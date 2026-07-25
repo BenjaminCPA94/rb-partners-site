@@ -376,6 +376,10 @@ p { color: var(--gray-600); }
 .simulator-compare .simulator-result { border-bottom-color: rgba(255,255,255,0.08); padding: 10px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
 .simulator-compare .simulator-result__value { font-size: 1rem; }
 
+.simulator-recommendation { text-align: center; padding: 12px 0; }
+.simulator-recommendation__title { font-family: var(--font-head); font-size: 1.6rem; color: var(--gold-400); margin-bottom: 14px; }
+.simulator-recommendation__desc { color: #c7d0de; font-size: 0.95rem; line-height: 1.6; }
+
 .simulator-disclaimer {
   background: var(--cream); border-left: 3px solid var(--gold-500); border-radius: var(--radius);
   padding: 18px 22px; font-size: 0.88rem; color: var(--navy-800); margin-top: 28px;

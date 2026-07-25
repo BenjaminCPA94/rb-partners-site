@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-doctitle="sim.tns.title">Cotisations sociales TNS — RB Partners</title>
+<meta name="description" content="Simulateur de cotisations sociales TNS (gérant majoritaire, entreprise individuelle), par RB Partners.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
+    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
+    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="logo">
+      <span class="logo__mark">RB</span>
+      <span class="logo__text">RB <em>Partners</em></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="../index.html#international" data-i18n="nav.international">International</a>
+      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+    </nav>
+
+    <div class="call-dropdown">
+      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-i18n="nav.call">Nous appeler</span>
+        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="call-dropdown__panel" id="call-panel">
+        <a href="tel:+33600000001" class="call-dropdown__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
+        </a>
+        <a href="tel:+33600000002" class="call-dropdown__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
+        </a>
+      </div>
+    </div>
+
+    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
+
+    <div class="lang-toggle">
+      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
+      <label class="lang-switch">
+        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
+        <span class="lang-switch__track"></span>
+        <span class="lang-switch__thumb"></span>
+      </label>
+      <span class="lang-toggle__label" data-lang-label="en">EN</span>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Fil d'ariane">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
+      <li><a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a></li>
+      <li aria-current="page" data-i18n="sim.tns.title">Cotisations sociales TNS</li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+
+  <section class="article-banner">
+    <div class="container article-banner__inner">
+      <span class="blog-card__category" data-i18n="sim.tns.category">Statut du dirigeant</span>
+      <h1 data-i18n="sim.tns.title">Cotisations sociales TNS</h1>
+      <p class="article-banner__meta" data-i18n="sim.tns.excerpt">Estimez vos cotisations sociales de travailleur non salarié à partir de votre revenu professionnel.</p>
+    </div>
+  </section>
+
+  <section class="simulator-body">
+    <div class="container">
+      <div class="simulator-grid">
+
+        <form class="simulator-form" id="sim-tns-form">
+          <h2 data-i18n="sim.tns.form_title">Vos données</h2>
+
+          <div class="simulator-form__row">
+            <label for="sim-tns-revenu" data-i18n="sim.tns.revenu_label">Revenu professionnel annuel (avant cotisations sociales)</label>
+            <input type="number" id="sim-tns-revenu" min="0" step="1000" value="50000" inputmode="decimal">
+          </div>
+        </form>
+
+        <div class="simulator-results">
+          <h2 data-i18n="sim.tns.results_title">Estimation</h2>
+          <div class="simulator-result">
+            <span class="simulator-result__label" data-i18n="sim.tns.taux_label">Taux de charges TNS retenu</span>
+            <span class="simulator-result__value">35 %</span>
+          </div>
+          <div class="simulator-result">
+            <span class="simulator-result__label" data-i18n="sim.tns.cotisations_label">Cotisations sociales estimées</span>
+            <span class="simulator-result__value" id="sim-tns-cotisations">0 €</span>
+          </div>
+          <div class="simulator-result simulator-result--total">
+            <span class="simulator-result__label" data-i18n="sim.tns.net_label">Revenu net annuel après cotisations</span>
+            <span class="simulator-result__value" id="sim-tns-net">0 €</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="simulator-disclaimer">
+        <strong data-i18n="sim.disclaimer_label">Estimation indicative</strong> — <span data-i18n-html="sim.disclaimer_text">Ce simulateur fournit un ordre de grandeur simplifié à partir de taux moyens. Il ne constitue pas un conseil personnalisé ni un calcul définitif&nbsp;: votre situation réelle peut inclure des paramètres (conventions collectives, régimes particuliers, seuils spécifiques) que seul un échange avec nos équipes permet de prendre en compte.</span>
+      </div>
+
+      <div class="article-nav">
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          <span data-i18n="sim.back">Retour aux simulateurs</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-cta">
+    <div class="container">
+      <h2 data-i18n="sim.cta_title">Un besoin de chiffrer précisément votre situation ?</h2>
+      <p data-i18n="sim.cta_text">Nos associés affinent ces estimations en fonction de votre cas réel.</p>
+      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="logo__mark logo__mark--footer">RB</span>
+      <span>RB <em>Partners</em></span>
+    </div>
+    <nav class="footer__nav">
+      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="../index.html#international" data-i18n="nav.international">International</a>
+      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+    </nav>
+    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/simulateurs.js"></script>
+</body>
+</html>

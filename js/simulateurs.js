@@ -88,8 +88,185 @@ function initSimDirigeant() {
   compute();
 }
 
+function initSimBrutNet() {
+  const form = document.getElementById('sim-brutnet-form');
+  if (!form) return;
+  const brutInput = document.getElementById('sim-brutnet-brut');
+  const statutInput = document.getElementById('sim-brutnet-statut');
+  const outNet = document.getElementById('sim-brutnet-net');
+  const outCharges = document.getElementById('sim-brutnet-charges');
+  const outCoutEmployeur = document.getElementById('sim-brutnet-cout-employeur');
+
+  function compute() {
+    const brut = Math.max(0, parseFloat(brutInput.value) || 0);
+    const cadre = statutInput.value === 'cadre';
+    const tauxSalarial = cadre ? 0.25 : 0.22;
+    const tauxPatronal = cadre ? 0.45 : 0.42;
+    const net = brut * (1 - tauxSalarial);
+    outNet.textContent = rbFormatEUR(net);
+    outCharges.textContent = rbFormatEUR(brut - net);
+    outCoutEmployeur.textContent = rbFormatEUR(brut * (1 + tauxPatronal));
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimTNS() {
+  const form = document.getElementById('sim-tns-form');
+  if (!form) return;
+  const revenuInput = document.getElementById('sim-tns-revenu');
+  const outCotisations = document.getElementById('sim-tns-cotisations');
+  const outNet = document.getElementById('sim-tns-net');
+  const tauxTNS = 0.35;
+
+  function compute() {
+    const revenu = Math.max(0, parseFloat(revenuInput.value) || 0);
+    const cotisations = revenu * tauxTNS;
+    outCotisations.textContent = rbFormatEUR(cotisations);
+    outNet.textContent = rbFormatEUR(revenu - cotisations);
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimDividendes() {
+  const form = document.getElementById('sim-dividendes-form');
+  if (!form) return;
+  const montantInput = document.getElementById('sim-dividendes-montant');
+  const tmiInput = document.getElementById('sim-dividendes-tmi');
+  const outPfuNet = document.getElementById('sim-dividendes-pfu-net');
+  const outBaremeImpot = document.getElementById('sim-dividendes-bareme-impot');
+  const outBaremePs = document.getElementById('sim-dividendes-bareme-ps');
+  const outBaremeNet = document.getElementById('sim-dividendes-bareme-net');
+  const psRate = 0.172;
+
+  function compute() {
+    const montant = Math.max(0, parseFloat(montantInput.value) || 0);
+    const tmi = parseFloat(tmiInput.value) || 0;
+
+    const pfuNet = montant * (1 - 0.128 - psRate);
+    outPfuNet.textContent = rbFormatEUR(pfuNet);
+
+    const baseAbattue = montant * 0.6;
+    const impot = baseAbattue * tmi;
+    const ps = montant * psRate;
+    const baremeNet = montant - impot - ps;
+    outBaremeImpot.textContent = rbFormatEUR(impot);
+    outBaremePs.textContent = rbFormatEUR(ps);
+    outBaremeNet.textContent = rbFormatEUR(baremeNet);
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimKm() {
+  const form = document.getElementById('sim-km-form');
+  if (!form) return;
+  const distanceInput = document.getElementById('sim-km-distance');
+  const puissanceInput = document.getElementById('sim-km-puissance');
+  const outTaux = document.getElementById('sim-km-taux');
+  const outTotal = document.getElementById('sim-km-total');
+  const taux = { '3': 0.53, '4': 0.60, '5': 0.63, '6': 0.66, '7': 0.70 };
+
+  function compute() {
+    const distance = Math.max(0, parseFloat(distanceInput.value) || 0);
+    const rate = taux[puissanceInput.value] || taux['5'];
+    outTaux.textContent = rate.toFixed(2).replace('.', ',') + ' €/km';
+    outTotal.textContent = rbFormatEUR(distance * rate);
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimRTT() {
+  const form = document.getElementById('sim-rtt-form');
+  if (!form) return;
+  const dureeInput = document.getElementById('sim-rtt-duree');
+  const semainesInput = document.getElementById('sim-rtt-semaines');
+  const outHeures = document.getElementById('sim-rtt-heures');
+  const outJours = document.getElementById('sim-rtt-jours');
+
+  function compute() {
+    const duree = Math.max(35, parseFloat(dureeInput.value) || 35);
+    const semaines = Math.max(0, parseFloat(semainesInput.value) || 0);
+    const heuresSupp = Math.max(0, duree - 35);
+    const heuresAn = heuresSupp * semaines;
+    const jours = duree > 0 ? heuresAn / (duree / 5) : 0;
+    outHeures.textContent = heuresAn.toFixed(0).replace('.', ',') + ' h';
+    outJours.textContent = jours.toFixed(1).replace('.', ',') + ' j';
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimActivitePartielle() {
+  const form = document.getElementById('sim-partiel-form');
+  if (!form) return;
+  const tauxHoraireInput = document.getElementById('sim-partiel-taux-horaire');
+  const heuresInput = document.getElementById('sim-partiel-heures');
+  const outIndemniteHoraire = document.getElementById('sim-partiel-indemnite-horaire');
+  const outTotal = document.getElementById('sim-partiel-total');
+  const tauxIndemnisation = 0.6;
+
+  function compute() {
+    const tauxHoraire = Math.max(0, parseFloat(tauxHoraireInput.value) || 0);
+    const heures = Math.max(0, parseFloat(heuresInput.value) || 0);
+    const indemniteHoraire = tauxHoraire * tauxIndemnisation;
+    outIndemniteHoraire.textContent = rbFormatEUR(indemniteHoraire);
+    outTotal.textContent = rbFormatEUR(indemniteHoraire * heures);
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+}
+
+function initSimStatut() {
+  const form = document.getElementById('sim-statut-form');
+  if (!form) return;
+  const associesInput = document.getElementById('sim-statut-associes');
+  const caInput = document.getElementById('sim-statut-ca');
+  const socialInput = document.getElementById('sim-statut-social');
+  const outTitle = document.getElementById('sim-statut-result-title');
+  const outDesc = document.getElementById('sim-statut-result-desc');
+
+  function compute() {
+    const seul = associesInput.value === 'seul';
+    const ca = caInput.value;
+    const social = socialInput.value;
+    const lang = window.rbI18n ? window.rbI18n.getLang() : 'fr';
+    let key = 'sarl';
+
+    if (ca === 'faible' && social === 'peuimporte') {
+      key = 'micro';
+    } else if (seul) {
+      key = social === 'tns' ? 'eurl' : 'sasu';
+    } else {
+      key = social === 'tns' ? 'sarl' : 'sas';
+    }
+
+    outTitle.textContent = window.rbI18n ? window.rbI18n.get(`sim.statut.result.${key}`) : key;
+    outDesc.textContent = window.rbI18n ? window.rbI18n.get(`sim.statut.result.${key}_desc`) : '';
+  }
+
+  form.addEventListener('input', compute);
+  compute();
+  document.addEventListener('rb:langchange', compute);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initSimIS();
   initSimCoutSalarie();
   initSimDirigeant();
+  initSimBrutNet();
+  initSimTNS();
+  initSimDividendes();
+  initSimKm();
+  initSimRTT();
+  initSimActivitePartielle();
+  initSimStatut();
 });
