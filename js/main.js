@@ -14,6 +14,31 @@ nav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+// Call dropdown
+const callToggle = document.getElementById('call-toggle');
+const callPanel = document.getElementById('call-panel');
+
+if (callToggle && callPanel) {
+  const closeCallPanel = () => {
+    callPanel.classList.remove('is-open');
+    callToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  callToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = callPanel.classList.toggle('is-open');
+    callToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!callPanel.contains(e.target) && e.target !== callToggle) closeCallPanel();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCallPanel();
+  });
+}
+
 // Scroll reveal animations
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(

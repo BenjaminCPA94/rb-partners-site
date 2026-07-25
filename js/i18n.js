@@ -9,8 +9,8 @@ const RB_TRANSLATIONS = {
     'nav.international': 'International',
     'nav.equipe': 'Le cabinet',
     'nav.blog': 'Blog',
-    'nav.contact': 'Contact',
     'nav.cta': 'Prendre rendez-vous',
+    'nav.call': 'Nous appeler',
     'breadcrumb.home': 'Accueil',
 
     'hero.eyebrow': 'Expertise comptable, sociale & fiscale',
@@ -261,8 +261,8 @@ const RB_TRANSLATIONS = {
     'nav.international': 'International',
     'nav.equipe': 'The Firm',
     'nav.blog': 'Blog',
-    'nav.contact': 'Contact',
     'nav.cta': 'Book a meeting',
+    'nav.call': 'Call us',
     'breadcrumb.home': 'Home',
 
     'hero.eyebrow': 'Accounting, HR & Tax Expertise',
