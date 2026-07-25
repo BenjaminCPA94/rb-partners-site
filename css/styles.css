@@ -110,7 +110,7 @@ p { color: var(--gray-600); }
 .logo__mark--footer { background: var(--gold-500); color: var(--navy-950); }
 .logo em { color: var(--gold-500); font-style: normal; }
 
-.nav { display: flex; gap: 24px; flex: 1; justify-content: center; min-width: 0; }
+.nav { display: flex; gap: 24px; flex: 1; justify-content: center; }
 .nav a { font-size: 0.92rem; font-weight: 500; color: var(--navy-800); position: relative; padding: 4px 0; white-space: nowrap; }
 .nav a::after {
   content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
@@ -436,7 +436,7 @@ p { color: var(--gray-600); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
   .nav, .header__cta, .topbar { display: none; }
   .burger { display: flex; }
   .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
