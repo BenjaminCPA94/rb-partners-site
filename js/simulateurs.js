@@ -140,7 +140,7 @@ function initSimDividendes() {
   const outBaremeImpot = document.getElementById('sim-dividendes-bareme-impot');
   const outBaremePs = document.getElementById('sim-dividendes-bareme-ps');
   const outBaremeNet = document.getElementById('sim-dividendes-bareme-net');
-  const psRate = 0.172;
+  const psRate = 0.186;
 
   function compute() {
     const montant = Math.max(0, parseFloat(montantInput.value) || 0);
