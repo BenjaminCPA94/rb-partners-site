@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="blog.facturation.title">Facturation électronique obligatoire — RB Partners</title>
-<meta name="description" content="Réforme de la facturation électronique en B2B : calendrier, obligations et comment préparer votre entreprise, par RB Partners.">
+<title data-i18n-doctitle="sim.cout.title">Simulateur coût d'un salarié — RB Partners</title>
+<meta name="description" content="Calculez le coût total employeur d'une embauche à partir du salaire brut envisagé, par RB Partners.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,8 +33,8 @@
       <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
       <a href="../index.html#international" data-i18n="nav.international">International</a>
       <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a>
     </nav>
 
     <div class="call-dropdown">
@@ -77,8 +77,8 @@
   <div class="container">
     <ol>
       <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
-      <li aria-current="page" data-i18n-html="blog.facturation.title">Facturation électronique obligatoire</li>
+      <li><a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a></li>
+      <li aria-current="page" data-i18n="sim.cout.title">Coût d'un salarié</li>
     </ol>
   </div>
 </nav>
@@ -87,68 +87,63 @@
 
   <section class="article-banner">
     <div class="container article-banner__inner">
-      <span class="blog-card__category" data-i18n="blog.facturation.category">Fiscalité</span>
-      <h1 data-i18n-html="blog.facturation.title">Facturation électronique obligatoire&nbsp;: ce qui change pour votre entreprise</h1>
-      <p class="article-banner__meta">
-        <span data-i18n="blog.facturation.date">Juillet 2026</span>
-        <span data-i18n="blog.facturation.readtime">6 min de lecture</span>
-      </p>
+      <span class="blog-card__category" data-i18n="sim.cout.category">Social & paie</span>
+      <h1 data-i18n="sim.cout.title">Coût d'un salarié</h1>
+      <p class="article-banner__meta" data-i18n="sim.cout.excerpt">Calculez le coût total employeur d'une embauche à partir du salaire brut envisagé.</p>
     </div>
   </section>
 
-  <section class="article-body">
+  <section class="simulator-body">
     <div class="container">
-      <div class="article-body__inner reveal">
-        <p data-i18n="blog.facturation.intro">
-          La facturation électronique devient progressivement obligatoire pour les transactions entre entreprises
-          assujetties à la TVA en France. Porté par la DGFiP, ce changement touchera l'ensemble des sociétés,
-          quelle que soit leur taille. Voici ce qu'il faut savoir pour anticiper sereinement cette transition.
-        </p>
+      <div class="simulator-grid">
 
-        <h2 data-i18n="blog.facturation.s1_title">Pourquoi cette réforme ?</h2>
-        <p data-i18n-html="blog.facturation.s1_body">
-          L'objectif affiché par l'administration est triple&nbsp;: lutter plus efficacement contre la fraude à la
-          TVA, simplifier à terme les démarches déclaratives des entreprises, et donner à l'État une visibilité en
-          temps quasi réel sur l'activité économique. La France s'aligne ainsi sur plusieurs de ses voisins
-          européens qui ont déjà généralisé la facture électronique.
-        </p>
+        <form class="simulator-form" id="sim-cout-form">
+          <h2 data-i18n="sim.cout.form_title">Vos données</h2>
 
-        <h2 data-i18n="blog.facturation.s2_title">Qui est concerné, et à partir de quand ?</h2>
-        <p data-i18n-html="blog.facturation.s2_body">
-          Toutes les entreprises assujetties à la TVA et établies en France sont concernées, pour leurs transactions
-          domestiques avec d'autres professionnels. Le déploiement est progressif&nbsp;: les grandes entreprises et
-          les ETI ouvrent la marche, suivies des PME puis des TPE quelques mois plus tard. Réception et émission des
-          factures électroniques ne suivent pas nécessairement le même calendrier.
-        </p>
-        <div class="article-body__note">
-          <strong data-i18n="blog.note_label">Point de vigilance</strong> — <span data-i18n="blog.facturation.note">Les dates exactes ont déjà été ajustées plusieurs fois par le législateur. Nous vous recommandons de vérifier votre échéance précise avec nous plutôt que de vous fier à une date isolée trouvée en ligne.</span>
+          <div class="simulator-form__row">
+            <label for="sim-cout-brut" data-i18n="sim.cout.brut_label">Salaire brut mensuel</label>
+            <input type="number" id="sim-cout-brut" min="0" step="50" value="3000" inputmode="decimal">
+          </div>
+
+          <div class="simulator-form__row">
+            <label for="sim-cout-statut" data-i18n="sim.cout.statut_label">Statut</label>
+            <select id="sim-cout-statut">
+              <option value="non-cadre" data-i18n="sim.cout.statut_non_cadre">Non-cadre</option>
+              <option value="cadre" data-i18n="sim.cout.statut_cadre">Cadre</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="simulator-results">
+          <h2 data-i18n="sim.cout.results_title">Estimation</h2>
+          <div class="simulator-result">
+            <span class="simulator-result__label" data-i18n="sim.cout.patronales_label">Charges patronales estimées</span>
+            <span class="simulator-result__value" id="sim-cout-patronales">0 €</span>
+          </div>
+          <div class="simulator-result">
+            <span class="simulator-result__label" data-i18n="sim.cout.net_label">Net avant impôt estimé (salarié)</span>
+            <span class="simulator-result__value" id="sim-cout-net">0 €</span>
+          </div>
+          <div class="simulator-result">
+            <span class="simulator-result__label" data-i18n="sim.cout.cout_annuel_label">Coût annuel employeur</span>
+            <span class="simulator-result__value" id="sim-cout-annuel">0 €</span>
+          </div>
+          <div class="simulator-result simulator-result--total">
+            <span class="simulator-result__label" data-i18n="sim.cout.cout_mensuel_label">Coût mensuel employeur</span>
+            <span class="simulator-result__value" id="sim-cout-mensuel">0 €</span>
+          </div>
         </div>
 
-        <h2 data-i18n="blog.facturation.s3_title">Deux obligations à ne pas confondre</h2>
-        <ul>
-          <li data-i18n-html="blog.facturation.list1.0">L'e-invoicing&nbsp;: l'émission et la réception de factures électroniques structurées, transmises via une plateforme agréée, pour vos transactions B2B domestiques.</li>
-          <li data-i18n-html="blog.facturation.list1.1">L'e-reporting&nbsp;: la transmission à l'administration des données de transactions non couvertes par l'e-invoicing (ventes aux particuliers, opérations internationales), ainsi que des données de paiement.</li>
-        </ul>
+      </div>
 
-        <h2 data-i18n="blog.facturation.s4_title">Comment vous préparer dès maintenant</h2>
-        <ul>
-          <li data-i18n="blog.facturation.list2.0">Choisir une plateforme de dématérialisation (partenaire agréé ou portail public) adaptée à votre volume de facturation</li>
-          <li data-i18n="blog.facturation.list2.1">Vérifier la compatibilité de votre logiciel de facturation ou de comptabilité avec le format attendu</li>
-          <li data-i18n="blog.facturation.list2.2">Former les équipes qui émettent ou traitent des factures aux nouveaux flux</li>
-          <li data-i18n="blog.facturation.list2.3">Anticiper les règles d'archivage électronique probant de vos factures</li>
-        </ul>
-
-        <p data-i18n="blog.facturation.closing">
-          Cette réforme est structurante, mais elle se prépare sereinement avec un peu d'avance. Nos équipes
-          suivent l'actualité réglementaire de près et peuvent vous aider à choisir votre solution et à sécuriser
-          votre transition.
-        </p>
+      <div class="simulator-disclaimer">
+        <strong data-i18n="sim.disclaimer_label">Estimation indicative</strong> — <span data-i18n-html="sim.disclaimer_text">Ce simulateur fournit un ordre de grandeur simplifié à partir de taux moyens. Il ne constitue pas un conseil personnalisé ni un calcul définitif&nbsp;: votre situation réelle peut inclure des paramètres (conventions collectives, régimes particuliers, seuils spécifiques) que seul un échange avec nos équipes permet de prendre en compte.</span>
       </div>
 
       <div class="article-nav">
         <a href="index.html">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-          <span data-i18n="blog.back">Retour au blog</span>
+          <span data-i18n="sim.back">Retour aux simulateurs</span>
         </a>
       </div>
     </div>
@@ -156,8 +151,8 @@
 
   <section class="expertise-cta">
     <div class="container">
-      <h2 data-i18n="blog.facturation.cta_title">Une question sur la facturation électronique ?</h2>
-      <p data-i18n="blog.facturation.cta_text">Nous vous aidons à comprendre votre calendrier et à préparer votre entreprise.</p>
+      <h2 data-i18n="sim.cta_title">Un besoin de chiffrer précisément votre situation ?</h2>
+      <p data-i18n="sim.cta_text">Nos associés affinent ces estimations en fonction de votre cas réel.</p>
       <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
     </div>
   </section>
@@ -175,8 +170,8 @@
       <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
       <a href="../index.html#international" data-i18n="nav.international">International</a>
       <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="index.html" data-i18n="nav.simulateurs">Simulateurs</a>
     </nav>
     <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
   </div>
@@ -184,5 +179,6 @@
 
 <script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/simulateurs.js"></script>
 </body>
 </html>
