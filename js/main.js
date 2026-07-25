@@ -40,7 +40,7 @@ if (form) {
       form.reportValidity();
       return;
     }
-    status.textContent = 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
+    status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
     form.reset();
   });
 }

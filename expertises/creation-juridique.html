@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Création & structuration juridique — RB Partners</title>
+<title data-i18n-doctitle="card.creation.title">Création & structuration juridique — RB Partners</title>
 <meta name="description" content="Choix du statut, rédaction des statuts, immatriculation et structuration de groupe : l'accompagnement création de RB Partners.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
   <div class="container topbar__inner">
     <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
     <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent">Espace client</a>
+    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
   </div>
 </div>
 
@@ -29,14 +29,24 @@
     </a>
 
     <nav class="nav" id="nav">
-      <a href="../index.html#expertises">Expertises</a>
-      <a href="../index.html#accompagnement">Accompagnement</a>
-      <a href="../index.html#international">International</a>
-      <a href="../index.html#equipe">Le cabinet</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="../index.html#international" data-i18n="nav.international">International</a>
+      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
     </nav>
 
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
+
+    <div class="lang-toggle">
+      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
+      <label class="lang-switch">
+        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
+        <span class="lang-switch__track"></span>
+        <span class="lang-switch__thumb"></span>
+      </label>
+      <span class="lang-toggle__label" data-lang-label="en">EN</span>
+    </div>
 
     <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -47,9 +57,9 @@
 <nav class="breadcrumb" aria-label="Fil d'ariane">
   <div class="container">
     <ol>
-      <li><a href="../index.html">Accueil</a></li>
-      <li><a href="../index.html#expertises">Expertises</a></li>
-      <li aria-current="page">Création & structuration juridique</li>
+      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
+      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
+      <li aria-current="page" data-i18n="card.creation.title">Création & structuration juridique</li>
     </ol>
   </div>
 </nav>
@@ -58,40 +68,40 @@
 
   <section class="expertise-banner">
     <div class="container expertise-banner__inner">
-      <p class="eyebrow">Expertise</p>
-      <h1>Création & structuration juridique</h1>
-      <p>Poser les bonnes fondations juridiques dès le départ, pour éviter d'avoir à les corriger plus tard.</p>
+      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
+      <h1 data-i18n="card.creation.title">Création & structuration juridique</h1>
+      <p data-i18n="exp.creation.subtitle">Poser les bonnes fondations juridiques dès le départ, pour éviter d'avoir à les corriger plus tard.</p>
     </div>
   </section>
 
   <section class="expertise-body">
     <div class="container expertise-body__grid">
       <div class="expertise-body__intro reveal">
-        <p>
+        <p data-i18n="exp.creation.intro1">
           Le choix de la structure juridique conditionne votre fiscalité, votre protection sociale et votre
           gouvernance pour les années à venir. Nous vous aidons à choisir la forme la plus adaptée à votre projet,
           en tenant compte de votre activité, de vos associés éventuels et de vos perspectives de développement.
         </p>
-        <p>
+        <p data-i18n="exp.creation.intro2">
           Nous prenons en charge la rédaction des statuts et l'ensemble des formalités de constitution, jusqu'à
           l'obtention de votre immatriculation. Pour les projets plus complexes, nous vous accompagnons également
           dans la structuration d'un groupe (holding, filiales) et la rédaction de pactes d'associés.
         </p>
-        <p>
+        <p data-i18n="exp.creation.intro3">
           Lors d'une levée de fonds ou d'une opération en capital, nous vous assistons dans la préparation des
           documents juridiques et financiers nécessaires.
         </p>
       </div>
 
       <aside class="expertise-services reveal">
-        <h2>Nos services clés</h2>
+        <h2 data-i18n="services.title">Nos services clés</h2>
         <ul class="checklist">
-          <li>Choix de la forme juridique adaptée à votre projet</li>
-          <li>Rédaction des statuts et formalités de constitution</li>
-          <li>Immatriculation (RCS, Kbis, INSEE)</li>
-          <li>Structuration de groupe (holding, filiales)</li>
-          <li>Pactes d'associés et gouvernance</li>
-          <li>Accompagnement lors des levées de fonds et opérations en capital</li>
+          <li data-i18n="exp.creation.services.0">Choix de la forme juridique adaptée à votre projet</li>
+          <li data-i18n="exp.creation.services.1">Rédaction des statuts et formalités de constitution</li>
+          <li data-i18n="exp.creation.services.2">Immatriculation (RCS, Kbis, INSEE)</li>
+          <li data-i18n="exp.creation.services.3">Structuration de groupe (holding, filiales)</li>
+          <li data-i18n="exp.creation.services.4">Pactes d'associés et gouvernance</li>
+          <li data-i18n="exp.creation.services.5">Accompagnement lors des levées de fonds et opérations en capital</li>
         </ul>
       </aside>
     </div>
@@ -99,16 +109,16 @@
     <div class="container expertise-nav">
       <a href="../index.html#expertises">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        Retour aux expertises
+        <span data-i18n="exp.back">Retour aux expertises</span>
       </a>
     </div>
   </section>
 
   <section class="expertise-cta">
     <div class="container">
-      <h2>Un projet de création à structurer ?</h2>
-      <p>Parlons-en avant de déposer vos statuts.</p>
-      <a href="../index.html#contact" class="btn btn--primary">Nous contacter</a>
+      <h2 data-i18n="exp.creation.cta_title">Un projet de création à structurer ?</h2>
+      <p data-i18n="exp.creation.cta_text">Parlons-en avant de déposer vos statuts.</p>
+      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
     </div>
   </section>
 
@@ -121,16 +131,17 @@
       <span>RB <em>Partners</em></span>
     </div>
     <nav class="footer__nav">
-      <a href="../index.html#expertises">Expertises</a>
-      <a href="../index.html#accompagnement">Accompagnement</a>
-      <a href="../index.html#international">International</a>
-      <a href="../index.html#equipe">Le cabinet</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="../index.html#international" data-i18n="nav.international">International</a>
+      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <p class="footer__legal">© <span id="year"></span> RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</p>
+    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
   </div>
 </footer>
 
+<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
