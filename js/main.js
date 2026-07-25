@@ -33,15 +33,17 @@ revealEls.forEach((el) => observer.observe(el));
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  status.textContent = 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
-  form.reset();
-});
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    status.textContent = 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
+    form.reset();
+  });
+}
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
