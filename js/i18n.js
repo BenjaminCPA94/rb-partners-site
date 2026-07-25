@@ -8,6 +8,7 @@ const RB_TRANSLATIONS = {
     'nav.accompagnement': 'Accompagnement',
     'nav.international': 'International',
     'nav.equipe': 'Le cabinet',
+    'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.cta': 'Prendre rendez-vous',
     'breadcrumb.home': 'Accueil',
@@ -180,6 +181,77 @@ const RB_TRANSLATIONS = {
     'exp.implantation.services.5': 'Accompagnement en français et en anglais',
     'exp.implantation.cta_title': "Un projet d'implantation en France ?",
     'exp.implantation.cta_text': 'Parlons de votre structure d’origine et de vos objectifs.',
+
+    'blog.eyebrow': 'Actualités',
+    'blog.title': 'Nos actualités & conseils',
+    'blog.subtitle': "Réglementation, création d'entreprise, international&nbsp;: nos éclairages pour vous accompagner.",
+    'blog.read_more': "Lire l'article",
+    'blog.back': 'Retour au blog',
+    'blog.note_label': 'Point de vigilance',
+
+    'blog.facturation.category': 'Fiscalité',
+    'blog.facturation.date': 'Juillet 2026',
+    'blog.facturation.readtime': '6 min de lecture',
+    'blog.facturation.title': 'Facturation électronique obligatoire&nbsp;: ce qui change pour votre entreprise',
+    'blog.facturation.excerpt': 'Réforme de la facturation électronique en B2B&nbsp;: calendrier, obligations et comment vous y préparer.',
+    'blog.facturation.intro': "La facturation électronique devient progressivement obligatoire pour les transactions entre entreprises assujetties à la TVA en France. Porté par la DGFiP, ce changement touchera l'ensemble des sociétés, quelle que soit leur taille. Voici ce qu'il faut savoir pour anticiper sereinement cette transition.",
+    'blog.facturation.s1_title': 'Pourquoi cette réforme ?',
+    'blog.facturation.s1_body': "L'objectif affiché par l'administration est triple&nbsp;: lutter plus efficacement contre la fraude à la TVA, simplifier à terme les démarches déclaratives des entreprises, et donner à l'État une visibilité en temps quasi réel sur l'activité économique. La France s'aligne ainsi sur plusieurs de ses voisins européens qui ont déjà généralisé la facture électronique.",
+    'blog.facturation.s2_title': 'Qui est concerné, et à partir de quand ?',
+    'blog.facturation.s2_body': "Toutes les entreprises assujetties à la TVA et établies en France sont concernées, pour leurs transactions domestiques avec d'autres professionnels. Le déploiement est progressif&nbsp;: les grandes entreprises et les ETI ouvrent la marche, suivies des PME puis des TPE quelques mois plus tard. Réception et émission des factures électroniques ne suivent pas nécessairement le même calendrier.",
+    'blog.facturation.note': 'Les dates exactes ont déjà été ajustées plusieurs fois par le législateur. Nous vous recommandons de vérifier votre échéance précise avec nous plutôt que de vous fier à une date isolée trouvée en ligne.',
+    'blog.facturation.s3_title': 'Deux obligations à ne pas confondre',
+    'blog.facturation.list1.0': "L'e-invoicing&nbsp;: l'émission et la réception de factures électroniques structurées, transmises via une plateforme agréée, pour vos transactions B2B domestiques.",
+    'blog.facturation.list1.1': "L'e-reporting&nbsp;: la transmission à l'administration des données de transactions non couvertes par l'e-invoicing (ventes aux particuliers, opérations internationales), ainsi que des données de paiement.",
+    'blog.facturation.s4_title': 'Comment vous préparer dès maintenant',
+    'blog.facturation.list2.0': 'Choisir une plateforme de dématérialisation (partenaire agréé ou portail public) adaptée à votre volume de facturation',
+    'blog.facturation.list2.1': 'Vérifier la compatibilité de votre logiciel de facturation ou de comptabilité avec le format attendu',
+    'blog.facturation.list2.2': 'Former les équipes qui émettent ou traitent des factures aux nouveaux flux',
+    'blog.facturation.list2.3': 'Anticiper les règles d’archivage électronique probant de vos factures',
+    'blog.facturation.closing': 'Cette réforme est structurante, mais elle se prépare sereinement avec un peu d’avance. Nos équipes suivent l’actualité réglementaire de près et peuvent vous aider à choisir votre solution et à sécuriser votre transition.',
+    'blog.facturation.cta_title': 'Une question sur la facturation électronique ?',
+    'blog.facturation.cta_text': 'Nous vous aidons à comprendre votre calendrier et à préparer votre entreprise.',
+
+    'blog.creation.category': "Création d'entreprise",
+    'blog.creation.date': 'Juin 2026',
+    'blog.creation.readtime': '5 min de lecture',
+    'blog.creation.title': 'Créer son entreprise en France&nbsp;: les 5 étapes clés',
+    'blog.creation.excerpt': "De l'idée à l'immatriculation, le parcours pour lancer votre activité en toute sérénité.",
+    'blog.creation.intro': "Se lancer est une aventure enthousiasmante, mais elle gagne à être structurée. Voici les cinq étapes que nous voyons revenir, projet après projet, chez les entrepreneurs que nous accompagnons.",
+    'blog.creation.s1_title': '1. Valider et chiffrer votre projet',
+    'blog.creation.s1_body': "Avant toute démarche administrative, prenez le temps de formaliser votre projet&nbsp;: à qui vous vous adressez, comment vous générez du chiffre d'affaires, et surtout, quels moyens financiers vous engagez au démarrage. Un prévisionnel financier, même simple, vous évite bien des mauvaises surprises.",
+    'blog.creation.s2_title': '2. Choisir la structure juridique adaptée',
+    'blog.creation.s2_body': "Entreprise individuelle, micro-entreprise, SASU, SAS, EURL, SARL&nbsp;: chaque forme a ses propres règles de fiscalité, de protection sociale et de gouvernance. Ce choix dépend de votre activité, de la présence ou non d'associés, et de vos perspectives de développement — il mérite d'être fait avec un accompagnement, pas seul face à un formulaire en ligne.",
+    'blog.creation.s3_title': '3. Rédiger les statuts et réunir le capital',
+    'blog.creation.s3_body': "Si vous créez une société, les statuts formalisent son fonctionnement&nbsp;: répartition du capital, pouvoirs du dirigeant, règles de prise de décision. C'est aussi le moment d'ouvrir un compte bancaire dédié et d'y déposer le capital social.",
+    'blog.creation.s4_title': '4. Immatriculer votre société',
+    'blog.creation.s4_body': "L'immatriculation au registre du commerce et des sociétés donne naissance juridiquement à votre entreprise et vous permet d'obtenir votre extrait Kbis. Les formalités se font aujourd'hui essentiellement en ligne, mais la vigilance reste de mise sur les pièces justificatives demandées.",
+    'blog.creation.s5_title': '5. Mettre en place vos outils de gestion dès le premier jour',
+    'blog.creation.s5_body': "Comptabilité, facturation, suivi de trésorerie&nbsp;: plus ces outils sont posés tôt, plus le pilotage de votre activité est simple dès les premiers mois. C'est aussi le moment idéal pour définir avec votre expert-comptable la fréquence de vos points de suivi.",
+    'blog.creation.closing': "Chaque projet est différent, et ces étapes ne se déroulent jamais tout à fait dans le même ordre. Nous accompagnons les porteurs de projet dès les premières réflexions, pour sécuriser les choix qui comptent.",
+    'blog.creation.cta_title': 'Un projet de création en tête ?',
+    'blog.creation.cta_text': 'Parlons-en avant que vous ne posiez la première pierre administrative.',
+
+    'blog.implantation.category': 'International',
+    'blog.implantation.date': 'Mai 2026',
+    'blog.implantation.readtime': '5 min de lecture',
+    'blog.implantation.title': 'Filiale, succursale ou bureau de liaison&nbsp;: comment choisir sa structure d’implantation en France',
+    'blog.implantation.excerpt': "Trois options, trois régimes très différents. Un panorama pour les sociétés étrangères qui préparent leur arrivée en France.",
+    'blog.implantation.intro': "Lorsqu'une société étrangère souhaite s'implanter en France, la première question à trancher est structurelle&nbsp;: filiale, succursale ou bureau de liaison&nbsp;? Ce choix conditionne votre fiscalité, votre niveau de responsabilité et la nature des activités que vous pourrez exercer.",
+    'blog.implantation.s1_title': 'La filiale&nbsp;: une société de droit français à part entière',
+    'blog.implantation.s1_body': "Juridiquement indépendante de sa société mère, la filiale est immatriculée en France comme n'importe quelle société française (SAS, SARL...). Elle est imposée localement sur ses propres résultats et sa responsabilité est en principe limitée à son propre patrimoine, ce qui protège la société mère. C'est la structure la plus adaptée pour une activité commerciale pérenne et autonome.",
+    'blog.implantation.s2_title': 'La succursale&nbsp;: une extension de la société étrangère',
+    'blog.implantation.s2_body': "La succursale n'a pas de personnalité juridique distincte&nbsp;: elle est un établissement de la société étrangère sur le territoire français. Elle est plus rapide et moins coûteuse à mettre en place qu'une filiale, mais la société mère reste responsable de ses engagements en France. Un choix pertinent pour tester une activité avant de structurer plus durablement.",
+    'blog.implantation.s3_title': 'Le bureau de liaison&nbsp;: une présence sans activité commerciale',
+    'blog.implantation.s3_body': "Le bureau de liaison permet une présence en France&nbsp;: veille de marché, représentation, coordination avec des partenaires locaux, mais sans exercer d'activité commerciale génératrice de revenus. Il n'est pas imposé en France au titre d'une activité qu'il n'exerce pas, ce qui en fait une option d'entrée en matière avant un projet plus structuré.",
+    'blog.implantation.s4_title': 'Comment choisir',
+    'blog.implantation.list.0': 'Le degré d’autonomie souhaité par rapport à la société mère',
+    'blog.implantation.list.1': 'Le niveau de responsabilité que vous acceptez d’engager en France',
+    'blog.implantation.list.2': "La nature de l'activité&nbsp;: simple représentation ou véritable activité commerciale",
+    'blog.implantation.list.3': 'Votre horizon de temps&nbsp;: test de marché ou implantation durable',
+    'blog.implantation.closing': "Il n'y a pas de bonne réponse universelle&nbsp;: le bon choix dépend de votre stratégie, de votre secteur et de votre calendrier. C'est précisément l'objet de notre premier échange avec les dirigeants de sociétés étrangères que nous accompagnons.",
+    'blog.implantation.cta_title': 'Vous préparez une implantation en France ?',
+    'blog.implantation.cta_text': 'Parlons de votre structure d’origine et de vos objectifs avant de vous engager.',
   },
 
   en: {
@@ -188,6 +260,7 @@ const RB_TRANSLATIONS = {
     'nav.accompagnement': 'Support',
     'nav.international': 'International',
     'nav.equipe': 'The Firm',
+    'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.cta': 'Book a meeting',
     'breadcrumb.home': 'Home',
@@ -360,6 +433,77 @@ const RB_TRANSLATIONS = {
     'exp.implantation.services.5': 'Support in French and English',
     'exp.implantation.cta_title': 'Planning to set up in France?',
     'exp.implantation.cta_text': "Let's talk about your parent company and your goals.",
+
+    'blog.eyebrow': 'News',
+    'blog.title': 'News & insights',
+    'blog.subtitle': 'Regulations, company formation, international matters&nbsp;: our insights to support you.',
+    'blog.read_more': 'Read the article',
+    'blog.back': 'Back to the blog',
+    'blog.note_label': 'Please note',
+
+    'blog.facturation.category': 'Tax',
+    'blog.facturation.date': 'July 2026',
+    'blog.facturation.readtime': '6 min read',
+    'blog.facturation.title': "Mandatory e-invoicing&nbsp;: what's changing for your business",
+    'blog.facturation.excerpt': "France's B2B e-invoicing reform&nbsp;: timeline, obligations, and how to prepare.",
+    'blog.facturation.intro': "E-invoicing is becoming mandatory, step by step, for transactions between VAT-registered businesses in France. Driven by the French tax authorities (DGFiP), this change will affect every company, regardless of size. Here's what you need to know to prepare calmly for the transition.",
+    'blog.facturation.s1_title': 'Why this reform?',
+    'blog.facturation.s1_body': "The tax authorities have three stated goals&nbsp;: fighting VAT fraud more effectively, eventually simplifying businesses' reporting obligations, and giving the State near real-time visibility into economic activity. France is aligning with several European neighbors that have already rolled out mandatory e-invoicing.",
+    'blog.facturation.s2_title': "Who's affected, and from when?",
+    'blog.facturation.s2_body': "All VAT-registered businesses established in France are concerned, for their domestic transactions with other businesses. The rollout is staggered&nbsp;: large companies and mid-caps go first, followed by SMEs and micro-businesses a few months later. Receiving and issuing e-invoices don't necessarily follow the same timeline.",
+    'blog.facturation.note': 'The exact dates have already been adjusted several times by lawmakers. We recommend checking your specific deadline with us rather than relying on a single date found online.',
+    'blog.facturation.s3_title': 'Two obligations not to confuse',
+    'blog.facturation.list1.0': 'E-invoicing&nbsp;: issuing and receiving structured electronic invoices, transmitted through an approved platform, for your domestic B2B transactions.',
+    'blog.facturation.list1.1': 'E-reporting&nbsp;: sending the tax authorities transaction data not covered by e-invoicing (sales to consumers, international transactions), as well as payment data.',
+    'blog.facturation.s4_title': 'How to prepare now',
+    'blog.facturation.list2.0': 'Choose an e-invoicing platform (accredited partner or public portal) suited to your invoicing volume',
+    'blog.facturation.list2.1': 'Check that your invoicing or accounting software is compatible with the required format',
+    'blog.facturation.list2.2': 'Train the teams who issue or process invoices on the new workflows',
+    'blog.facturation.list2.3': 'Plan ahead for the legally compliant electronic archiving of your invoices',
+    'blog.facturation.closing': 'This reform is significant, but it can be prepared for calmly with a bit of lead time. Our teams follow the regulatory news closely and can help you choose your solution and secure your transition.',
+    'blog.facturation.cta_title': 'A question about e-invoicing?',
+    'blog.facturation.cta_text': "We'll help you understand your timeline and prepare your business.",
+
+    'blog.creation.category': 'Company Formation',
+    'blog.creation.date': 'June 2026',
+    'blog.creation.readtime': '5 min read',
+    'blog.creation.title': 'Starting a business in France&nbsp;: the 5 key steps',
+    'blog.creation.excerpt': 'From idea to registration, the path to launching your business with confidence.',
+    'blog.creation.intro': "Starting out is an exciting adventure, but it benefits from structure. Here are the five steps we see come up, project after project, with the entrepreneurs we support.",
+    'blog.creation.s1_title': '1. Validate and cost out your project',
+    'blog.creation.s1_body': "Before any administrative steps, take the time to formalize your project&nbsp;: who you're serving, how you'll generate revenue, and above all, what financial resources you're committing at launch. Even a simple financial forecast saves you many unpleasant surprises.",
+    'blog.creation.s2_title': '2. Choose the right legal structure',
+    'blog.creation.s2_body': "Sole proprietorship, micro-business, single-shareholder company, multi-shareholder company&nbsp;: each form carries its own tax, social protection and governance rules. This choice depends on your activity, whether you have co-founders, and your growth plans — it deserves guidance, not a solo decision in front of an online form.",
+    'blog.creation.s3_title': '3. Draft the bylaws and raise the capital',
+    'blog.creation.s3_body': "If you're forming a company, the bylaws formalize how it operates&nbsp;: capital allocation, the manager's powers, decision-making rules. It's also the time to open a dedicated bank account and deposit the share capital.",
+    'blog.creation.s4_title': '4. Register your company',
+    'blog.creation.s4_body': "Registering with the trade and companies register legally brings your business into existence and lets you obtain your official registration certificate. The formalities are now largely handled online, but care is still needed with the supporting documents requested.",
+    'blog.creation.s5_title': '5. Set up your management tools from day one',
+    'blog.creation.s5_body': "Accounting, invoicing, cash flow tracking&nbsp;: the earlier these tools are in place, the easier it is to steer your business in the first months. It's also the ideal time to agree with your accountant on how often you'll check in.",
+    'blog.creation.closing': "Every project is different, and these steps never quite unfold in the same order. We support founders from their earliest thinking, to secure the choices that matter.",
+    'blog.creation.cta_title': 'Thinking about starting a business?',
+    'blog.creation.cta_text': "Let's talk before you take the first administrative step.",
+
+    'blog.implantation.category': 'International',
+    'blog.implantation.date': 'May 2026',
+    'blog.implantation.readtime': '5 min read',
+    'blog.implantation.title': 'Subsidiary, branch or liaison office&nbsp;: how to choose your setup structure in France',
+    'blog.implantation.excerpt': 'Three options, three very different regimes. An overview for foreign companies preparing to enter the French market.',
+    'blog.implantation.intro': "When a foreign company wants to establish itself in France, the first question to settle is structural&nbsp;: subsidiary, branch, or liaison office? This choice shapes your taxation, your level of liability, and the type of activities you're allowed to carry out.",
+    'blog.implantation.s1_title': 'The subsidiary&nbsp;: a fully-fledged French company',
+    'blog.implantation.s1_body': "Legally independent from its parent company, a subsidiary is registered in France like any French company (SAS, SARL...). It is taxed locally on its own results, and its liability is generally limited to its own assets, which protects the parent company. It's the best-suited structure for a lasting, self-standing commercial activity.",
+    'blog.implantation.s2_title': 'The branch&nbsp;: an extension of the foreign company',
+    'blog.implantation.s2_body': "A branch has no separate legal personality&nbsp;: it's an establishment of the foreign company on French soil. It's faster and cheaper to set up than a subsidiary, but the parent company remains liable for its commitments in France. A sound choice for testing an activity before structuring more permanently.",
+    'blog.implantation.s3_title': 'The liaison office&nbsp;: a presence without commercial activity',
+    'blog.implantation.s3_body': "A liaison office allows a presence in France — market monitoring, representation, coordination with local partners — but without carrying out revenue-generating commercial activity. It isn't taxed in France for an activity it doesn't perform, making it a good entry-level option before a more structured project.",
+    'blog.implantation.s4_title': 'How to choose',
+    'blog.implantation.list.0': 'The degree of autonomy you want from the parent company',
+    'blog.implantation.list.1': "The level of liability you're willing to take on in France",
+    'blog.implantation.list.2': 'The nature of the activity&nbsp;: simple representation or genuine commercial activity',
+    'blog.implantation.list.3': 'Your time horizon&nbsp;: market test or lasting setup',
+    'blog.implantation.closing': "There's no universal right answer&nbsp;: the best choice depends on your strategy, your industry and your timeline. That's exactly what our first conversation with the leaders of foreign companies we support is about.",
+    'blog.implantation.cta_title': 'Planning a setup in France?',
+    'blog.implantation.cta_text': "Let's talk about your parent company and your goals before you commit.",
   },
 };
 
@@ -371,6 +515,10 @@ function rbGetLang() {
 function rbTranslate(key, lang) {
   const dict = RB_TRANSLATIONS[lang] || RB_TRANSLATIONS.fr;
   return dict[key] !== undefined ? dict[key] : (RB_TRANSLATIONS.fr[key] !== undefined ? RB_TRANSLATIONS.fr[key] : null);
+}
+
+function rbStripEntities(str) {
+  return str.replace(/&nbsp;/g, ' ').replace(/&hellip;/g, '…').replace(/&amp;/g, '&');
 }
 
 function rbApplyLang(lang) {
@@ -390,10 +538,10 @@ function rbApplyLang(lang) {
   if (doctitleEl) {
     const key = doctitleEl.getAttribute('data-i18n-doctitle');
     if (key === 'meta.home_title') {
-      document.title = rbTranslate('meta.home_title', lang);
+      document.title = rbStripEntities(rbTranslate('meta.home_title', lang));
     } else {
       const base = rbTranslate(key, lang);
-      document.title = base ? `${base} — RB Partners` : document.title;
+      document.title = base ? `${rbStripEntities(base)} — RB Partners` : document.title;
     }
   }
 

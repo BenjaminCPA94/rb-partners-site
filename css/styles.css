@@ -264,6 +264,49 @@ p { color: var(--gray-600); }
   .expertise-services { position: static; }
 }
 
+/* ---------- Blog ---------- */
+.blog-card__meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.blog-card__category {
+  display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--navy-950); background: var(--gold-100); padding: 4px 10px; border-radius: 999px;
+}
+.blog-card__date { font-size: 0.8rem; color: var(--gray-400); }
+.blog-card p { font-size: 0.95rem; }
+
+.article-banner { background: var(--navy-950); padding: 64px 0; position: relative; overflow: hidden; }
+.article-banner::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 90% 10%, rgba(198,161,91,0.16), transparent 45%);
+}
+.article-banner__inner { position: relative; max-width: 760px; }
+.article-banner .blog-card__category { background: var(--gold-500); }
+.article-banner h1 { color: var(--white); font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin: 16px 0 14px; }
+.article-banner__meta { color: #9aa6b8; font-size: 0.88rem; }
+.article-banner__meta span:not(:last-child)::after { content: "•"; margin: 0 8px; }
+
+.article-body { padding: 72px 0; }
+.article-body__inner { max-width: 720px; margin: 0 auto; }
+.article-body__inner p { font-size: 1.03rem; margin-bottom: 20px; line-height: 1.75; }
+.article-body__inner h2 { font-size: 1.4rem; margin: 40px 0 16px; }
+.article-body__inner h2:first-child { margin-top: 0; }
+.article-body__inner ul { margin: -4px 0 24px; }
+.article-body__inner ul li {
+  position: relative; padding-left: 26px; margin-bottom: 10px; font-size: 1rem; color: var(--navy-800);
+}
+.article-body__inner ul li::before {
+  content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; background: var(--gold-500); border-radius: 50%;
+}
+.article-body__note {
+  background: var(--cream); border-left: 3px solid var(--gold-500); border-radius: var(--radius);
+  padding: 18px 22px; font-size: 0.92rem; color: var(--navy-800); margin: 8px 0 28px;
+}
+.article-body__note strong { color: var(--navy-900); }
+
+.article-nav { max-width: 720px; margin: 0 auto; padding-top: 8px; }
+.article-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; font-weight: 500; color: var(--navy-800); }
+.article-nav a:hover { color: var(--gold-500); }
+.article-nav svg { width: 14px; height: 14px; }
+
 .value { padding: 6px; }
 .value__num { display: block; font-family: var(--font-head); font-size: 1.6rem; color: var(--gold-500); margin-bottom: 10px; }
 .value p { font-size: 0.92rem; }
