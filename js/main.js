@@ -54,9 +54,17 @@ const observer = new IntersectionObserver(
 );
 revealEls.forEach((el) => observer.observe(el));
 
-// Contact form (client-side only — connect to a backend or form service to send real emails)
+// Contact form — sent via FormSubmit.co (no backend required).
+// First submission to a new address triggers a one-time confirmation email from FormSubmit
+// that must be approved before messages start arriving.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
+const CONTACT_FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@rb-partners.fr';
+
+function t(key, fallback) {
+  const val = window.rbI18n ? window.rbI18n.get(key) : null;
+  return val !== null && val !== undefined ? val : fallback;
+}
 
 if (form) {
   form.addEventListener('submit', (e) => {
@@ -65,8 +73,29 @@ if (form) {
       form.reportValidity();
       return;
     }
-    status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
-    form.reset();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    status.classList.remove('form__status--error');
+    status.textContent = t('form.sending', 'Envoi en cours…');
+
+    fetch(CONTACT_FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(form),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Request failed');
+        status.textContent = t('form.success', 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.');
+        form.reset();
+      })
+      .catch(() => {
+        status.classList.add('form__status--error');
+        status.textContent = t('form.error', "Une erreur est survenue. Vous pouvez nous écrire directement à contact@rb-partners.fr.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
   });
 }
 
