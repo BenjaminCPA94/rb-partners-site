@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-doctitle="fe.title">Facturation électronique — RB Partners</title>
+<meta name="description" content="Accompagnement à la mise en conformité facturation électronique : choix de plateforme, compatibilité logiciel, formation, archivage. Par RB Partners.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
+    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
+    <a href="index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark">RB</span>
+      <span class="logo__text">RB <em>Partners</em></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="index.html#international" data-i18n="nav.international">International</a>
+      <a href="index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+      <a href="facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
+    </nav>
+
+    <div class="call-dropdown">
+      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-i18n="nav.call">Nous appeler</span>
+        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="call-dropdown__panel" id="call-panel">
+        <a href="tel:+33600000001" class="call-dropdown__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
+        </a>
+        <a href="tel:+33600000002" class="call-dropdown__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
+        </a>
+      </div>
+    </div>
+
+    <a href="index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
+
+    <div class="lang-toggle">
+      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
+      <label class="lang-switch">
+        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
+        <span class="lang-switch__track"></span>
+        <span class="lang-switch__thumb"></span>
+      </label>
+      <span class="lang-toggle__label" data-lang-label="en">EN</span>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Fil d'ariane">
+  <div class="container">
+    <ol>
+      <li><a href="index.html" data-i18n="breadcrumb.home">Accueil</a></li>
+      <li aria-current="page" data-i18n="fe.title">Facturation électronique</li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+
+  <section class="expertise-banner">
+    <div class="container expertise-banner__inner">
+      <p class="eyebrow" data-i18n="fe.eyebrow">Notre offre</p>
+      <h1 data-i18n="fe.title">Facturation électronique : passez à la réforme sereinement</h1>
+      <p data-i18n="fe.lead">La facturation électronique devient progressivement obligatoire pour toutes les entreprises assujetties à la TVA en France. RB Partners vous accompagne à chaque étape pour que cette transition ne perturbe ni votre facturation, ni votre trésorerie.</p>
+    </div>
+  </section>
+
+  <section class="expertise-body">
+    <div class="container expertise-body__grid">
+      <div class="expertise-body__intro reveal">
+        <p data-i18n-html="fe.intro1">
+          Choix de la plateforme de dématérialisation, compatibilité de vos outils, formation de vos équipes,
+          archivage probant&nbsp;: la mise en conformité soulève de nombreuses questions techniques pour une
+          entreprise qui n'a pas vocation à devenir experte en facturation électronique. C'est précisément le
+          rôle que nous jouons à vos côtés.
+        </p>
+        <p data-i18n="fe.intro2">
+          Nous commençons par un diagnostic de vos flux de facturation actuels (émission, réception, volumes,
+          outils en place) pour identifier la solution la mieux adaptée à votre activité, avant de vous
+          accompagner dans son déploiement.
+        </p>
+        <p data-i18n="fe.intro3">
+          Cette offre s'adresse aussi bien aux entreprises qui souhaitent anticiper la réforme dès maintenant
+          qu'à celles qui doivent encore choisir leur plateforme et sécuriser leur passage à l'échéance qui les
+          concerne.
+        </p>
+      </div>
+
+      <aside class="expertise-services reveal">
+        <h2 data-i18n="fe.services_title">Ce que comprend notre accompagnement</h2>
+        <ul class="checklist">
+          <li data-i18n="fe.services.0">Diagnostic de vos flux de facturation actuels (émission, réception, volumes, outils)</li>
+          <li data-i18n-html="fe.services.1">Aide au choix d'une plateforme de dématérialisation partenaire (PDP) adaptée à votre volume</li>
+          <li data-i18n="fe.services.2">Vérification de la compatibilité de votre logiciel de facturation ou de comptabilité</li>
+          <li data-i18n-html="fe.services.3">Formation de vos équipes aux nouveaux flux d'émission et de réception</li>
+          <li data-i18n-html="fe.services.4">Mise en place de l'archivage électronique probant de vos factures</li>
+          <li data-i18n-html="fe.services.5">Suivi de votre dossier jusqu'à l'échéance qui vous concerne, avec ajustement si le calendrier légal évolue</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="container">
+      <div class="article-body__note article-body__note--centered">
+        <strong data-i18n="fe.calendar_title">Un calendrier encore mouvant</strong> — <span data-i18n="fe.calendar_text">Les dates exactes de la réforme ont déjà été ajustées plusieurs fois par le législateur et le déploiement est progressif selon la taille des entreprises. Plutôt que de vous fier à une date isolée trouvée en ligne, parlons ensemble de l'échéance qui s'applique précisément à votre structure.</span>
+      </div>
+    </div>
+
+    <div class="container expertise-nav">
+      <a href="blog/facturation-electronique.html">
+        <span data-i18n="fe.read_article">Lire notre article sur la réforme</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="expertise-cta">
+    <div class="container">
+      <h2 data-i18n="fe.cta_title">Prêt à sécuriser votre passage à la facturation électronique ?</h2>
+      <p data-i18n="fe.cta_text">Parlons de vos outils actuels et du calendrier qui s'applique à votre entreprise.</p>
+      <a href="index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="logo__mark logo__mark--footer">RB</span>
+      <span>RB <em>Partners</em></span>
+    </div>
+    <nav class="footer__nav">
+      <a href="index.html#expertises" data-i18n="nav.expertises">Expertises</a>
+      <a href="index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
+      <a href="index.html#international" data-i18n="nav.international">International</a>
+      <a href="index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
+      <a href="simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
+      <a href="facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
+    </nav>
+    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
