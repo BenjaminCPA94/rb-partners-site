@@ -2,12 +2,12 @@
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
-burger.addEventListener('click', () => {
+if (burger && nav) burger.addEventListener('click', () => {
   const isOpen = nav.classList.toggle('is-open');
   burger.setAttribute('aria-expanded', String(isOpen));
 });
 
-nav.querySelectorAll('a').forEach((link) => {
+if (nav) nav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     nav.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
@@ -72,3 +72,26 @@ if (form) {
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Dropdown navigation: click support (especially mobile/tablet)
+document.querySelectorAll('.nav-group__toggle').forEach((toggle) => {
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const group = toggle.closest('.nav-group');
+    const opening = !group.classList.contains('is-open');
+    document.querySelectorAll('.nav-group.is-open').forEach((item) => {
+      item.classList.remove('is-open');
+      item.querySelector('.nav-group__toggle')?.setAttribute('aria-expanded', 'false');
+    });
+    group.classList.toggle('is-open', opening);
+    toggle.setAttribute('aria-expanded', String(opening));
+  });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-group.is-open').forEach((item) => {
+    item.classList.remove('is-open');
+    item.querySelector('.nav-group__toggle')?.setAttribute('aria-expanded', 'false');
+  });
+});
