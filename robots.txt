@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://benjamincpa94.github.io/rb-partners-site/sitemap.xml
