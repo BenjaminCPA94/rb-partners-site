@@ -8,6 +8,14 @@
   document.head.appendChild(css);
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
+  upgrade.onload = () => {
+    document.querySelectorAll('#secteurs .reveal, #digital-ia .reveal, #faq .reveal').forEach((el) => el.classList.add('is-visible'));
+    const upgradedNav = document.getElementById('nav');
+    upgradedNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      upgradedNav.classList.remove('is-open');
+      document.getElementById('burger')?.setAttribute('aria-expanded', 'false');
+    }));
+  };
   document.head.appendChild(upgrade);
 })();
 
@@ -23,7 +31,7 @@ if (burger && nav) burger.addEventListener('click', () => {
 if (nav) nav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     nav.classList.remove('is-open');
-    burger.setAttribute('aria-expanded', 'false');
+    burger?.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -36,53 +44,40 @@ if (callToggle && callPanel) {
     callPanel.classList.remove('is-open');
     callToggle.setAttribute('aria-expanded', 'false');
   };
-
   callToggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isOpen = callPanel.classList.toggle('is-open');
     callToggle.setAttribute('aria-expanded', String(isOpen));
   });
-
   document.addEventListener('click', (e) => {
     if (!callPanel.contains(e.target) && e.target !== callToggle) closeCallPanel();
   });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeCallPanel();
-  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCallPanel(); });
 }
 
 // Scroll reveal animations
 const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
 revealEls.forEach((el) => observer.observe(el));
 
 // Contact form (client-side only — connect to a backend or form service to send real emails)
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
-
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
     status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
     form.reset();
   });
 }
 
-// Footer year
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
