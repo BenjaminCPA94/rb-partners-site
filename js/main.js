@@ -1,3 +1,16 @@
+// Load RB Partners visual and structural upgrades
+(() => {
+  const here = document.currentScript?.src || '';
+  const base = here ? here.replace(/js\/main\.js(?:\?.*)?$/, '') : '';
+  const css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = `${base}css/site-upgrade.css`;
+  document.head.appendChild(css);
+  const upgrade = document.createElement('script');
+  upgrade.src = `${base}js/site-upgrade.js`;
+  document.head.appendChild(upgrade);
+})();
+
 // Mobile navigation toggle
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
@@ -71,27 +84,5 @@ if (form) {
 }
 
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-
-// Dropdown navigation: click support (especially mobile/tablet)
-document.querySelectorAll('.nav-group__toggle').forEach((toggle) => {
-  toggle.addEventListener('click', (event) => {
-    event.stopPropagation();
-    const group = toggle.closest('.nav-group');
-    const opening = !group.classList.contains('is-open');
-    document.querySelectorAll('.nav-group.is-open').forEach((item) => {
-      item.classList.remove('is-open');
-      item.querySelector('.nav-group__toggle')?.setAttribute('aria-expanded', 'false');
-    });
-    group.classList.toggle('is-open', opening);
-    toggle.setAttribute('aria-expanded', String(opening));
-  });
-});
-
-document.addEventListener('click', () => {
-  document.querySelectorAll('.nav-group.is-open').forEach((item) => {
-    item.classList.remove('is-open');
-    item.querySelector('.nav-group__toggle')?.setAttribute('aria-expanded', 'false');
-  });
-});
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
