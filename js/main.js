@@ -7,12 +7,6 @@
   css.href = `${base}css/site-upgrade.css`;
   document.head.appendChild(css);
 
-  const loadSeoLinks = () => {
-    const seoLinks = document.createElement('script');
-    seoLinks.src = `${base}js/seo-links.js`;
-    document.head.appendChild(seoLinks);
-  };
-
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -22,7 +16,6 @@
       upgradedNav.classList.remove('is-open');
       document.getElementById('burger')?.setAttribute('aria-expanded', 'false');
     }));
-    loadSeoLinks();
   };
   document.head.appendChild(upgrade);
 })();
