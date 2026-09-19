@@ -19,9 +19,9 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    applyPageLanguage(window.rbI18n?.getLang?.() || 'fr');
-  });
+  const init = () => applyPageLanguage(window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr');
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once:true });
+  else init();
 
   document.addEventListener('rb:langchange', (event) => {
     applyPageLanguage(event.detail?.lang || 'fr');
