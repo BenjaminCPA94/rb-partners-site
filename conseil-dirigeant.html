@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conseil au dirigeant — RB Partners</title>
-<meta name="description" content="RB Partners accompagne les dirigeants sur leurs choix de rémunération, dividendes, holding, trésorerie et structuration.">
+<meta name="description" content="Rémunération, dividendes, holding et trésorerie : RB Partners accompagne les arbitrages du dirigeant avec une vision globale.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="mission-page">
 <header class="header" id="header"><div class="container header__inner">
 <a href="index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
 <nav class="nav" id="nav"></nav>
@@ -17,80 +17,59 @@
 <div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
 <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
-<main>
-<section class="seo-hero"><div class="container seo-hero__inner">
-<p class="eyebrow" data-copy="eyebrow"></p><h1 data-copy="title"></h1><p class="seo-hero__lead" data-copy="lead"></p>
-<div class="seo-hero__actions"><a class="btn btn--primary" href="index.html#v4-booking" data-copy="cta"></a></div>
-</div></section>
 
-<section class="section section--cream"><div class="container">
-<div class="section__head"><p class="eyebrow" data-copy="whyEye"></p><h2 data-copy="whyTitle"></h2></div>
-<div class="seo-points">
-<article class="seo-point"><span>01</span><h3 data-copy="p1t"></h3><p data-copy="p1p"></p></article>
-<article class="seo-point"><span>02</span><h3 data-copy="p2t"></h3><p data-copy="p2p"></p></article>
-<article class="seo-point"><span>03</span><h3 data-copy="p3t"></h3><p data-copy="p3p"></p></article>
-</div></div></section>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
+  </div>
+</section>
 
-<section class="section"><div class="container seo-grid">
-<div class="seo-copy"><p class="eyebrow" data-copy="missionEye"></p><h2 data-copy="missionTitle"></h2>
-<p data-copy="body1"></p><p data-copy="body2"></p><p data-copy="body3"></p></div>
-<aside class="seo-card"><h3 data-copy="servicesTitle"></h3><ul class="seo-list" data-list="services"></ul></aside>
-</div></section>
+<section class="section mission-promise">
+  <div class="container">
+    <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+    <div class="mission-promise-grid"></div>
+  </div>
+</section>
 
-<section class="expertise-cta"><div class="container">
-<h2 data-copy="finalTitle"></h2><p data-copy="finalText"></p>
-<a href="index.html#v4-booking" class="btn btn--primary" data-copy="finalCta"></a>
-</div></section>
+<section class="section mission-scope">
+  <div class="container">
+    <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+    <div class="mission-scope-grid"></div>
+  </div>
+</section>
+
+<section class="section mission-situations">
+  <div class="container mission-situations__grid">
+    <div><p class="eyebrow" data-copy="situationEye"></p><h2 data-copy="situationTitle"></h2></div>
+    <ul class="mission-situation-list"></ul>
+  </div>
+</section>
+
+<section class="section mission-process">
+  <div class="container">
+    <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+    <div class="mission-process-grid"></div>
+  </div>
+</section>
+
+<section class="section mission-faq">
+  <div class="container faq-wrap">
+    <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+    <div class="faq-list mission-faq-list"></div>
+  </div>
+</section>
+
+<section class="expertise-cta mission-final">
+  <div class="container"><h2 data-copy="finalTitle"></h2><p data-copy="finalText"></p><a class="btn btn--primary" href="index.html#v4-booking" data-copy="finalCta"></a></div>
+</section>
 </main>
 
 <footer class="footer"></footer>
-
-<script>
-window.RB_SEO_PAGE={
-fr:{
-metaTitle:"Conseil au dirigeant — RB Partners",
-metaDescription:"RB Partners accompagne les dirigeants sur leurs choix de rémunération, dividendes, holding, trésorerie et structuration.",
-eyebrow:"Conseil au dirigeant",
-title:"Des décisions d’entreprise qui tiennent compte de votre situation de dirigeant.",
-lead:"Rémunération, dividendes, holding, trésorerie ou prévisionnel : RB Partners vous aide à arbitrer avec une vision comptable, fiscale et financière coordonnée.",
-cta:"Prendre rendez-vous",
-whyEye:"Vos décisions",
-whyTitle:"Les bons arbitrages ne se résument pas à une seule question fiscale",
-p1t:"Rémunération",p1p:"Salaire, dividendes et protection sociale s’analysent ensemble, selon votre situation et celle de votre société.",
-p2t:"Structuration",p2p:"Holding, flux entre sociétés et organisation du groupe doivent rester cohérents avec vos objectifs.",
-p3t:"Pilotage",p3p:"Trésorerie, prévisionnels et visibilité financière permettent de décider au bon moment.",
-missionEye:"Notre accompagnement",missionTitle:"Un conseil connecté à la réalité de votre entreprise",
-body1:"Nous partons de votre situation réelle : activité, rentabilité, trésorerie, projets personnels et organisation actuelle.",
-body2:"L’objectif n’est pas d’appliquer une recette standard, mais de comparer les options, mesurer leurs impacts et sécuriser leur mise en œuvre.",
-body3:"Lorsque le sujet dépasse notre périmètre, nous pouvons coordonner les échanges avec vos autres conseils afin de conserver une vision cohérente.",
-servicesTitle:"Sujets accompagnés",
-services:["Rémunération du dirigeant","Dividendes et arbitrages","Holding et structuration de groupe","Trésorerie et remontées de cash","Prévisionnels et décisions d’investissement","Coordination avec vos autres conseils"],
-finalTitle:"Vous avez une décision importante à arbitrer ?",
-finalText:"Présentez-nous votre situation et vos priorités. Nous vous aidons à structurer les options et leurs impacts.",
-finalCta:"Échanger avec RB Partners"
-},
-en:{
-metaTitle:"Owner-Manager Advisory — RB Partners",
-metaDescription:"RB Partners supports business owners with compensation, dividends, holding structures, cash decisions and financial planning.",
-eyebrow:"Owner-manager advisory",
-title:"Business decisions that also take your position as an owner-manager into account.",
-lead:"Compensation, dividends, holding structures, cash or forecasts: RB Partners helps you make decisions with coordinated accounting, tax and financial insight.",
-cta:"Book a meeting",
-whyEye:"Your decisions",
-whyTitle:"The right choice is rarely only a tax question",
-p1t:"Compensation",p1p:"Salary, dividends and social protection need to be considered together, based on your situation and your company.",
-p2t:"Structuring",p2p:"Holding companies, intercompany flows and group organisation should remain aligned with your objectives.",
-p3t:"Management",p3p:"Cash visibility, forecasts and financial reporting help you decide at the right time.",
-missionEye:"How we help",missionTitle:"Advice connected to the reality of your business",
-body1:"We start from your actual situation: activity, profitability, cash, personal projects and current organisation.",
-body2:"The aim is not to apply a standard formula, but to compare options, measure their impact and secure implementation.",
-body3:"Where a topic falls outside our scope, we can coordinate with your other advisers to keep the overall approach coherent.",
-servicesTitle:"Typical topics",
-services:["Owner-manager compensation","Dividends and trade-offs","Holding-company structuring","Cash and distributions","Forecasts and investment decisions","Coordination with your other advisers"],
-finalTitle:"Facing an important owner-manager decision?",
-finalText:"Tell us about your situation and priorities. We help structure the options and their implications.",
-finalCta:"Talk to RB Partners"
-}};
-</script>
-<script src="js/i18n.js"></script><script src="js/main.js"></script><script src="js/seo-page.js"></script>
+<script>window.RB_MISSION_PAGE={"fr":{"metaTitle":"Conseil au dirigeant — RB Partners","metaDescription":"Rémunération, dividendes, holding et trésorerie : RB Partners accompagne les arbitrages du dirigeant avec une vision globale.","eyebrow":"Conseil au dirigeant","title":"Arbitrer avec une vision globale, pas uniquement fiscale.","lead":"Nous mettons en regard la situation de l’entreprise, la trésorerie disponible et les objectifs du dirigeant pour éclairer les décisions importantes.","cta":"Parler à un associé","proofs":["Rémunération","Dividendes","Holding","Trésorerie & arbitrages"],"promiseEye":"Notre rôle","promiseTitle":"Relier les décisions de l’entreprise à votre situation de dirigeant.","promiseLead":"Une bonne décision ne se résume pas à un taux d’impôt. Elle doit tenir compte du cash, des projets à venir, de la protection sociale et de la structure du groupe.","promises":[["Comparer","Mettre plusieurs options face à face avant de décider."],["Mesurer","Chiffrer les impacts sur la société et sur le dirigeant."],["Coordonner","Faire le lien avec vos autres conseils lorsque le sujet dépasse notre périmètre."]],"scopeEye":"Les sujets que nous traitons","scopeTitle":"Des arbitrages concrets au fil de la vie de l’entreprise.","scopeLead":"Nous partons des comptes et des projets réels, pas d’une solution standard.","scope":[["Rémunération du dirigeant","Comparer salaire, dividendes et impacts sociaux selon votre situation.","Pour décider avec des chiffres."],["Dividendes & remontées de cash","Mesurer la capacité de distribution et les conséquences du choix.","Pour ne pas fragiliser la trésorerie."],["Holding & organisation de groupe","Réfléchir aux flux, aux rôles des sociétés et aux objectifs du groupe.","Avec coordination des conseils spécialisés si nécessaire."],["Investissements & décisions à venir","Prévisionnels et scénarios avant une décision structurante.","Pour arbitrer au bon moment."]],"situationEye":"Quand cette mission devient utile","situationTitle":"Souvent juste avant une décision importante.","situations":["Vous vous demandez comment vous rémunérer cette année.","Vous envisagez de créer une holding ou une nouvelle société.","Vous souhaitez distribuer des dividendes sans dégrader la trésorerie de l’entreprise.","Vous préparez un investissement, une acquisition ou un changement de rythme de croissance."],"processEye":"Notre méthode","processTitle":"Comprendre, comparer, décider.","processLead":"Nous transformons une question souvent complexe en options lisibles.","process":[["Comprendre la situation","Comptes, cash, structure et objectifs sont remis dans le même tableau."],["Comparer les options","Les impacts sont chiffrés et expliqués de façon claire."],["Décider & mettre en œuvre","La solution retenue est intégrée dans le calendrier comptable, fiscal et juridique."]],"faqTitle":"Questions fréquentes","faq":[["Pouvez-vous me dire s’il vaut mieux prendre un salaire ou des dividendes ?","Nous pouvons comparer les scénarios à partir de votre situation. Il n’existe pas de réponse universelle indépendante des chiffres, de vos objectifs et de votre statut."],["Accompagnez-vous la création de holdings ?","Oui, dans notre périmètre, en coordination avec les conseils juridiques ou patrimoniaux lorsque nécessaire."],["Pouvez-vous travailler avec mon avocat ou mon conseiller patrimonial ?","Oui. La coordination entre conseils est souvent utile pour garder une approche cohérente."]],"finalTitle":"Vous avez une décision importante à arbitrer ?","finalText":"Présentez-nous la situation et les options envisagées. Nous vous aiderons à les mettre en perspective.","finalCta":"Échanger avec RB Partners"},"en":{"metaTitle":"Owner-manager advisory — RB Partners","metaDescription":"Compensation, dividends, holding structures and cash decisions: RB Partners supports owner-manager trade-offs with an integrated view.","eyebrow":"Owner-manager advisory","title":"Make trade-offs with a full picture, not a tax-only view.","lead":"We connect company performance, available cash and the owner-manager’s objectives to support important decisions.","cta":"Speak with a partner","proofs":["Compensation","Dividends","Holding structures","Cash & trade-offs"],"promiseEye":"Our role","promiseTitle":"Connect company decisions with the owner-manager position.","promiseLead":"A good decision is not just about a tax rate. It should reflect cash, future plans, social protection and group structure.","promises":[["Compare","Put several options side by side before deciding."],["Measure","Quantify the impact on both company and owner-manager."],["Coordinate","Work with your other advisers where a matter falls outside our scope."]],"scopeEye":"Topics we support","scopeTitle":"Concrete trade-offs throughout the life of the business.","scopeLead":"We start from actual figures and plans, not from a standard answer.","scope":[["Owner-manager compensation","Compare salary, dividends and social impacts in your situation.","To decide with numbers."],["Dividends & cash distributions","Measure distributable capacity and consequences.","Without weakening company liquidity."],["Holding & group organisation","Consider flows, entity roles and group objectives.","Coordinating specialist advisers when needed."],["Investments & upcoming decisions","Forecasts and scenarios before a major commitment.","To make decisions at the right time."]],"situationEye":"When this becomes useful","situationTitle":"Often just before an important decision.","situations":["You are deciding how to pay yourself this year.","You are considering a holding company or a new entity.","You want to distribute dividends without weakening business cash.","You are preparing an investment, acquisition or a change in growth pace."],"processEye":"How we work","processTitle":"Understand, compare, decide.","processLead":"We turn a complex question into readable options.","process":[["Understand the position","Accounts, cash, structure and objectives are reviewed together."],["Compare options","Impacts are quantified and explained clearly."],["Decide & implement","The chosen solution is integrated into the accounting, tax and legal calendar."]],"faqTitle":"Frequently asked questions","faq":[["Can you tell me whether salary or dividends are better?","We can compare scenarios based on your situation. There is no universal answer independent of your numbers, objectives and status."],["Do you support holding-company setups?","Yes, within our scope, coordinating legal or wealth advisers where required."],["Can you work with my lawyer or wealth adviser?","Yes. Adviser coordination is often useful to maintain a coherent overall approach."]],"finalTitle":"Facing an important owner-manager decision?","finalText":"Tell us about the situation and the options you are considering. We will help put them into perspective.","finalCta":"Talk to RB Partners"}};</script>
+<script src="js/i18n.js"></script><script src="js/main.js"></script><script src="js/mission-page.js"></script>
 </body></html>
