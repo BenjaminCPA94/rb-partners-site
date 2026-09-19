@@ -188,3 +188,7 @@
   .v6-digital-grid{grid-template-columns:1fr}
   .v6-digital-card{min-height:170px}
 }
+
+/* Partner LinkedIn links */
+.v6-linkedin{display:inline-flex;align-items:center;gap:6px;margin-top:18px;color:var(--navy-900);font-size:.82rem;font-weight:700;letter-spacing:.01em;border-bottom:1px solid rgba(198,161,91,.45);padding-bottom:2px;transition:color .2s ease,border-color .2s ease,transform .2s ease}
+.v6-linkedin:hover{color:var(--gold-500);border-color:var(--gold-500);transform:translateX(2px)}
