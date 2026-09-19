@@ -117,3 +117,13 @@
   body{padding-bottom:0!important}
   .v4-mobile-cta{display:none!important}
 }
+
+/* V4.5 — section rhythm inspired by MOON */
+.v2-paths{background:#fff!important}
+#expertises{background:var(--cream)!important}
+.v2-founders{background:#fff!important}
+.v4-leader{background:var(--cream)!important}
+#v2-steps{background:#fff!important}
+.v4-proof-section{background:var(--cream)!important}
+#v4-tools{background:#fff!important}
+#v2-faq{background:var(--cream)!important}
