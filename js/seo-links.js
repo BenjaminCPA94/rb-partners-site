@@ -3,14 +3,7 @@
     const logoHref = document.querySelector('.logo')?.getAttribute('href') || 'index.html';
     const prefix = logoHref.startsWith('../') ? '../' : '';
     const lang = window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr';
-    const groups = document.querySelectorAll('#nav .nav-group');
-    const businessMenu = groups[1]?.querySelector('.nav-dropdown');
-
-    if (businessMenu) {
-      businessMenu.innerHTML = lang === 'en'
-        ? `<a href="${prefix}expert-comptable-startup.html">Startups & scale-ups</a><a href="${prefix}expert-comptable-pme.html">SMEs</a><a href="${prefix}expert-comptable-international.html">International companies</a><a href="${prefix}expert-comptable-paris.html">Accountant in Paris</a>`
-        : `<a href="${prefix}expert-comptable-startup.html">Start-up & scale-up</a><a href="${prefix}expert-comptable-pme.html">TPE & PME</a><a href="${prefix}expert-comptable-international.html">Sociétés internationales</a><a href="${prefix}expert-comptable-paris.html">Expert-comptable à Paris</a>`;
-    }
+    // Navigation is now fully managed by site-upgrade.js. Do not override mission labels here.
 
     const cards = document.querySelectorAll('#secteurs .audience-card');
     const cardLinks = [
