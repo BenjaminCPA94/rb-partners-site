@@ -250,3 +250,41 @@
   .intl-structure-card,.intl-service{min-height:auto}
   .intl-hero-proof{gap:8px}
 }
+
+/* V7 — richer individual mission pages */
+.mission-rich{background:#fff}
+.mission-rich__intro{max-width:840px;margin-bottom:40px}
+.mission-rich__intro h2{font-size:clamp(2.35rem,4.5vw,4rem);line-height:1.06;margin:10px 0 18px}
+.mission-rich__intro>p:last-child{font-size:1.02rem;line-height:1.78;color:var(--gray-700);max-width:760px}
+.mission-rich__cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mission-rich__cards article{min-height:230px;padding:26px;border:1px solid var(--border);border-radius:16px;background:var(--cream);display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.mission-rich__cards article:nth-child(2){background:#fff}
+.mission-rich__cards article:nth-child(3){background:var(--navy-950);border-color:var(--navy-950)}
+.mission-rich__cards article:nth-child(3) h3,.mission-rich__cards article:nth-child(3) p{color:#fff}
+.mission-rich__cards article:nth-child(3) p{color:rgba(255,255,255,.68)}
+.mission-rich__cards article:hover{transform:translateY(-4px);border-color:var(--gold-500);box-shadow:var(--rb-shadow)}
+.mission-rich__cards span{color:var(--gold-500);font-family:var(--font-head);font-size:1.05rem;margin-bottom:auto}
+.mission-rich__cards h3{font-size:1.18rem;margin:34px 0 10px}
+.mission-rich__cards p{font-size:.86rem;line-height:1.65;color:var(--gray-700);margin:0}
+.mission-rich__situations{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start;margin-top:78px;padding:52px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.mission-rich__situations h2{font-size:clamp(2rem,3.6vw,3rem);margin-top:8px}
+.mission-rich__situations ul{list-style:none;margin:0;padding:0}
+.mission-rich__situations li{position:relative;padding:18px 0 18px 28px;border-bottom:1px solid var(--border);font-size:.95rem;line-height:1.6;color:var(--navy-900)}
+.mission-rich__situations li:last-child{border-bottom:0}
+.mission-rich__situations li::before{content:'→';position:absolute;left:0;top:18px;color:var(--gold-500);font-weight:800}
+.mission-rich__process{padding-top:58px}
+.mission-rich__steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--border)}
+.mission-rich__steps article{padding:28px 32px 4px 0}
+.mission-rich__steps article+article{padding-left:32px;border-left:1px solid var(--border)}
+.mission-rich__steps b{display:block;color:var(--gold-500);font-family:var(--font-head);font-size:1.05rem;margin-bottom:20px}
+.mission-rich__steps h3{font-size:1.1rem;margin-bottom:9px}
+.mission-rich__steps p{font-size:.86rem;line-height:1.65;color:var(--gray-700)}
+@media(max-width:1000px){
+  .mission-rich__cards{grid-template-columns:1fr 1fr}
+  .mission-rich__situations{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:700px){
+  .mission-rich__cards,.mission-rich__steps{grid-template-columns:1fr}
+  .mission-rich__cards article{min-height:190px}
+  .mission-rich__steps article,.mission-rich__steps article+article{padding:22px 0;border-left:0;border-bottom:1px solid var(--border)}
+}
