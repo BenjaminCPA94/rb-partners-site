@@ -1,168 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="card.conseil.title">Conseil en gestion & pilotage — RB Partners</title>
-<meta name="description" content="Business plan, prévisionnel financier et aide à la levée de fonds : l'accompagnement en gestion et pilotage de RB Partners.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilotage & reporting — RB Partners</title>
+<meta name="description" content="Tableaux de bord, trésorerie, prévisionnels et reporting : RB Partners transforme vos chiffres en outils de décision.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="mission-page">
+<header class="header" id="header"><div class="container header__inner">
+<a href="../index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="../index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
   </div>
-</div>
+</section>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="../index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33600000001" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
-        </a>
-        <a href="tel:+33600000002" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
-        </a>
-      </div>
-    </div>
-
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
-
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
+<section class="section mission-promise">
   <div class="container">
-    <ol>
-      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
-      <li aria-current="page" data-i18n="card.conseil.title">Conseil en gestion & pilotage</li>
-    </ol>
+    <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+    <div class="mission-promise-grid"></div>
   </div>
-</nav>
+</section>
 
-<main>
+<section class="section mission-scope">
+  <div class="container">
+    <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+    <div class="mission-scope-grid"></div>
+  </div>
+</section>
 
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
-      <h1 data-i18n="card.conseil.title">Conseil en gestion & pilotage</h1>
-      <p data-i18n-html="exp.conseil.subtitle">Des chiffres transformés en décisions&nbsp;: business plan, prévisionnel et outils de pilotage pour avancer avec visibilité.</p>
-    </div>
-  </section>
+<section class="section mission-situations">
+  <div class="container mission-situations__grid">
+    <div><p class="eyebrow" data-copy="situationEye"></p><h2 data-copy="situationTitle"></h2></div>
+    <ul class="mission-situation-list"></ul>
+  </div>
+</section>
 
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n-html="exp.conseil.intro1">
-          Diriger une entreprise suppose de prendre des décisions dans l'incertitude&nbsp;: recruter, investir,
-          lever des fonds, changer de modèle. Notre rôle est de vous fournir les repères chiffrés nécessaires pour
-          que ces décisions reposent sur des bases solides plutôt que sur des intuitions seules.
-        </p>
-        <p data-i18n="exp.conseil.intro2">
-          Nous élaborons avec vous des business plans et des prévisionnels financiers réalistes, que ce soit pour
-          structurer un projet de création, préparer une levée de fonds ou anticiper un développement.
-        </p>
-        <p data-i18n="exp.conseil.intro3">
-          Au-delà des documents ponctuels, nous mettons en place des outils de pilotage récurrents (reporting,
-          indicateurs clés) pour que vous puissiez suivre votre performance dans la durée, et pas seulement au
-          moment d'une échéance.
-        </p>
-      </div>
+<section class="section mission-process">
+  <div class="container">
+    <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+    <div class="mission-process-grid"></div>
+  </div>
+</section>
 
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="services.title">Nos services clés</h2>
-        <ul class="checklist">
-          <li data-i18n="exp.conseil.services.0">Élaboration de business plans et prévisionnels financiers</li>
-          <li data-i18n="exp.conseil.services.1">Analyse de rentabilité et de performance</li>
-          <li data-i18n="exp.conseil.services.2">Aide à la levée de fonds et relations avec les investisseurs</li>
-          <li data-i18n="exp.conseil.services.3">Mise en place d'outils de pilotage (reporting, indicateurs clés)</li>
-          <li data-i18n="exp.conseil.services.4">Accompagnement dans les décisions stratégiques (investissement, recrutement, développement)</li>
-        </ul>
-      </aside>
-    </div>
+<section class="section mission-faq">
+  <div class="container faq-wrap">
+    <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+    <div class="faq-list mission-faq-list"></div>
+  </div>
+</section>
 
-    <div class="container expertise-nav">
-      <a href="../index.html#expertises">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="exp.back">Retour aux expertises</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="exp.conseil.cta_title">Besoin d'y voir plus clair sur votre pilotage ?</h2>
-      <p data-i18n="exp.conseil.cta_text">Parlons de vos objectifs et de vos échéances.</p>
-      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+<section class="expertise-cta mission-final">
+  <div class="container"><h2 data-copy="finalTitle"></h2><p data-copy="finalText"></p><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="finalCta"></a></div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={"fr":{"metaTitle":"Pilotage & reporting — RB Partners","metaDescription":"Tableaux de bord, trésorerie, prévisionnels et reporting : RB Partners transforme vos chiffres en outils de décision.","eyebrow":"Pilotage & reporting","title":"Des chiffres qui répondent à une question simple : où va l’entreprise ?","lead":"Nous transformons la donnée comptable en visibilité sur le cash, indicateurs de performance et scénarios de décision.","cta":"Parler à un associé","proofs":["Trésorerie","KPI & tableaux de bord","Budgets & prévisionnels","Reporting groupe"],"promiseEye":"Notre rôle","promiseTitle":"Faire sortir la gestion du rétroviseur.","promiseLead":"Un bon reporting ne consiste pas à multiplier les tableaux. Il doit faire ressortir les quelques informations qui changent réellement une décision.","promises":[["Voir plus tôt","Identifier les tendances de cash, de marge ou d’activité avant qu’elles ne deviennent un problème."],["Comparer","Mettre le réel face au budget ou au prévisionnel pour comprendre les écarts."],["Décider","Tester l’impact d’un recrutement, d’un investissement ou d’un nouveau scénario de croissance."]],"scopeEye":"Ce que nous construisons","scopeTitle":"Des outils de pilotage adaptés à votre modèle, pas un reporting standard.","scopeLead":"Nous choisissons avec vous la fréquence, les indicateurs et le niveau de détail réellement utiles.","scope":[["Trésorerie & cash","Suivi des encaissements, décaissements, besoins à court terme et scénarios de trésorerie.","Voir venir les tensions avant qu’elles n’arrivent."],["Tableaux de bord & KPI","Indicateurs de marge, activité, coûts ou performance selon votre modèle.","Quelques indicateurs utiles plutôt qu’une batterie de ratios."],["Budgets & prévisionnels","Construction de scénarios pour recruter, investir, financer ou accélérer.","Mesurer les conséquences avant de décider."],["Reporting groupe / investisseurs","Restitutions périodiques pour la direction, les investisseurs ou une maison mère.","Un format cohérent avec vos interlocuteurs."]],"situationEye":"Quand cette mission devient utile","situationTitle":"Quand la comptabilité seule ne suffit plus.","situations":["Vous prenez des décisions importantes sans visibilité suffisante sur la trésorerie.","Vous recrutez, investissez ou lancez une nouvelle activité et souhaitez mesurer l’impact.","Votre groupe ou vos investisseurs demandent un reporting plus structuré.","Vous avez des chiffres, mais pas encore un outil de lecture simple pour les dirigeants."],"processEye":"Notre méthode","processTitle":"Choisir, mesurer, analyser.","processLead":"Le dispositif doit rester suffisamment simple pour être utilisé dans la durée.","process":[["Choisir les bons indicateurs","Nous partons de vos décisions, pas d’un modèle de tableau standard."],["Installer le rythme","Mensuel, trimestriel ou sur une période spécifique selon vos besoins."],["Analyser & ajuster","Nous lisons les écarts avec vous et faisons évoluer le pilotage quand le contexte change."]],"faqTitle":"Questions fréquentes","faq":[["Faut-il déjà avoir une comptabilité mensuelle ?","Pas nécessairement, mais la qualité et la fréquence des données conditionnent le niveau de pilotage possible."],["Pouvez-vous reprendre un reporting groupe existant ?","Oui. Nous pouvons partir du format demandé par le siège et organiser la production des données françaises."],["Faites-vous des prévisionnels ponctuels ?","Oui, notamment pour un financement, un investissement, un recrutement ou une opération particulière."]],"finalTitle":"Vous avez besoin de mieux voir avant de décider ?","finalText":"Nous pouvons construire un pilotage proportionné à votre activité et à vos décisions.","finalCta":"Échanger avec RB Partners"},"en":{"metaTitle":"Management & reporting — RB Partners","metaDescription":"Cash management, dashboards, forecasts and reporting: RB Partners turns accounting data into decision tools.","eyebrow":"Management & reporting","title":"Numbers that answer one simple question: where is the business going?","lead":"We turn accounting data into cash visibility, performance indicators and decision scenarios.","cta":"Speak with a partner","proofs":["Cash management","KPIs & dashboards","Budgets & forecasts","Group reporting"],"promiseEye":"Our role","promiseTitle":"Move management out of the rear-view mirror.","promiseLead":"Good reporting is not about more spreadsheets. It is about surfacing the few pieces of information that actually change a decision.","promises":[["See earlier","Identify cash, margin or activity trends before they become problems."],["Compare","Put actuals against budget or forecast to understand variances."],["Decide","Test the impact of hiring, investment or a new growth scenario."]],"scopeEye":"What we build","scopeTitle":"Management tools tailored to your model, not a standard report pack.","scopeLead":"We define the frequency, indicators and level of detail that are genuinely useful.","scope":[["Cash & liquidity","Collections, payments, short-term needs and cash scenarios.","See pressure points before they hit."],["Dashboards & KPIs","Margin, activity, cost or performance indicators tailored to your model.","A focused set of useful indicators."],["Budgets & forecasts","Scenarios for hiring, investment, financing or growth.","Understand the impact before deciding."],["Group / investor reporting","Periodic outputs for management, investors or a parent company.","A format aligned with your stakeholders."]],"situationEye":"When this becomes useful","situationTitle":"When accounting alone is no longer enough.","situations":["You are making important decisions without enough cash visibility.","You are hiring, investing or launching a new activity and want to measure the impact.","Headquarters or investors require more structured reporting.","You have numbers, but not yet a simple management view for decision-makers."],"processEye":"How we work","processTitle":"Select, measure, analyse.","processLead":"The system needs to stay simple enough to be used consistently.","process":[["Select the right indicators","We start from the decisions you need to make, not from a standard template."],["Set the rhythm","Monthly, quarterly or project-based depending on the need."],["Analyse & adjust","We review variances and evolve the reporting as the business changes."]],"faqTitle":"Frequently asked questions","faq":[["Do we need monthly accounting first?","Not necessarily, but the quality and frequency of source data determine how far management reporting can go."],["Can you take over an existing group reporting pack?","Yes. We can work from the parent company format and organise the French data production."],["Do you prepare one-off forecasts?","Yes, for financing, investment, hiring or specific transactions."]],"finalTitle":"Need better visibility before making decisions?","finalText":"We can build a management approach proportionate to your business and decision needs.","finalCta":"Talk to RB Partners"}};</script>
+<script src="../js/i18n.js"></script><script src="../js/main.js"></script><script src="../js/mission-page.js"></script>
+</body></html>
