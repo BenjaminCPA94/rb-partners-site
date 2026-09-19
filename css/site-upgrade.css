@@ -127,3 +127,40 @@
 .v4-proof-section{background:var(--cream)!important}
 #v4-tools{background:#fff!important}
 #v2-faq{background:var(--cream)!important}
+
+/* V5 — one strong "new-generation firm" block, inspired by premium advisory sites */
+.v5-modern-firm{background:var(--navy-950)!important;color:#fff;padding-top:92px;padding-bottom:92px}
+.v5-modern-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:start}
+.v5-modern-intro{position:sticky;top:118px}
+.v5-modern-intro .eyebrow{color:rgba(255,255,255,.48);letter-spacing:.18em}
+.v5-modern-intro h2{color:#fff;font-size:clamp(2.7rem,5.6vw,5.15rem);line-height:.99;max-width:610px;margin:18px 0 24px;font-weight:500}
+.v5-modern-intro h2 em{display:block;color:var(--gold-400);font-weight:500}
+.v5-modern-intro>p:not(.eyebrow){max-width:590px;color:rgba(255,255,255,.68);font-size:1.03rem;line-height:1.78}
+.v5-modern-links{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}
+.v5-modern-links a{color:var(--gold-400);font-size:.86rem;font-weight:700;transition:transform .25s ease,color .25s ease}
+.v5-modern-links a:hover{color:#fff;transform:translateX(3px)}
+.v5-modern-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.v5-modern-card{min-height:260px;padding:30px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:rgba(255,255,255,.025);display:flex;flex-direction:column;transition:transform .35s ease,border-color .35s ease,background .35s ease}
+.v5-modern-card:hover{transform:translateY(-5px);border-color:rgba(216,184,118,.5);background:rgba(255,255,255,.055)}
+.v5-modern-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+.v5-modern-card-top span{font-family:var(--font-head);color:rgba(216,184,118,.5);font-size:1.25rem}
+.v5-modern-card-top small{color:var(--gold-400);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.v5-modern-card h3{color:#fff;font-size:1.32rem;margin:0 0 14px}
+.v5-modern-card p{color:rgba(255,255,255,.63);font-size:.9rem;line-height:1.72;margin:0}
+#v4-tools{display:none!important}
+
+/* Terminal landing pages: no related-pages drawer after the main content */
+.seo-crosslinks{display:none!important}
+
+@media(max-width:1000px){
+  .v5-modern-grid{grid-template-columns:1fr;gap:42px}
+  .v5-modern-intro{position:static}
+  .v5-modern-intro h2{max-width:760px}
+}
+@media(max-width:700px){
+  .v5-modern-firm{padding-top:68px;padding-bottom:68px}
+  .v5-modern-cards{grid-template-columns:1fr}
+  .v5-modern-card{min-height:210px;padding:25px}
+  .v5-modern-intro h2{font-size:clamp(2.45rem,12vw,3.65rem)}
+  .v5-modern-links{gap:18px}
+}
