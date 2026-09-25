@@ -306,3 +306,39 @@
   .mission-process-grid{grid-template-columns:1fr}
   .mission-process-grid article,.mission-process-grid article+article{padding:24px 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.12)}
 }
+
+
+/* Accounting mission page — concrete services, 4-step process and service commitment */
+.mission-page--accounting .mission-process-grid{grid-template-columns:repeat(4,1fr)}
+.mission-page--accounting .mission-engagement{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:30px 34px;
+  align-self:start;
+}
+.mission-page--accounting .mission-engagement strong{
+  display:block;
+  font-family:var(--font-head);
+  font-size:clamp(3.4rem,7vw,5.8rem);
+  line-height:.95;
+  color:var(--gold-500);
+  margin-bottom:18px;
+}
+.mission-page--accounting .mission-engagement p{
+  margin:0;
+  color:var(--gray-700);
+  line-height:1.72;
+}
+.mission-page--accounting .mission-final__actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+.mission-page--accounting .mission-final__actions .btn{margin:0}
+@media (max-width:900px){
+  .mission-page--accounting .mission-process-grid{grid-template-columns:1fr}
+}
