@@ -342,3 +342,42 @@
 @media (max-width:900px){
   .mission-page--accounting .mission-process-grid{grid-template-columns:1fr}
 }
+
+
+/* Rewritten mission pages */
+.mission-page--rewrite .mission-process-grid{grid-template-columns:repeat(4,1fr)}
+.mission-page--rewrite .mission-engagement{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:30px 34px;
+  align-self:start;
+}
+.mission-page--rewrite .mission-engagement strong{
+  display:block;
+  font-family:var(--font-head);
+  font-size:clamp(2rem,4vw,3.8rem);
+  line-height:1.02;
+  color:var(--gold-500);
+  margin-bottom:18px;
+}
+.mission-page--rewrite .mission-engagement p{
+  margin:0;
+  color:var(--gray-700);
+  line-height:1.72;
+}
+.mission-page--rewrite .mission-final__actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+.mission-page--rewrite .mission-final__actions .btn{margin:0}
+@media (min-width:901px){
+  .mission-page--rewrite .mission-scope-grid article:last-child:nth-child(odd){grid-column:1 / -1;min-height:190px}
+}
+@media (max-width:900px){
+  .mission-page--rewrite .mission-process-grid{grid-template-columns:1fr}
+}
