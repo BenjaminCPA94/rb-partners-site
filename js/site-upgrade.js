@@ -18,7 +18,7 @@ function renderMissionDetail(l){
     path.endsWith('/expertises/creation-juridique.html')?'juridique':
     path.endsWith('/conseil-dirigeant.html')?'dirigeant':
     path.endsWith('/facturation-electronique.html')?'einvoice':null;
-  if(!key || key==='compta')return;
+  if(!key || ['compta','pilotage','social','juridique','dirigeant','einvoice'].includes(key))return;
   const D={
     fr:{
       compta:{
