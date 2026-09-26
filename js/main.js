@@ -68,15 +68,24 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach((el) => observer.observe(el));
 
-// Contact form (client-side only — connect to a backend or form service to send real emails)
+// Contact form — prepares a structured email without pretending a server submission occurred.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre message a bien été enregistré. Nous revenons vers vous rapidement.';
-    form.reset();
+    const data = new FormData(form);
+    const lang = window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr';
+    const company = data.get('company') === 'etrangere'
+      ? (lang === 'en' ? 'Foreign company / France market entry' : 'Société étrangère / implantation en France')
+      : (lang === 'en' ? 'French company' : 'Société française');
+    const subject = lang === 'en' ? 'Contact request — RB Partners' : 'Demande de contact — RB Partners';
+    const body = lang === 'en'
+      ? `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${company}\n\nMessage:\n${data.get('message')}`
+      : `Nom : ${data.get('name')}\nEmail : ${data.get('email')}\nSociété : ${company}\n\nMessage :\n${data.get('message')}`;
+    status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Votre messagerie va s’ouvrir avec votre demande préremplie.';
+    window.location.href = `mailto:contact@rb-partners.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 

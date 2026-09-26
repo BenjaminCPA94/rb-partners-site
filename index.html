@@ -4,12 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n-doctitle="meta.home_title">RB Partners — Expertise comptable & accompagnement franco-international</title>
-<meta name="description" content="RB Partners, cabinet d'expertise comptable dirigé par Rachel Illouz et Benjamin Haziza. Accompagnement complet des sociétés françaises, de la création au pilotage opérationnel, et des sociétés étrangères souhaitant s'implanter en France.">
+<meta name="description" content="RB Partners, cabinet d'expertise comptable à Paris pour entrepreneurs, start-up, PME et sociétés étrangères : comptabilité, fiscalité, paie, reporting et implantation en France.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RB Partners">
+<meta property="og:title" content="RB Partners — Expert-comptable à Paris & accompagnement international">
+<meta property="og:description" content="Comptabilité, fiscalité, paie, reporting et implantation en France pour entrepreneurs, PME, start-up et groupes internationaux.">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"RB Partners","description":"Cabinet d'expertise comptable à Paris accompagnant entrepreneurs, start-up, PME et sociétés étrangères opérant en France.","email":"contact@rb-partners.fr","areaServed":{"@type":"Country","name":"France"},"knowsLanguage":["fr","en"],"founder":[{"@type":"Person","name":"Rachel Illouz"},{"@type":"Person","name":"Benjamin Haziza"}],"serviceType":["Expertise comptable","Fiscalité","Paie et social","Reporting et pilotage","Création et juridique","Implantation en France"]}
+</script>
 </head>
 <body>
 
@@ -301,6 +309,10 @@
             </div>
             
             <div class="contact-info__item">
+              <strong data-i18n="contact.info.phone_label">Téléphone</strong>
+              <span><a href="tel:+33624126769">Rachel · 06 24 12 67 69</a><br><a href="tel:+33761534670">Benjamin · 07 61 53 46 70</a></span>
+            </div>
+            <div class="contact-info__item">
               <strong data-i18n="contact.info.email_label">Email</strong>
               <span><a href="mailto:contact@rb-partners.fr">contact@rb-partners.fr</a></span>
             </div>
@@ -328,7 +340,8 @@
               <label for="message" data-i18n="form.message_label">Message</label>
               <textarea id="message" name="message" rows="4" required></textarea>
             </div>
-            <a href="mailto:contact@rb-partners.fr" class="btn btn--primary btn--full">Écrire à RB Partners</a>
+            <button type="submit" class="btn btn--primary btn--full" data-i18n="form.submit">Préparer mon e-mail</button>
+            <p class="form__privacy" data-i18n-html="form.privacy">Les informations saisies servent uniquement à préparer votre message dans votre logiciel de messagerie. <a href="politique-confidentialite.html">En savoir plus</a>.</p>
             <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
