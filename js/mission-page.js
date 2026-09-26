@@ -25,6 +25,40 @@
     const proof = document.querySelector('.mission-hero__proofs');
     if (proof) proof.innerHTML = (d.proofs || []).map(x => `<span>${x}</span>`).join('');
 
+    let questionsSection = document.querySelector('.mission-client-questions');
+    if (!questionsSection) {
+      document.querySelector('.mission-scope')?.insertAdjacentHTML('afterend', '<section class="section mission-client-questions"><div class="container"><div class="mission-v7-head"><p class="eyebrow" data-v7="questionsEye"></p><h2 data-v7="questionsTitle"></h2><p data-v7="questionsLead"></p></div><div class="mission-question-grid"></div></div></section>');
+      questionsSection = document.querySelector('.mission-client-questions');
+    }
+    if (questionsSection) {
+      questionsSection.querySelector('[data-v7="questionsEye"]').textContent = d.questionsEye || '';
+      questionsSection.querySelector('[data-v7="questionsTitle"]').textContent = d.questionsTitle || '';
+      questionsSection.querySelector('[data-v7="questionsLead"]').textContent = d.questionsLead || '';
+      questionsSection.querySelector('.mission-question-grid').innerHTML = (d.questions || []).map((x,i) => `<article class="mission-question-card"><span>0${i+1}</span><p>${x}</p></article>`).join('');
+    }
+
+    let deliverablesSection = document.querySelector('.mission-deliverables');
+    if (!deliverablesSection) {
+      document.querySelector('.mission-promise')?.insertAdjacentHTML('afterend', '<section class="section mission-deliverables"><div class="container mission-deliverables__grid"><div class="mission-deliverables__intro"><p class="eyebrow" data-v7="deliverablesEye"></p><h2 data-v7="deliverablesTitle"></h2></div><div class="mission-deliverable-list"></div></div></section>');
+      deliverablesSection = document.querySelector('.mission-deliverables');
+    }
+    if (deliverablesSection) {
+      deliverablesSection.querySelector('[data-v7="deliverablesEye"]').textContent = d.deliverablesEye || '';
+      deliverablesSection.querySelector('[data-v7="deliverablesTitle"]').textContent = d.deliverablesTitle || '';
+      deliverablesSection.querySelector('.mission-deliverable-list').innerHTML = (d.deliverables || []).map((x,i) => `<article><b>0${i+1}</b><div><h3>${x[0]}</h3><p>${x[1]}</p></div></article>`).join('');
+    }
+
+    let lanesSection = document.querySelector('.mission-lanes');
+    if (!lanesSection) {
+      document.querySelector('.mission-process')?.insertAdjacentHTML('afterend', '<section class="section mission-lanes"><div class="container"><div class="mission-v7-head mission-v7-head--light"><p class="eyebrow" data-v7="lanesEye"></p><h2 data-v7="lanesTitle"></h2></div><div class="mission-lane-grid"></div></div></section>');
+      lanesSection = document.querySelector('.mission-lanes');
+    }
+    if (lanesSection) {
+      lanesSection.querySelector('[data-v7="lanesEye"]').textContent = d.lanesEye || '';
+      lanesSection.querySelector('[data-v7="lanesTitle"]').textContent = d.lanesTitle || '';
+      lanesSection.querySelector('.mission-lane-grid').innerHTML = (d.lanes || []).map((x,i) => `<article><span>${i===0?'FR':'INTL'}</span><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join('');
+    }
+
     const promises = document.querySelector('.mission-promise-grid');
     if (promises) promises.innerHTML = (d.promises || []).map((x,i) =>
       `<article><span>0${i+1}</span><h3>${x[0]}</h3><p>${x[1]}</p></article>`
