@@ -53,16 +53,18 @@
 .mission-page .mission-situations{
   padding-top:66px;
   padding-bottom:66px;
-  background:var(--mission-soft);
+  background:var(--mission-light);
+  color:var(--mission-navy);
 }
 .mission-page .mission-faq{
   padding-top:66px;
   padding-bottom:66px;
-  background:var(--mission-light);
+  background:var(--mission-soft);
 }
 .mission-page .mission-final{
   padding-top:66px;
   padding-bottom:66px;
+  background:var(--mission-light);
 }
 
 /* Headings sit closer to their content. */
@@ -274,4 +276,35 @@
   .mission-page .mission-process__lead{
     text-align:left;
   }
+}
+
+/* Stronger section-to-section contrast across every mission page */
+.mission-page .mission-situations h2,
+.mission-page .mission-situations h3{
+  color:var(--mission-navy);
+}
+.mission-page .mission-situations .eyebrow{
+  color:#a77f34;
+}
+.mission-page .mission-situations .mission-engagement{
+  background:var(--mission-soft);
+  border-color:var(--mission-border);
+  box-shadow:0 8px 24px rgba(8,20,38,.035);
+}
+.mission-page .mission-situations .mission-engagement strong{
+  color:var(--gold-500);
+}
+.mission-page .mission-situations .mission-engagement p{
+  color:var(--gray-700);
+}
+
+/* Keep the closing sequence visually alternating instead of merging into one beige block */
+.mission-page .mission-lanes + .mission-situations{
+  border-top:1px solid var(--mission-border);
+}
+.mission-page .mission-situations + .mission-faq{
+  border-top:1px solid rgba(198,161,91,.16);
+}
+.mission-page .mission-faq + .mission-final{
+  border-top:1px solid var(--mission-border);
 }
