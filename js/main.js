@@ -14,6 +14,11 @@
   polishCss.href = `${base}css/final-polish.css`;
   document.head.appendChild(polishCss);
 
+  const hotfixCss = document.createElement('link');
+  hotfixCss.rel = 'stylesheet';
+  hotfixCss.href = `${base}css/final-polish-hotfix.css`;
+  document.head.appendChild(hotfixCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -26,6 +31,11 @@
 
     const polish = document.createElement('script');
     polish.src = `${base}js/final-polish.js`;
+    polish.onload = () => {
+      const hotfix = document.createElement('script');
+      hotfix.src = `${base}js/final-polish-hotfix.js`;
+      document.head.appendChild(hotfix);
+    };
     document.head.appendChild(polish);
   };
   document.head.appendChild(upgrade);
