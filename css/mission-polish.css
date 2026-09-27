@@ -1,0 +1,262 @@
+/* RB Partners — mission pages visual rhythm and palette
+   Shared by all six mission pages. */
+
+.mission-page{
+  --mission-light:#ffffff;
+  --mission-soft:#f7f4ee;
+  --mission-navy:#081426;
+  --mission-gold:#d8b876;
+  --mission-border:#e7e2d8;
+}
+
+/* A tighter, more editorial rhythm. */
+.mission-page .section{
+  padding-top:68px;
+  padding-bottom:68px;
+}
+.mission-page .mission-hero{
+  padding-top:78px;
+  padding-bottom:64px;
+}
+.mission-page .mission-scope{
+  padding-top:70px;
+  padding-bottom:54px;
+  background:var(--mission-light);
+}
+.mission-page .mission-client-questions{
+  padding-top:54px;
+  padding-bottom:64px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-promise{
+  padding-top:64px;
+  padding-bottom:64px;
+  background:var(--mission-light);
+}
+.mission-page .mission-deliverables{
+  padding-top:64px;
+  padding-bottom:68px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-process{
+  padding-top:68px;
+  padding-bottom:46px;
+  background:var(--mission-navy);
+}
+.mission-page .mission-lanes{
+  padding-top:42px;
+  padding-bottom:68px;
+  background:var(--mission-navy);
+}
+.mission-page .mission-situations{
+  padding-top:66px;
+  padding-bottom:66px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-faq{
+  padding-top:66px;
+  padding-bottom:66px;
+  background:var(--mission-light);
+}
+.mission-page .mission-final{
+  padding-top:66px;
+  padding-bottom:66px;
+}
+
+/* Headings sit closer to their content. */
+.mission-page .mission-scope__head,
+.mission-page .mission-promise__head,
+.mission-page .mission-v7-head{
+  margin-bottom:28px;
+}
+.mission-page .mission-v7-head h2,
+.mission-page .mission-scope__head h2,
+.mission-page .mission-promise__head h2,
+.mission-page .mission-process h2,
+.mission-page .mission-situations h2,
+.mission-page .mission-faq h2{
+  margin-top:6px;
+  margin-bottom:11px;
+}
+.mission-page .eyebrow{
+  margin-bottom:9px;
+}
+
+/* The cards share one visual language instead of changing colour arbitrarily. */
+.mission-page .mission-scope-grid article,
+.mission-page .mission-promise-grid article,
+.mission-page .mission-question-card{
+  background:#fff;
+  border-color:var(--mission-border);
+  box-shadow:0 7px 22px rgba(8,20,38,.025);
+}
+.mission-page .mission-scope-grid article:nth-child(2),
+.mission-page .mission-scope-grid article:nth-child(3){
+  background:#fff;
+  border-color:var(--mission-border);
+}
+.mission-page .mission-scope-grid article:nth-child(3) h3{
+  color:var(--navy-900);
+}
+.mission-page .mission-scope-grid article:nth-child(3) p,
+.mission-page .mission-scope-grid article:nth-child(3) small{
+  color:var(--gray-700);
+}
+.mission-page .mission-scope-grid article:hover,
+.mission-page .mission-promise-grid article:hover,
+.mission-page .mission-question-card:hover{
+  border-color:rgba(198,161,91,.70);
+  box-shadow:0 14px 34px rgba(8,20,38,.07);
+}
+
+/* Less empty space inside cards. */
+.mission-page .mission-scope-grid article{
+  min-height:190px;
+  padding:25px 27px;
+}
+.mission-page .mission-scope-grid h3{
+  margin:24px 0 9px;
+}
+.mission-page .mission-scope-grid small{
+  padding-top:11px;
+}
+.mission-page .mission-promise-grid article{
+  min-height:185px;
+  padding:25px 27px;
+}
+.mission-page .mission-promise-grid h3{
+  margin:26px 0 9px;
+}
+.mission-page .mission-question-card{
+  min-height:132px;
+  padding:22px 25px 22px 68px;
+}
+.mission-page .mission-question-card>span{
+  left:23px;
+  top:22px;
+  color:var(--gold-500);
+}
+.mission-page .mission-question-card p{
+  font-size:1.08rem;
+  line-height:1.42;
+  text-align:left!important;
+  text-justify:auto!important;
+}
+.mission-page .mission-deliverables__grid{
+  gap:52px;
+}
+.mission-page .mission-deliverable-list article{
+  padding:19px 0;
+}
+.mission-page .mission-deliverable-list p{
+  text-align:left!important;
+  text-justify:auto!important;
+}
+
+/* The method and France/international sections read as one coherent dark chapter. */
+.mission-page .mission-process-grid{
+  margin-top:28px;
+}
+.mission-page .mission-process-grid article{
+  padding-top:25px;
+}
+.mission-page .mission-process-grid b{
+  margin-bottom:17px;
+  color:var(--mission-gold);
+}
+.mission-page .mission-process-grid p{
+  color:rgba(255,255,255,.72);
+  text-align:left!important;
+  text-justify:auto!important;
+}
+.mission-page .mission-lanes::before{
+  opacity:.72;
+}
+.mission-page .mission-lane-grid article{
+  min-height:205px;
+  padding:27px;
+  background:rgba(255,255,255,.035);
+  border-color:rgba(255,255,255,.14);
+}
+.mission-page .mission-lane-grid span{
+  margin-bottom:28px;
+  color:var(--mission-gold);
+  border-color:rgba(216,184,118,.42);
+}
+.mission-page .mission-lane-grid h3{
+  margin-bottom:9px;
+}
+.mission-page .mission-lane-grid p{
+  color:rgba(255,255,255,.74);
+  text-align:left!important;
+  text-justify:auto!important;
+}
+
+/* Consistent accent colour for all step/index numbers. */
+.mission-page .mission-scope-grid>article>span,
+.mission-page .mission-promise-grid>article>span,
+.mission-page .mission-question-card>span,
+.mission-page .mission-deliverable-list b,
+.mission-page .mission-process-grid b{
+  color:var(--gold-500)!important;
+}
+
+/* Avoid stretched justification in narrow content areas. */
+.mission-page .mission-scope-grid p,
+.mission-page .mission-promise-grid p,
+.mission-page .mission-engagement p,
+.mission-page .faq-item p{
+  text-align:left!important;
+  text-justify:auto!important;
+  word-spacing:normal!important;
+}
+.mission-page .mission-hero__lead,
+.mission-page .mission-scope__head>p:last-child,
+.mission-page .mission-promise__head>p:last-child,
+.mission-page .mission-v7-head>p:last-child,
+.mission-page .mission-process__lead{
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+/* Remove visual dead zones caused by fixed heights on odd final scope cards. */
+@media (min-width:901px){
+  .mission-page--rewrite .mission-scope-grid article:last-child:nth-child(odd){
+    min-height:160px;
+  }
+}
+
+@media(max-width:900px){
+  .mission-page .section{
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  .mission-page .mission-process{padding-bottom:34px}
+  .mission-page .mission-lanes{padding-top:34px}
+  .mission-page .mission-deliverables__grid{gap:28px}
+  .mission-page .mission-scope-grid article,
+  .mission-page .mission-promise-grid article,
+  .mission-page .mission-lane-grid article{
+    min-height:0;
+  }
+}
+@media(max-width:600px){
+  .mission-page .section{
+    padding-top:48px;
+    padding-bottom:48px;
+  }
+  .mission-page .mission-hero{
+    padding-top:58px;
+    padding-bottom:52px;
+  }
+  .mission-page .mission-client-questions{padding-top:44px}
+  .mission-page .mission-process{padding-bottom:30px}
+  .mission-page .mission-lanes{padding-top:30px}
+  .mission-page .mission-hero__lead,
+  .mission-page .mission-scope__head>p:last-child,
+  .mission-page .mission-promise__head>p:last-child,
+  .mission-page .mission-v7-head>p:last-child,
+  .mission-page .mission-process__lead{
+    text-align:left;
+  }
+}
