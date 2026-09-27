@@ -44,9 +44,11 @@
   background:var(--mission-navy);
 }
 .mission-page .mission-lanes{
-  padding-top:42px;
+  padding-top:54px;
   padding-bottom:68px;
-  background:var(--mission-navy);
+  background:var(--mission-soft);
+  color:var(--mission-navy);
+  border-top:1px solid rgba(216,184,118,.26);
 }
 .mission-page .mission-situations{
   padding-top:66px;
@@ -153,7 +155,7 @@
   text-justify:auto!important;
 }
 
-/* The method and France/international sections read as one coherent dark chapter. */
+/* Method stays dark; France & International switches to a warm light chapter. */
 .mission-page .mission-process-grid{
   margin-top:28px;
 }
@@ -170,24 +172,37 @@
   text-justify:auto!important;
 }
 .mission-page .mission-lanes::before{
-  opacity:.72;
+  opacity:.20;
+}
+.mission-page .mission-lanes .eyebrow{
+  color:#a77f34;
+}
+.mission-page .mission-lanes h2,
+.mission-page .mission-lanes h3{
+  color:var(--mission-navy);
 }
 .mission-page .mission-lane-grid article{
   min-height:205px;
   padding:27px;
-  background:rgba(255,255,255,.035);
-  border-color:rgba(255,255,255,.14);
+  background:#fff;
+  border-color:var(--mission-border);
+  box-shadow:0 8px 24px rgba(8,20,38,.035);
+}
+.mission-page .mission-lane-grid article:hover{
+  border-color:rgba(198,161,91,.62);
+  box-shadow:0 14px 34px rgba(8,20,38,.07);
 }
 .mission-page .mission-lane-grid span{
   margin-bottom:28px;
-  color:var(--mission-gold);
-  border-color:rgba(216,184,118,.42);
+  color:#a77f34;
+  border-color:rgba(167,127,52,.42);
+  background:rgba(216,184,118,.08);
 }
 .mission-page .mission-lane-grid h3{
   margin-bottom:9px;
 }
 .mission-page .mission-lane-grid p{
-  color:rgba(255,255,255,.74);
+  color:var(--gray-700);
   text-align:left!important;
   text-justify:auto!important;
 }
@@ -232,7 +247,7 @@
     padding-bottom:56px;
   }
   .mission-page .mission-process{padding-bottom:34px}
-  .mission-page .mission-lanes{padding-top:34px}
+  .mission-page .mission-lanes{padding-top:44px}
   .mission-page .mission-deliverables__grid{gap:28px}
   .mission-page .mission-scope-grid article,
   .mission-page .mission-promise-grid article,
@@ -251,7 +266,7 @@
   }
   .mission-page .mission-client-questions{padding-top:44px}
   .mission-page .mission-process{padding-bottom:30px}
-  .mission-page .mission-lanes{padding-top:30px}
+  .mission-page .mission-lanes{padding-top:38px}
   .mission-page .mission-hero__lead,
   .mission-page .mission-scope__head>p:last-child,
   .mission-page .mission-promise__head>p:last-child,
