@@ -455,3 +455,87 @@
 @media(max-width:920px){.international-hero .seo-hero__inner{grid-template-columns:1fr}.international-hero .seo-hero__inner>.eyebrow,.international-hero .seo-hero__inner>h1,.international-hero .seo-hero__inner>.seo-hero__lead,.international-hero .seo-hero__inner>.seo-hero__actions,.international-hero .seo-hero__inner>.intl-hero-proof{grid-column:1}.intl-v8-visual{grid-column:1;grid-row:auto;min-height:370px;margin-top:34px}}
 @media(max-width:560px){.intl-v8-visual{min-height:320px}.intl-v8-label{font-size:.56rem}.intl-v8-france{width:82px;height:82px}.intl-v8-france strong{font-size:1.65rem}}
 @media(prefers-reduced-motion:reduce){.intl-v8-visual::before,.intl-v8-label,.intl-v8-route i{animation:none!important}}
+
+
+/* V9 — typography, rhythm and footer consistency */
+.hero__lead,
+.section__lead,
+.v2-path p,
+.v5-modern-intro>p,
+.v5-modern-card p,
+.v6-proof-card p,
+.v8-int-copy>p:not(.eyebrow),
+.v2-founder>p,
+.partner-contact__head>p,
+.partner-contact__card>div>p,
+.seo-hero__lead,
+.seo-copy>p,
+.seo-point p,
+.intl-intro-copy p,
+.intl-service p,
+.intl-structure-card p,
+.mission-question-card p,
+.mission-deliverable-list p,
+.mission-lane-grid p,
+.mission-hero__lead,
+.mission-rich p,
+.faq-item p,
+.contact__intro p,
+.contact-info__item span,
+.article-body p{
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+}
+.section__head{text-align:left}
+.section__head .eyebrow,.section__head h2{ text-align:left }
+#v4-reviews{padding-bottom:54px!important}
+#v2-faq{padding-top:54px!important}
+#v4-reviews + #v2-faq{margin-top:0!important}
+.v4-proof-section .section__head{margin-bottom:30px}
+#v2-faq .section__head{margin-bottom:26px}
+.v4-booking{display:none!important}
+#contact{padding-top:64px!important}
+#partner-home .partner-contact{padding-top:0}
+.partner-contact__head{margin-bottom:24px}
+.footer .footer-lang-note{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.68);
+  font-size:.82rem;
+  line-height:1.5;
+  font-family:var(--font-body);
+  font-weight:400;
+}
+@media(max-width:700px){
+  .hero__lead,
+  .section__lead,
+  .v2-path p,
+  .v5-modern-intro>p,
+  .v5-modern-card p,
+  .v6-proof-card p,
+  .v8-int-copy>p:not(.eyebrow),
+  .v2-founder>p,
+  .partner-contact__head>p,
+  .partner-contact__card>div>p,
+  .seo-hero__lead,
+  .seo-copy>p,
+  .seo-point p,
+  .intl-intro-copy p,
+  .intl-service p,
+  .intl-structure-card p,
+  .mission-question-card p,
+  .mission-deliverable-list p,
+  .mission-lane-grid p,
+  .mission-hero__lead,
+  .mission-rich p,
+  .faq-item p,
+  .contact__intro p,
+  .contact-info__item span,
+  .article-body p{
+    text-align:left;
+    hyphens:none;
+  }
+  #v4-reviews{padding-bottom:38px!important}
+  #v2-faq{padding-top:38px!important}
+}
