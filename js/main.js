@@ -19,6 +19,11 @@
   hotfixCss.href = `${base}css/final-polish-hotfix.css`;
   document.head.appendChild(hotfixCss);
 
+  const missionPolishCss = document.createElement('link');
+  missionPolishCss.rel = 'stylesheet';
+  missionPolishCss.href = `${base}css/mission-polish.css`;
+  document.head.appendChild(missionPolishCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
