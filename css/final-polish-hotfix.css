@@ -1,0 +1,17 @@
+/* Final overrides after browser verification */
+.v5-modern-card .v5-modern-card-top > span,
+.v5-modern-card .v5-modern-card-top > small {
+  color: #d8b876 !important;
+  opacity: 1 !important;
+}
+.v5-modern-card .v5-modern-card-top > span {
+  font-weight: 600 !important;
+}
+.v5-modern-card p {
+  text-align: left !important;
+  text-align-last: left !important;
+  text-justify: auto !important;
+  word-spacing: normal !important;
+  letter-spacing: 0 !important;
+  white-space: normal !important;
+}
