@@ -7,6 +7,13 @@
   css.href = `${base}css/site-upgrade.css`;
   document.head.appendChild(css);
 
+  // Final polish is intentionally loaded after the main upgrade stylesheet so
+  // the narrow-card typography and booking/reassurance UI win the cascade.
+  const polishCss = document.createElement('link');
+  polishCss.rel = 'stylesheet';
+  polishCss.href = `${base}css/final-polish.css`;
+  document.head.appendChild(polishCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -16,6 +23,10 @@
       upgradedNav.classList.remove('is-open');
       document.getElementById('burger')?.setAttribute('aria-expanded', 'false');
     }));
+
+    const polish = document.createElement('script');
+    polish.src = `${base}js/final-polish.js`;
+    document.head.appendChild(polish);
   };
   document.head.appendChild(upgrade);
 })();
