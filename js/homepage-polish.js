@@ -124,9 +124,33 @@
     },true);
   }
 
+  function refineContact(){
+    const partnerHead=document.querySelector('#partner-home .partner-contact__head');
+    const contactText=document.querySelector('#contact .split__text');
+    if(!partnerHead || !contactText) return;
+    const en=lang()==='en';
+
+    partnerHead.innerHTML=`
+      <p class="eyebrow">${en?'Contact':'Contact'}</p>
+      <h2>${en?'Let’s talk about your project.':'Parlons de votre projet.'}</h2>
+      <p>${en
+        ? 'Accounting, tax, payroll or a France market-entry project? Speak directly with Rachel or Benjamin, depending on your needs.'
+        : 'Comptabilité, fiscalité, paie ou projet d’implantation en France ? Échangez directement avec Rachel ou Benjamin selon votre besoin.'}</p>`;
+
+    const eyebrow=contactText.querySelector('.eyebrow');
+    const title=contactText.querySelector('h2');
+    const lead=contactText.querySelector('p.text--light-muted');
+    if(eyebrow) eyebrow.textContent=en?'Write to us':'Nous écrire';
+    if(title) title.textContent=en?'Prefer to send us a message?':'Vous préférez nous écrire ?';
+    if(lead) lead.textContent=en
+      ? 'Use the form or contact us directly by phone or email. We will come back to you as soon as possible.'
+      : 'Utilisez le formulaire ou contactez-nous directement par téléphone ou par e-mail. Nous vous répondrons rapidement.';
+  }
+
   function refresh(){
     renderHero();
     bindFirmButton();
+    refineContact();
     requestAnimationFrame(setupReveals);
   }
 
