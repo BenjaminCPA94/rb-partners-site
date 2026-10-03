@@ -523,3 +523,54 @@ body:has(main#top .hero) #contact .split__text>p.text--light-muted{
   body:has(main#top .hero) #partner-home .partner-contact__grid{margin-bottom:28px}
   body:has(main#top .hero) #contact>.container:not(#partner-home){padding-top:26px}
 }
+
+
+/* 2026-10-03 — hero spacing + international globe cue + contact cleanup */
+body:has(main#top .hero) .v6-hero-visual{
+  width:min(100%,540px);
+  aspect-ratio:1.18;
+}
+.rb-hero-bridge{
+  border-radius:32px;
+}
+.rb-hero-side--fr{left:28px}
+.rb-hero-side--intl{right:28px}
+.rb-hero-side--intl::before{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  right:-54px;
+  top:50%;
+  transform:translateY(-50%);
+  border-radius:50%;
+  opacity:.18;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at center,transparent 48%,rgba(216,184,118,.58) 49%,transparent 50%),
+    linear-gradient(90deg,transparent 49%,rgba(216,184,118,.38) 50%,transparent 51%),
+    linear-gradient(0deg,transparent 49%,rgba(216,184,118,.32) 50%,transparent 51%),
+    radial-gradient(ellipse at center,transparent 58%,rgba(216,184,118,.30) 59%,transparent 60%);
+  box-shadow:inset 0 0 0 1px rgba(216,184,118,.34);
+  animation:rb-globe-drift 9s ease-in-out infinite;
+}
+@keyframes rb-globe-drift{
+  0%,100%{transform:translateY(-50%) rotate(-4deg) scale(.98);opacity:.15}
+  50%{transform:translateY(-50%) rotate(5deg) scale(1.03);opacity:.23}
+}
+body:has(main#top .hero) #contact .split__text h2{
+  margin-top:0;
+}
+@media(max-width:980px){
+  body:has(main#top .hero) .v6-hero-visual{width:min(92vw,510px)}
+}
+@media(max-width:620px){
+  body:has(main#top .hero) .v6-hero-visual{width:min(94vw,460px);aspect-ratio:1.05}
+  .rb-hero-side--fr{left:10px}
+  .rb-hero-side--intl{right:10px}
+  .rb-hero-side--intl::before{width:145px;height:145px;right:-46px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-hero-side--intl::before{animation:none!important}
+}
