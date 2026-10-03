@@ -379,3 +379,106 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
 @media(hover:none){
   .rb-hero-client__hint{display:none}
 }
+
+
+/* V2 — homepage rhythm, hero CTA contrast and interactive client paths */
+body:has(main#top .hero) #v2-steps{
+  background:var(--cream)!important;
+  border-top:1px solid rgba(198,161,91,.12);
+  border-bottom:1px solid var(--border);
+}
+body:has(main#top .hero) #v4-reviews{background:#fff!important}
+body:has(main#top .hero) #v2-steps + #v4-reviews{border-top:0}
+body:has(main#top .hero) .hero .btn--outline{
+  color:var(--gold-400)!important;
+  border:1px solid var(--gold-400)!important;
+  background:rgba(216,184,118,.04)!important;
+}
+body:has(main#top .hero) .hero .btn--outline:hover,
+body:has(main#top .hero) .hero .btn--outline:focus-visible{
+  color:var(--navy-950)!important;
+  background:var(--gold-400)!important;
+  border-color:var(--gold-400)!important;
+}
+.rb-hero-side{
+  cursor:pointer;
+  width:154px;
+  min-height:104px;
+  text-align:left;
+  font:inherit;
+  transition:width .35s cubic-bezier(.2,.7,.2,1),min-height .35s cubic-bezier(.2,.7,.2,1),border-color .28s ease,background .28s ease,box-shadow .28s ease,transform .28s ease;
+}
+.rb-hero-side--fr{animation:rb-side-drift-fr 6.2s ease-in-out infinite}
+.rb-hero-side--intl{animation:rb-side-drift-intl 6.8s ease-in-out infinite}
+.rb-hero-side:hover,.rb-hero-side:focus-visible,.rb-hero-side.is-open{
+  width:188px;
+  min-height:236px;
+  border-color:rgba(216,184,118,.52);
+  background:rgba(8,20,38,.96);
+  box-shadow:0 22px 44px rgba(0,0,0,.28),0 0 0 1px rgba(216,184,118,.07);
+  outline:none;
+  animation-play-state:paused;
+}
+.rb-hero-side--fr:hover,.rb-hero-side--fr:focus-visible,.rb-hero-side--fr.is-open{transform:translateY(-50%) translateX(-8px)}
+.rb-hero-side--intl:hover,.rb-hero-side--intl:focus-visible,.rb-hero-side--intl.is-open{transform:translateY(-50%) translateX(8px)}
+.rb-hero-side__hint{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.38);
+  font-style:normal;
+  font-size:.56rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.rb-hero-side__missions{
+  display:grid!important;
+  gap:7px;
+  max-height:0;
+  margin-top:0!important;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(8px);
+  transition:max-height .35s ease,opacity .25s ease,transform .35s ease,margin-top .35s ease;
+}
+.rb-hero-side:hover .rb-hero-side__missions,.rb-hero-side:focus-visible .rb-hero-side__missions,.rb-hero-side.is-open .rb-hero-side__missions{
+  max-height:150px;
+  margin-top:14px!important;
+  opacity:1;
+  transform:none;
+}
+.rb-hero-mission{
+  display:flex!important;
+  align-items:center;
+  gap:7px;
+  margin:0!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:.61rem!important;
+  line-height:1.25!important;
+}
+.rb-hero-mission::before{
+  content:"";
+  width:5px;height:5px;flex:0 0 5px;border-radius:50%;
+  background:var(--gold-400);
+  box-shadow:0 0 8px rgba(216,184,118,.55);
+}
+.rb-hero-service{opacity:.72;transition:opacity .25s ease}
+.rb-hero-bridge:has(.rb-hero-side:hover) .rb-hero-service,
+.rb-hero-bridge:has(.rb-hero-side:focus-visible) .rb-hero-service,
+.rb-hero-bridge:has(.rb-hero-side.is-open) .rb-hero-service{opacity:.18}
+@keyframes rb-side-drift-fr{
+  0%,100%{transform:translateY(-50%) translate3d(0,-3px,0)}
+  50%{transform:translateY(-50%) translate3d(6px,4px,0)}
+}
+@keyframes rb-side-drift-intl{
+  0%,100%{transform:translateY(-50%) translate3d(0,4px,0)}
+  50%{transform:translateY(-50%) translate3d(-6px,-4px,0)}
+}
+@media(max-width:620px){
+  .rb-hero-side{width:118px;min-height:96px}
+  .rb-hero-side:hover,.rb-hero-side:focus-visible,.rb-hero-side.is-open{width:148px;min-height:220px}
+  .rb-hero-side__hint{font-size:.5rem}
+  .rb-hero-mission{font-size:.55rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-hero-side--fr,.rb-hero-side--intl{animation:none!important}
+}
