@@ -676,3 +676,41 @@ body:has(main#top .hero) #contact .split__text h2{
 @media(max-width:700px){
   body:has(main#top .hero) #contact .split__text{padding-top:0}
 }
+
+
+/* Final spacing pass from visual review */
+@media(min-width:981px){
+  body:has(main#top .hero) .hero__inner{
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)!important;
+    column-gap:34px!important;
+  }
+  body:has(main#top .hero) .v6-hero-visual{
+    width:min(100%,690px)!important;
+    max-width:690px!important;
+    aspect-ratio:1.7!important;
+  }
+  .rb-hero-side{
+    width:180px!important;
+  }
+  .rb-hero-side--fr{left:22px!important}
+  .rb-hero-side--intl{right:22px!important}
+  .rb-hero-side:hover,
+  .rb-hero-side:focus-visible,
+  .rb-hero-side.is-open{
+    width:226px!important;
+  }
+  .rb-hero-flow--left{
+    left:198px!important;
+    width:calc(50% - 262px)!important;
+  }
+  .rb-hero-flow--right{
+    left:calc(50% + 64px)!important;
+    width:calc(50% - 262px)!important;
+  }
+}
+body:has(main#top .hero) #partner-home .partner-contact__grid{
+  margin-bottom:12px!important;
+}
+body:has(main#top .hero) #contact>.container:not(#partner-home){
+  padding-top:0!important;
+}
