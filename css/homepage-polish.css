@@ -574,3 +574,105 @@ body:has(main#top .hero) #contact .split__text h2{
 @media(prefers-reduced-motion:reduce){
   .rb-hero-side--intl::before{animation:none!important}
 }
+
+
+/* 2026-10-03 — requested homepage refinements */
+
+/* 1. Hero CTAs: same gold treatment */
+body:has(main#top .hero) .hero .hero__actions .btn,
+body:has(main#top .hero) .hero .hero__actions .btn--primary,
+body:has(main#top .hero) .hero .hero__actions .btn--outline{
+  background:var(--gold-500,#c6a15b)!important;
+  color:var(--navy-950,#081426)!important;
+  border:1px solid var(--gold-500,#c6a15b)!important;
+  box-shadow:none!important;
+}
+body:has(main#top .hero) .hero .hero__actions .btn:hover,
+body:has(main#top .hero) .hero .hero__actions .btn:focus-visible{
+  background:var(--gold-400,#d8b876)!important;
+  color:var(--navy-950,#081426)!important;
+  border-color:var(--gold-400,#d8b876)!important;
+  transform:translateY(-1px);
+}
+
+/* 2. Wider, more readable homepage identity animation */
+@media(min-width:981px){
+  body:has(main#top .hero) .hero__inner{
+    grid-template-columns:minmax(0,.95fr) minmax(500px,1.05fr);
+    column-gap:42px;
+    max-width:1240px;
+  }
+  body:has(main#top .hero) .v6-hero-visual{
+    width:min(100%,660px);
+    max-width:660px;
+    aspect-ratio:1.58;
+    margin-left:auto;
+  }
+  .rb-hero-bridge{
+    border-radius:30px;
+  }
+  .rb-hero-side{
+    width:172px;
+    min-height:112px;
+    padding:18px 17px;
+  }
+  .rb-hero-side--fr{left:24px}
+  .rb-hero-side--intl{right:24px}
+  .rb-hero-side strong{
+    font-size:1.03rem;
+    line-height:1.18;
+  }
+  .rb-hero-side span{
+    font-size:.68rem;
+  }
+  .rb-hero-side:hover,
+  .rb-hero-side:focus-visible,
+  .rb-hero-side.is-open{
+    width:218px;
+    min-height:242px;
+  }
+  .rb-hero-center{
+    width:128px;
+    height:128px;
+  }
+  .rb-hero-flow--left{
+    left:190px;
+    width:calc(50% - 254px);
+  }
+  .rb-hero-flow--right{
+    left:calc(50% + 64px);
+    width:calc(50% - 254px);
+  }
+  .rb-hero-service{
+    min-width:110px;
+    font-size:.65rem;
+  }
+  .rb-hero-service--1{top:30px}
+  .rb-hero-service--2{bottom:30px}
+  .rb-hero-service--3{top:92px}
+  .rb-hero-service--4{bottom:92px}
+  .rb-hero-caption{
+    bottom:10px;
+    font-size:.6rem;
+  }
+}
+
+/* 3. Align the written-contact block with the form instead of vertically centring it */
+body:has(main#top .hero) #contact>.container:not(#partner-home){
+  padding-top:18px!important;
+}
+body:has(main#top .hero) #partner-home .partner-contact__grid{
+  margin-bottom:22px!important;
+}
+body:has(main#top .hero) #contact>.container:not(#partner-home) .split{
+  align-items:start!important;
+}
+body:has(main#top .hero) #contact .split__text{
+  padding-top:12px;
+}
+body:has(main#top .hero) #contact .split__text h2{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  body:has(main#top .hero) #contact .split__text{padding-top:0}
+}
