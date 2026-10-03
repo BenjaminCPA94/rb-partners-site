@@ -8,47 +8,56 @@
     const box=document.querySelector('.v6-hero-visual');
     if(!box) return;
     const en=lang()==='en';
-    const frMissions=en
-      ? ['Accounting & compliance','Tax & VAT','Payroll & HR','Management reporting','Legal & company life']
-      : ['Comptabilité & conformité','Fiscalité & TVA','Paie & RH','Pilotage & reporting','Juridique & vie sociale'];
-    const intlMissions=en
-      ? ['France market entry','French accounting','Tax & VAT in France','French payroll','FR / EN group reporting']
-      : ['Implantation en France','Comptabilité française','Fiscalité & TVA France','Paie française','Reporting groupe FR / EN'];
     box.innerHTML=`
       <div class="rb-hero-bridge">
-        <div class="rb-hero-client rb-hero-client--fr" tabindex="0">
-          <div class="rb-hero-client__main">
-            <small>FRANCE</small>
-            <strong>${en?'French business':'Entreprise française'}</strong>
-            <em>${en?'SME · start-up · owner-manager':'PME · start-up · dirigeant'}</em>
-            <span class="rb-hero-client__hint">${en?'Our services':'Nos missions'}</span>
-          </div>
-          <div class="rb-hero-client__missions">
-            ${frMissions.map(x=>`<span>${x}</span>`).join('')}
-          </div>
-        </div>
+        <button class="rb-hero-side rb-hero-side--fr" type="button" aria-expanded="false">
+          <small>FRANCE</small>
+          <strong>${en?'French businesses':'Entreprises françaises'}</strong>
+          <span>${en?'SMEs · start-ups · founders':'PME · start-up · dirigeants'}</span>
+          <em class="rb-hero-side__hint">${en?'Hover to see services':'Survolez pour voir les missions'}</em>
+          <span class="rb-hero-side__missions">
+            <span class="rb-hero-mission">${en?'Accounting & VAT':'Comptabilité & TVA'}</span>
+            <span class="rb-hero-mission">${en?'Payroll & HR':'Paie & social'}</span>
+            <span class="rb-hero-mission">${en?'Management & reporting':'Pilotage & reporting'}</span>
+            <span class="rb-hero-mission">${en?'Legal & formation':'Juridique & création'}</span>
+          </span>
+        </button>
         <div class="rb-hero-flow rb-hero-flow--left"><i></i><i></i></div>
         <div class="rb-hero-center"><b>RB</b><small>PARTNERS · FRANCE</small></div>
         <div class="rb-hero-flow rb-hero-flow--right"><i></i><i></i></div>
-        <div class="rb-hero-client rb-hero-client--intl" tabindex="0">
-          <div class="rb-hero-client__main">
-            <small>INTERNATIONAL</small>
-            <strong>${en?'International group':'Groupe international'}</strong>
-            <em>${en?'HQ · subsidiary · France entry':'Siège · filiale · implantation'}</em>
-            <span class="rb-hero-client__hint">${en?'Our services':'Nos missions'}</span>
-          </div>
-          <div class="rb-hero-client__missions">
-            ${intlMissions.map(x=>`<span>${x}</span>`).join('')}
-          </div>
-        </div>
-        <span class="rb-hero-service rb-hero-service--1">${en?'French expertise':'Expertise française'}</span>
-        <span class="rb-hero-service rb-hero-service--2">${en?'Bilingual support':'Accompagnement bilingue'}</span>
-        <span class="rb-hero-service rb-hero-service--3">${en?'Connected tools':'Outils connectés'}</span>
+        <button class="rb-hero-side rb-hero-side--intl" type="button" aria-expanded="false">
+          <small>INTERNATIONAL</small>
+          <strong>${en?'International groups':'Groupes internationaux'}</strong>
+          <span>${en?'HQ · subsidiaries · market entry':'Sièges · filiales · implantation'}</span>
+          <em class="rb-hero-side__hint">${en?'Hover to see services':'Survolez pour voir les missions'}</em>
+          <span class="rb-hero-side__missions">
+            <span class="rb-hero-mission">${en?'France market entry':'Implantation en France'}</span>
+            <span class="rb-hero-mission">${en?'French GAAP & VAT':'French GAAP & TVA'}</span>
+            <span class="rb-hero-mission">${en?'French payroll':'Paie française'}</span>
+            <span class="rb-hero-mission">Reporting FR / EN</span>
+          </span>
+        </button>
+        <span class="rb-hero-service rb-hero-service--1">${en?'Accounting':'Comptabilité'}</span>
+        <span class="rb-hero-service rb-hero-service--2">${en?'Tax & VAT':'Fiscalité & TVA'}</span>
+        <span class="rb-hero-service rb-hero-service--3">${en?'Payroll':'Paie'}</span>
         <span class="rb-hero-service rb-hero-service--4">Reporting FR / EN</span>
         <span class="rb-hero-caption">${en?'French expertise · international reflexes':'Expertise française · réflexes internationaux'}</span>
       </div>`;
-  }
 
+    box.querySelectorAll('.rb-hero-side').forEach(side=>{
+      side.addEventListener('click',()=>{
+        const open=!side.classList.contains('is-open');
+        box.querySelectorAll('.rb-hero-side').forEach(other=>{
+          other.classList.remove('is-open');
+          other.setAttribute('aria-expanded','false');
+        });
+        if(open){
+          side.classList.add('is-open');
+          side.setAttribute('aria-expanded','true');
+        }
+      });
+    });
+  }
   let revealObserver;
   function setupReveals(){
     document.querySelectorAll('.rb-home-reveal').forEach(el=>{
