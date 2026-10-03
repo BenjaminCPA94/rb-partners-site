@@ -1,170 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="card.fiscalite.title">Fiscalité française & internationale — RB Partners</title>
-<meta name="description" content="Optimisation et sécurisation de votre stratégie fiscale, conventions internationales, TVA et prix de transfert : l'expertise fiscale de RB Partners.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiscalité française & internationale — RB Partners</title>
+<meta name="description" content="Fiscalité des entreprises, TVA, impôt sur les sociétés, flux internationaux, contrôles et calendrier fiscal : RB Partners sécurise les obligations fiscales en France.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="mission-page mission-page--rewrite">
+<header class="header" id="header"><div class="container header__inner">
+<a href="../index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="../index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33624126769" class="topbar__item">06 24 12 67 69</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
   </div>
-</div>
+</section>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="../index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
+<section class="section mission-scope"><div class="container">
+  <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+  <div class="mission-scope-grid"></div>
+</div></section>
 
-    <nav class="nav" id="nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
+<section class="section mission-promise"><div class="container">
+  <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+  <div class="mission-promise-grid"></div>
+</div></section>
 
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33624126769" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 24 12 67 69</span></span>
-        </a>
-        <a href="tel:+33761534670" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>07 61 53 46 70</span></span>
-        </a>
-      </div>
-    </div>
+<section class="section mission-process"><div class="container">
+  <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+  <div class="mission-process-grid"></div>
+</div></section>
 
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
+<section class="section mission-situations"><div class="container mission-situations__grid">
+  <div><p class="eyebrow" data-copy="engagementEye"></p><h2 data-copy="engagementTitle"></h2></div>
+  <div class="mission-engagement"><strong data-copy="engagementValue"></strong><p data-copy="engagementText"></p></div>
+</div></section>
 
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
+<section class="section mission-faq"><div class="container faq-wrap">
+  <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+  <div class="faq-list mission-faq-list"></div>
+</div></section>
 
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<section class="expertise-cta mission-final"><div class="container">
+  <h2 data-copy="finalTitle"></h2><p data-copy="finalText"></p>
+  <div class="mission-final__actions">
+    <a class="btn btn--primary" href="../index.html#v4-booking" data-copy="finalCta"></a>
+    <a class="btn btn--ghost" href="mailto:contact@rb-partners.fr" data-copy="finalCtaSecondary"></a>
   </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
-  <div class="container">
-    <ol>
-      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
-      <li aria-current="page" data-i18n="card.fiscalite.title">Fiscalité française & internationale</li>
-    </ol>
-  </div>
-</nav>
-
-<main>
-
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
-      <h1 data-i18n="card.fiscalite.title">Fiscalité française & internationale</h1>
-      <p data-i18n="exp.fiscalite.subtitle">Sécuriser votre stratégie fiscale en France et dans vos relations avec l'étranger, sans surprise ni improvisation.</p>
-    </div>
-  </section>
-
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n="exp.fiscalite.intro1">
-          La fiscalité française est dense et évolutive ; dès qu'une dimension internationale s'ajoute, la
-          complexité augmente encore. Notre rôle est de vous permettre de vous concentrer sur votre activité en
-          prenant en charge vos obligations déclaratives et en anticipant les points de vigilance propres à votre
-          situation.
-        </p>
-        <p data-i18n="exp.fiscalite.intro2">
-          Pour les entreprises ayant des flux ou des implantations à l'étranger, nous analysons l'application des
-          conventions fiscales internationales, la gestion de la TVA intracommunautaire et, le cas échéant, la
-          documentation de vos prix de transfert entre entités liées.
-        </p>
-        <p data-i18n="exp.fiscalite.intro3">
-          En cas de contrôle fiscal, nous vous accompagnons dans la préparation des échanges avec l'administration
-          et la constitution des dossiers justificatifs.
-        </p>
-      </div>
-
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="services.title">Nos services clés</h2>
-        <ul class="checklist">
-          <li data-i18n="exp.fiscalite.services.0">Déclarations fiscales (IS, TVA, CFE/CVAE, liasse fiscale)</li>
-          <li data-i18n="exp.fiscalite.services.1">Optimisation et sécurisation de la stratégie fiscale</li>
-          <li data-i18n="exp.fiscalite.services.2">Conventions fiscales internationales et prévention de la double imposition</li>
-          <li data-i18n="exp.fiscalite.services.3">TVA intracommunautaire et internationale</li>
-          <li data-i18n="exp.fiscalite.services.4">Prix de transfert et documentation associée</li>
-          <li data-i18n="exp.fiscalite.services.5">Assistance en cas de contrôle fiscal</li>
-        </ul>
-      </aside>
-    </div>
-
-    <div class="container expertise-nav">
-      <a href="../index.html#expertises">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="exp.back">Retour aux expertises</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="exp.fiscalite.cta_title">Une question fiscale, franco-française ou internationale ?</h2>
-      <p data-i18n="exp.fiscalite.cta_text">Parlons de votre situation avant qu'elle ne devienne une contrainte.</p>
-      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+</div></section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={
+"fr":{
+"metaTitle":"Fiscalité française & internationale — RB Partners",
+"metaDescription":"Fiscalité des entreprises, TVA, impôt sur les sociétés, flux internationaux, contrôles et calendrier fiscal : RB Partners sécurise les obligations fiscales en France.",
+"eyebrow":"Fiscalité","title":"Des obligations fiscales sécurisées, un calendrier lisible et moins de surprises.","lead":"Nous organisons la fiscalité courante de votre entreprise, anticipons les échéances et traitons les sujets liés aux flux internationaux lorsque votre activité dépasse le cadre français. L’objectif : savoir ce qui doit être déclaré, quand, sur quelle base et avec quels justificatifs.","cta":"Parler à un associé",
+"proofs":["TVA & déclarations","Impôt sur les sociétés","Flux internationaux","Contrôles & justificatifs"],
+"scopeEye":"Ce que nous faisons","scopeTitle":"De la fiscalité courante aux sujets transfrontaliers.","scopeLead":"Nous adaptons le périmètre au fonctionnement de votre société, à ses flux et aux opérations qui nécessitent une analyse spécifique.",
+"scope":[["TVA & obligations courantes","Préparation et suivi des déclarations de TVA et des principales obligations fiscales applicables à votre société, avec un calendrier partagé."],["Impôt sur les sociétés","Acomptes, solde, liasse fiscale et suivi des éléments nécessaires à la détermination du résultat fiscal."],["Flux internationaux","Analyse des principaux flux transfrontaliers, TVA intracommunautaire ou internationale et coordination avec les conseils étrangers lorsque nécessaire."],["Prix de transfert & intragroupe","Identification des flux entre sociétés liées, collecte des éléments utiles et coordination de la documentation lorsque la situation le requiert."],["Contrôle fiscal & demandes de l'administration","Préparation des pièces, reconstitution des éléments demandés et accompagnement dans l'organisation des réponses relevant de notre mission."]],
+"promiseEye":"Pour qui","promiseTitle":"La fiscalité dépend d’abord de votre réalité opérationnelle.","promiseLead":"Une PME française, une filiale internationale et une société avec des flux transfrontaliers n’ont pas les mêmes points de vigilance.",
+"promises":[["PME française","Nous sécurisons les déclarations récurrentes, le calendrier fiscal et les sujets qui apparaissent au fil des opérations de l’entreprise."],["Filiale française d’un groupe étranger","Nous faisons le lien entre les obligations fiscales françaises, les calendriers du groupe et les flux intragroupe à documenter ou expliquer."],["Entreprise avec activité internationale","Nous examinons les principaux flux et coordonnons les sujets locaux avec vos conseils dans les autres juridictions lorsque le dossier l’exige."]],
+"processEye":"Notre méthode","processTitle":"Un calendrier fiscal qui part des opérations réelles.","processLead":"Nous distinguons les obligations récurrentes des opérations ponctuelles pour éviter que les sujets importants arrivent trop tard.",
+"process":[["Cartographier","Nous identifions l’activité, les régimes applicables, les flux, les entités liées et les principales échéances."],["Planifier","Nous construisons le calendrier des déclarations, acomptes, clôtures et informations à réunir."],["Préparer & contrôler","Nous préparons les déclarations et contrôlons la cohérence des données comptables et fiscales nécessaires."],["Expliquer & documenter","Nous vous signalons les points d’attention, conservons les justificatifs utiles et cadrons les sujets nécessitant une analyse complémentaire."]],
+"engagementEye":"Notre approche","engagementTitle":"Anticiper avant que la fiscalité ne devienne une urgence.","engagementValue":"Calendrier","engagementText":"Les échéances récurrentes sont identifiées en amont et intégrées au fonctionnement du dossier. Lorsqu’une opération inhabituelle apparaît, nous la traitons séparément plutôt que de la découvrir au moment de la déclaration ou de la clôture.",
+"faqTitle":"Questions fréquentes","faq":[["Pouvez-vous gérer toutes les déclarations fiscales courantes ?","Nous prenons en charge les déclarations incluses dans la lettre de mission et définissons clairement le calendrier et les responsabilités de chacun."],["Accompagnez-vous les sociétés avec des flux internationaux ?","Oui. Nous pouvons traiter le volet français des flux transfrontaliers et nous coordonner avec les conseils étrangers lorsque leur intervention est nécessaire."],["Pouvez-vous reprendre un dossier avec des déclarations en retard ou des points ouverts ?","Oui. Nous commençons par identifier les périodes concernées, les déclarations déjà déposées, les paiements effectués et les éléments manquants afin de prioriser les régularisations."],["Que se passe-t-il en cas de demande de l’administration fiscale ?","Nous organisons les éléments disponibles, analysons la demande dans le cadre de notre mission et préparons avec vous les informations nécessaires. Les sujets contentieux ou nécessitant une expertise juridique spécifique peuvent être coordonnés avec un avocat fiscaliste."],["Pouvez-vous travailler avec notre équipe finance ou notre maison mère ?","Oui. Nous pouvons organiser les échanges avec une direction financière française ou étrangère et adapter les restitutions au calendrier du groupe."]],
+"finalTitle":"Faisons le point sur votre organisation fiscale.","finalText":"Un premier échange permet d’identifier vos principales obligations, vos échéances, les flux à surveiller et les éventuels sujets ouverts avant de définir le bon périmètre d’accompagnement.","finalCta":"Présenter votre situation","finalCtaSecondary":"Écrire à RB Partners",
+"questions":["Mes déclarations sont-elles alignées avec ma comptabilité et mes flux réels ?","Qui suit les acomptes, soldes et autres échéances fiscales de l’année ?","Quels flux internationaux nécessitent une analyse ou une documentation spécifique ?","Comment reprendre un dossier lorsqu’il existe des déclarations ou demandes encore ouvertes ?"],
+"deliverables":[["Calendrier fiscal","Une vue claire des déclarations, acomptes, soldes et dates de clôture relevant de votre dossier."],["Déclarations préparées","Les déclarations incluses dans la mission sont préparées à partir de données comptables contrôlées."],["Points d’attention","Les opérations inhabituelles ou zones d’incertitude sont identifiées et traitées séparément."],["Dossier documentaire","Les principaux justificatifs utiles aux déclarations et contrôles sont organisés avec le dossier."],["Coordination internationale","Lorsque nécessaire, nous faisons le lien entre le volet français et vos conseils ou équipes à l’étranger."]],
+"lanes":[["Entreprise française","Fiscalité courante, TVA, IS et suivi des opérations qui affectent directement la société en France."],["Groupe international","Obligations françaises, flux intragroupe, calendrier du siège et coordination avec les intervenants étrangers."]],
+"questionsEye":"Vos enjeux","questionsTitle":"Vous vous posez peut-être ces questions.","questionsLead":"Nous partons de vos opérations et de votre calendrier avant de parler de technique.","deliverablesEye":"Concrètement","deliverablesTitle":"Ce que vous obtenez, pas seulement ce que nous faisons.","lanesEye":"France & international","lanesTitle":"Le même cadre français, des flux très différents."
+},
+"en":{
+"metaTitle":"French tax compliance & international tax coordination — RB Partners",
+"metaDescription":"French corporate tax, VAT, recurring filings, cross-border flows, tax audits and compliance calendars for SMEs and international groups operating in France.",
+"eyebrow":"French tax","title":"Controlled tax compliance, a clear calendar and fewer surprises.","lead":"We organise your recurring French tax obligations, anticipate deadlines and address cross-border matters when your business extends beyond France. The objective is simple: know what must be filed, when, on which basis and with which supporting information.","cta":"Speak with a partner",
+"proofs":["VAT & filings","Corporate tax","Cross-border flows","Audit support"],
+"scopeEye":"What we do","scopeTitle":"From recurring French tax to cross-border matters.","scopeLead":"The scope is adapted to your company, transactions and any operations requiring separate analysis.",
+"scope":[["VAT & recurring obligations","Preparation and monitoring of VAT returns and the main recurring French tax obligations applicable to your company, with a shared calendar."],["Corporate income tax","Instalments, final balance, French tax return and follow-up of the information required to determine taxable profit."],["Cross-border flows","Review of key cross-border transactions, EU and international VAT issues and coordination with foreign advisers where necessary."],["Transfer pricing & intercompany","Identification of related-party flows, collection of supporting information and coordination of documentation where required."],["Tax audits & authority requests","Organisation of supporting documents, reconstruction of requested information and assistance with responses within our engagement scope."]],
+"promiseEye":"Who we support","promiseTitle":"Tax compliance starts with how the business actually operates.","promiseLead":"A French SME, an international subsidiary and a company with cross-border flows do not face the same issues.",
+"promises":[["French SME","We secure recurring filings, the tax calendar and issues arising from day-to-day business operations."],["French subsidiary of an international group","We connect French tax obligations with group calendars and the intercompany flows that need to be documented or explained."],["Business with international activity","We review key flows and coordinate French matters with advisers in other jurisdictions where the file requires it."]],
+"processEye":"How we work","processTitle":"A tax calendar built around real operations.","processLead":"Recurring filings and one-off transactions are handled separately so important issues are not discovered too late.",
+"process":[["Map","We identify the activity, tax regimes, flows, related entities and main filing deadlines."],["Plan","We build the calendar for filings, instalments, year-end work and information to be collected."],["Prepare & review","We prepare filings and review the consistency of the accounting and tax data used."],["Explain & document","We flag attention points, organise useful supporting documents and frame matters requiring further analysis."]],
+"engagementEye":"Our approach","engagementTitle":"Anticipate before tax becomes an emergency.","engagementValue":"Calendar","engagementText":"Recurring deadlines are identified in advance and built into the operating rhythm. Unusual transactions are handled separately rather than discovered at filing or year-end.",
+"faqTitle":"Frequently asked questions","faq":[["Can you handle our recurring French tax filings?","We handle the filings included in the engagement letter and clearly define the calendar and responsibilities."],["Do you support companies with cross-border flows?","Yes. We can handle the French side of cross-border transactions and coordinate with foreign advisers where their input is needed."],["Can you take over a file with late filings or open tax matters?","Yes. We first identify the periods concerned, filings already submitted, payments made and missing information in order to prioritise corrective work."],["What happens if the French tax authorities contact us?","We organise the available information, review the request within our engagement scope and prepare the required information with you. Disputes or legal matters can be coordinated with a tax lawyer."],["Can you work directly with our finance team or headquarters?","Yes. We can work with French or foreign finance teams and align reporting with the group calendar."]],
+"finalTitle":"Let’s review your French tax organisation.","finalText":"A first conversation helps identify your recurring obligations, deadlines, key flows and any open matters before defining the right scope of support.","finalCta":"Discuss your situation","finalCtaSecondary":"Email RB Partners",
+"questions":["Are our filings aligned with our accounting and actual transactions?","Who is monitoring instalments, balances and recurring French tax deadlines?","Which international flows require specific analysis or documentation?","How do we take over a file with open filings or authority requests?"],
+"deliverables":[["Tax calendar","A clear view of the filings, instalments, balances and closing dates within your scope."],["Prepared filings","Filings included in the engagement are prepared from reviewed accounting information."],["Attention points","Unusual transactions and areas of uncertainty are identified and handled separately."],["Supporting file","Key documents supporting filings and reviews are organised with the file."],["International coordination","Where necessary, we connect the French tax work with foreign advisers or head-office teams."]],
+"lanes":[["French business","Recurring tax, VAT, corporate income tax and transactions directly affecting the French company."],["International group","French obligations, intercompany flows, head-office calendars and coordination with foreign stakeholders."]],
+"questionsEye":"Your challenges","questionsTitle":"You may be asking these questions.","questionsLead":"We start with your transactions and calendar before talking about technical rules.","deliverablesEye":"In practice","deliverablesTitle":"What you receive, not only what we do.","lanesEye":"France & international","lanesTitle":"The same French framework, very different flows."
+}
+};</script>
+<script src="../js/i18n.js"></script><script src="../js/main.js"></script><script src="../js/mission-page.js"></script>
+</body></html>
