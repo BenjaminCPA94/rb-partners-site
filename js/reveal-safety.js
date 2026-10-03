@@ -26,9 +26,15 @@
       observer.observe(el);
     });
 
-    // Safety net: animations must never leave actual content invisible.
+    // Safety net: never leave content in the current viewport invisible,
+    // while preserving the progressive reveal for sections further down the page.
     window.setTimeout(()=>{
-      nodes.forEach(el=>el.classList.add('is-visible'));
+      nodes.forEach(el=>{
+        if(el.classList.contains('is-visible')) return;
+        const rect=el.getBoundingClientRect();
+        const nearViewport=rect.top<=window.innerHeight*1.15 && rect.bottom>=-120;
+        if(nearViewport) el.classList.add('is-visible');
+      });
     },1400);
   }
 
