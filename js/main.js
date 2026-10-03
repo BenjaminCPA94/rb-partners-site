@@ -29,6 +29,11 @@
   seoEnhanceCss.href = `${base}css/seo-enhance.css`;
   document.head.appendChild(seoEnhanceCss);
 
+  const internationalEnhanceCss = document.createElement('link');
+  internationalEnhanceCss.rel = 'stylesheet';
+  internationalEnhanceCss.href = `${base}css/international-enhance.css`;
+  document.head.appendChild(internationalEnhanceCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -55,6 +60,10 @@
       const seoEnhance = document.createElement('script');
       seoEnhance.src = `${base}js/seo-enhance.js`;
       document.head.appendChild(seoEnhance);
+
+      const internationalEnhance = document.createElement('script');
+      internationalEnhance.src = `${base}js/international-enhance.js`;
+      document.head.appendChild(internationalEnhance);
     };
     document.head.appendChild(polish);
   };
