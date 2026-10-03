@@ -131,11 +131,11 @@
     const en=lang()==='en';
 
     partnerHead.innerHTML=`
-      <p class="eyebrow">${en?'Contact':'Contact'}</p>
-      <h2>${en?'Let’s talk about your project.':'Parlons de votre projet.'}</h2>
+      <p class="eyebrow">${en?'Ready to move forward?':'Prêt à avancer ?'}</p>
+      <h2>${en?'A first conversation can change everything.':'Un premier échange peut tout changer.'}</h2>
       <p>${en
-        ? 'Accounting, tax, payroll or a France market-entry project? Speak directly with Rachel or Benjamin, depending on your needs.'
-        : 'Comptabilité, fiscalité, paie ou projet d’implantation en France ? Échangez directement avec Rachel ou Benjamin selon votre besoin.'}</p>`;
+        ? 'Tell us what you need. Rachel or Benjamin will speak with you directly and point you toward the right support.'
+        : 'Parlez-nous de votre besoin. Rachel ou Benjamin échange directement avec vous et vous oriente vers le bon accompagnement.'}</p>`;
 
     const eyebrow=contactText.querySelector('.eyebrow');
     const title=contactText.querySelector('h2');
