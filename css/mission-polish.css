@@ -397,9 +397,10 @@ body:not(.mission-page) .rb-review-viewport{
 }
 body:not(.mission-page) .rb-review-track{
   gap:16px;
-  padding-left:16px;
-  padding-right:16px;
+  padding-left:0;
+  padding-right:0;
   will-change:transform;
+  animation-duration:34s;
 }
 
 @media(max-width:600px){
