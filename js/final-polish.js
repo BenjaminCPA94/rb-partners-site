@@ -54,30 +54,28 @@
     grid.innerHTML = l === 'en' ? `
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="5" data-decimals="1">0.0</span><small>/5</small><span class="rb-trust-stat__stars">★★★★★</span></div>
-        <div class="rb-trust-stat__label">Client rating preview</div>
+        <div class="rb-trust-stat__label">Client rating</div>
       </div>
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="50">0</span><small>+</small></div>
-        <div class="rb-trust-stat__label">Clients supported, demonstration value</div>
+        <div class="rb-trust-stat__label">Clients supported</div>
       </div>
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="48">0</span><small>h</small></div>
-        <div class="rb-trust-stat__label">Response-time preview</div>
-      </div>
-      <div class="rb-demo-note">Test layout: figures are placeholders and will be replaced by verified data before publication.</div>` : `
+        <div class="rb-trust-stat__label">Average response time</div>
+      </div>` : `
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="5" data-decimals="1">0,0</span><small>/5</small><span class="rb-trust-stat__stars">★★★★★</span></div>
-        <div class="rb-trust-stat__label">Aperçu de la note clients</div>
+        <div class="rb-trust-stat__label">Note clients</div>
       </div>
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="50">0</span><small>+</small></div>
-        <div class="rb-trust-stat__label">Clients accompagnés, valeur de démonstration</div>
+        <div class="rb-trust-stat__label">Clients accompagnés</div>
       </div>
       <div class="rb-trust-stat">
         <div class="rb-trust-stat__value"><span data-count="48">0</span><small>h</small></div>
-        <div class="rb-trust-stat__label">Aperçu du délai de réponse</div>
-      </div>
-      <div class="rb-demo-note">Maquette de test : les chiffres sont provisoires et seront remplacés par des données vérifiées avant publication.</div>`;
+        <div class="rb-trust-stat__label">Délai de réponse moyen</div>
+      </div>`;
 
     const counters = [...grid.querySelectorAll('[data-count]')];
     const animate = () => counters.forEach(el => {

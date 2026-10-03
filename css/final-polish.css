@@ -89,14 +89,6 @@ body:not(.mission-page) #contact {
   line-height: 1.45;
   max-width: 310px;
 }
-.rb-demo-note {
-  grid-column: 1 / -1;
-  padding: 8px 34px 11px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  color: rgba(255,255,255,.40);
-  font-size: .68rem;
-  letter-spacing: .02em;
-}
 
 /* Review mockup: clearly marked as demo until real Google reviews are connected. */
 .rb-reviews-demo {
