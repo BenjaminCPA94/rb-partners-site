@@ -64,6 +64,10 @@
       const internationalEnhance = document.createElement('script');
       internationalEnhance.src = `${base}js/international-enhance.js`;
       document.head.appendChild(internationalEnhance);
+
+      const revealSafety = document.createElement('script');
+      revealSafety.src = `${base}js/reveal-safety.js`;
+      document.head.appendChild(revealSafety);
     };
     document.head.appendChild(polish);
   };
