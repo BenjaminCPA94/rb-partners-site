@@ -140,11 +140,16 @@
     const eyebrow=contactText.querySelector('.eyebrow');
     const title=contactText.querySelector('h2');
     const lead=contactText.querySelector('p.text--light-muted');
-    if(eyebrow) eyebrow.textContent=en?'Write to us':'Nous écrire';
+    if(eyebrow) eyebrow.remove();
     if(title) title.textContent=en?'Prefer to send us a message?':'Vous préférez nous écrire ?';
     if(lead) lead.textContent=en
       ? 'Use the form or contact us directly by phone or email. We will come back to you as soon as possible.'
       : 'Utilisez le formulaire ou contactez-nous directement par téléphone ou par e-mail. Nous vous répondrons rapidement.';
+
+    document.querySelectorAll('#partner-home .partner-contact__card a, #partner-home .partner-contact__card button').forEach(action=>{
+      const label=(action.textContent||'').trim().replace(/\s+/g,' ');
+      if(/^(Écrire|Ecrire|Write)\s+(Rachel|Benjamin)$/i.test(label)) action.remove();
+    });
   }
 
   function refresh(){
