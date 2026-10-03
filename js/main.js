@@ -34,6 +34,11 @@
   internationalEnhanceCss.href = `${base}css/international-enhance.css`;
   document.head.appendChild(internationalEnhanceCss);
 
+  const homepagePolishCss = document.createElement('link');
+  homepagePolishCss.rel = 'stylesheet';
+  homepagePolishCss.href = `${base}css/homepage-polish.css`;
+  document.head.appendChild(homepagePolishCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -68,6 +73,10 @@
       const revealSafety = document.createElement('script');
       revealSafety.src = `${base}js/reveal-safety.js`;
       document.head.appendChild(revealSafety);
+
+      const homepagePolish = document.createElement('script');
+      homepagePolish.src = `${base}js/homepage-polish.js`;
+      document.head.appendChild(homepagePolish);
     };
     document.head.appendChild(polish);
   };
