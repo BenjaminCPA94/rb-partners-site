@@ -25,6 +25,16 @@
         ["Créer une entreprise en France","Structurer, immatriculer et démarrer dans de bonnes conditions.","../creation-entreprise-france.html"],
         ["Expert-comptable start-up","Structuration et accompagnement après la création.","../expert-comptable-startup.html"],
         ["Implantation en France","Filiale, succursale et organisation locale.","../expert-comptable-international.html"]
+      ],
+      tax: [
+        ["Expert-comptable international","Fiscalité française, flux transfrontaliers et coordination groupe.","../expert-comptable-international.html"],
+        ["Expert-comptable pour PME","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
+        ["Comptabilité & reporting","Des données fiables pour préparer déclarations, clôture et reporting.","comptabilite.html"]
+      ],
+      implant: [
+        ["Expert-comptable international","L’accompagnement global des groupes étrangers en France.","../expert-comptable-international.html"],
+        ["Créer une entreprise en France","Structurer et immatriculer une société française.","../creation-entreprise-france.html"],
+        ["Social & RH","Mettre en place la paie et les premiers processus sociaux en France.","social-paie.html"]
       ]
     },
     en: {
@@ -47,6 +57,16 @@
         ["Create a company in France","Structure, register and launch on solid foundations.","../creation-entreprise-france.html"],
         ["Accountant for start-ups","Structuring and support after incorporation.","../expert-comptable-startup.html"],
         ["Setting up in France","Subsidiary, branch and local operating setup.","../expert-comptable-international.html"]
+      ],
+      tax: [
+        ["International accountant","French tax, cross-border flows and group coordination.","../expert-comptable-international.html"],
+        ["Accountant for SMEs","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
+        ["Accounting & reporting","Reliable data for filings, closings and reporting.","comptabilite.html"]
+      ],
+      implant: [
+        ["International accountant","End-to-end support for foreign groups operating in France.","../expert-comptable-international.html"],
+        ["Create a company in France","Structure and register a French company.","../creation-entreprise-france.html"],
+        ["Payroll & HR","Set up French payroll and first local HR processes.","social-paie.html"]
       ]
     }
   };
@@ -57,6 +77,8 @@
     if (path.includes('conseil-gestion')) return 'management';
     if (path.includes('social-paie')) return 'payroll';
     if (path.includes('creation-juridique')) return 'legal';
+    if (path.includes('fiscalite')) return 'tax';
+    if (path.includes('implantation-france')) return 'implant';
     return null;
   }
 
