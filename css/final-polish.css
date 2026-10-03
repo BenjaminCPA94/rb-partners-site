@@ -1,0 +1,316 @@
+/* RB Partners — final visual polish for the test branch */
+
+/* Long-form copy can stay justified; compact cards should never stretch words. */
+.hero__lead,
+.v2-founders-head .section__lead,
+.v8-path-head .section__lead,
+.v8-int-copy > p,
+.v5-modern-intro > p,
+.partner-contact__head > p,
+#v2-faq .faq-item p,
+#contact .split__text > p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.v5-modern-card p,
+.v6-proof-card p,
+.v2-path p,
+.partner-contact__card p,
+.v4-process-step p,
+.trust-strip p,
+.rb-review-card p,
+.rb-booking-modal p {
+  text-align: left !important;
+  text-justify: auto !important;
+}
+
+/* Keep the four differentiator numbers consistent with their gold labels. */
+.v5-modern-card-top > span {
+  color: var(--gold-400, #d5ad59) !important;
+  opacity: 1 !important;
+}
+
+/* Slightly tighter vertical rhythm on the homepage. */
+body:not(.mission-page) #v4-reviews,
+body:not(.mission-page) #v2-faq,
+body:not(.mission-page) .partner-section,
+body:not(.mission-page) #contact {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+/* Reassurance / animated proof strip */
+.rb-trust-band {
+  background: #071426;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.09);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+.rb-trust-band__inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.rb-trust-stat {
+  min-height: 155px;
+  padding: 30px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(255,255,255,.10);
+}
+.rb-trust-stat:last-child { border-right: 0; }
+.rb-trust-stat__value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: var(--font-body, Inter, sans-serif);
+  font-size: clamp(2.45rem, 4vw, 3.7rem);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+.rb-trust-stat__value small {
+  font-size: .45em;
+  letter-spacing: 0;
+  color: #fff;
+}
+.rb-trust-stat__stars {
+  color: var(--gold-400, #d5ad59);
+  font-size: .42em;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.rb-trust-stat__label {
+  color: rgba(255,255,255,.68);
+  font-size: .79rem;
+  line-height: 1.45;
+  max-width: 310px;
+}
+.rb-demo-note {
+  grid-column: 1 / -1;
+  padding: 8px 34px 11px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.40);
+  font-size: .68rem;
+  letter-spacing: .02em;
+}
+
+/* Review mockup: clearly marked as demo until real Google reviews are connected. */
+.rb-reviews-demo {
+  overflow: hidden;
+  background: #fff;
+}
+.rb-reviews-demo__head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+.rb-reviews-demo__head h2 { margin-bottom: 0; }
+.rb-reviews-demo__tag {
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--gray-600);
+  font-size: .72rem;
+  background: var(--cream);
+}
+.rb-review-viewport {
+  overflow: hidden;
+  margin-left: max(0px, calc((100vw - 1240px) / 2));
+}
+.rb-review-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  padding: 4px 0 12px;
+  animation: rbReviewScroll 38s linear infinite;
+}
+.rb-review-viewport:hover .rb-review-track { animation-play-state: paused; }
+.rb-review-card {
+  width: min(390px, calc(100vw - 48px));
+  min-height: 205px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 9px 28px rgba(8,20,38,.045);
+}
+.rb-review-card__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+.rb-review-card__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #eef1f5;
+  color: var(--navy-900);
+  font-weight: 700;
+  font-size: .82rem;
+}
+.rb-review-card__identity strong { display: block; color: var(--navy-950); font-size: .9rem; }
+.rb-review-card__identity span { color: var(--gray-600); font-size: .72rem; }
+.rb-review-card__stars { color: #e8b64b; letter-spacing: .05em; margin-bottom: 10px; }
+.rb-review-card p { margin: 0; color: var(--gray-700); font-size: .88rem; line-height: 1.65; }
+@keyframes rbReviewScroll { to { transform: translateX(calc(-50% - 8px)); } }
+
+/* Booking modal prepared for Calendly integration. */
+.rb-booking-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(4,14,28,.74);
+  backdrop-filter: blur(7px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+.rb-booking-backdrop.is-open { opacity: 1; visibility: visible; }
+.rb-booking-modal {
+  width: min(980px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 28px 90px rgba(0,0,0,.26);
+  transform: translateY(12px) scale(.985);
+  transition: transform .22s ease;
+}
+.rb-booking-backdrop.is-open .rb-booking-modal { transform: none; }
+.rb-booking-side {
+  padding: 34px;
+  background: #f6f3ed;
+  border-right: 1px solid var(--border);
+}
+.rb-booking-side .eyebrow { margin-bottom: 8px; }
+.rb-booking-side h2 { margin: 0 0 10px; font-size: 1.8rem; }
+.rb-booking-side > p { margin-bottom: 24px; color: var(--gray-700); font-size: .9rem; line-height: 1.6; }
+.rb-booking-persons { display: grid; gap: 10px; }
+.rb-booking-person {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: #fff;
+  color: var(--navy-950);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.rb-booking-person.is-selected { border-color: var(--gold-500); box-shadow: inset 0 0 0 1px var(--gold-500); }
+.rb-booking-person img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+.rb-booking-person strong { display: block; font-size: .88rem; }
+.rb-booking-person span { display: block; margin-top: 2px; color: var(--gray-600); font-size: .72rem; }
+.rb-booking-main { position: relative; padding: 34px 38px 36px; }
+.rb-booking-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy-950);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.rb-booking-title { padding-right: 44px; margin-bottom: 22px; }
+.rb-booking-title small { display: block; color: var(--gold-600); font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 7px; }
+.rb-booking-title h3 { margin: 0 0 7px; font-size: 1.35rem; }
+.rb-booking-title p { margin: 0; color: var(--gray-600); font-size: .84rem; }
+.rb-booking-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; }
+.rb-calendar { border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+.rb-calendar__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.rb-calendar__head strong { color: var(--navy-950); font-size: .9rem; }
+.rb-calendar__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.rb-calendar__grid span { text-align: center; color: var(--gray-500); font-size: .67rem; padding: 4px 0; }
+.rb-calendar__grid button {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--navy-900);
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+}
+.rb-calendar__grid button:hover,
+.rb-calendar__grid button.is-selected { background: #f3ead9; color: var(--navy-950); }
+.rb-calendar__grid button[disabled] { color: #c7ccd3; cursor: default; background: transparent; }
+.rb-time-panel h4 { margin: 0 0 11px; color: var(--navy-950); font-size: .9rem; }
+.rb-time-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.rb-time-list button {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 11px 8px;
+  background: #fff;
+  color: var(--navy-900);
+  font: inherit;
+  font-size: .8rem;
+  cursor: pointer;
+}
+.rb-time-list button:hover,
+.rb-time-list button.is-selected { border-color: var(--gold-500); background: #fbf7ef; }
+.rb-booking-placeholder {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f7f8fa;
+  color: var(--gray-600);
+  font-size: .74rem;
+  line-height: 1.5;
+}
+body.rb-modal-open { overflow: hidden; }
+
+@media (max-width: 820px) {
+  .rb-trust-band__inner { grid-template-columns: 1fr; }
+  .rb-trust-stat { min-height: 118px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.10); }
+  .rb-trust-stat:nth-child(3) { border-bottom: 0; }
+  .rb-reviews-demo__head { align-items: flex-start; flex-direction: column; }
+  .rb-booking-backdrop { padding: 0; }
+  .rb-booking-modal { width: 100%; height: 100vh; max-height: none; border-radius: 0; grid-template-columns: 1fr; }
+  .rb-booking-side { padding: 24px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .rb-booking-side > p { margin-bottom: 14px; }
+  .rb-booking-persons { grid-template-columns: 1fr 1fr; }
+  .rb-booking-main { padding: 26px 22px 32px; }
+  .rb-booking-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .hero__lead,
+  .v2-founders-head .section__lead,
+  .v8-path-head .section__lead,
+  .v8-int-copy > p,
+  .v5-modern-intro > p,
+  .partner-contact__head > p,
+  #v2-faq .faq-item p,
+  #contact .split__text > p { text-align: left; }
+  .rb-booking-persons { grid-template-columns: 1fr; }
+  .rb-booking-side { padding: 20px; }
+  .rb-calendar__grid { gap: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-review-track { animation: none; }
+  .rb-booking-modal, .rb-booking-backdrop { transition: none; }
+}

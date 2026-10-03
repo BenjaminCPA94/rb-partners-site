@@ -1,169 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="card.social.title">Social & paie — RB Partners</title>
-<meta name="description" content="Bulletins de paie, gestion administrative du personnel et conformité au droit social français : l'expertise sociale de RB Partners.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social & RH — RB Partners</title>
+<meta name="description" content="Paie, déclarations sociales, embauches et administration RH : RB Partners sécurise la gestion sociale de votre entreprise.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="mission-page mission-page--rewrite">
+<header class="header" id="header"><div class="container header__inner">
+<a href="../index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="../index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
   </div>
-</div>
+</section>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="../index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33600000001" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
-        </a>
-        <a href="tel:+33600000002" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
-        </a>
-      </div>
-    </div>
-
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
-
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
+<section class="section mission-scope">
   <div class="container">
-    <ol>
-      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
-      <li aria-current="page" data-i18n="card.social.title">Social & paie</li>
-    </ol>
+    <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+    <div class="mission-scope-grid"></div>
   </div>
-</nav>
+</section>
 
-<main>
+<section class="section mission-promise">
+  <div class="container">
+    <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+    <div class="mission-promise-grid"></div>
+  </div>
+</section>
 
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
-      <h1 data-i18n="card.social.title">Social & paie</h1>
-      <p data-i18n="exp.social.subtitle">Une gestion sociale fiable et conforme, pour que vos équipes soient payées à temps et vos obligations respectées.</p>
+<section class="section mission-process">
+  <div class="container">
+    <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+    <div class="mission-process-grid"></div>
+  </div>
+</section>
+
+<section class="section mission-situations">
+  <div class="container mission-situations__grid">
+    <div><p class="eyebrow" data-copy="engagementEye"></p><h2 data-copy="engagementTitle"></h2></div>
+    <div class="mission-engagement">
+      <strong data-copy="engagementValue"></strong>
+      <p data-copy="engagementText"></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n-html="exp.social.intro1">
-          La gestion sociale ne tolère pas l'approximation&nbsp;: bulletins de paie, déclarations sociales et
-          contrats de travail doivent être exacts et transmis dans les délais. Nous prenons en charge l'ensemble de
-          ce processus pour vous libérer de sa technicité.
-        </p>
-        <p data-i18n-html="exp.social.intro2">
-          Au-delà de la production des bulletins, nous vous accompagnons sur les événements qui rythment la vie
-          d'une équipe&nbsp;: embauches, ruptures de contrat, avenants, ainsi que sur les obligations déclaratives
-          récurrentes comme la DSN.
-        </p>
-        <p data-i18n="exp.social.intro3">
-          Nous assurons également une veille sur les évolutions du droit social français, pour que vos pratiques
-          restent conformes sans que vous ayez à suivre chaque changement de réglementation.
-        </p>
-      </div>
+<section class="section mission-faq">
+  <div class="container faq-wrap">
+    <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+    <div class="faq-list mission-faq-list"></div>
+  </div>
+</section>
 
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="services.title">Nos services clés</h2>
-        <ul class="checklist">
-          <li data-i18n="exp.social.services.0">Établissement des bulletins de paie</li>
-          <li data-i18n="exp.social.services.1">Déclarations sociales nominatives (DSN)</li>
-          <li data-i18n="exp.social.services.2">Rédaction des contrats de travail et avenants</li>
-          <li data-i18n="exp.social.services.3">Gestion des entrées et sorties (DPAE, soldes de tout compte)</li>
-          <li data-i18n="exp.social.services.4">Veille et conformité au droit social français</li>
-          <li data-i18n="exp.social.services.5">Conseil en relations sociales et représentation du personnel</li>
-        </ul>
-      </aside>
+<section class="expertise-cta mission-final">
+  <div class="container">
+    <h2 data-copy="finalTitle"></h2>
+    <p data-copy="finalText"></p>
+    <div class="mission-final__actions">
+      <a class="btn btn--primary" href="../index.html#v4-booking" data-copy="finalCta"></a>
+      <a class="btn btn--ghost" href="mailto:contact@rb-partners.fr" data-copy="finalCtaSecondary"></a>
     </div>
-
-    <div class="container expertise-nav">
-      <a href="../index.html#expertises">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="exp.back">Retour aux expertises</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="exp.social.cta_title">Besoin de reprendre en main votre gestion sociale ?</h2>
-      <p data-i18n="exp.social.cta_text">Parlons de vos effectifs et de votre organisation actuelle.</p>
-      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={"fr":{"metaTitle":"Social & RH — RB Partners","metaDescription":"Paie, DSN, embauches, départs et administration sociale pour PME, filiales françaises et sociétés étrangères employant en France.","eyebrow":"Social & RH","title":"Paie et RH en France : sécuriser chaque salarié, chaque mois.","lead":"De la première embauche au départ d’un salarié, nous organisons la paie et l’administration sociale française : bulletins, DSN, contrats, affiliations, absences et événements. Votre équipe sait quoi transmettre, quand et à qui.","cta":"Parler à un associé","proofs":["Bulletins & DSN","Embauches","Départs","Administration sociale"],"scopeEye":"Ce que nous faisons","scopeTitle":"Les opérations sociales, mois après mois.","scopeLead":"Nous définissons le circuit des variables, les responsabilités et les pièces nécessaires pour chaque échéance.","scope":[["Paie & DSN","Production des bulletins, DSN mensuelles et événementielles, déclarations auprès de l’URSSAF et des caisses de retraite, selon la situation du dossier."],["Embauches","Préparation des éléments contractuels relevant de la mission, DPAE, collecte des données salarié et affiliations à la mutuelle et à la prévoyance."],["Départs & événements","Arrêts maladie, congés parentaux, changements de situation et sorties : solde de tout compte, certificat de travail et attestation France Travail."],["Administration sociale","Suivi du registre unique du personnel, des échéances sociales et des informations nécessaires aux obligations courantes de l’employeur."],["Sociétés étrangères & mobilité","Paie française d’équipes locales, employeurs étrangers sans établissement en France selon leur situation, mobilité ou détachement, avec restitutions possibles en anglais."]],"promiseEye":"Pour qui","promiseTitle":"Une organisation sociale adaptée à votre équipe.","promiseLead":"Le niveau d’accompagnement change selon vos effectifs, votre organisation interne et votre présence en France.","promises":[["Société qui recrute ses premiers salariés","Nous mettons en place le dossier social, le calendrier de paie, les affiliations et le circuit des variables. Les premières embauches sont intégrées dans un processus clair."],["PME dont l’équipe grandit","Nous structurons la collecte des variables, les absences et les événements salariés pour éviter les traitements dispersés. Le suivi tient compte de votre convention collective et de votre organisation RH."],["Société étrangère qui embauche en France","Nous mettons en place la paie et les obligations sociales françaises avec des échanges possibles en anglais. Les situations internationales complexes sont coordonnées avec les conseils spécialisés lorsque nécessaire."]],"processEye":"Notre méthode","processTitle":"Quatre étapes pour cadrer la paie.","processLead":"Une paie fiable commence par des données reprises et un calendrier compris par tous.","process":[["Reprendre le dossier social","Nous collectons les contrats, cumuls de paie, paramétrages, organismes, convention collective et données salariés utiles."],["Paramétrer","Nous contrôlons les informations du dossier, les affiliations et les règles de paie applicables à votre organisation."],["Produire chaque mois","Vous transmettez les variables selon le circuit convenu ; nous préparons les bulletins, contrôles et déclarations sociales."],["Suivre les événements","Embauches, absences, changements contractuels et départs sont intégrés au calendrier et traités avec les pièces nécessaires."]],"engagementEye":"Mise en avant","engagementTitle":"Un calendrier de paie connu à l’avance.","engagementValue":"Calendrier de paie","engagementText":"La date de transmission des variables et le calendrier de remise des bulletins sont définis avec vous au démarrage. Les événements exceptionnels sont signalés dès qu’ils surviennent afin d’être intégrés au bon cycle de paie.","faqTitle":"Questions fréquentes","faq":[["Pouvez-vous gérer la paie d’une filiale étrangère en France ?","Oui. Nous pouvons mettre en place et suivre la paie française d’une filiale ou d’une équipe locale. Les échanges avec la maison mère peuvent être réalisés en anglais. Les questions de mobilité internationale ou de droit du travail nécessitant une analyse spécialisée sont coordonnées avec les conseils compétents."],["Pouvez-vous reprendre une paie en cours d’année ?","Oui. Nous reprenons les données salariés, les cumuls de paie, les paramétrages et les déclarations disponibles. Un contrôle de reprise permet d’identifier les points à corriger ou à compléter avant le prochain cycle."],["Gérez-vous les contrats de travail ?","Nous pouvons préparer les documents courants relevant de notre mission et les éléments nécessaires à l’embauche. Lorsqu’une clause ou une situation requiert un conseil spécialisé en droit du travail, nous travaillons avec l’avocat de l’entreprise. Le périmètre est défini au démarrage."],["Comment déterminez-vous la convention collective applicable ?","Nous examinons l’activité de l’entreprise, son organisation et les informations disponibles. Lorsque l’identification nécessite une analyse juridique particulière, nous recommandons une validation avec un conseil spécialisé. La convention retenue conditionne ensuite plusieurs paramètres de paie."],["Comment vous transmettons-nous les variables de paie ?","Le circuit est défini lors de la mise en place du dossier. Les variables peuvent être centralisées dans l’outil collaboratif retenu ou selon un format convenu avec votre équipe. L’objectif est d’avoir une source identifiée et un calendrier stable."]],"finalTitle":"Organisons votre paie et vos échéances sociales.","finalText":"Un premier échange permet de passer en revue vos effectifs, votre convention collective, votre organisation actuelle et les événements que vous devez gérer.","finalCta":"Parler de votre paie","finalCtaSecondary":"Écrire à RB Partners","questions":["Je recrute mon premier salarié : par quoi dois-je commencer ?","Comment être sûr que la convention collective et les paramétrages de paie sont corrects ?","Qui gère les absences, entrées, sorties et documents obligatoires ?","Nous sommes une société étrangère : comment embaucher et payer correctement en France ?"],"deliverables":[["Calendrier de paie","Dates de collecte des variables, production, contrôle et remise des bulletins."],["Bulletins & DSN","Paie mensuelle, DSN et déclarations sociales selon votre dossier."],["Entrées salariés","DPAE, données d’embauche, affiliations et documents relevant de la mission."],["Suivi des événements","Absences, changements contractuels, arrêts, congés et sorties intégrés au bon cycle."],["Restitution RH","Échanges avec vos équipes RH / finance et, pour les groupes étrangers, restitutions possibles en anglais."]],"lanes":[["Employeur français","Nous structurons la paie autour de votre convention collective, de vos variables et de vos process RH internes."],["Employeur / groupe étranger","Nous expliquons les règles françaises, organisons la paie locale et coordonnons les échanges avec le siège ou les conseils internationaux."]],"questionsEye":"Vos enjeux","questionsTitle":"Vous vous posez peut-être ces questions.","questionsLead":"Nous partons de votre situation réelle avant de parler de technique.","deliverablesEye":"Concrètement","deliverablesTitle":"Ce que vous obtenez, pas seulement ce que nous faisons.","lanesEye":"France & international","lanesTitle":"Le même métier, deux contextes très différents."},"en":{"metaTitle":"Payroll & HR — RB Partners","metaDescription":"French payroll, DSN, hiring, leavers and social administration for SMEs, French subsidiaries and foreign companies employing in France.","eyebrow":"Payroll & HR","title":"French payroll & HR: secure every employee, every month.","lead":"From the first hire to an employee’s departure, we organise French payroll and HR administration: payslips, DSN, contracts, registrations, absences and employee events. Your team knows what to send, when and to whom.","cta":"Speak with a partner","proofs":["Payslips & DSN","Hiring","Leavers","Social administration"],"scopeEye":"What we do","scopeTitle":"French payroll operations, month after month.","scopeLead":"We define the variable-payroll workflow, responsibilities and documents required for each deadline.","scope":[["Payroll & DSN","Payslips, monthly and event-based DSN filings, URSSAF and pension-fund declarations, depending on the file."],["Hiring","Employment documents within the engagement scope, DPAE, employee data collection and health/provident scheme enrolment."],["Leavers & events","Sick leave, parental leave, changes and departures: final payroll documents, work certificate and France Travail certificate."],["Social administration","Employee register follow-up, social deadlines and information required for recurring employer obligations."],["Foreign companies & mobility","French payroll for local teams, foreign employers without a French establishment where applicable, mobility or secondment, with reporting available in English."]],"promiseEye":"Who we support","promiseTitle":"A payroll setup adapted to your team.","promiseLead":"The level of support changes with headcount, internal organisation and your presence in France.","promises":[["Company hiring its first employees","We set up the payroll file, calendar, enrolments and variable-payroll workflow. The first hires are integrated into a clear process."],["Growing SME","We structure variable collection, absences and employee events so they are not handled across scattered channels. Follow-up reflects your collective agreement and HR organisation."],["Foreign company hiring in France","We set up French payroll and social obligations with communication available in English. Complex international mobility matters are coordinated with specialist advisers where needed."]],"processEye":"How we work","processTitle":"Four steps to structure payroll.","processLead":"Reliable payroll starts with correctly transferred data and a calendar understood by all.","process":[["Take over the payroll file","We collect contracts, payroll totals, settings, schemes, collective agreement and relevant employee data."],["Configure","We review file information, enrolments and payroll rules applicable to your organisation."],["Produce each month","You send variables through the agreed workflow; we prepare payslips, checks and social filings."],["Track employee events","Hiring, absences, contractual changes and departures are integrated into the calendar with the required documents."]],"engagementEye":"Focus","engagementTitle":"A payroll calendar agreed in advance.","engagementValue":"Payroll calendar","engagementText":"The cut-off for payroll variables and the payslip delivery calendar are agreed with you during onboarding. Exceptional employee events are reported as they occur so they can be included in the appropriate payroll cycle.","faqTitle":"Frequently asked questions","faq":[["Can you manage payroll for a foreign-owned French entity?","Yes. We can set up and manage French payroll for a subsidiary or local team. Communication with headquarters can be in English. International mobility or employment-law matters requiring specialist advice are coordinated with the relevant advisers."],["Can you take over payroll during the year?","Yes. We take over employee data, payroll totals, settings and available filings. A takeover review identifies any items that need correction or completion before the next cycle."],["Do you handle employment contracts?","We can prepare routine documents within our engagement and the information required for hiring. Where a clause or situation requires specialist employment-law advice, we work with the company’s lawyer. The scope is agreed at the outset."],["How do you determine the applicable collective agreement?","We review the company’s activity, organisation and available information. Where identification requires specific legal analysis, we recommend validation with specialist counsel. The selected agreement then affects several payroll settings."],["How do we send payroll variables?","The workflow is defined when the payroll file is set up. Variables can be centralised in the chosen collaborative tool or through a format agreed with your team. The objective is to maintain one identified source and a stable calendar."]],"finalTitle":"Organise your payroll and social deadlines.","finalText":"A first conversation reviews your headcount, collective agreement, current organisation and the employee events you need to manage.","finalCta":"Discuss your payroll","finalCtaSecondary":"Email RB Partners","questions":["We are hiring our first employee in France — where do we start?","How do we make sure the collective bargaining agreement and payroll setup are correct?","Who handles absences, hires, departures and mandatory documents?","We are a foreign company — how do we employ and pay people correctly in France?"],"deliverables":[["Payroll calendar","Clear dates for variable collection, payroll production, checks and payslip delivery."],["Payslips & DSN","Monthly payroll, DSN and social filings based on your setup."],["Employee onboarding","DPAE, hiring data, registrations and documents within the agreed scope."],["Employee events","Absence, contract changes, leave and departures integrated into the correct payroll cycle."],["HR reporting","Coordination with HR / finance teams and, for foreign groups, English-language communication where needed."]],"lanes":[["French employer","We structure payroll around your collective agreement, variables and internal HR processes."],["Foreign employer / group","We explain French rules, organise local payroll and coordinate with headquarters or international advisers."]],"questionsEye":"Your challenges","questionsTitle":"You may be asking these questions.","questionsLead":"We start from your actual situation before talking about technical solutions.","deliverablesEye":"In practice","deliverablesTitle":"What you receive, not only what we do.","lanesEye":"France & international","lanesTitle":"The same expertise, two very different contexts."}};</script>
+<script src="../js/i18n.js"></script><script src="../js/main.js"></script><script src="../js/mission-page.js"></script>
+</body></html>

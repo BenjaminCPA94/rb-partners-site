@@ -1,0 +1,30 @@
+/* RB Partners — international landing page depth */
+.intl-moments .section__head{max-width:850px}
+.intl-moment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.intl-moment-grid article{
+  min-height:240px;padding:27px;border:1px solid var(--border);border-radius:16px;background:#fff;
+  display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease
+}
+.intl-moment-grid article:hover{transform:translateY(-4px);border-color:rgba(198,161,91,.68);box-shadow:0 14px 34px rgba(8,20,38,.07)}
+.intl-moment-grid span{font-family:var(--font-head);color:var(--gold-500);font-size:1.05rem}
+.intl-moment-grid h3{margin:38px 0 10px;font-size:1.2rem}
+.intl-moment-grid p{margin:0;color:var(--gray-700);font-size:.89rem;line-height:1.7;text-align:left!important}
+.intl-hq-outputs{background:#fff}
+.intl-output-head{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:end;margin-bottom:30px}
+.intl-output-head h2{font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.08;margin:7px 0 0}
+.intl-output-head>p{margin:0;color:var(--gray-700);font-size:1rem;line-height:1.7;max-width:520px}
+.intl-output-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.intl-output-grid article{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--border)}
+.intl-output-grid b{font-family:var(--font-head);color:var(--gold-500)}
+.intl-output-grid h3{margin:0 0 7px;font-size:1.08rem}
+.intl-output-grid p{margin:0;color:var(--gray-700);font-size:.88rem;line-height:1.65;text-align:left!important}
+@media(max-width:900px){
+  .intl-moment-grid{grid-template-columns:1fr}
+  .intl-moment-grid article{min-height:0}
+  .intl-output-head,.intl-output-grid{grid-template-columns:1fr}
+  .intl-output-head{gap:18px}
+}
+@media(max-width:600px){
+  .intl-moment-grid article{padding:23px}
+  .intl-output-grid article{grid-template-columns:38px 1fr}
+}

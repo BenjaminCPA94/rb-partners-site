@@ -1,171 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="card.implantation.title">Implantation en France — RB Partners</title>
-<meta name="description" content="Filiale, succursale, fiscalité d'entrée et conformité sociale : l'accompagnement de RB Partners pour les sociétés étrangères qui s'implantent en France.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implantation en France — RB Partners</title>
+<meta name="description" content="RB Partners accompagne les sociétés étrangères qui s’implantent en France : filiale ou succursale, création, comptabilité, fiscalité, paie, reporting et coordination locale.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="mission-page mission-page--rewrite">
+<header class="header" id="header"><div class="container header__inner">
+<a href="../index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="../index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero"><div class="container mission-hero__inner">
+  <p class="eyebrow" data-copy="eyebrow"></p><h1 data-copy="title"></h1><p class="mission-hero__lead" data-copy="lead"></p>
+  <div class="mission-hero__actions"><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="cta"></a></div>
+  <div class="mission-hero__proofs"></div>
+</div></section>
+
+<section class="section mission-scope"><div class="container">
+  <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+  <div class="mission-scope-grid"></div>
+</div></section>
+
+<section class="section mission-promise"><div class="container">
+  <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+  <div class="mission-promise-grid"></div>
+</div></section>
+
+<section class="section mission-process"><div class="container">
+  <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+  <div class="mission-process-grid"></div>
+</div></section>
+
+<section class="section mission-situations"><div class="container mission-situations__grid">
+  <div><p class="eyebrow" data-copy="engagementEye"></p><h2 data-copy="engagementTitle"></h2></div>
+  <div class="mission-engagement"><strong data-copy="engagementValue"></strong><p data-copy="engagementText"></p></div>
+</div></section>
+
+<section class="section mission-faq"><div class="container faq-wrap">
+  <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+  <div class="faq-list mission-faq-list"></div>
+</div></section>
+
+<section class="expertise-cta mission-final"><div class="container">
+  <h2 data-copy="finalTitle"></h2><p data-copy="finalText"></p>
+  <div class="mission-final__actions">
+    <a class="btn btn--primary" href="../index.html#v4-booking" data-copy="finalCta"></a>
+    <a class="btn btn--ghost" href="mailto:contact@rb-partners.fr" data-copy="finalCtaSecondary"></a>
   </div>
-</div>
-
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="../index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33600000001" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
-        </a>
-        <a href="tel:+33600000002" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
-        </a>
-      </div>
-    </div>
-
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
-
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
-  <div class="container">
-    <ol>
-      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
-      <li aria-current="page" data-i18n="card.implantation.title">Implantation en France</li>
-    </ol>
-  </div>
-</nav>
-
-<main>
-
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
-      <h1 data-i18n="card.implantation.title">Implantation en France</h1>
-      <p data-i18n="exp.implantation.subtitle">Un point d'entrée unique pour les sociétés étrangères qui souhaitent s'installer et se développer en France.</p>
-    </div>
-  </section>
-
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n="exp.implantation.intro1">
-          S'implanter dans un nouveau pays suppose de naviguer entre des règles juridiques, fiscales et sociales
-          qui ne sont pas les vôtres. Nous accompagnons les dirigeants de sociétés étrangères tout au long de ce
-          processus, en français comme en anglais, pour que l'implantation en France se fasse sans mauvaise
-          surprise.
-        </p>
-        <p data-i18n-html="exp.implantation.intro2">
-          La première étape consiste à choisir la structure la plus adaptée à votre projet&nbsp;: filiale, succursale
-          ou simple bureau de liaison n'ont ni la même fiscalité, ni les mêmes obligations. Nous vous aidons à faire
-          ce choix avant d'engager les formalités d'immatriculation.
-        </p>
-        <p data-i18n="exp.implantation.intro3">
-          Une fois la structure en place, nous assurons la mise en conformité sociale, la gestion de la paie locale
-          et servons d'interface avec vos équipes et vos conseils à l'étranger, pour que la coordination reste
-          fluide malgré la distance.
-        </p>
-      </div>
-
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="services.title">Nos services clés</h2>
-        <ul class="checklist">
-          <li data-i18n="exp.implantation.services.0">Choix de la structure (filiale, succursale, bureau de liaison)</li>
-          <li data-i18n="exp.implantation.services.1">Immatriculation et formalités administratives et bancaires</li>
-          <li data-i18n="exp.implantation.services.2">Fiscalité d'entrée et conventions fiscales</li>
-          <li data-i18n="exp.implantation.services.3">Mise en conformité sociale et gestion de la paie locale</li>
-          <li data-i18n="exp.implantation.services.4">Interface avec vos équipes et conseils à l'étranger</li>
-          <li data-i18n="exp.implantation.services.5">Accompagnement en français et en anglais</li>
-        </ul>
-      </aside>
-    </div>
-
-    <div class="container expertise-nav">
-      <a href="../index.html#expertises">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="exp.back">Retour aux expertises</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="exp.implantation.cta_title">Un projet d'implantation en France ?</h2>
-      <p data-i18n="exp.implantation.cta_text">Parlons de votre structure d'origine et de vos objectifs.</p>
-      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+</div></section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={
+"fr":{
+"metaTitle":"Implantation en France — RB Partners",
+"metaDescription":"RB Partners accompagne les sociétés étrangères qui s’implantent en France : filiale ou succursale, création, comptabilité, fiscalité, paie, reporting et coordination locale.",
+"eyebrow":"Implantation en France","title":"Votre point d’entrée local pour rendre votre activité française opérationnelle.","lead":"RB Partners accompagne les groupes et sociétés étrangères avant, pendant et après leur implantation en France. Nous coordonnons la structure, la comptabilité, la fiscalité, la paie, le reporting et les premiers flux pour que la maison mère dispose d’un interlocuteur français identifié.","cta":"Parler à un associé",
+"proofs":["Filiale ou succursale","Comptabilité française","Paie & fiscalité","Reporting FR / EN"],
+"scopeEye":"Ce que nous faisons","scopeTitle":"De la décision d’entrer en France au fonctionnement quotidien.","scopeLead":"Nous organisons les sujets qui doivent être traités localement et faisons le lien avec les équipes du siège.",
+"scope":[["Choix de la présence en France","Cadrage du projet et mise en perspective des principales options de présence locale avant le lancement des formalités."],["Création & formalités","Coordination des documents, des formalités de création ou d’immatriculation et de la mise en place du dossier français."],["Comptabilité & fiscalité","Organisation de la comptabilité locale, du calendrier fiscal, de la TVA et des premières clôtures selon le fonctionnement de l’entité."],["Paie & premiers salariés","Mise en place du processus de paie français et organisation des informations nécessaires aux premières embauches locales."],["Reporting & coordination groupe","Restitutions en français ou en anglais, calendrier de clôture, flux intragroupe et coordination avec la direction financière ou les conseils du siège."]],
+"promiseEye":"Pour qui","promiseTitle":"Trois moments où un relais français fait gagner du temps.","promiseLead":"Le besoin n’est pas le même avant la création, au démarrage ou lorsque l’entité existe déjà.",
+"promises":[["Groupe qui prépare son entrée en France","Nous cadrons les besoins locaux, la structure envisagée, les flux et les premiers sujets comptables, fiscaux et sociaux avant le lancement."],["Entité française en cours de démarrage","Nous transformons l’immatriculation en organisation opérationnelle : banque, facturation, comptabilité, fiscalité, paie, accès et calendrier."],["Filiale existante à restructurer ou reprendre","Nous reprenons les historiques, identifions les échéances et remettons en place un fonctionnement plus lisible avec le siège."]],
+"processEye":"Notre méthode","processTitle":"Quatre étapes pour rendre l’entité française opérationnelle.","processLead":"Le siège doit savoir ce qui est attendu, qui intervient et quand les premières obligations arrivent.",
+"process":[["Cadrer le projet","Nous comprenons l’activité prévue en France, les flux avec le groupe, le calendrier et les besoins de recrutement."],["Structurer le démarrage","Nous organisons les formalités, les accès, la banque, les outils et les responsabilités locales ou groupe."],["Lancer les opérations","Nous mettons en place la comptabilité, la fiscalité, la paie et les premiers circuits d’information."],["Installer le rythme groupe","Nous alignons clôtures, reporting, intercompany et échanges avec la maison mère sur un calendrier récurrent."]],
+"engagementEye":"Point de coordination","engagementTitle":"Un interlocuteur français, plusieurs sujets locaux coordonnés.","engagementValue":"France","engagementText":"L’objectif n’est pas simplement d’immatriculer une entité. Nous organisons le passage vers l’exploitation et faisons le lien entre les exigences françaises, les outils locaux et les attentes du siège.",
+"faqTitle":"Questions fréquentes","faq":[["Filiale ou succursale : comment choisir ?","Le choix dépend notamment du projet, du niveau d’autonomie recherché, de l’organisation du groupe et des conséquences comptables, fiscales et juridiques. Nous cadrons le volet relevant de notre mission et coordonnons vos autres conseils lorsque nécessaire."],["Pouvez-vous intervenir avant que la société française soit créée ?","Oui. Il est souvent utile de cadrer le calendrier, les flux, les besoins de paie, la comptabilité et les documents à réunir avant le démarrage des formalités."],["Pouvez-vous travailler directement avec notre CFO ou notre siège ?","Oui. Nous pouvons organiser les échanges en français ou en anglais, utiliser le calendrier de clôture du groupe et adapter les restitutions aux informations attendues par la maison mère."],["Pouvez-vous gérer la comptabilité et la paie après l’implantation ?","Oui, selon le périmètre convenu. L’intérêt est de coordonner les données comptables, fiscales et sociales au lieu de créer des circuits séparés."],["Pouvez-vous reprendre une filiale française déjà existante ?","Oui. Nous pouvons reprendre les historiques, les accès et les échéances puis remettre en place l’organisation courante et le reporting avec vos équipes."]],
+"finalTitle":"Préparons votre fonctionnement en France, pas seulement votre immatriculation.","finalText":"Présentez-nous votre activité, votre structure actuelle, votre calendrier et les attentes du siège. Nous identifions les étapes à organiser pour rendre l’entité française réellement opérationnelle.","finalCta":"Parler de votre implantation","finalCtaSecondary":"Écrire à RB Partners",
+"questions":["Filiale, succursale ou présence plus légère : quel schéma correspond à notre projet ?","Quelles obligations devons-nous organiser dès les premières semaines en France ?","Comment faire remonter une information française compréhensible au siège ?","Qui coordonne comptabilité, fiscalité, paie et premiers interlocuteurs locaux ?"],
+"deliverables":[["Feuille de route France","Les étapes de démarrage, responsabilités et dépendances sont organisées dans un ordre lisible."],["Calendrier local","Premières obligations comptables, fiscales, sociales et dates de clôture identifiées."],["Organisation des flux","Banque, facturation, pièces, paie et échanges avec le siège structurés dès le départ."],["Reporting groupe","Format, fréquence et calendrier adaptés aux besoins de la maison mère lorsque nécessaire."],["Point de contact local","Un interlocuteur capable de coordonner les différents sujets français relevant de la mission."]],
+"lanes":[["Avant l’implantation","Choix du schéma, calendrier, documents, flux et organisation du démarrage français."],["Après l’implantation","Comptabilité, fiscalité, paie, reporting et coordination récurrente avec la maison mère."]],
+"questionsEye":"Vos enjeux","questionsTitle":"Vous vous posez peut-être ces questions.","questionsLead":"Nous partons de votre projet d’entrée en France et du fonctionnement de votre groupe.","deliverablesEye":"Concrètement","deliverablesTitle":"Ce que la maison mère obtient, pas seulement les formalités réalisées.","lanesEye":"Avant & après","lanesTitle":"Une implantation réussie se joue des deux côtés de l’immatriculation."
+},
+"en":{
+"metaTitle":"Setting up a business in France — RB Partners",
+"metaDescription":"RB Partners supports foreign companies setting up in France with entity setup, French accounting, tax, payroll, reporting and local coordination.",
+"eyebrow":"Setting up in France","title":"Your local point of contact to make French operations actually work.","lead":"RB Partners supports foreign companies before, during and after their French market entry. We coordinate entity setup, accounting, tax, payroll, reporting and the first operational flows so headquarters has one identified French contact.","cta":"Speak with a partner",
+"proofs":["Subsidiary or branch","French accounting","Payroll & tax","FR / EN reporting"],
+"scopeEye":"What we do","scopeTitle":"From the decision to enter France to day-to-day operations.","scopeLead":"We organise the matters that must be handled locally and connect them with head-office teams.",
+"scope":[["Choosing the French presence","Project scoping and review of the main forms of local presence before formalities begin."],["Entity setup & formalities","Coordination of documents, formation or registration steps and setup of the French file."],["Accounting & tax","Organisation of local accounting, French tax calendar, VAT and first closings around the entity’s operating model."],["Payroll & first hires","Setup of the French payroll process and organisation of the information needed for the first local employees."],["Group reporting & coordination","French or English reporting, closing calendars, intercompany flows and coordination with head-office finance teams or advisers."]],
+"promiseEye":"Who we support","promiseTitle":"Three moments when a French relay makes a real difference.","promiseLead":"The need is different before incorporation, during launch and once the entity already exists.",
+"promises":[["Group preparing its entry into France","We frame local requirements, the intended structure, flows and first accounting, tax and payroll matters before launch."],["French entity in launch phase","We turn registration into an operating setup: banking, invoicing, accounting, tax, payroll, access rights and calendars."],["Existing subsidiary needing a reset","We take over history, identify deadlines and rebuild a clearer operating model with headquarters."]],
+"processEye":"How we work","processTitle":"Four steps to make the French entity operational.","processLead":"Headquarters should know what is expected, who is responsible and when the first local obligations arise.",
+"process":[["Scope the project","We understand the planned French activity, group flows, timeline and hiring needs."],["Structure the launch","We organise formalities, access rights, banking, tools and local versus group responsibilities."],["Start operations","We set up accounting, tax, payroll and the first information workflows."],["Build the group rhythm","We align closings, reporting, intercompany matters and head-office communication on a recurring calendar."]],
+"engagementEye":"Coordination point","engagementTitle":"One French contact, several local topics coordinated.","engagementValue":"France","engagementText":"The objective is not simply to register an entity. We organise the move into operations and connect French requirements, local tools and head-office expectations.",
+"faqTitle":"Frequently asked questions","faq":[["Subsidiary or branch: how do we choose?","The right structure depends on the project, desired autonomy, group organisation and accounting, tax and legal consequences. We frame the matters within our scope and coordinate with your other advisers where needed."],["Can you get involved before the French company exists?","Yes. It is often useful to frame the timeline, flows, payroll needs, accounting setup and documents before formal incorporation starts."],["Can you work directly with our CFO or headquarters?","Yes. We can work in French or English, use the group closing calendar and adapt reporting to the information expected by headquarters."],["Can you handle accounting and payroll after setup?","Yes, depending on the agreed scope. This helps coordinate accounting, tax and payroll information instead of building separate workflows."],["Can you take over an existing French subsidiary?","Yes. We can take over historical information, access rights and deadlines, then rebuild recurring operations and reporting with your teams."]],
+"finalTitle":"Let’s prepare your French operating model, not only your registration.","finalText":"Tell us about your activity, current structure, timeline and head-office expectations. We identify the steps needed to make the French entity genuinely operational.","finalCta":"Discuss your French setup","finalCtaSecondary":"Email RB Partners",
+"questions":["Subsidiary, branch or lighter presence: which setup fits the project?","Which obligations need to be organised in the first weeks in France?","How do we send French financial information back to headquarters in a usable format?","Who coordinates accounting, tax, payroll and the first local providers?"],
+"deliverables":[["France roadmap","Launch steps, responsibilities and dependencies organised in a clear sequence."],["Local calendar","First accounting, tax, payroll and closing deadlines identified."],["Flow setup","Banking, invoicing, documents, payroll and head-office exchanges structured from the start."],["Group reporting","Format, frequency and calendar aligned with headquarters where required."],["Local point of contact","One contact able to coordinate the French matters included in the engagement."]],
+"lanes":[["Before market entry","Entity choice, timeline, documentation, flows and organisation of the French launch."],["After market entry","Accounting, tax, payroll, reporting and recurring coordination with headquarters."]],
+"questionsEye":"Your challenges","questionsTitle":"You may be asking these questions.","questionsLead":"We start with your French market-entry project and group operating model.","deliverablesEye":"In practice","deliverablesTitle":"What headquarters receives, not only the formalities completed.","lanesEye":"Before & after","lanesTitle":"Successful market entry happens on both sides of registration."
+}
+};</script>
+<script src="../js/i18n.js"></script><script src="../js/main.js"></script><script src="../js/mission-page.js"></script>
+</body></html>

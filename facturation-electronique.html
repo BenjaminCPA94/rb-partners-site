@@ -1,176 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="fe.title">Facturation électronique — RB Partners</title>
-<meta name="description" content="Accompagnement à la mise en conformité facturation électronique : choix de plateforme, compatibilité logiciel, formation, archivage. Par RB Partners.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facturation électronique — RB Partners</title>
+<meta name="description" content="RB Partners accompagne les entreprises dans la préparation de la facturation électronique : diagnostic des flux, outils, process et organisation.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="mission-page mission-page--rewrite">
+<header class="header" id="header"><div class="container header__inner">
+<a href="index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
   </div>
-</div>
+</section>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="index.html#international" data-i18n="nav.international">International</a>
-      <a href="index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33600000001" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
-        </a>
-        <a href="tel:+33600000002" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
-        </a>
-      </div>
-    </div>
-
-    <a href="index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
-
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
+<section class="section mission-scope">
   <div class="container">
-    <ol>
-      <li><a href="index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li aria-current="page" data-i18n="fe.title">Facturation électronique</li>
-    </ol>
+    <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+    <div class="mission-scope-grid"></div>
   </div>
-</nav>
+</section>
 
-<main>
+<section class="section mission-promise">
+  <div class="container">
+    <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+    <div class="mission-promise-grid"></div>
+  </div>
+</section>
 
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="fe.eyebrow">Notre offre</p>
-      <h1 data-i18n="fe.title">Facturation électronique : passez à la réforme sereinement</h1>
-      <p data-i18n="fe.lead">La facturation électronique devient progressivement obligatoire pour toutes les entreprises assujetties à la TVA en France. RB Partners vous accompagne à chaque étape pour que cette transition ne perturbe ni votre facturation, ni votre trésorerie.</p>
+<section class="section mission-process">
+  <div class="container">
+    <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+    <div class="mission-process-grid"></div>
+  </div>
+</section>
+
+<section class="section mission-situations">
+  <div class="container mission-situations__grid">
+    <div><p class="eyebrow" data-copy="engagementEye"></p><h2 data-copy="engagementTitle"></h2></div>
+    <div class="mission-engagement">
+      <strong data-copy="engagementValue"></strong>
+      <p data-copy="engagementText"></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n-html="fe.intro1">
-          Choix de la plateforme de dématérialisation, compatibilité de vos outils, formation de vos équipes,
-          archivage probant&nbsp;: la mise en conformité soulève de nombreuses questions techniques pour une
-          entreprise qui n'a pas vocation à devenir experte en facturation électronique. C'est précisément le
-          rôle que nous jouons à vos côtés.
-        </p>
-        <p data-i18n="fe.intro2">
-          Nous commençons par un diagnostic de vos flux de facturation actuels (émission, réception, volumes,
-          outils en place) pour identifier la solution la mieux adaptée à votre activité, avant de vous
-          accompagner dans son déploiement.
-        </p>
-        <p data-i18n="fe.intro3">
-          Cette offre s'adresse aussi bien aux entreprises qui souhaitent anticiper la réforme dès maintenant
-          qu'à celles qui doivent encore choisir leur plateforme et sécuriser leur passage à l'échéance qui les
-          concerne.
-        </p>
-      </div>
+<section class="section mission-faq">
+  <div class="container faq-wrap">
+    <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+    <div class="faq-list mission-faq-list"></div>
+  </div>
+</section>
 
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="fe.services_title">Ce que comprend notre accompagnement</h2>
-        <ul class="checklist">
-          <li data-i18n="fe.services.0">Diagnostic de vos flux de facturation actuels (émission, réception, volumes, outils)</li>
-          <li data-i18n-html="fe.services.1">Aide au choix d'une plateforme de dématérialisation partenaire (PDP) adaptée à votre volume</li>
-          <li data-i18n="fe.services.2">Vérification de la compatibilité de votre logiciel de facturation ou de comptabilité</li>
-          <li data-i18n-html="fe.services.3">Formation de vos équipes aux nouveaux flux d'émission et de réception</li>
-          <li data-i18n-html="fe.services.4">Mise en place de l'archivage électronique probant de vos factures</li>
-          <li data-i18n-html="fe.services.5">Suivi de votre dossier jusqu'à l'échéance qui vous concerne, avec ajustement si le calendrier légal évolue</li>
-        </ul>
-      </aside>
+<section class="expertise-cta mission-final">
+  <div class="container">
+    <h2 data-copy="finalTitle"></h2>
+    <p data-copy="finalText"></p>
+    <div class="mission-final__actions">
+      <a class="btn btn--primary" href="index.html#v4-booking" data-copy="finalCta"></a>
+      <a class="btn btn--ghost" href="mailto:contact@rb-partners.fr" data-copy="finalCtaSecondary"></a>
     </div>
-
-    <div class="container">
-      <div class="article-body__note article-body__note--centered">
-        <strong data-i18n="fe.calendar_title">Un calendrier encore mouvant</strong> — <span data-i18n="fe.calendar_text">Les dates exactes de la réforme ont déjà été ajustées plusieurs fois par le législateur et le déploiement est progressif selon la taille des entreprises. Plutôt que de vous fier à une date isolée trouvée en ligne, parlons ensemble de l'échéance qui s'applique précisément à votre structure.</span>
-      </div>
-    </div>
-
-    <div class="container expertise-nav">
-      <a href="blog/facturation-electronique.html">
-        <span data-i18n="fe.read_article">Lire notre article sur la réforme</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="fe.cta_title">Prêt à sécuriser votre passage à la facturation électronique ?</h2>
-      <p data-i18n="fe.cta_text">Parlons de vos outils actuels et du calendrier qui s'applique à votre entreprise.</p>
-      <a href="index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="index.html#international" data-i18n="nav.international">International</a>
-      <a href="index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={"fr":{"metaTitle":"Facturation électronique — RB Partners","metaDescription":"Réception obligatoire depuis septembre 2026, émission selon la taille : diagnostic des flux, plateforme agréée, e-reporting et organisation avec Pennylane.","eyebrow":"Facturation électronique","title":"Passer de l’obligation réglementaire à un circuit de facturation qui fonctionne.","lead":"La réforme ne se résume pas à choisir une plateforme. Nous cartographions vos ventes, achats, validations et données pour construire un circuit de réception, d’émission et d’e-reporting cohérent avec votre comptabilité et vos équipes.","cta":"Parler à un associé","proofs":["Réception 2026","Émission 2026 / 2027","Plateforme agréée","E-reporting"],"scopeEye":"Ce que nous faisons","scopeTitle":"Mettre vos flux en ordre, pas seulement l’outil.","scopeLead":"Nous partons de vos ventes, achats et circuits internes pour préparer le fonctionnement attendu par la réforme.","scope":[["Diagnostic des flux","Cartographie des ventes, achats, B2B, B2C et opérations internationales, ainsi que des outils et rôles utilisés aujourd’hui."],["Plateforme agréée & paramétrage","Choix et paramétrage de la plateforme agréée en cohérence avec votre organisation comptable et, lorsqu’il est utilisé, avec Pennylane."],["Factures & référentiels clients","Revue des mentions et données nécessaires sur les factures et fiches clients, notamment le SIREN et la catégorie d’opération lorsque requis."],["E-reporting","Organisation de la transmission des données concernant les opérations qui ne relèvent pas de la facturation électronique, ainsi que des données de paiement concernées."],["Équipes & premiers cycles","Définition des rôles, circuit de validation, accompagnement des utilisateurs et contrôle des premiers cycles de facturation et de réception."]],"promiseEye":"Pour qui","promiseTitle":"Le chantier n’est pas le même pour toutes les entreprises.","promiseLead":"Le point de départ dépend de votre taille, de vos outils et de la complexité de vos flux.","promises":[["PME qui devra émettre en 2027","Vous recevez déjà des factures électroniques et devez préparer l’émission avant votre échéance. Nous mettons à profit cette période pour nettoyer les référentiels, choisir le circuit cible et tester l’organisation."],["Société déjà en réception","La plateforme est en place, mais les validations, pièces ou responsabilités n’ont pas encore été adaptées. Nous reprenons le circuit réel pour éviter les doubles traitements et les zones d’incertitude."],["Groupe ou filiale multi-entités","Nous cartographions les flux par entité, y compris les opérations internationales et B2C, puis définissons les responsabilités entre équipes locales, maison mère et outils."]],"processEye":"Notre méthode","processTitle":"Quatre étapes pour passer au fonctionnement cible.","processLead":"Nous avançons à partir de vos flux réels et des obligations qui vous concernent.","process":[["Cartographier","Nous recensons ventes, achats, typologies de clients, opérations internationales, outils et circuits de validation."],["Choisir l’organisation","Nous définissons la plateforme agréée et le schéma de circulation des factures et données adapté à votre entreprise."],["Paramétrer","Nous mettons à jour les référentiels, les mentions nécessaires, les accès et les règles de traitement avec les équipes concernées."],["Suivre les premiers cycles","Nous contrôlons les premières émissions, réceptions et transmissions de données afin d’identifier les ajustements nécessaires."]],"engagementEye":"Échéance PME","engagementTitle":"Préparer l’émission avant qu’elle ne devienne urgente.","engagementValue":"1er septembre 2027","engagementText":"À cette date, les PME et micro-entreprises concernées devront émettre leurs factures électroniques et transmettre leurs données de e-reporting. D’ici là, le travail porte surtout sur les référentiels, la plateforme agréée, les circuits internes et les tests avec les équipes.","faqTitle":"Questions fréquentes","faq":[["Pouvez-vous nous aider à choisir une plateforme ?","Oui. Nous partons de vos volumes, de vos flux, de votre organisation et de vos outils actuels pour définir les besoins. Nous pouvons ensuite vous aider à sélectionner une plateforme agréée adaptée et à organiser son paramétrage. Nous ne recommandons pas de multiplier les outils sans nécessité opérationnelle."],["Faut-il changer de logiciel comptable ?","Pas nécessairement. La réforme impose surtout de passer par une plateforme agréée pour les flux concernés. Nous examinons donc la compatibilité de votre organisation actuelle, y compris avec Pennylane lorsque vous l’utilisez, avant de proposer des adaptations."],["Pouvez-vous accompagner plusieurs sociétés d’un même groupe ?","Oui. Nous pouvons cartographier les flux de plusieurs entités et identifier les règles communes ou spécifiques à chacune. Cela permet notamment de traiter les circuits intersociétés, les rôles locaux et les flux internationaux de façon cohérente."],["Suis-je concerné si je ne vends qu’à des particuliers ?","Les ventes B2C ne relèvent pas du même circuit de facturation électronique entre entreprises, mais elles sont concernées par le e-reporting lorsqu’elles entrent dans le champ de la réforme. Votre entreprise reste également concernée par la réception électronique de ses factures fournisseurs. Nous examinons vos flux pour déterminer les obligations applicables."],["Qu’est-ce qui change pour mes factures fournisseurs ?","Depuis le 1er septembre 2026, les entreprises concernées doivent être en mesure de recevoir leurs factures électroniques via une plateforme agréée. Le circuit de réception, validation et intégration comptable doit donc être organisé autour de cette plateforme. Nous vérifions également qui valide les factures et comment les pièces rejoignent la comptabilité."]],"finalTitle":"Faisons le point sur vos flux de facturation.","finalText":"Un premier échange permet de cartographier vos ventes, achats, outils et circuits de validation afin d’identifier les adaptations prioritaires.","finalCta":"Faire le point sur vos flux","finalCtaSecondary":"Écrire à RB Partners","questions":["Quelle plateforme agréée choisir avec mon organisation actuelle ?","Mes fichiers clients et fournisseurs contiennent-ils les données nécessaires ?","Qui doit valider quoi entre commerce, finance, direction et cabinet ?","Comment traiter mes ventes B2C ou mes opérations internationales dans l’e-reporting ?"],"deliverables":[["Cartographie des flux","B2B, B2C, international, ventes, achats et responsabilités internes."],["Schéma cible","Plateforme agréée, outils, circuits de réception / émission et validations."],["Référentiels fiabilisés","Données clients et fournisseurs nécessaires au fonctionnement du dispositif."],["Règles d’e-reporting","Identification des opérations et données à transmettre selon vos flux."],["Tests & premiers cycles","Contrôle des premières factures et ajustement des process avec les équipes."]],"lanes":[["Entreprise française","Nous adaptons le dispositif à vos outils, à votre facturation, à vos équipes et à votre calendrier d’émission."],["Groupe / filiale internationale","Nous distinguons les flux domestiques, B2C, internationaux et intragroupe, puis clarifions les responsabilités entre France et siège."]],"questionsEye":"Vos enjeux","questionsTitle":"Vous vous posez peut-être ces questions.","questionsLead":"Nous partons de votre situation réelle avant de parler de technique.","deliverablesEye":"Concrètement","deliverablesTitle":"Ce que vous obtenez, pas seulement ce que nous faisons.","lanesEye":"France & international","lanesTitle":"Le même métier, deux contextes très différents."},"en":{"metaTitle":"E-invoicing — RB Partners","metaDescription":"Mandatory receipt since September 2026, issuance phased by company size: flow diagnostic, accredited platform, e-reporting and Pennylane organisation.","eyebrow":"E-invoicing","title":"Turn a regulatory requirement into an invoicing workflow that actually works.","lead":"The reform is not simply about choosing a platform. We map sales, purchases, approvals and data to build receipt, issuance and e-reporting workflows that fit your accounting setup and teams.","cta":"Speak with a partner","proofs":["Receipt 2026","Issuance 2026 / 2027","Accredited platform","E-reporting"],"scopeEye":"What we do","scopeTitle":"Organise the flows, not just the software.","scopeLead":"We start from sales, purchases and internal workflows to prepare the operating model required by the reform.","scope":[["Flow diagnostic","Mapping of sales, purchases, B2B, B2C and international transactions, together with current tools and responsibilities."],["Accredited platform & setup","Selection and configuration of the accredited platform in line with the accounting setup and, where used, Pennylane."],["Invoices & customer master data","Review of required invoice and customer data, including SIREN and transaction category where applicable."],["E-reporting","Organisation of data transmission for transactions outside e-invoicing, together with the payment data concerned."],["Teams & first cycles","Definition of roles, approval workflow, user support and review of the first invoice issuance and receipt cycles."]],"promiseEye":"Who we support","promiseTitle":"The workstream differs from one company to another.","promiseLead":"The starting point depends on company size, tools and the complexity of invoice flows.","promises":[["SME required to issue in 2027","You already need to receive e-invoices and must prepare issuance before your deadline. We use this period to clean master data, define the target workflow and test the organisation."],["Company already receiving e-invoices","The platform may be in place while approvals, documents and responsibilities remain unchanged. We review the actual workflow to remove duplicate processing and unclear hand-offs."],["Multi-entity group or subsidiary","We map flows by entity, including international and B2C transactions, then define responsibilities between local teams, headquarters and tools."]],"processEye":"How we work","processTitle":"Four steps to the target workflow.","processLead":"We work from your actual flows and the obligations that apply to your business.","process":[["Map","We identify sales, purchases, customer types, international transactions, tools and approval workflows."],["Choose the setup","We define the accredited platform and the invoice and data-flow model suited to the company."],["Configure","We update master data, required invoice information, access rights and processing rules with the relevant teams."],["Review first cycles","We check the first issuance, receipt and data-transmission cycles to identify necessary adjustments."]],"engagementEye":"SME deadline","engagementTitle":"Prepare issuance before it becomes urgent.","engagementValue":"1 September 2027","engagementText":"By this date, affected SMEs and micro-enterprises must issue electronic invoices and transmit e-reporting data. Before then, the priority is master data, the accredited platform, internal workflows and testing with teams.","faqTitle":"Frequently asked questions","faq":[["Can you help us choose a platform?","Yes. We start from your volumes, flows, organisation and existing tools to define requirements. We can then help select an appropriate accredited platform and organise its setup. We do not recommend adding tools without an operational reason."],["Do we need to change accounting software?","Not necessarily. The reform mainly requires the relevant flows to pass through an accredited platform. We therefore review the compatibility of your current setup, including Pennylane where you use it, before proposing changes."],["Can you support several companies in one group?","Yes. We can map the flows of several entities and identify common and entity-specific rules. This is particularly useful for intercompany processes, local responsibilities and international transactions."],["Are we affected if we only sell to consumers?","B2C sales do not follow the same B2B e-invoicing flow, but they can fall within e-reporting. Your business is also affected by the requirement to receive electronic supplier invoices. We review the flows to determine which obligations apply."],["What changes for supplier invoices?","Since 1 September 2026, affected businesses must be able to receive electronic invoices through an accredited platform. Receipt, approval and accounting integration therefore need to be organised around that platform. We also review who approves invoices and how supporting documents reach accounting."]],"finalTitle":"Let’s review your invoice flows.","finalText":"A first conversation maps your sales, purchases, tools and approval workflows to identify the priority changes.","finalCta":"Review your invoice flows","finalCtaSecondary":"Email RB Partners","questions":["Which accredited platform fits our current setup?","Do our customer and supplier records contain the required data?","Who should approve what between sales, finance, management and the accounting firm?","How should B2C sales or international transactions be handled for e-reporting?"],"deliverables":[["Flow mapping","B2B, B2C, international, sales, purchases and internal responsibilities."],["Target workflow","Accredited platform, tools, receipt / issuance flows and approvals."],["Clean master data","Customer and supplier data required for the new process."],["E-reporting rules","Identification of transactions and data to be reported based on your flows."],["Tests & first cycles","Review of initial invoices and adjustment of workflows with your teams."]],"lanes":[["French business","We adapt the setup to your tools, invoicing process, teams and issuance timetable."],["International group / subsidiary","We separate domestic, B2C, international and intercompany flows, then clarify responsibilities between France and headquarters."]],"questionsEye":"Your challenges","questionsTitle":"You may be asking these questions.","questionsLead":"We start from your actual situation before talking about technical solutions.","deliverablesEye":"In practice","deliverablesTitle":"What you receive, not only what we do.","lanesEye":"France & international","lanesTitle":"The same expertise, two very different contexts."}};</script>
+<script src="js/i18n.js"></script><script src="js/main.js"></script><script src="js/mission-page.js"></script>
+</body></html>

@@ -1,0 +1,716 @@
+/* RB Partners — homepage hero clarity + stable progressive reveals */
+body:has(main#top .hero) .v6-hero-visual{
+  width:min(100%,470px);
+  aspect-ratio:1.05;
+  border-radius:28px;
+  filter:none;
+}
+.rb-hero-bridge{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  border:1px solid rgba(216,184,118,.16);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 48%,rgba(216,184,118,.12),transparent 26%),
+    linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+  box-shadow:0 26px 60px rgba(4,14,29,.18),inset 0 0 60px rgba(255,255,255,.02);
+}
+.rb-hero-bridge::before{
+  content:"";
+  position:absolute;
+  inset:8%;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:24px;
+  pointer-events:none;
+}
+.rb-hero-side{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:142px;
+  min-height:92px;
+  padding:16px 15px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:15px;
+  background:rgba(8,20,38,.78);
+  backdrop-filter:blur(10px);
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+  z-index:3;
+}
+.rb-hero-side--fr{left:24px}
+.rb-hero-side--intl{right:24px}
+.rb-hero-side small{
+  display:block;
+  margin-bottom:7px;
+  color:var(--gold-400);
+  font-size:.61rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.rb-hero-side strong{
+  display:block;
+  color:#fff;
+  font-family:var(--font-head);
+  font-size:.98rem;
+  line-height:1.2;
+  font-weight:600;
+}
+.rb-hero-side span{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.56);
+  font-size:.66rem;
+  line-height:1.35;
+}
+.rb-hero-center{
+  position:absolute;
+  left:50%;
+  top:50%;
+  z-index:5;
+  transform:translate(-50%,-50%);
+  width:122px;
+  height:122px;
+  border-radius:50%;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  background:linear-gradient(145deg,#0a1930,#132c51);
+  border:1px solid rgba(216,184,118,.55);
+  box-shadow:0 0 0 12px rgba(216,184,118,.045),0 22px 46px rgba(0,0,0,.24);
+  animation:rb-center-breathe 5.5s ease-in-out infinite;
+}
+.rb-hero-center b{
+  color:#fff;
+  font-family:var(--font-head);
+  font-size:2.15rem;
+  line-height:1;
+}
+.rb-hero-center small{
+  margin-top:6px;
+  color:var(--gold-400);
+  font-size:.56rem;
+  font-weight:800;
+  letter-spacing:.15em;
+}
+.rb-hero-flow{
+  position:absolute;
+  top:50%;
+  height:1px;
+  z-index:2;
+  background:linear-gradient(90deg,rgba(216,184,118,.03),rgba(216,184,118,.78),rgba(216,184,118,.03));
+  overflow:visible;
+}
+.rb-hero-flow--left{left:151px;width:calc(50% - 194px)}
+.rb-hero-flow--right{left:calc(50% + 61px);width:calc(50% - 194px)}
+.rb-hero-flow i{
+  position:absolute;
+  top:-3px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold-400);
+  box-shadow:0 0 12px rgba(216,184,118,.9);
+  animation:rb-flow 3.4s linear infinite;
+}
+.rb-hero-flow i:nth-child(2){animation-delay:-1.7s}
+.rb-hero-flow--right i{animation-direction:reverse}
+.rb-hero-service{
+  position:absolute;
+  z-index:4;
+  min-width:96px;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.78);
+  font-size:.62rem;
+  font-weight:650;
+  text-align:center;
+  backdrop-filter:blur(7px);
+  animation:rb-chip-float 5s ease-in-out infinite;
+}
+.rb-hero-service--1{left:50%;top:48px;transform:translateX(-50%);animation-delay:-.6s}
+.rb-hero-service--2{left:50%;bottom:48px;transform:translateX(-50%);animation-delay:-2.1s}
+.rb-hero-service--3{left:50%;top:112px;transform:translateX(-50%);animation-delay:-3.2s}
+.rb-hero-service--4{left:50%;bottom:112px;transform:translateX(-50%);animation-delay:-4.1s}
+.rb-hero-caption{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.42);
+  font-size:.58rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@keyframes rb-flow{
+  0%{left:0;opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{left:100%;opacity:0}
+}
+@keyframes rb-center-breathe{
+  0%,100%{transform:translate(-50%,-50%) scale(.97)}
+  50%{transform:translate(-50%,-50%) scale(1.025)}
+}
+@keyframes rb-chip-float{
+  0%,100%{margin-top:0}
+  50%{margin-top:-6px}
+}
+
+/* Neutralise the unstable legacy homepage reveal classes. */
+body:has(main#top .hero) .v3-reveal{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
+
+/* Dedicated, predictable progressive reveal for the homepage. */
+body:has(main#top .hero) .rb-home-reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:
+    opacity .72s cubic-bezier(.2,.7,.2,1) var(--rb-home-delay,0ms),
+    transform .72s cubic-bezier(.2,.7,.2,1) var(--rb-home-delay,0ms);
+}
+body:has(main#top .hero) .rb-home-reveal.rb-home-visible{
+  opacity:1;
+  transform:none;
+}
+body:has(main#top .hero) .v2-founder.rb-home-reveal:nth-child(1){transform:translateX(-24px)}
+body:has(main#top .hero) .v2-founder.rb-home-reveal:nth-child(2){transform:translateX(24px)}
+body:has(main#top .hero) .v2-founder.rb-home-reveal.rb-home-visible{transform:none}
+
+@media(max-width:980px){
+  body:has(main#top .hero) .v6-hero-visual{width:min(86vw,440px)}
+}
+@media(max-width:620px){
+  .rb-hero-side{width:112px;padding:13px 11px}
+  .rb-hero-side--fr{left:10px}
+  .rb-hero-side--intl{right:10px}
+  .rb-hero-side strong{font-size:.84rem}
+  .rb-hero-side span{display:none}
+  .rb-hero-center{width:100px;height:100px}
+  .rb-hero-center b{font-size:1.75rem}
+  .rb-hero-flow--left{left:118px;width:calc(50% - 160px)}
+  .rb-hero-flow--right{left:calc(50% + 50px);width:calc(50% - 160px)}
+  .rb-hero-service{font-size:.57rem;min-width:82px}
+  .rb-hero-service--1{top:34px}
+  .rb-hero-service--2{bottom:38px}
+  .rb-hero-service--3{top:95px}
+  .rb-hero-service--4{bottom:96px}
+  .rb-hero-caption{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-hero-center,.rb-hero-flow i,.rb-hero-service{animation:none!important}
+  body:has(main#top .hero) .rb-home-reveal,
+  body:has(main#top .hero) .rb-home-reveal.rb-home-visible{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
+
+/* 2026-10-03 — homepage visual refinements */
+
+/* Restore a clear alternating rhythm between the process and reviews sections. */
+body:has(main#top .hero) #v2-steps{
+  background:var(--cream,#f7f4ee)!important;
+}
+body:has(main#top .hero) #v4-reviews{
+  background:#fff!important;
+  border-top:1px solid var(--border,#e7e2d8);
+}
+
+/* Make the secondary hero CTA intentionally gold and readable. */
+body:has(main#top .hero) .hero .hero__actions .btn--outline{
+  color:var(--gold-500,#c69f55)!important;
+  border-color:var(--gold-500,#c69f55)!important;
+  background:rgba(198,159,85,.06)!important;
+}
+body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
+  color:var(--navy-950,#081426)!important;
+  background:var(--gold-400,#d8b876)!important;
+  border-color:var(--gold-400,#d8b876)!important;
+}
+
+/* Hero identity visual: two client universes, one French partner. */
+.rb-hero-bridge{
+  overflow:visible;
+}
+.rb-hero-client{
+  position:absolute;
+  top:50%;
+  z-index:6;
+  width:148px;
+  transform:translateY(-50%);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:16px;
+  background:rgba(8,20,38,.84);
+  backdrop-filter:blur(12px);
+  box-shadow:0 16px 34px rgba(0,0,0,.18);
+  transition:width .3s ease,transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.rb-hero-client--fr{left:18px}
+.rb-hero-client--intl{right:18px}
+.rb-hero-client__main{
+  padding:16px 15px 14px;
+  cursor:default;
+}
+.rb-hero-client small{
+  display:block;
+  margin-bottom:7px;
+  color:var(--gold-400,#d8b876);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.rb-hero-client strong{
+  display:block;
+  color:#fff;
+  font-family:var(--font-head);
+  font-size:.96rem;
+  line-height:1.18;
+}
+.rb-hero-client em{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.48);
+  font-size:.61rem;
+  font-style:normal;
+}
+.rb-hero-client__missions{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  padding:0 14px;
+  border-top:1px solid transparent;
+  transition:max-height .34s ease,opacity .25s ease,padding .34s ease,border-color .25s ease;
+}
+.rb-hero-client__missions span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:5px 0;
+  color:rgba(255,255,255,.74);
+  font-size:.61rem;
+  line-height:1.3;
+  white-space:nowrap;
+}
+.rb-hero-client__missions span::before{
+  content:"";
+  width:4px;
+  height:4px;
+  flex:0 0 4px;
+  border-radius:50%;
+  background:var(--gold-400,#d8b876);
+  box-shadow:0 0 7px rgba(216,184,118,.75);
+}
+.rb-hero-client:hover,
+.rb-hero-client:focus-within{
+  width:190px;
+  border-color:rgba(216,184,118,.48);
+  background:rgba(8,20,38,.96);
+  box-shadow:0 22px 50px rgba(0,0,0,.26);
+}
+.rb-hero-client--fr:hover,
+.rb-hero-client--fr:focus-within{transform:translateY(-50%) translateX(-4px)}
+.rb-hero-client--intl:hover,
+.rb-hero-client--intl:focus-within{transform:translateY(-50%) translateX(4px)}
+.rb-hero-client:hover .rb-hero-client__missions,
+.rb-hero-client:focus-within .rb-hero-client__missions{
+  max-height:160px;
+  opacity:1;
+  padding:10px 14px 14px;
+  border-color:rgba(255,255,255,.10);
+}
+.rb-hero-client__hint{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-top:8px;
+  color:rgba(255,255,255,.38);
+  font-size:.54rem;
+}
+.rb-hero-client__hint::after{
+  content:"+";
+  color:var(--gold-400,#d8b876);
+  font-size:.72rem;
+}
+.rb-hero-client:hover .rb-hero-client__hint::after{content:"−"}
+
+.rb-hero-flow--left{left:159px;width:calc(50% - 202px)}
+.rb-hero-flow--right{left:calc(50% + 61px);width:calc(50% - 202px)}
+
+.rb-hero-center::after{
+  content:"";
+  position:absolute;
+  inset:-17px;
+  border:1px solid rgba(216,184,118,.12);
+  border-radius:50%;
+  animation:rb-orbit-pulse 4.8s ease-in-out infinite;
+}
+@keyframes rb-orbit-pulse{
+  0%,100%{transform:scale(.96);opacity:.35}
+  50%{transform:scale(1.08);opacity:.75}
+}
+
+/* The service chips support the visual but stay secondary to the two client universes. */
+.rb-hero-service{opacity:.72}
+.rb-hero-service--1{top:38px}
+.rb-hero-service--2{bottom:38px}
+.rb-hero-service--3{top:102px}
+.rb-hero-service--4{bottom:102px}
+
+@media(max-width:620px){
+  .rb-hero-client{width:112px}
+  .rb-hero-client--fr{left:7px}
+  .rb-hero-client--intl{right:7px}
+  .rb-hero-client:hover,.rb-hero-client:focus-within{width:144px}
+  .rb-hero-client__main{padding:12px 10px}
+  .rb-hero-client strong{font-size:.78rem}
+  .rb-hero-client em,.rb-hero-client__hint{display:none}
+  .rb-hero-client__missions span{font-size:.53rem}
+  .rb-hero-flow--left{left:115px;width:calc(50% - 157px)}
+  .rb-hero-flow--right{left:calc(50% + 50px);width:calc(50% - 157px)}
+}
+@media(hover:none){
+  .rb-hero-client__hint{display:none}
+}
+
+
+/* V2 — homepage rhythm, hero CTA contrast and interactive client paths */
+body:has(main#top .hero) #v2-steps{
+  background:var(--cream)!important;
+  border-top:1px solid rgba(198,161,91,.12);
+  border-bottom:1px solid var(--border);
+}
+body:has(main#top .hero) #v4-reviews{background:#fff!important}
+body:has(main#top .hero) #v2-steps + #v4-reviews{border-top:0}
+body:has(main#top .hero) .hero .btn--outline{
+  color:var(--gold-400)!important;
+  border:1px solid var(--gold-400)!important;
+  background:rgba(216,184,118,.04)!important;
+}
+body:has(main#top .hero) .hero .btn--outline:hover,
+body:has(main#top .hero) .hero .btn--outline:focus-visible{
+  color:var(--navy-950)!important;
+  background:var(--gold-400)!important;
+  border-color:var(--gold-400)!important;
+}
+.rb-hero-side{
+  cursor:pointer;
+  width:154px;
+  min-height:104px;
+  text-align:left;
+  font:inherit;
+  transition:width .35s cubic-bezier(.2,.7,.2,1),min-height .35s cubic-bezier(.2,.7,.2,1),border-color .28s ease,background .28s ease,box-shadow .28s ease,transform .28s ease;
+}
+.rb-hero-side--fr{animation:rb-side-drift-fr 6.2s ease-in-out infinite}
+.rb-hero-side--intl{animation:rb-side-drift-intl 6.8s ease-in-out infinite}
+.rb-hero-side:hover,.rb-hero-side:focus-visible,.rb-hero-side.is-open{
+  width:188px;
+  min-height:236px;
+  border-color:rgba(216,184,118,.52);
+  background:rgba(8,20,38,.96);
+  box-shadow:0 22px 44px rgba(0,0,0,.28),0 0 0 1px rgba(216,184,118,.07);
+  outline:none;
+  animation-play-state:paused;
+}
+.rb-hero-side--fr:hover,.rb-hero-side--fr:focus-visible,.rb-hero-side--fr.is-open{transform:translateY(-50%) translateX(-8px)}
+.rb-hero-side--intl:hover,.rb-hero-side--intl:focus-visible,.rb-hero-side--intl.is-open{transform:translateY(-50%) translateX(8px)}
+.rb-hero-side__hint{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.38);
+  font-style:normal;
+  font-size:.56rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.rb-hero-side__missions{
+  display:grid!important;
+  gap:7px;
+  max-height:0;
+  margin-top:0!important;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(8px);
+  transition:max-height .35s ease,opacity .25s ease,transform .35s ease,margin-top .35s ease;
+}
+.rb-hero-side:hover .rb-hero-side__missions,.rb-hero-side:focus-visible .rb-hero-side__missions,.rb-hero-side.is-open .rb-hero-side__missions{
+  max-height:150px;
+  margin-top:14px!important;
+  opacity:1;
+  transform:none;
+}
+.rb-hero-mission{
+  display:flex!important;
+  align-items:center;
+  gap:7px;
+  margin:0!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:.61rem!important;
+  line-height:1.25!important;
+}
+.rb-hero-mission::before{
+  content:"";
+  width:5px;height:5px;flex:0 0 5px;border-radius:50%;
+  background:var(--gold-400);
+  box-shadow:0 0 8px rgba(216,184,118,.55);
+}
+.rb-hero-service{opacity:.72;transition:opacity .25s ease}
+.rb-hero-bridge:has(.rb-hero-side:hover) .rb-hero-service,
+.rb-hero-bridge:has(.rb-hero-side:focus-visible) .rb-hero-service,
+.rb-hero-bridge:has(.rb-hero-side.is-open) .rb-hero-service{opacity:.18}
+@keyframes rb-side-drift-fr{
+  0%,100%{transform:translateY(-50%) translate3d(0,-3px,0)}
+  50%{transform:translateY(-50%) translate3d(6px,4px,0)}
+}
+@keyframes rb-side-drift-intl{
+  0%,100%{transform:translateY(-50%) translate3d(0,4px,0)}
+  50%{transform:translateY(-50%) translate3d(-6px,-4px,0)}
+}
+@media(max-width:620px){
+  .rb-hero-side{width:118px;min-height:96px}
+  .rb-hero-side:hover,.rb-hero-side:focus-visible,.rb-hero-side.is-open{width:148px;min-height:220px}
+  .rb-hero-side__hint{font-size:.5rem}
+  .rb-hero-mission{font-size:.55rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-hero-side--fr,.rb-hero-side--intl{animation:none!important}
+}
+
+
+/* Contact section: one conversation, two ways to reach us. */
+body:has(main#top .hero) #contact{
+  padding-top:72px!important;
+}
+body:has(main#top .hero) #partner-home .partner-contact__head{
+  max-width:760px;
+  margin-bottom:24px;
+}
+body:has(main#top .hero) #partner-home .partner-contact__head h2{
+  margin:7px 0 12px;
+  font-size:clamp(2.15rem,4vw,3.4rem);
+}
+body:has(main#top .hero) #partner-home .partner-contact__head>p:last-child{
+  max-width:720px;
+  color:rgba(255,255,255,.72);
+}
+body:has(main#top .hero) #partner-home .partner-contact__grid{
+  margin-bottom:42px;
+}
+body:has(main#top .hero) #contact>.container:not(#partner-home){
+  padding-top:34px;
+  border-top:1px solid rgba(255,255,255,.11);
+}
+body:has(main#top .hero) #contact .split__text .eyebrow{
+  margin-bottom:8px;
+}
+body:has(main#top .hero) #contact .split__text h2{
+  font-size:clamp(1.75rem,3vw,2.45rem);
+  margin-bottom:12px;
+}
+body:has(main#top .hero) #contact .split__text>p.text--light-muted{
+  max-width:500px;
+  font-size:.94rem;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  body:has(main#top .hero) #partner-home .partner-contact__grid{margin-bottom:28px}
+  body:has(main#top .hero) #contact>.container:not(#partner-home){padding-top:26px}
+}
+
+
+/* 2026-10-03 — hero spacing + international globe cue + contact cleanup */
+body:has(main#top .hero) .v6-hero-visual{
+  width:min(100%,540px);
+  aspect-ratio:1.18;
+}
+.rb-hero-bridge{
+  border-radius:32px;
+}
+.rb-hero-side--fr{left:28px}
+.rb-hero-side--intl{right:28px}
+.rb-hero-side--intl::before{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  right:-54px;
+  top:50%;
+  transform:translateY(-50%);
+  border-radius:50%;
+  opacity:.18;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at center,transparent 48%,rgba(216,184,118,.58) 49%,transparent 50%),
+    linear-gradient(90deg,transparent 49%,rgba(216,184,118,.38) 50%,transparent 51%),
+    linear-gradient(0deg,transparent 49%,rgba(216,184,118,.32) 50%,transparent 51%),
+    radial-gradient(ellipse at center,transparent 58%,rgba(216,184,118,.30) 59%,transparent 60%);
+  box-shadow:inset 0 0 0 1px rgba(216,184,118,.34);
+  animation:rb-globe-drift 9s ease-in-out infinite;
+}
+@keyframes rb-globe-drift{
+  0%,100%{transform:translateY(-50%) rotate(-4deg) scale(.98);opacity:.15}
+  50%{transform:translateY(-50%) rotate(5deg) scale(1.03);opacity:.23}
+}
+body:has(main#top .hero) #contact .split__text h2{
+  margin-top:0;
+}
+@media(max-width:980px){
+  body:has(main#top .hero) .v6-hero-visual{width:min(92vw,510px)}
+}
+@media(max-width:620px){
+  body:has(main#top .hero) .v6-hero-visual{width:min(94vw,460px);aspect-ratio:1.05}
+  .rb-hero-side--fr{left:10px}
+  .rb-hero-side--intl{right:10px}
+  .rb-hero-side--intl::before{width:145px;height:145px;right:-46px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-hero-side--intl::before{animation:none!important}
+}
+
+
+/* 2026-10-03 — requested homepage refinements */
+
+/* 1. Hero CTAs: same gold treatment */
+body:has(main#top .hero) .hero .hero__actions .btn,
+body:has(main#top .hero) .hero .hero__actions .btn--primary,
+body:has(main#top .hero) .hero .hero__actions .btn--outline{
+  background:var(--gold-500,#c6a15b)!important;
+  color:var(--navy-950,#081426)!important;
+  border:1px solid var(--gold-500,#c6a15b)!important;
+  box-shadow:none!important;
+}
+body:has(main#top .hero) .hero .hero__actions .btn:hover,
+body:has(main#top .hero) .hero .hero__actions .btn:focus-visible{
+  background:var(--gold-400,#d8b876)!important;
+  color:var(--navy-950,#081426)!important;
+  border-color:var(--gold-400,#d8b876)!important;
+  transform:translateY(-1px);
+}
+
+/* 2. Wider, more readable homepage identity animation */
+@media(min-width:981px){
+  body:has(main#top .hero) .hero__inner{
+    grid-template-columns:minmax(0,.95fr) minmax(500px,1.05fr);
+    column-gap:42px;
+    max-width:1240px;
+  }
+  body:has(main#top .hero) .v6-hero-visual{
+    width:min(100%,660px);
+    max-width:660px;
+    aspect-ratio:1.58;
+    margin-left:auto;
+  }
+  .rb-hero-bridge{
+    border-radius:30px;
+  }
+  .rb-hero-side{
+    width:172px;
+    min-height:112px;
+    padding:18px 17px;
+  }
+  .rb-hero-side--fr{left:24px}
+  .rb-hero-side--intl{right:24px}
+  .rb-hero-side strong{
+    font-size:1.03rem;
+    line-height:1.18;
+  }
+  .rb-hero-side span{
+    font-size:.68rem;
+  }
+  .rb-hero-side:hover,
+  .rb-hero-side:focus-visible,
+  .rb-hero-side.is-open{
+    width:218px;
+    min-height:242px;
+  }
+  .rb-hero-center{
+    width:128px;
+    height:128px;
+  }
+  .rb-hero-flow--left{
+    left:190px;
+    width:calc(50% - 254px);
+  }
+  .rb-hero-flow--right{
+    left:calc(50% + 64px);
+    width:calc(50% - 254px);
+  }
+  .rb-hero-service{
+    min-width:110px;
+    font-size:.65rem;
+  }
+  .rb-hero-service--1{top:30px}
+  .rb-hero-service--2{bottom:30px}
+  .rb-hero-service--3{top:92px}
+  .rb-hero-service--4{bottom:92px}
+  .rb-hero-caption{
+    bottom:10px;
+    font-size:.6rem;
+  }
+}
+
+/* 3. Align the written-contact block with the form instead of vertically centring it */
+body:has(main#top .hero) #contact>.container:not(#partner-home){
+  padding-top:18px!important;
+}
+body:has(main#top .hero) #partner-home .partner-contact__grid{
+  margin-bottom:22px!important;
+}
+body:has(main#top .hero) #contact>.container:not(#partner-home) .split{
+  align-items:start!important;
+}
+body:has(main#top .hero) #contact .split__text{
+  padding-top:12px;
+}
+body:has(main#top .hero) #contact .split__text h2{
+  margin-top:0!important;
+}
+@media(max-width:700px){
+  body:has(main#top .hero) #contact .split__text{padding-top:0}
+}
+
+
+/* Final spacing pass from visual review */
+@media(min-width:981px){
+  body:has(main#top .hero) .hero__inner{
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)!important;
+    column-gap:34px!important;
+  }
+  body:has(main#top .hero) .v6-hero-visual{
+    width:min(100%,690px)!important;
+    max-width:690px!important;
+    aspect-ratio:1.7!important;
+  }
+  .rb-hero-side{
+    width:180px!important;
+  }
+  .rb-hero-side--fr{left:22px!important}
+  .rb-hero-side--intl{right:22px!important}
+  .rb-hero-side:hover,
+  .rb-hero-side:focus-visible,
+  .rb-hero-side.is-open{
+    width:226px!important;
+  }
+  .rb-hero-flow--left{
+    left:198px!important;
+    width:calc(50% - 262px)!important;
+  }
+  .rb-hero-flow--right{
+    left:calc(50% + 64px)!important;
+    width:calc(50% - 262px)!important;
+  }
+}
+body:has(main#top .hero) #partner-home .partner-contact__grid{
+  margin-bottom:12px!important;
+}
+body:has(main#top .hero) #contact>.container:not(#partner-home){
+  padding-top:0!important;
+}

@@ -1,0 +1,423 @@
+/* RB Partners — mission pages visual rhythm and palette
+   Shared by all six mission pages. */
+
+.mission-page{
+  --mission-light:#ffffff;
+  --mission-soft:#f7f4ee;
+  --mission-navy:#081426;
+  --mission-gold:#d8b876;
+  --mission-border:#e7e2d8;
+}
+
+/* A tighter, more editorial rhythm. */
+.mission-page .section{
+  padding-top:68px;
+  padding-bottom:68px;
+}
+.mission-page .mission-hero{
+  padding-top:78px;
+  padding-bottom:64px;
+}
+.mission-page .mission-scope{
+  padding-top:70px;
+  padding-bottom:54px;
+  background:var(--mission-light);
+}
+.mission-page .mission-client-questions{
+  padding-top:54px;
+  padding-bottom:64px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-promise{
+  padding-top:64px;
+  padding-bottom:64px;
+  background:var(--mission-light);
+}
+.mission-page .mission-deliverables{
+  padding-top:64px;
+  padding-bottom:68px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-process{
+  padding-top:68px;
+  padding-bottom:46px;
+  background:var(--mission-navy);
+}
+.mission-page .mission-lanes{
+  padding-top:54px;
+  padding-bottom:68px;
+  background:var(--mission-soft);
+  color:var(--mission-navy);
+  border-top:1px solid rgba(216,184,118,.26);
+}
+.mission-page .mission-situations{
+  padding-top:66px;
+  padding-bottom:66px;
+  background:var(--mission-light);
+  color:var(--mission-navy);
+}
+.mission-page .mission-faq{
+  padding-top:66px;
+  padding-bottom:66px;
+  background:var(--mission-soft);
+}
+.mission-page .mission-final{
+  padding-top:66px;
+  padding-bottom:66px;
+  background:var(--mission-light);
+}
+
+/* Headings sit closer to their content. */
+.mission-page .mission-scope__head,
+.mission-page .mission-promise__head,
+.mission-page .mission-v7-head{
+  margin-bottom:28px;
+}
+.mission-page .mission-v7-head h2,
+.mission-page .mission-scope__head h2,
+.mission-page .mission-promise__head h2,
+.mission-page .mission-process h2,
+.mission-page .mission-situations h2,
+.mission-page .mission-faq h2{
+  margin-top:6px;
+  margin-bottom:11px;
+}
+.mission-page .eyebrow{
+  margin-bottom:9px;
+}
+
+/* The cards share one visual language instead of changing colour arbitrarily. */
+.mission-page .mission-scope-grid article,
+.mission-page .mission-promise-grid article,
+.mission-page .mission-question-card{
+  background:#fff;
+  border-color:var(--mission-border);
+  box-shadow:0 7px 22px rgba(8,20,38,.025);
+}
+.mission-page .mission-scope-grid article:nth-child(2),
+.mission-page .mission-scope-grid article:nth-child(3){
+  background:#fff;
+  border-color:var(--mission-border);
+}
+.mission-page .mission-scope-grid article:nth-child(3) h3{
+  color:var(--navy-900);
+}
+.mission-page .mission-scope-grid article:nth-child(3) p,
+.mission-page .mission-scope-grid article:nth-child(3) small{
+  color:var(--gray-700);
+}
+.mission-page .mission-scope-grid article:hover,
+.mission-page .mission-promise-grid article:hover,
+.mission-page .mission-question-card:hover{
+  border-color:rgba(198,161,91,.70);
+  box-shadow:0 14px 34px rgba(8,20,38,.07);
+}
+
+/* Less empty space inside cards. */
+.mission-page .mission-scope-grid article{
+  min-height:190px;
+  padding:25px 27px;
+}
+.mission-page .mission-scope-grid h3{
+  margin:24px 0 9px;
+}
+.mission-page .mission-scope-grid small{
+  padding-top:11px;
+}
+.mission-page .mission-promise-grid article{
+  min-height:185px;
+  padding:25px 27px;
+}
+.mission-page .mission-promise-grid h3{
+  margin:26px 0 9px;
+}
+.mission-page .mission-question-card{
+  min-height:132px;
+  padding:22px 25px 22px 68px;
+}
+.mission-page .mission-question-card>span{
+  left:23px;
+  top:22px;
+  color:var(--gold-500);
+}
+.mission-page .mission-question-card p{
+  font-size:1.08rem;
+  line-height:1.42;
+  text-align:left!important;
+  text-justify:auto!important;
+}
+.mission-page .mission-deliverables__grid{
+  gap:52px;
+}
+.mission-page .mission-deliverable-list article{
+  padding:19px 0;
+}
+.mission-page .mission-deliverable-list p{
+  text-align:left!important;
+  text-justify:auto!important;
+}
+
+/* Method stays dark; France & International switches to a warm light chapter. */
+.mission-page .mission-process-grid{
+  margin-top:28px;
+}
+.mission-page .mission-process-grid article{
+  padding-top:25px;
+}
+.mission-page .mission-process-grid b{
+  margin-bottom:17px;
+  color:var(--mission-gold);
+}
+.mission-page .mission-process-grid p{
+  color:rgba(255,255,255,.72);
+  text-align:left!important;
+  text-justify:auto!important;
+}
+.mission-page .mission-lanes::before{
+  opacity:.20;
+}
+.mission-page .mission-lanes .eyebrow{
+  color:#a77f34;
+}
+.mission-page .mission-lanes h2,
+.mission-page .mission-lanes h3{
+  color:var(--mission-navy);
+}
+.mission-page .mission-lane-grid article{
+  min-height:205px;
+  padding:27px;
+  background:#fff;
+  border-color:var(--mission-border);
+  box-shadow:0 8px 24px rgba(8,20,38,.035);
+}
+.mission-page .mission-lane-grid article:hover{
+  border-color:rgba(198,161,91,.62);
+  box-shadow:0 14px 34px rgba(8,20,38,.07);
+}
+.mission-page .mission-lane-grid span{
+  margin-bottom:28px;
+  color:#a77f34;
+  border-color:rgba(167,127,52,.42);
+  background:rgba(216,184,118,.08);
+}
+.mission-page .mission-lane-grid h3{
+  margin-bottom:9px;
+}
+.mission-page .mission-lane-grid p{
+  color:var(--gray-700);
+  text-align:left!important;
+  text-justify:auto!important;
+}
+
+/* Consistent accent colour for all step/index numbers. */
+.mission-page .mission-scope-grid>article>span,
+.mission-page .mission-promise-grid>article>span,
+.mission-page .mission-question-card>span,
+.mission-page .mission-deliverable-list b,
+.mission-page .mission-process-grid b{
+  color:var(--gold-500)!important;
+}
+
+/* Avoid stretched justification in narrow content areas. */
+.mission-page .mission-scope-grid p,
+.mission-page .mission-promise-grid p,
+.mission-page .mission-engagement p,
+.mission-page .faq-item p{
+  text-align:left!important;
+  text-justify:auto!important;
+  word-spacing:normal!important;
+}
+.mission-page .mission-hero__lead,
+.mission-page .mission-scope__head>p:last-child,
+.mission-page .mission-promise__head>p:last-child,
+.mission-page .mission-v7-head>p:last-child,
+.mission-page .mission-process__lead{
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+/* Remove visual dead zones caused by fixed heights on odd final scope cards. */
+@media (min-width:901px){
+  .mission-page--rewrite .mission-scope-grid article:last-child:nth-child(odd){
+    min-height:160px;
+  }
+}
+
+@media(max-width:900px){
+  .mission-page .section{
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+  .mission-page .mission-process{padding-bottom:34px}
+  .mission-page .mission-lanes{padding-top:44px}
+  .mission-page .mission-deliverables__grid{gap:28px}
+  .mission-page .mission-scope-grid article,
+  .mission-page .mission-promise-grid article,
+  .mission-page .mission-lane-grid article{
+    min-height:0;
+  }
+}
+@media(max-width:600px){
+  .mission-page .section{
+    padding-top:48px;
+    padding-bottom:48px;
+  }
+  .mission-page .mission-hero{
+    padding-top:58px;
+    padding-bottom:52px;
+  }
+  .mission-page .mission-client-questions{padding-top:44px}
+  .mission-page .mission-process{padding-bottom:30px}
+  .mission-page .mission-lanes{padding-top:38px}
+  .mission-page .mission-hero__lead,
+  .mission-page .mission-scope__head>p:last-child,
+  .mission-page .mission-promise__head>p:last-child,
+  .mission-page .mission-v7-head>p:last-child,
+  .mission-page .mission-process__lead{
+    text-align:left;
+  }
+}
+
+/* Stronger section-to-section contrast across every mission page */
+.mission-page .mission-situations h2,
+.mission-page .mission-situations h3{
+  color:var(--mission-navy);
+}
+.mission-page .mission-situations .eyebrow{
+  color:#a77f34;
+}
+.mission-page .mission-situations .mission-engagement{
+  background:var(--mission-soft);
+  border-color:var(--mission-border);
+  box-shadow:0 8px 24px rgba(8,20,38,.035);
+}
+.mission-page .mission-situations .mission-engagement strong{
+  color:var(--gold-500);
+}
+.mission-page .mission-situations .mission-engagement p{
+  color:var(--gray-700);
+}
+
+/* Keep the closing sequence visually alternating instead of merging into one beige block */
+.mission-page .mission-lanes + .mission-situations{
+  border-top:1px solid var(--mission-border);
+}
+.mission-page .mission-situations + .mission-faq{
+  border-top:1px solid rgba(198,161,91,.16);
+}
+.mission-page .mission-faq + .mission-final{
+  border-top:1px solid var(--mission-border);
+}
+
+/* Final mission CTA: bring back the premium visual language of the homepage hero. */
+.mission-page .mission-final{
+  position:relative;
+  overflow:hidden;
+  padding:74px 0 76px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(198,161,91,.18), transparent 36%),
+    radial-gradient(circle at 12% 92%, rgba(30,58,99,.58), transparent 42%),
+    linear-gradient(145deg, #071426 0%, #0b1d3a 58%, #142c54 100%);
+  border-top:0;
+}
+.mission-page .mission-final::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.035) 12% 12.1%, transparent 12.1% 88%, rgba(255,255,255,.035) 88% 88.1%, transparent 88.1%);
+  pointer-events:none;
+}
+.mission-page .mission-final .container{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  padding:0 32px;
+}
+.mission-page .mission-final .container::before{
+  content:"";
+  display:block;
+  width:54px;
+  height:2px;
+  margin:0 auto 22px;
+  background:var(--mission-gold);
+}
+.mission-page .mission-final h2{
+  max-width:760px;
+  margin:0 auto 18px;
+  color:#fff;
+  font-size:clamp(2rem,3.7vw,3.15rem);
+  line-height:1.12;
+  letter-spacing:-.025em;
+}
+.mission-page .mission-final p{
+  max-width:760px;
+  margin:0 auto;
+  color:rgba(255,255,255,.72);
+  font-size:1rem;
+  line-height:1.72;
+  text-align:center!important;
+  text-justify:auto!important;
+}
+.mission-page .mission-final__actions{
+  justify-content:center;
+  gap:12px;
+  margin-top:30px;
+}
+.mission-page .mission-final .btn{
+  min-width:210px;
+  min-height:48px;
+}
+.mission-page .mission-final .btn--primary{
+  box-shadow:0 10px 28px rgba(198,161,91,.18);
+}
+.mission-page .mission-final .btn--ghost{
+  color:#fff;
+  border-color:rgba(255,255,255,.28);
+  background:rgba(255,255,255,.03);
+}
+.mission-page .mission-final .btn--ghost:hover{
+  color:var(--mission-navy);
+  background:#fff;
+  border-color:#fff;
+}
+
+/* Homepage review ribbon: true edge-to-edge continuous movement. */
+body:not(.mission-page) .rb-reviews-demo{
+  overflow:hidden;
+}
+body:not(.mission-page) .rb-review-viewport{
+  position:relative;
+  left:50%;
+  width:100vw;
+  max-width:none;
+  margin-left:0!important;
+  transform:translateX(-50%);
+  overflow:hidden;
+  padding:4px 0 10px;
+}
+body:not(.mission-page) .rb-review-track{
+  gap:16px;
+  padding-left:0;
+  padding-right:0;
+  will-change:transform;
+  animation-duration:34s;
+}
+
+@media(max-width:600px){
+  .mission-page .mission-final{
+    padding:58px 0 60px;
+  }
+  .mission-page .mission-final .container{
+    padding:0 22px;
+  }
+  .mission-page .mission-final h2{
+    font-size:clamp(1.8rem,9vw,2.35rem);
+  }
+  .mission-page .mission-final__actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .mission-page .mission-final .btn{
+    width:100%;
+  }
+}

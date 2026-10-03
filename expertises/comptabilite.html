@@ -1,168 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-doctitle="card.comptabilite.title">Comptabilité & tenue des comptes — RB Partners</title>
-<meta name="description" content="Tenue comptable, comptes annuels et tableaux de bord : découvrez l'accompagnement comptable de RB Partners.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conformité & comptabilité — RB Partners</title>
+<meta name="description" content="RB Partners sécurise votre comptabilité, vos déclarations, vos clôtures et votre reporting en France.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="mission-page mission-page--accounting">
+<header class="header" id="header"><div class="container header__inner">
+<a href="../index.html" class="logo"><span class="logo__mark">RB</span><span class="logo__text">RB <em>Partners</em></span></a>
+<nav class="nav" id="nav"></nav>
+<a href="../index.html#v4-booking" class="btn btn--primary btn--sm header__cta">Prendre rendez-vous</a>
+<div class="lang-toggle"><span class="lang-toggle__label" data-lang-label="fr">FR</span><label class="lang-switch"><input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue"><span class="lang-switch__track"></span><span class="lang-switch__thumb"></span></label><span class="lang-toggle__label" data-lang-label="en">EN</span></div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
 
-<div class="topbar">
-  <div class="container topbar__inner">
-    <a href="tel:+33100000000" class="topbar__item">01 00 00 00 00</a>
-    <a href="mailto:contact@rb-partners.fr" class="topbar__item">contact@rb-partners.fr</a>
-    <a href="../index.html#contact" class="topbar__item topbar__item--accent" data-i18n="topbar.account">Espace client</a>
+<main class="mission-detail">
+<section class="mission-hero">
+  <div class="container mission-hero__inner">
+    <p class="eyebrow" data-copy="eyebrow"></p>
+    <h1 data-copy="title"></h1>
+    <p class="mission-hero__lead" data-copy="lead"></p>
+    <div class="mission-hero__actions"><a class="btn btn--primary" href="../index.html#v4-booking" data-copy="cta"></a></div>
+    <div class="mission-hero__proofs"></div>
   </div>
-</div>
+</section>
 
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="../index.html" class="logo">
-      <span class="logo__mark">RB</span>
-      <span class="logo__text">RB <em>Partners</em></span>
-    </a>
-
-    <nav class="nav" id="nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-
-    <div class="call-dropdown">
-      <button class="call-dropdown__toggle" id="call-toggle" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span data-i18n="nav.call">Nous appeler</span>
-        <svg class="call-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="call-dropdown__panel" id="call-panel">
-        <a href="tel:+33600000001" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Rachel Illouz</strong><span>06 00 00 00 01</span></span>
-        </a>
-        <a href="tel:+33600000002" class="call-dropdown__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="call-dropdown__item-text"><strong>Benjamin Haziza</strong><span>06 00 00 00 02</span></span>
-        </a>
-      </div>
-    </div>
-
-    <a href="../index.html#contact" class="btn btn--primary btn--sm header__cta" data-i18n="nav.cta">Prendre rendez-vous</a>
-
-    <div class="lang-toggle">
-      <span class="lang-toggle__label" data-lang-label="fr">FR</span>
-      <label class="lang-switch">
-        <input type="checkbox" id="lang-switch" aria-label="Switch site language / Changer la langue du site">
-        <span class="lang-switch__track"></span>
-        <span class="lang-switch__thumb"></span>
-      </label>
-      <span class="lang-toggle__label" data-lang-label="en">EN</span>
-    </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav class="breadcrumb" aria-label="Fil d'ariane">
+<section class="section mission-scope">
   <div class="container">
-    <ol>
-      <li><a href="../index.html" data-i18n="breadcrumb.home">Accueil</a></li>
-      <li><a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a></li>
-      <li aria-current="page" data-i18n="card.comptabilite.title">Comptabilité & tenue des comptes</li>
-    </ol>
+    <div class="mission-scope__head"><p class="eyebrow" data-copy="scopeEye"></p><h2 data-copy="scopeTitle"></h2><p data-copy="scopeLead"></p></div>
+    <div class="mission-scope-grid"></div>
   </div>
-</nav>
+</section>
 
-<main>
+<section class="section mission-promise">
+  <div class="container">
+    <div class="mission-promise__head"><p class="eyebrow" data-copy="promiseEye"></p><h2 data-copy="promiseTitle"></h2><p data-copy="promiseLead"></p></div>
+    <div class="mission-promise-grid"></div>
+  </div>
+</section>
 
-  <section class="expertise-banner">
-    <div class="container expertise-banner__inner">
-      <p class="eyebrow" data-i18n="exp.eyebrow">Expertise</p>
-      <h1 data-i18n="card.comptabilite.title">Comptabilité & tenue des comptes</h1>
-      <p data-i18n="exp.comptabilite.subtitle">Une production comptable fiable et des tableaux de bord clairs pour piloter votre activité en toute confiance, mois après mois.</p>
+<section class="section mission-process">
+  <div class="container">
+    <p class="eyebrow" data-copy="processEye"></p><h2 data-copy="processTitle"></h2><p class="mission-process__lead" data-copy="processLead"></p>
+    <div class="mission-process-grid"></div>
+  </div>
+</section>
+
+<section class="section mission-situations">
+  <div class="container mission-situations__grid">
+    <div><p class="eyebrow" data-copy="engagementEye"></p><h2 data-copy="engagementTitle"></h2></div>
+    <div class="mission-engagement">
+      <strong data-copy="engagementValue"></strong>
+      <p data-copy="engagementText"></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="expertise-body">
-    <div class="container expertise-body__grid">
-      <div class="expertise-body__intro reveal">
-        <p data-i18n="exp.comptabilite.intro1">
-          La comptabilité est le socle de toute décision de gestion. Chez RB Partners, nous tenons vos comptes avec
-          rigueur et vous restituons l'information sous une forme directement exploitable, pour que vous puissiez
-          piloter votre entreprise sans avoir à déchiffrer des colonnes de chiffres.
-        </p>
-        <p data-i18n-html="exp.comptabilite.intro2">
-          Selon la taille et la maturité de votre structure, nous adaptons la fréquence et le niveau de détail de
-          nos restitutions&nbsp;: suivi mensuel pour un pilotage fin, points trimestriels pour une structure plus
-          stable. Dans tous les cas, vous gardez une vision claire et à jour de votre situation financière.
-        </p>
-        <p data-i18n="exp.comptabilite.intro3">
-          Nous assurons également l'établissement de vos comptes annuels et, lorsque votre structure y est soumise,
-          nous coordonnons les échanges avec votre commissaire aux comptes pour une clôture sans accroc.
-        </p>
-      </div>
+<section class="section mission-faq">
+  <div class="container faq-wrap">
+    <div class="section__head"><p class="eyebrow">FAQ</p><h2 data-copy="faqTitle"></h2></div>
+    <div class="faq-list mission-faq-list"></div>
+  </div>
+</section>
 
-      <aside class="expertise-services reveal">
-        <h2 data-i18n="services.title">Nos services clés</h2>
-        <ul class="checklist">
-          <li data-i18n="exp.comptabilite.services.0">Tenue comptable mensuelle et rapprochements bancaires</li>
-          <li data-i18n="exp.comptabilite.services.1">Établissement des comptes annuels (bilan, compte de résultat, annexes)</li>
-          <li data-i18n="exp.comptabilite.services.2">Tableaux de bord et indicateurs de pilotage sur mesure</li>
-          <li data-i18n="exp.comptabilite.services.3">Suivi et prévisionnel de trésorerie</li>
-          <li data-i18n="exp.comptabilite.services.4">Accompagnement lors des clôtures et relations avec le commissaire aux comptes</li>
-        </ul>
-      </aside>
+<section class="expertise-cta mission-final">
+  <div class="container">
+    <h2 data-copy="finalTitle"></h2>
+    <p data-copy="finalText"></p>
+    <div class="mission-final__actions">
+      <a class="btn btn--primary" href="../index.html#v4-booking" data-copy="finalCta"></a>
+      <a class="btn btn--ghost" href="mailto:contact@rb-partners.fr" data-copy="finalCtaSecondary"></a>
     </div>
-
-    <div class="container expertise-nav">
-      <a href="../index.html#expertises">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-        <span data-i18n="exp.back">Retour aux expertises</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="expertise-cta">
-    <div class="container">
-      <h2 data-i18n="exp.comptabilite.cta_title">Un projet comptable à nous confier ?</h2>
-      <p data-i18n="exp.comptabilite.cta_text">Parlons de votre activité et de vos besoins de suivi.</p>
-      <a href="../index.html#contact" class="btn btn--primary" data-i18n="exp.cta_button">Nous contacter</a>
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <span class="logo__mark logo__mark--footer">RB</span>
-      <span>RB <em>Partners</em></span>
-    </div>
-    <nav class="footer__nav">
-      <a href="../index.html#expertises" data-i18n="nav.expertises">Expertises</a>
-      <a href="../index.html#accompagnement" data-i18n="nav.accompagnement">Accompagnement</a>
-      <a href="../index.html#international" data-i18n="nav.international">International</a>
-      <a href="../index.html#equipe" data-i18n="nav.equipe">Le cabinet</a>
-      <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-      <a href="../simulateurs/index.html" data-i18n="nav.simulateurs">Simulateurs</a>
-      <a href="../facturation-electronique.html" data-i18n="nav.facturation">Facturation électronique</a>
-    </nav>
-    <p class="footer__legal">© <span id="year"></span> <span data-i18n="footer.legal">RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.</span></p>
-  </div>
-</footer>
-
-<script src="../js/i18n.js"></script>
-<script src="../js/main.js"></script>
-</body>
-</html>
+<footer class="footer"></footer>
+<script>window.RB_MISSION_PAGE={"fr":{"metaTitle":"Conformité & comptabilité — RB Partners","metaDescription":"Tenue, révision, TVA, déclarations fiscales, clôture, liasse fiscale et reporting FR/EN pour PME et filiales françaises de groupes étrangers.","eyebrow":"Conformité & comptabilité","title":"Une comptabilité fiable en France, des chiffres lisibles pour décider.","lead":"Nous prenons en charge la comptabilité française au quotidien, les déclarations et la clôture, tout en organisant des restitutions utiles au dirigeant ou à la maison mère. L’objectif : moins de collecte, moins d’incertitude et une information financière que vous pouvez réellement utiliser.","cta":"Parler à un associé","proofs":["Tenue & révision","TVA & fiscalité","Bilan & liasse","Reporting FR / EN"],"scopeEye":"Ce que nous faisons","scopeTitle":"Votre comptabilité, du quotidien à la clôture.","scopeLead":"Nous définissons avec vous qui fait quoi, à quelle fréquence et avec quels livrables.","scope":[["Tenue & révision","Intégration des flux, rapprochements bancaires, contrôle des comptes, suivi des pièces et constitution du dossier de révision."],["TVA & déclarations fiscales","Déclarations de TVA, acomptes et solde d’IS, CFE, CVAE, DAS2 et autres obligations applicables à votre société."],["Clôture, bilan & liasse","Travaux d’inventaire et justification des comptes, puis bilan, compte de résultat, annexe, liasse fiscale et FEC."],["Reporting groupe FR / EN","Situations périodiques, reporting en anglais, retraitements aux normes du groupe, package de consolidation et calendrier de la maison mère."],["Facturation électronique & outils","Organisation des circuits de factures, Pennylane, collecte des pièces et validations dans le cadre de la réforme de la facturation électronique."]],"promiseEye":"Pour qui","promiseTitle":"Un suivi adapté à votre organisation.","promiseLead":"Le même socle comptable, avec un fonctionnement différent selon votre structure et vos contraintes.","promises":[["PME établie","Nous organisons la production comptable, les déclarations et les clôtures selon votre rythme de suivi. Les situations périodiques sont calibrées selon les besoins du dirigeant et de la direction financière."],["Filiale française d’un groupe étranger","Nous articulons obligations françaises, reporting FR/EN, comptes intragroupe, package de consolidation et calendrier de la maison mère."],["Société en transition ou en croissance","Nous reprenons les historiques, identifions les sujets ouverts et remettons en place les outils, responsabilités et échéances lors d’un changement de cabinet ou d’une phase de croissance."]],"processEye":"Notre méthode","processTitle":"Un fonctionnement clair dès le départ.","processLead":"Quatre étapes concrètes pour reprendre le dossier et installer un rythme de travail lisible.","process":[["Reprendre le dossier","Nous récupérons la comptabilité, les déclarations, les FEC, les immobilisations et les éléments utiles auprès de vos équipes et, le cas échéant, du précédent cabinet."],["Paramétrer les outils et les flux","Nous organisons Pennylane, les banques, les factures, les accès et les circuits de validation en définissant les responsabilités de chacun."],["Tenir les comptes et déclarer","Nous réalisons les traitements comptables, rapprochements, contrôles et déclarations fiscales selon le calendrier défini avec vous."],["Clôturer et restituer","Nous préparons les comptes annuels ou situations intermédiaires, traitons les points de clôture et vous remettons les principaux livrables."]],"engagementEye":"Engagement","engagementTitle":"Une question ne reste pas sans réponse.","engagementValue":"48h","engagementText":"Nous nous engageons à apporter une première réponse à vos demandes sous 48 heures ouvrées. Lorsqu’un sujet nécessite une analyse complémentaire, nous vous indiquons sa prise en charge et les prochaines étapes.","faqTitle":"Questions fréquentes","faq":[["Pouvez-vous reprendre un dossier en cours d’exercice ?","Oui. Nous pouvons reprendre la comptabilité sans attendre la prochaine clôture. Nous organisons la transmission des balances, grands livres, FEC, déclarations fiscales et autres éléments utiles. Nous faisons ensuite le point sur les écritures à reprendre, les échéances à venir et les sujets encore ouverts."],["Travaillez-vous avec Pennylane ?","Oui. Pennylane peut centraliser les factures, les flux bancaires, les justificatifs et les échanges liés à la comptabilité. Nous organisons le paramétrage du dossier et les circuits de validation avec votre équipe. Chacun sait ainsi où déposer, valider et retrouver l’information."],["Pouvez-vous produire un reporting pour une maison mère étrangère ?","Oui. Nous pouvons préparer des reportings périodiques en français ou en anglais selon le format demandé par le groupe. Cela peut inclure un mapping du plan de comptes, des rapprochements intragroupe, des retraitements vers les normes du groupe et un package de consolidation. Le calendrier est défini à partir des dates de clôture de la maison mère."],["Pouvez-vous établir des situations comptables en cours d’année ?","Oui. Une situation peut être préparée mensuellement, trimestriellement ou à une date spécifique selon vos besoins. Elle comprend une revue des principaux comptes et les écritures nécessaires à la période. Le contenu et le niveau de détail sont définis selon l’usage attendu."],["Comment gérez-vous la facturation électronique ?","Nous intégrons la réforme de la facturation électronique dans l’organisation du dossier. Nous examinons votre circuit de facturation, de réception et de validation des pièces afin de l’adapter aux nouvelles obligations. Lorsque Pennylane est utilisé, nous veillons à la cohérence entre ce circuit et le reste du processus comptable."]],"finalTitle":"Faisons le point sur votre organisation comptable.","finalText":"Un premier échange de 30 minutes permet de comprendre votre organisation actuelle, vos outils, vos échéances fiscales et, le cas échéant, les attentes de votre maison mère.","finalCta":"Réserver un échange de 30 min","finalCtaSecondary":"Écrire à RB Partners","questions":["Est-ce que mes comptes sont suffisamment à jour pour que je puisse décider ?","Qui suit mes échéances de TVA, d’IS et mes autres obligations fiscales ?","Comment changer de cabinet sans perdre l’historique ni les échéances en cours ?","Comment produire un reporting français compatible avec les attentes de ma maison mère ?"],"deliverables":[["Calendrier comptable & fiscal","Un calendrier clair des travaux, déclarations et dates de clôture."],["Comptabilité révisée","Rapprochements, justification des comptes et suivi des pièces manquantes."],["Déclarations & clôture","TVA, fiscalité courante, comptes annuels, liasse et FEC selon votre situation."],["Reporting utile","Situations périodiques, commentaires et reporting FR / EN lorsque nécessaire."],["Dossier organisé","Pennylane, circuits de validation et responsabilités définies avec vos équipes."]],"lanes":[["Entreprise française","Nous adaptons le rythme de production aux besoins du dirigeant : obligations françaises, suivi de trésorerie, situations intermédiaires et clôture annuelle."],["Filiale / groupe international","Nous faisons le lien entre French GAAP, obligations locales, comptes intragroupe, calendrier de clôture et reporting demandé par le siège."]],"questionsEye":"Vos enjeux","questionsTitle":"Vous vous posez peut-être ces questions.","questionsLead":"Nous partons de votre situation réelle avant de parler de technique.","deliverablesEye":"Concrètement","deliverablesTitle":"Ce que vous obtenez, pas seulement ce que nous faisons.","lanesEye":"France & international","lanesTitle":"Le même métier, deux contextes très différents."},"en":{"metaTitle":"Compliance & accounting — RB Partners","metaDescription":"Bookkeeping, VAT, French tax filings, year-end accounts, tax returns and FR/EN group reporting for SMEs and French subsidiaries of international groups.","eyebrow":"Compliance & accounting","title":"Reliable French accounting, clear numbers for better decisions.","lead":"We handle day-to-day French accounting, tax filings and year-end work while organising reporting that is useful to management or headquarters. The goal is less chasing, less uncertainty and financial information you can actually use.","cta":"Speak with a partner","proofs":["Bookkeeping & review","VAT & tax","Accounts & tax return","FR / EN reporting"],"scopeEye":"What we do","scopeTitle":"Your accounting, from day-to-day to year-end.","scopeLead":"We define who does what, how often and which deliverables are expected.","scope":[["Bookkeeping & review","Transaction flows, bank reconciliations, account reviews, supporting-document follow-up and preparation of the review file."],["VAT & tax filings","VAT returns, corporate income tax instalments and balance, CFE, CVAE, DAS2 and other filings applicable to your company."],["Year-end, accounts & tax return","Year-end entries and account substantiation, followed by financial statements, notes, French tax return and FEC."],["FR / EN group reporting","Periodic reporting, English-language reporting, group-GAAP adjustments, consolidation packages and alignment with the parent company calendar."],["E-invoicing & tools","Invoice workflows, Pennylane, document collection and approval processes organised around the ongoing French e-invoicing reform."]],"promiseEye":"Who we support","promiseTitle":"A setup adapted to your organisation.","promiseLead":"The same accounting fundamentals, with a different operating model depending on your structure and constraints.","promises":[["Established SME","We organise accounting production, tax filings and year-end work around your management rhythm. Periodic accounts are calibrated to the needs of management and the finance team."],["French subsidiary of an international group","We connect French statutory requirements with FR/EN reporting, intercompany accounts, consolidation packages and the parent company closing calendar."],["Company in transition or growth","We take over historical data, identify open items and reset tools, responsibilities and deadlines when you change firm or when the accounting organisation has not kept pace with growth."]],"processEye":"How we work","processTitle":"A clear operating model from day one.","processLead":"Four practical steps to take over the file and establish a clear working rhythm.","process":[["Take over the file","We collect accounting records, tax filings, FEC files, fixed-asset data and other relevant information from your team and, where applicable, the previous accounting firm."],["Set up tools and workflows","We organise Pennylane, bank feeds, invoices, access rights and approval workflows, with clear responsibilities for each stakeholder."],["Maintain accounts and file returns","We complete accounting processing, reconciliations, reviews and French tax filings according to the agreed calendar."],["Close and report","We prepare annual accounts or interim statements, address closing items and deliver the agreed accounting and reporting outputs."]],"engagementEye":"Service commitment","engagementTitle":"Your question does not disappear into a queue.","engagementValue":"48h","engagementText":"We commit to providing an initial response to your requests within 48 business hours. When a matter requires further analysis, we confirm that it is being handled and explain the next steps.","faqTitle":"Frequently asked questions","faq":[["Can you take over during the financial year?","Yes. We can take over the accounting without waiting for the next year-end. We organise the transfer of trial balances, ledgers, FEC files, tax filings and other relevant information. We then review entries to be addressed, upcoming deadlines and any open items."],["Do you work with Pennylane?","Yes. Pennylane can centralise invoices, bank flows, supporting documents and accounting-related exchanges. We organise the file setup and approval workflows with your team. This gives each stakeholder a clear place to submit, approve and retrieve information."],["Can you report to a foreign parent company?","Yes. We can prepare periodic reports in French or English using the group’s required format. This may include chart-of-accounts mapping, intercompany reconciliations, group-GAAP adjustments and consolidation packages. The reporting calendar is built around the parent company’s closing deadlines."],["Can you prepare interim accounts during the year?","Yes. Interim accounts can be prepared monthly, quarterly or at a specific date depending on your needs. They include a review of the main accounts and the entries required for the period. The level of detail is defined according to how the information will be used."],["How do you handle French e-invoicing?","We integrate the e-invoicing reform into the accounting setup. We review your current invoice issuing, receipt and approval workflows and adapt them to the new requirements. When Pennylane is used, we make sure the invoice workflow remains consistent with the rest of the accounting process."]],"finalTitle":"Let’s review your accounting organisation.","finalText":"A first 30-minute conversation helps us understand your current setup, tools, French tax deadlines and, where relevant, the reporting requirements of your parent company.","finalCta":"Book a 30-minute call","finalCtaSecondary":"Email RB Partners","questions":["Are our accounts up to date enough to support decisions?","Who is monitoring VAT, corporate tax and recurring French filing deadlines?","How can we change accounting firm without losing history or upcoming deadlines?","How do we produce French accounts and reporting that fit head-office requirements?"],"deliverables":[["Accounting & tax calendar","A clear calendar of recurring work, filings and closing deadlines."],["Reviewed accounts","Reconciliations, account substantiation and follow-up of missing documents."],["Filings & year-end","VAT, recurring French tax, annual accounts, tax return and FEC where applicable."],["Useful reporting","Periodic accounts, commentary and FR / EN reporting where required."],["Organised workflow","Pennylane, approval workflows and clear responsibilities with your teams."]],"lanes":[["French business","We adapt the production rhythm to management needs: French compliance, cash visibility, interim accounts and annual closing."],["International subsidiary / group","We connect French GAAP and local compliance with intercompany accounts, group closing calendars and head-office reporting."]],"questionsEye":"Your challenges","questionsTitle":"You may be asking these questions.","questionsLead":"We start from your actual situation before talking about technical solutions.","deliverablesEye":"In practice","deliverablesTitle":"What you receive, not only what we do.","lanesEye":"France & international","lanesTitle":"The same expertise, two very different contexts."}};</script>
+<script src="../js/i18n.js"></script><script src="../js/main.js"></script><script src="../js/mission-page.js"></script>
+</body></html>
