@@ -3,6 +3,88 @@
   if (!cfg) return;
 
   const currentLang = () => window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr';
+
+  const relatedMap = {
+    fr: {
+      accounting: [
+        ["Expert-comptable Pennylane","Une organisation comptable digitale, lisible et collaborative.","../expert-comptable-pennylane.html"],
+        ["Expert-comptable pour PME","Un accompagnement complet du quotidien aux décisions de gestion.","../expert-comptable-pme.html"],
+        ["Implantation en France","Le point d’entrée local des sociétés et groupes étrangers.","../expert-comptable-international.html"]
+      ],
+      management: [
+        ["Expert-comptable start-up","Cash, budget, reporting et accompagnement de la croissance.","../expert-comptable-startup.html"],
+        ["Expert-comptable pour PME","Pilotage, trésorerie et organisation financière.","../expert-comptable-pme.html"],
+        ["Expert-comptable à Paris","Un cabinet de proximité pour vos sujets comptables et financiers.","../expert-comptable-paris.html"]
+      ],
+      payroll: [
+        ["Expert-comptable pour PME","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
+        ["Implantation en France","Paie française et obligations sociales pour les groupes étrangers.","../expert-comptable-international.html"],
+        ["Expert-comptable start-up","Paie, recrutements et croissance des équipes.","../expert-comptable-startup.html"]
+      ],
+      legal: [
+        ["Créer une entreprise en France","Structurer, immatriculer et démarrer dans de bonnes conditions.","../creation-entreprise-france.html"],
+        ["Expert-comptable start-up","Structuration et accompagnement après la création.","../expert-comptable-startup.html"],
+        ["Implantation en France","Filiale, succursale et organisation locale.","../expert-comptable-international.html"]
+      ]
+    },
+    en: {
+      accounting: [
+        ["Pennylane accounting firm","A digital and collaborative accounting workflow.","../expert-comptable-pennylane.html"],
+        ["Accountant for SMEs","End-to-end support from compliance to management decisions.","../expert-comptable-pme.html"],
+        ["Setting up in France","A local point of contact for foreign companies and groups.","../expert-comptable-international.html"]
+      ],
+      management: [
+        ["Accountant for start-ups","Cash, budgets, reporting and growth support.","../expert-comptable-startup.html"],
+        ["Accountant for SMEs","Management reporting, cash and finance organisation.","../expert-comptable-pme.html"],
+        ["Accountant in Paris","A responsive local firm for accounting and finance matters.","../expert-comptable-paris.html"]
+      ],
+      payroll: [
+        ["Accountant for SMEs","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
+        ["Setting up in France","French payroll and social compliance for international groups.","../expert-comptable-international.html"],
+        ["Accountant for start-ups","Payroll, hiring and team growth support.","../expert-comptable-startup.html"]
+      ],
+      legal: [
+        ["Create a company in France","Structure, register and launch on solid foundations.","../creation-entreprise-france.html"],
+        ["Accountant for start-ups","Structuring and support after incorporation.","../expert-comptable-startup.html"],
+        ["Setting up in France","Subsidiary, branch and local operating setup.","../expert-comptable-international.html"]
+      ]
+    }
+  };
+
+  function relatedKey() {
+    if (document.body.classList.contains('mission-page--accounting')) return 'accounting';
+    const path = location.pathname;
+    if (path.includes('conseil-gestion')) return 'management';
+    if (path.includes('social-paie')) return 'payroll';
+    if (path.includes('creation-juridique')) return 'legal';
+    return null;
+  }
+
+  function renderRelated(lang) {
+    const key = relatedKey();
+    const items = relatedMap[lang]?.[key];
+    if (!items?.length) return;
+    document.querySelector('.rb-related')?.remove();
+    const target = document.querySelector('.mission-final');
+    if (!target) return;
+    const section = document.createElement('section');
+    section.className = 'rb-related';
+    section.innerHTML = `
+      <div class="container">
+        <div class="rb-related__head">
+          <div>
+            <p class="eyebrow">${lang === 'en' ? 'Related expertise' : 'À découvrir aussi'}</p>
+            <h2>${lang === 'en' ? 'Continue with the topic that fits your situation.' : 'Poursuivez selon votre situation.'}</h2>
+          </div>
+          <p>${lang === 'en' ? 'Useful entry points to understand how RB Partners can support your company in France.' : 'Des pages complémentaires pour comprendre rapidement l’accompagnement adapté à votre entreprise.'}</p>
+        </div>
+        <div class="rb-related__grid">
+          ${items.map((x,i) => `<a class="rb-related__card" href="${x[2]}"><small>0${i+1}</small><h3>${x[0]}</h3><p>${x[1]}</p><span>${lang === 'en' ? 'Explore' : 'Découvrir'} →</span></a>`).join('')}
+        </div>
+      </div>`;
+    target.before(section);
+  }
+
   const setText = (selector, value) => {
     const el = document.querySelector(selector);
     if (el && value !== undefined) el.textContent = value;
@@ -77,10 +159,14 @@
       `<article><b>0${i+1}</b><h3>${x[0]}</h3><p>${x[1]}</p></article>`
     ).join('');
 
+    renderRelated(lang);
+
     const faq = document.querySelector('.mission-faq-list');
     if (faq) faq.innerHTML = (d.faq || []).map(x =>
       `<details class="faq-item"><summary>${x[0]}</summary><p>${x[1]}</p></details>`
     ).join('');
+
+    document.dispatchEvent(new CustomEvent('rb:content-upgraded'));
   }
 
   render(currentLang());
