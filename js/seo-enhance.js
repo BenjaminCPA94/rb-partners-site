@@ -1,7 +1,11 @@
 (() => {
   const root = document.documentElement;
   const getLang = () => root.lang === 'en' ? 'en' : 'fr';
-  const cleanPath = () => location.pathname.replace(/\/+$/, '').split('/').slice(-2).join('/');
+  const cleanPath = () => {
+    const parts = location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+    if (parts.length >= 2 && parts[parts.length - 2] === 'expertises') return `expertises/${parts.at(-1)}`;
+    return parts.at(-1) || 'index.html';
+  };
 
   const pages = {
     fr: {
