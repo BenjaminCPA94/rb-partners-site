@@ -24,6 +24,11 @@
   missionPolishCss.href = `${base}css/mission-polish.css`;
   document.head.appendChild(missionPolishCss);
 
+  const seoEnhanceCss = document.createElement('link');
+  seoEnhanceCss.rel = 'stylesheet';
+  seoEnhanceCss.href = `${base}css/seo-enhance.css`;
+  document.head.appendChild(seoEnhanceCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -46,6 +51,10 @@
       hotfix.src = `${base}js/final-polish-hotfix.js`;
       hotfix.onload = () => document.dispatchEvent(new CustomEvent('rb:content-upgraded'));
       document.head.appendChild(hotfix);
+
+      const seoEnhance = document.createElement('script');
+      seoEnhance.src = `${base}js/seo-enhance.js`;
+      document.head.appendChild(seoEnhance);
     };
     document.head.appendChild(polish);
   };
