@@ -110,7 +110,7 @@ const observer = prefersReducedMotion ? null : new IntersectionObserver((entries
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px 8% 0px' });
 
 const observeReveal = (el) => {
   if (el.dataset.rbRevealObserved === 'true') return;
