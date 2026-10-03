@@ -27,6 +27,16 @@
         ["Implantation en France","Filiale, succursale et organisation locale.","../expert-comptable-international.html"]
       ],
       tax: [
+        ["Expert-comptable pour PME","Une fiscalité suivie avec la comptabilité et le pilotage du quotidien.","../expert-comptable-pme.html"],
+        ["Implantation en France","TVA, fiscalité locale et flux transfrontaliers pour les sociétés étrangères.","../expert-comptable-international.html"],
+        ["Comptabilité & reporting","Des comptes fiables pour sécuriser les déclarations et les clôtures.","comptabilite.html"]
+      ],
+      implantation: [
+        ["Expert-comptable international","Un accompagnement dédié aux groupes et sociétés étrangères opérant en France.","../expert-comptable-international.html"],
+        ["Créer une entreprise en France","Structurer et lancer votre entité française sur de bonnes bases.","../creation-entreprise-france.html"],
+        ["Paie & social","Mettre en place les premières embauches et la paie française.","social-paie.html"]
+      ],
+      tax: [
         ["Expert-comptable international","Fiscalité française, flux transfrontaliers et coordination groupe.","../expert-comptable-international.html"],
         ["Expert-comptable pour PME","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
         ["Comptabilité & reporting","Des données fiables pour préparer déclarations, clôture et reporting.","comptabilite.html"]
@@ -56,7 +66,17 @@
       legal: [
         ["Create a company in France","Structure, register and launch on solid foundations.","../creation-entreprise-france.html"],
         ["Accountant for start-ups","Structuring and support after incorporation.","../expert-comptable-startup.html"],
-        ["Setting up in France","Subsidiary, branch and local operating setup.","../expert-comptable-international.html"]
+        ["Setting up in France","Subsidiary, branch and local operating setup.","../international-accountant-france.html"]
+      ],
+      tax: [
+        ["Accountant for SMEs","Connect French tax compliance with day-to-day accounting and management.","../expert-comptable-pme.html"],
+        ["Doing business in France","VAT, French tax and cross-border flows for foreign companies.","../international-accountant-france.html"],
+        ["Accounting & reporting","Reliable local accounts supporting filings and closings.","comptabilite.html"]
+      ],
+      implantation: [
+        ["International accountant in France","Dedicated support for foreign companies and international groups.","../international-accountant-france.html"],
+        ["Create a company in France","Structure and launch the French entity on solid foundations.","../creation-entreprise-france.html"],
+        ["Payroll & HR","Set up first hires and French payroll obligations.","social-paie.html"]
       ],
       tax: [
         ["International accountant","French tax, cross-border flows and group coordination.","../expert-comptable-international.html"],
