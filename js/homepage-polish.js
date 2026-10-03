@@ -146,6 +146,11 @@
       ? 'Use the form or contact us directly by phone or email. We will come back to you as soon as possible.'
       : 'Utilisez le formulaire ou contactez-nous directement par téléphone ou par e-mail. Nous vous répondrons rapidement.';
 
+    const split=contactText.closest('.split');
+    if(split) split.style.alignItems='start';
+    contactText.style.alignSelf='start';
+    contactText.style.paddingTop='0';
+
     document.querySelectorAll('#partner-home .partner-contact__card a, #partner-home .partner-contact__card button').forEach(action=>{
       const label=(action.textContent||'').trim().replace(/\s+/g,' ');
       if(/^(Écrire|Ecrire|Write)\s+(Rachel|Benjamin)$/i.test(label)) action.remove();
