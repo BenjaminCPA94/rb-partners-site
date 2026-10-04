@@ -516,6 +516,7 @@ p { color: var(--gray-600); }
   .section { padding: 70px 0; }
   .form { padding: 26px; }
   .steps-card, .globe-card { padding: 28px; }
+  .btn { white-space: normal; text-align: center; }
 }
 
 @media (max-width: 520px) {

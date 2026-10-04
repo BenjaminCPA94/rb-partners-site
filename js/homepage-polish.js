@@ -8,13 +8,15 @@
     const box=document.querySelector('.v6-hero-visual');
     if(!box) return;
     const en=lang()==='en';
+    const canHover=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const hint=canHover?(en?'Hover to see services':'Survolez pour voir les missions'):(en?'Tap to see services':'Touchez pour voir les missions');
     box.innerHTML=`
       <div class="rb-hero-bridge">
         <button class="rb-hero-side rb-hero-side--fr" type="button" aria-expanded="false">
           <small>FRANCE</small>
           <strong>${en?'French businesses':'Entreprises françaises'}</strong>
           <span>${en?'SMEs · start-ups · founders':'PME · start-up · dirigeants'}</span>
-          <em class="rb-hero-side__hint">${en?'Hover to see services':'Survolez pour voir les missions'}</em>
+          <em class="rb-hero-side__hint">${hint}</em>
           <span class="rb-hero-side__missions">
             <span class="rb-hero-mission">${en?'Accounting & VAT':'Comptabilité & TVA'}</span>
             <span class="rb-hero-mission">${en?'Payroll & HR':'Paie & social'}</span>
@@ -29,7 +31,7 @@
           <small>INTERNATIONAL</small>
           <strong>${en?'International groups':'Groupes internationaux'}</strong>
           <span>${en?'HQ · subsidiaries · market entry':'Sièges · filiales · implantation'}</span>
-          <em class="rb-hero-side__hint">${en?'Hover to see services':'Survolez pour voir les missions'}</em>
+          <em class="rb-hero-side__hint">${hint}</em>
           <span class="rb-hero-side__missions">
             <span class="rb-hero-mission">${en?'France market entry':'Implantation en France'}</span>
             <span class="rb-hero-mission">${en?'French GAAP & VAT':'French GAAP & TVA'}</span>
