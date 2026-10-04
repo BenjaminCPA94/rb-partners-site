@@ -21,6 +21,8 @@
   color:var(--gray-600);
   font-size:.92rem;
   line-height:1.65;
+  text-align:justify;
+  hyphens:auto;
 }
 .rb-related__grid{
   display:grid;
@@ -152,7 +154,8 @@
   color:var(--gray-700);
   font-size:.88rem;
   line-height:1.62;
-  text-align:left!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 .seo-depth-faq{
   max-width:900px;

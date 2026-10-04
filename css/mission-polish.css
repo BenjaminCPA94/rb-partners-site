@@ -26,6 +26,8 @@
   font-size:.92rem;
   line-height:1.6;
   color:rgba(255,255,255,.68);
+  text-align:justify;
+  hyphens:auto;
 }
 .mission-page .mission-scope{
   padding-top:70px;
@@ -152,8 +154,8 @@
 .mission-page .mission-question-card p{
   font-size:1.08rem;
   line-height:1.42;
-  text-align:left!important;
-  text-justify:auto!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 .mission-page .mission-deliverables__grid{
   gap:52px;
@@ -162,8 +164,8 @@
   padding:19px 0;
 }
 .mission-page .mission-deliverable-list p{
-  text-align:left!important;
-  text-justify:auto!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 
 /* Method stays dark; France & International switches to a warm light chapter. */
@@ -214,8 +216,8 @@
 }
 .mission-page .mission-lane-grid p{
   color:var(--gray-700);
-  text-align:left!important;
-  text-justify:auto!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 
 /* Consistent accent colour for all step/index numbers. */
@@ -227,14 +229,18 @@
   color:var(--gold-500)!important;
 }
 
-/* Avoid stretched justification in narrow content areas. */
-.mission-page .mission-scope-grid p,
-.mission-page .mission-promise-grid p,
-.mission-page .mission-engagement p,
-.mission-page .faq-item p{
+/* Avoid stretched justification in narrow (3-column) content areas. */
+.mission-page .mission-promise-grid p{
   text-align:left!important;
   text-justify:auto!important;
   word-spacing:normal!important;
+}
+/* These run wide enough (2-column or full-width) to justify like the rest of the site. */
+.mission-page .mission-scope-grid p,
+.mission-page .mission-engagement p,
+.mission-page .faq-item p{
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 .mission-page .mission-hero__lead,
 .mission-page .mission-scope__head>p:last-child,

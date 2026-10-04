@@ -12,12 +12,12 @@
 .intl-hq-outputs{background:#fff}
 .intl-output-head{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:end;margin-bottom:30px}
 .intl-output-head h2{font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.08;margin:7px 0 0}
-.intl-output-head>p{margin:0;color:var(--gray-700);font-size:1rem;line-height:1.7;max-width:520px}
+.intl-output-head>p{margin:0;color:var(--gray-700);font-size:1rem;line-height:1.7;max-width:520px;text-align:justify;hyphens:auto}
 .intl-output-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
 .intl-output-grid article{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--border)}
 .intl-output-grid b{font-family:var(--font-head);color:var(--gold-500)}
 .intl-output-grid h3{margin:0 0 7px;font-size:1.08rem}
-.intl-output-grid p{margin:0;color:var(--gray-700);font-size:.88rem;line-height:1.65;text-align:left!important}
+.intl-output-grid p{margin:0;color:var(--gray-700);font-size:.88rem;line-height:1.65;text-align:justify!important;hyphens:auto!important}
 @media(max-width:900px){
   .intl-moment-grid{grid-template-columns:1fr}
   .intl-moment-grid article{min-height:0}

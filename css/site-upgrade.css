@@ -199,7 +199,7 @@
 .intl-hero-proof span{display:inline-flex;align-items:center;min-height:34px;padding:7px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:rgba(255,255,255,.72);font-size:.76rem;font-weight:650}
 .intl-intro-grid,.intl-hq-grid,.intl-operations-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
 .intl-intro h2,.intl-hq h2,.intl-operations h2{font-size:clamp(2.2rem,4vw,3.7rem);line-height:1.08}
-.intl-intro-copy p,.intl-operations-copy>p,.intl-hq-lead{font-size:1rem;line-height:1.8;color:var(--gray-700)}
+.intl-intro-copy p,.intl-operations-copy>p,.intl-hq-lead{font-size:1rem;line-height:1.8;color:var(--gray-700);text-align:justify;hyphens:auto}
 .intl-structure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .intl-structure-card{min-height:270px;padding:28px;border:1px solid var(--border);border-radius:16px;background:#fff;display:flex;flex-direction:column}
 .intl-structure-card>span{color:var(--gold-500);font-family:var(--font-head);font-size:1.15rem}

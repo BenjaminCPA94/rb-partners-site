@@ -1,4 +1,9 @@
 /* RB Partners — homepage hero clarity + stable progressive reveals */
+#expertises .card p,
+.form__privacy{
+  text-align:justify;
+  hyphens:auto;
+}
 body:has(main#top .hero) .v6-hero-visual{
   width:min(100%,470px);
   aspect-ratio:1.05;
