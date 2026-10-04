@@ -389,6 +389,7 @@ body:has(main#top .hero) #v2-steps{
 }
 body:has(main#top .hero) #v4-reviews{background:#fff!important}
 body:has(main#top .hero) #v2-steps + #v4-reviews{border-top:0}
+body:has(main#top .hero) #v2-steps + #v2-faq{background:#fff!important}
 body:has(main#top .hero) .hero .btn--outline{
   color:var(--gold-400)!important;
   border:1px solid var(--gold-400)!important;
