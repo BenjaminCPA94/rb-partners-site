@@ -49,7 +49,7 @@
     if(!intro || !hq) return;
 
     const moments=document.createElement('section');
-    moments.className='section section--cream intl-extra intl-moments';
+    moments.className='section intl-extra intl-moments';
     moments.innerHTML=`<div class="container">
       <div class="section__head">
         <p class="eyebrow">${t.momentEye}</p>

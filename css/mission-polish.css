@@ -181,8 +181,8 @@
 }
 .mission-page .mission-process-grid p{
   color:rgba(255,255,255,.72);
-  text-align:left!important;
-  text-justify:auto!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 .mission-page .mission-lanes::before{
   opacity:.20;
@@ -229,11 +229,9 @@
   color:var(--gold-500)!important;
 }
 
-/* Avoid stretched justification in narrow (3-column) content areas. */
 .mission-page .mission-promise-grid p{
-  text-align:left!important;
-  text-justify:auto!important;
-  word-spacing:normal!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 /* These run wide enough (2-column or full-width) to justify like the rest of the site. */
 .mission-page .mission-scope-grid p,

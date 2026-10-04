@@ -61,6 +61,8 @@
   color:var(--gray-600);
   font-size:.84rem;
   line-height:1.58;
+  text-align:justify;
+  hyphens:auto;
 }
 .rb-related__card span{
   margin-top:auto;
@@ -125,7 +127,8 @@
   color:var(--gray-700);
   font-size:.9rem;
   line-height:1.68;
-  text-align:left!important;
+  text-align:justify!important;
+  hyphens:auto!important;
 }
 .seo-output-grid{
   display:grid;

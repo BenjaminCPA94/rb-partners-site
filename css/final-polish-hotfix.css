@@ -8,9 +8,9 @@
   font-weight: 600 !important;
 }
 .v5-modern-card p {
-  text-align: left !important;
-  text-align-last: left !important;
-  text-justify: auto !important;
+  text-align: justify !important;
+  hyphens: auto !important;
+  text-justify: inter-word !important;
   word-spacing: normal !important;
   letter-spacing: 0 !important;
   white-space: normal !important;

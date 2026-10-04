@@ -14,7 +14,10 @@
 }
 
 .v5-modern-card p,
-.v4-process-step p,
+.v4-process-step p {
+  text-align: justify !important;
+  hyphens: auto !important;
+}
 .trust-strip p,
 .rb-review-card p,
 .rb-booking-modal p {

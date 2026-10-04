@@ -8,7 +8,7 @@
 .intl-moment-grid article:hover{transform:translateY(-4px);border-color:rgba(198,161,91,.68);box-shadow:0 14px 34px rgba(8,20,38,.07)}
 .intl-moment-grid span{font-family:var(--font-head);color:var(--gold-500);font-size:1.05rem}
 .intl-moment-grid h3{margin:38px 0 10px;font-size:1.2rem}
-.intl-moment-grid p{margin:0;color:var(--gray-700);font-size:.89rem;line-height:1.7;text-align:left!important}
+.intl-moment-grid p{margin:0;color:var(--gray-700);font-size:.89rem;line-height:1.7;text-align:justify!important;hyphens:auto!important}
 .intl-hq-outputs{background:#fff}
 .intl-output-head{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:end;margin-bottom:30px}
 .intl-output-head h2{font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.08;margin:7px 0 0}
