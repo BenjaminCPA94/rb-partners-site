@@ -127,8 +127,9 @@
   function ensureBookingModal() {
     if (document.getElementById('rb-booking-backdrop')) return document.getElementById('rb-booking-backdrop');
     const l = getLang();
-    const rachelSrc = document.querySelector('img[src*="rachel-rb.jpg"]')?.src || (location.pathname.includes('/expertises/') ? '../assets/rachel-rb.jpg' : 'assets/rachel-rb.jpg');
-    const benjaminSrc = document.querySelector('img[src*="benjamin-rb.jpg"]')?.src || (location.pathname.includes('/expertises/') ? '../assets/benjamin-rb.jpg' : 'assets/benjamin-rb.jpg');
+    const nested = /\/(expertises|simulateurs|blog)\//.test(location.pathname);
+    const rachelSrc = document.querySelector('img[src*="rachel-rb.jpg"]')?.src || (nested ? '../assets/rachel-rb.jpg' : 'assets/rachel-rb.jpg');
+    const benjaminSrc = document.querySelector('img[src*="benjamin-rb.jpg"]')?.src || (nested ? '../assets/benjamin-rb.jpg' : 'assets/benjamin-rb.jpg');
     const backdrop = document.createElement('div');
     backdrop.id = 'rb-booking-backdrop';
     backdrop.className = 'rb-booking-backdrop';
