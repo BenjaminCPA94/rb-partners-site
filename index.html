@@ -16,8 +16,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"RB Partners","description":"Cabinet d'expertise comptable à Paris accompagnant entrepreneurs, start-up, PME et sociétés étrangères opérant en France.","email":"contact@rb-partners.fr","areaServed":{"@type":"Country","name":"France"},"knowsLanguage":["fr","en"],"founder":[{"@type":"Person","name":"Rachel Illouz"},{"@type":"Person","name":"Benjamin Haziza"}],"serviceType":["Expertise comptable","Fiscalité","Paie et social","Reporting et pilotage","Création et juridique","Implantation en France"]}
+<script type="application/ld+json" id="rb-schema-main">
+{"@context":"https://schema.org","@graph":[{"@type":"AccountingService","name":"RB Partners","email":"contact@rb-partners.fr","areaServed":{"@type":"Country","name":"France"},"availableLanguage":["fr","en"],"@id":"#accounting-service","description":"Cabinet d’expertise comptable à Paris pour indépendants, dirigeants, start-up, PME et sociétés étrangères souhaitant s’implanter en France."},{"@type":"WebSite","@id":"#website","name":"RB Partners","inLanguage":["fr","en"]}]}
+</script>
+<script type="application/ld+json" id="rb-schema-faq">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Accompagnez-vous les indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Oui. RB Partners accompagne les indépendants et dirigeants de la création au suivi comptable, fiscal et social."}},{"@type":"Question","name":"Accompagnez-vous les start-up ?","acceptedAnswer":{"@type":"Answer","text":"Oui, avec une approche adaptée à la croissance : reporting, trésorerie, fiscalité, paie et outils digitaux."}},{"@type":"Question","name":"Une société étrangère peut-elle vous confier toute sa gestion française ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Nous pouvons coordonner la création ou l’implantation puis la comptabilité, la fiscalité, la TVA, la paie et le reporting en France."}},{"@type":"Question","name":"Travaillez-vous en anglais ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Notre accompagnement international est pensé pour faciliter les échanges avec les équipes et maisons mères étrangères."}}]}
 </script>
 </head>
 <body>

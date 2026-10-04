@@ -93,7 +93,7 @@
           {'@type':'WebSite','@id':'#website',name:'RB Partners',inLanguage:['fr','en']}
         ]
       });
-    } else if(document.body.classList.contains('mission-page') || /expert-comptable|creation-entreprise|facturation-electronique|conseil-dirigeant/.test(location.pathname)){
+    } else if(!location.pathname.includes('/blog/') && (document.body.classList.contains('mission-page') || /expert-comptable|creation-entreprise|facturation-electronique|conseil-dirigeant/.test(location.pathname))){
       replaceSchema('rb-schema-main',{
         '@context':'https://schema.org',
         '@type':'Service',
