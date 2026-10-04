@@ -149,6 +149,15 @@
     const proof = document.querySelector('.mission-hero__proofs');
     if (proof) proof.innerHTML = (d.proofs || []).map(x => `<span>${x}</span>`).join('');
 
+    let fullService = document.querySelector('.mission-hero__full-service');
+    if (!fullService && proof) {
+      proof.insertAdjacentHTML('afterend', '<p class="mission-hero__full-service"></p>');
+      fullService = document.querySelector('.mission-hero__full-service');
+    }
+    if (fullService) fullService.textContent = lang === 'en'
+      ? 'One firm for all of it: accounting, tax, payroll, legal and owner-manager advice, coordinated by the same partners.'
+      : 'Un seul cabinet pour l’ensemble de vos sujets : comptabilité, fiscalité, social, juridique et conseil au dirigeant, coordonnés par les mêmes associés.';
+
     let questionsSection = document.querySelector('.mission-client-questions');
     if (!questionsSection) {
       document.querySelector('.mission-scope')?.insertAdjacentHTML('afterend', '<section class="section mission-client-questions"><div class="container"><div class="mission-v7-head"><p class="eyebrow" data-v7="questionsEye"></p><h2 data-v7="questionsTitle"></h2><p data-v7="questionsLead"></p></div><div class="mission-question-grid"></div></div></section>');

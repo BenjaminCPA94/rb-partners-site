@@ -2,7 +2,7 @@
 .intl-moments .section__head{max-width:850px}
 .intl-moment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .intl-moment-grid article{
-  min-height:240px;padding:27px;border:1px solid var(--border);border-radius:16px;background:#fff;
+  min-height:240px;padding:27px;border:1px solid var(--border);border-radius:16px;background:var(--cream);
   display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease
 }
 .intl-moment-grid article:hover{transform:translateY(-4px);border-color:rgba(198,161,91,.68);box-shadow:0 14px 34px rgba(8,20,38,.07)}
@@ -28,3 +28,4 @@
   .intl-moment-grid article{padding:23px}
   .intl-output-grid article{grid-template-columns:38px 1fr}
 }
+.intl-why{border-top:1px solid var(--border)}

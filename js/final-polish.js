@@ -101,37 +101,8 @@
     } else animate();
   }
 
-  function buildReviewDemo() {
-    if (!isHome) return;
-    const section = document.getElementById('v4-reviews');
-    const container = section?.querySelector('.container');
-    if (!section || !container) return;
-    const l = getLang();
-    section.className = 'section rb-reviews-demo';
-
-    const reviewsFr = [
-      ['CP', 'Client PME', 'Direction', 'Une équipe disponible, des réponses claires et un suivi qui permet de savoir où l’on en est sans relancer constamment.'],
-      ['DF', 'Direction financière', 'Filiale française', 'Le reporting est lisible pour le siège et les sujets français sont expliqués de façon simple. La coordination est beaucoup plus fluide.'],
-      ['FS', 'Fondatrice', 'Start-up', 'Le cabinet nous accompagne aussi bien sur la conformité que sur les décisions de pilotage. Nous avons enfin une vision plus claire de nos chiffres.'],
-      ['GI', 'Groupe international', 'Implantation en France', 'Un point d’entrée unique pour la comptabilité, la fiscalité et la paie en France. C’est exactement ce que nous recherchions pour démarrer.']
-    ];
-    const reviewsEn = [
-      ['SM', 'SME client', 'Management', 'A responsive team, clear answers and follow-up that makes it easy to know where things stand without constant chasing.'],
-      ['FD', 'Finance director', 'French subsidiary', 'Reporting is easy for headquarters to read and French topics are explained clearly. Coordination is much smoother.'],
-      ['FO', 'Founder', 'Start-up', 'The firm supports us on both compliance and management decisions. We finally have a clearer view of our numbers.'],
-      ['IG', 'International group', 'Setting up in France', 'One local point of contact for accounting, tax and payroll in France. Exactly what we needed to get started.']
-    ];
-    const reviews = l === 'en' ? reviewsEn : reviewsFr;
-    const card = x => `<article class="rb-review-card">
-      <div class="rb-review-card__top"><span class="rb-review-card__avatar">${x[0]}</span><div class="rb-review-card__identity"><strong>${x[1]}</strong><span>${x[2]}</span></div></div>
-      <div class="rb-review-card__stars">★★★★★</div><p>${x[3]}</p></article>`;
-
-    container.innerHTML = `
-      <div class="rb-reviews-demo__head">
-        <div><p class="eyebrow">${l === 'en' ? 'Client experience' : 'Ils nous font confiance'}</p><h2>${l === 'en' ? 'A preview of the client-review experience.' : 'Des retours clients visibles, simples et rassurants.'}</h2></div>
-        <span class="rb-reviews-demo__tag">${l === 'en' ? 'Demo reviews, replace with verified Google reviews' : 'Avis de démonstration, à remplacer par les avis Google vérifiés'}</span>
-      </div>`;
-    section.insertAdjacentHTML('beforeend', `<div class="rb-review-viewport"><div class="rb-review-track">${reviews.map(card).join('')}${reviews.map(card).join('')}</div></div>`);
+  function removeReviewPlaceholder() {
+    document.getElementById('v4-reviews')?.remove();
   }
 
   function calendarMarkup() {
@@ -221,7 +192,7 @@
   function init() {
     polishVisibleCopy();
     buildTrustBand();
-    buildReviewDemo();
+    removeReviewPlaceholder();
     bindBooking();
     document.documentElement.dataset.finalPolish = 'ready';
   }

@@ -18,6 +18,15 @@
   padding-top:78px;
   padding-bottom:64px;
 }
+.mission-page .mission-hero__full-service{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  max-width:620px;
+  font-size:.92rem;
+  line-height:1.6;
+  color:rgba(255,255,255,.68);
+}
 .mission-page .mission-scope{
   padding-top:70px;
   padding-bottom:54px;

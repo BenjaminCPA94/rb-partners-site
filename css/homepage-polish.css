@@ -709,8 +709,8 @@ body:has(main#top .hero) #contact .split__text h2{
   }
 }
 body:has(main#top .hero) #partner-home .partner-contact__grid{
-  margin-bottom:12px!important;
+  margin-bottom:36px!important;
 }
 body:has(main#top .hero) #contact>.container:not(#partner-home){
-  padding-top:0!important;
+  padding-top:48px!important;
 }

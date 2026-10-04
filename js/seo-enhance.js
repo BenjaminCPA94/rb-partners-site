@@ -33,7 +33,6 @@
     'expertises/creation-juridique.html':['creation','startup','international'],
     'conseil-dirigeant.html':['paris','pme','startup'],
     'facturation-electronique.html':['pennylane','pme','paris'],
-    'expert-comptable-international.html':['creation','paris','pennylane'],
     'expert-comptable-paris.html':['startup','pme','international'],
     'expert-comptable-startup.html':['pennylane','paris','creation'],
     'expert-comptable-pme.html':['paris','pennylane','startup'],
