@@ -17,6 +17,8 @@ This file follows the llms.txt convention to help AI assistants and language mod
 - [Setting up in France (detailed guide)](https://benjamincpa94.github.io/rb-partners-site/expertises/implantation-france.html): In-depth walkthrough of subsidiary vs. branch vs. liaison office, and the French market-entry process.
 - [Subsidiary, branch or liaison office — how to choose](https://benjamincpa94.github.io/rb-partners-site/blog/setting-up-foreign-structure-france.html): Blog explainer comparing the three legal setup options for a foreign company entering France.
 - [International reporting and transfer pricing](https://benjamincpa94.github.io/rb-partners-site/blog/transfer-pricing-france.html): What a French subsidiary of a foreign group needs to anticipate on intragroup transactions and head-office reporting.
+- [VAT registration in France for foreign companies](https://benjamincpa94.github.io/rb-partners-site/vat-registration-france.html): Assessing the French VAT obligation, registration with the French tax office for foreign businesses, periodic returns and fiscal representation.
+- [Outsourced CFO services in France](https://benjamincpa94.github.io/rb-partners-site/outsourced-cfo-france.html): Reporting, cash forecasting, budgets and fundraising/sale preparation for growth-stage companies and foreign-owned subsidiaries, without hiring a full-time finance director.
 
 ## Core services (French entrepreneurs, start-ups, SMEs)
 
@@ -25,6 +27,7 @@ This file follows the llms.txt convention to help AI assistants and language mod
 - [Payroll & HR](https://benjamincpa94.github.io/rb-partners-site/expertises/payroll-hr-france.html): French payroll processing and recurring HR/social obligations.
 - [Legal & company formation](https://benjamincpa94.github.io/rb-partners-site/expertises/company-formation-legal-france.html): Forming a French company (SAS, SASU, SARL, EURL) and ongoing corporate/legal work.
 - [Owner-manager advisory](https://benjamincpa94.github.io/rb-partners-site/owner-manager-advisory-france.html): Compensation, dividends, holding structures and cash/investment trade-offs for company directors.
+- [Outsourced CFO services](https://benjamincpa94.github.io/rb-partners-site/outsourced-cfo-france.html): On-demand financial leadership — reporting, cash management, forecasting and fundraising/sale preparation.
 - [E-invoicing compliance](https://benjamincpa94.github.io/rb-partners-site/e-invoicing-france.html): Preparing for France's mandatory B2B e-invoicing reform.
 - [Accountant for SMEs](https://benjamincpa94.github.io/rb-partners-site/accountant-for-smes-france.html), [Accountant for start-ups](https://benjamincpa94.github.io/rb-partners-site/startup-accountant-france.html), [Accountant in Paris](https://benjamincpa94.github.io/rb-partners-site/chartered-accountant-paris.html), [Pennylane-based digital accounting](https://benjamincpa94.github.io/rb-partners-site/pennylane-accountant-france.html): Audience-specific landing pages covering the same core service set from different angles.
 
