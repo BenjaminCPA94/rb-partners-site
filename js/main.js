@@ -180,11 +180,16 @@ document.addEventListener('rb:content-upgraded', () => {
   requestAnimationFrame(addProgressiveReveals);
 });
 
-// Contact form — prepares a structured email without pretending a server submission occurred.
+// Contact form — submits the lead by email via FormSubmit (formsubmit.co), a
+// zero-backend relay: the first real submission triggers a one-time
+// confirmation link sent to contact@rb-partners.fr that must be clicked to
+// activate delivery. Falls back to a pre-filled mailto: draft if the
+// request fails (offline, relay down, confirmation not yet done), so a
+// lead is never silently lost.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     const data = new FormData(form);
@@ -193,11 +198,39 @@ if (form) {
       ? (lang === 'en' ? 'Foreign company / France market entry' : 'Société étrangère / implantation en France')
       : (lang === 'en' ? 'French company' : 'Société française');
     const subject = lang === 'en' ? 'Contact request — RB Partners' : 'Demande de contact — RB Partners';
-    const body = lang === 'en'
-      ? `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${company}\n\nMessage:\n${data.get('message')}`
-      : `Nom : ${data.get('name')}\nEmail : ${data.get('email')}\nSociété : ${company}\n\nMessage :\n${data.get('message')}`;
-    status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Votre messagerie va s’ouvrir avec votre demande préremplie.';
-    window.location.href = `mailto:contact@rb-partners.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const fallbackToMailto = () => {
+      const body = lang === 'en'
+        ? `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${company}\n\nMessage:\n${data.get('message')}`
+        : `Nom : ${data.get('name')}\nEmail : ${data.get('email')}\nSociété : ${company}\n\nMessage :\n${data.get('message')}`;
+      status.textContent = window.rbI18n ? window.rbI18n.get('form.fallback') : 'Votre messagerie va s’ouvrir avec votre demande préremplie.';
+      window.location.href = `mailto:contact@rb-partners.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    if (submitBtn) submitBtn.disabled = true;
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/contact@rb-partners.fr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          company,
+          message: data.get('message'),
+          _subject: subject,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      if (!res.ok) throw new Error('FormSubmit error');
+      status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.';
+      form.reset();
+    } catch (err) {
+      fallbackToMailto();
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }
 

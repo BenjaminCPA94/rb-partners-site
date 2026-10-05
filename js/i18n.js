@@ -96,9 +96,10 @@ const RB_TRANSLATIONS = {
     'form.company_fr': 'Française',
     'form.company_foreign': "Étrangère, en projet d'implantation en France",
     'form.message_label': 'Message',
-    'form.submit': 'Préparer mon e-mail',
-    'form.privacy': 'Les informations saisies servent uniquement à préparer votre message dans votre logiciel de messagerie. <a href="politique-confidentialite.html">En savoir plus</a>.',
-    'form.success': 'Votre messagerie va s’ouvrir avec votre demande préremplie. Le site ne stocke pas les champs saisis.',
+    'form.submit': 'Envoyer ma demande',
+    'form.privacy': 'Les informations saisies sont transmises par email à RB Partners et ne sont utilisées que pour traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.',
+    'form.success': 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
+    'form.fallback': 'Votre messagerie va s’ouvrir avec votre demande préremplie.',
 
     'footer.legal': 'RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.',
 
@@ -567,9 +568,10 @@ const RB_TRANSLATIONS = {
     'form.company_fr': 'French',
     'form.company_foreign': 'Foreign, planning to set up in France',
     'form.message_label': 'Message',
-    'form.submit': 'Prepare my email',
-    'form.privacy': 'The information entered is only used to prepare your message in your email application. <a href="politique-confidentialite.html">Learn more</a>.',
-    'form.success': 'Your email application will open with your request pre-filled. The website does not store the fields you entered.',
+    'form.submit': 'Send my request',
+    'form.privacy': 'The information entered is sent by email to RB Partners and used only to handle your request. <a href="politique-confidentialite.html">Learn more</a>.',
+    'form.success': 'Thank you, your request has been sent. We will get back to you shortly.',
+    'form.fallback': 'Your email application will open with your request pre-filled.',
 
     'footer.legal': 'RB Partners — Rachel Illouz & Benjamin Haziza, Chartered Accountants. All rights reserved.',
 
