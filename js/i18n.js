@@ -15,6 +15,16 @@ const RB_TRANSLATIONS = {
     'nav.facturation': 'Facturation électronique',
     'breadcrumb.home': 'Accueil',
 
+    'error404.eyebrow': 'Erreur 404',
+    'error404.title': 'Cette page n’existe pas, ou plus.',
+    'error404.lead': 'Le lien suivi est peut-être obsolète ou mal orthographié. Voici les destinations les plus utiles pour repartir du bon pied.',
+    'error404.home': 'Retour à l’accueil',
+    'error404.expertises': 'Nos missions',
+    'error404.international': 'Implantation en France',
+    'error404.blog': 'Actualités & conseils',
+    'error404.simulateurs': 'Simulateurs',
+    'error404.contact': 'Nous contacter',
+
     'hero.eyebrow': 'Expertise comptable, sociale & fiscale',
     'hero.title': "Votre partenaire de confiance,<br>de la création à l'international.",
     'hero.lead': "RB Partners accompagne les entrepreneurs français dans chaque étape de leur développement, et guide les sociétés étrangères qui souhaitent s'implanter et réussir en France.",
@@ -486,6 +496,16 @@ const RB_TRANSLATIONS = {
     'nav.simulateurs': 'Calculators',
     'nav.facturation': 'E-invoicing',
     'breadcrumb.home': 'Home',
+
+    'error404.eyebrow': '404 error',
+    'error404.title': 'This page doesn’t exist, or doesn’t anymore.',
+    'error404.lead': 'The link you followed may be outdated or mistyped. Here are the most useful places to pick up from.',
+    'error404.home': 'Back to the homepage',
+    'error404.expertises': 'Our services',
+    'error404.international': 'Setting up in France',
+    'error404.blog': 'News & insights',
+    'error404.simulateurs': 'Calculators',
+    'error404.contact': 'Contact us',
 
     'hero.eyebrow': 'Accounting, HR & Tax Expertise',
     'hero.title': 'Your trusted partner,<br>from launch to international growth.',
