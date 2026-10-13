@@ -15,7 +15,7 @@
         <button class="rb-hero-side rb-hero-side--fr" type="button" aria-expanded="false">
           <small>FRANCE</small>
           <strong>${en?'French businesses':'Entreprises françaises'}</strong>
-          <span>${en?'SMEs · start-ups · founders':'PME · start-up · dirigeants'}</span>
+          <span>${en?'Self-employed · companies · start-ups':'Indépendants · sociétés · start-up'}</span>
           <em class="rb-hero-side__hint">${hint}</em>
           <span class="rb-hero-side__missions">
             <span class="rb-hero-mission">${en?'Accounting & VAT':'Comptabilité & TVA'}</span>

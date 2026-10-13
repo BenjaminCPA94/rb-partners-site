@@ -1,6 +1,6 @@
 # RB Partners
 
-> RB Partners is a French chartered accounting firm (expert-comptable) based in Paris, founded and run by two partners, Rachel Illouz and Benjamin Haziza. The firm supports three types of clients: French entrepreneurs, independent professionals and SMEs; French start-ups and scale-ups; and foreign companies and groups setting up or operating a subsidiary, branch or liaison office in France. Services cover French bookkeeping and annual accounts, corporate and personal tax, payroll and HR administration, company formation and routine legal/corporate work, management reporting and cash-flow steering, owner-manager compensation advisory, e-invoicing compliance, and bilingual (French/English) coordination with foreign headquarters. The firm is digital-first (Pennylane, Silae) and works in both French and English.
+> RB Partners is a French chartered accounting firm (expert-comptable) based in Paris, founded and run by two partners, Rachel Illouz and Benjamin Haziza. The firm supports three types of clients: French self-employed and liberal professions (including healthcare practitioners), tradespeople, retailers and companies of every size; French start-ups and scale-ups; and foreign companies and groups setting up or operating a subsidiary, branch or liaison office in France. Services cover French bookkeeping and annual accounts, corporate and personal tax, payroll and HR administration, company formation and routine legal/corporate work, management reporting and cash-flow steering, owner-manager compensation advisory, e-invoicing compliance, and bilingual (French/English) coordination with foreign headquarters. The firm is digital-first (Pennylane, Silae) and works in both French and English.
 
 This file follows the llms.txt convention to help AI assistants and language models quickly find the most relevant, authoritative pages on this site rather than guessing from a full crawl. Pages exist in matched French/English pairs; the English URL is the canonical source for English-speaking readers, not a machine translation.
 
@@ -20,7 +20,7 @@ This file follows the llms.txt convention to help AI assistants and language mod
 - [VAT registration in France for foreign companies](https://benjamincpa94.github.io/rb-partners-site/vat-registration-france.html): Assessing the French VAT obligation, registration with the French tax office for foreign businesses, periodic returns and fiscal representation.
 - [Outsourced CFO services in France](https://benjamincpa94.github.io/rb-partners-site/outsourced-cfo-france.html): Reporting, cash forecasting, budgets and fundraising/sale preparation for growth-stage companies and foreign-owned subsidiaries, without hiring a full-time finance director.
 
-## Core services (French entrepreneurs, start-ups, SMEs)
+## Core services (French self-employed professionals, businesses and start-ups)
 
 - [Accounting & compliance](https://benjamincpa94.github.io/rb-partners-site/expertises/accounting-compliance-france.html): French bookkeeping, VAT, annual accounts, tax filings, FR/EN group reporting.
 - [Management & reporting](https://benjamincpa94.github.io/rb-partners-site/expertises/management-reporting-france.html): Cash-flow, dashboards, forecasts and decision-support reporting.
