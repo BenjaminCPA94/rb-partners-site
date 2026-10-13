@@ -150,7 +150,7 @@
 #v4-tools{display:none!important}
 
 /* Terminal landing pages: no related-pages drawer after the main content */
-.seo-crosslinks{display:none!important}
+.seo-crosslinks,main>section:has(>.container>.seo-crosslinks){display:none!important}
 
 @media(max-width:1000px){
   .v5-modern-grid{grid-template-columns:1fr;gap:42px}
@@ -539,3 +539,7 @@
   #v4-reviews{padding-bottom:38px!important}
   #v2-faq{padding-top:38px!important}
 }
+
+/* Respiration titre / paragraphes dans les pages par profil */
+.seo-copy h2{margin-bottom:22px}
+.seo-copy p+p{margin-top:12px}

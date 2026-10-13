@@ -8,16 +8,16 @@
     fr: {
       accounting: [
         ["Expert-comptable Pennylane","Une organisation comptable digitale, lisible et collaborative.","../expert-comptable-pennylane.html"],
-        ["Expert-comptable pour PME","Un accompagnement complet du quotidien aux décisions de gestion.","../expert-comptable-pme.html"],
+        ["Expert-comptable indépendants & entreprises","Un accompagnement complet du quotidien aux décisions de gestion.","../expert-comptable-pme.html"],
         ["Implantation en France","Le point d’entrée local des sociétés et groupes étrangers.","../expert-comptable-international.html"]
       ],
       management: [
         ["Expert-comptable start-up","Cash, budget, reporting et accompagnement de la croissance.","../expert-comptable-startup.html"],
-        ["Expert-comptable pour PME","Pilotage, trésorerie et organisation financière.","../expert-comptable-pme.html"],
+        ["Expert-comptable indépendants & entreprises","Pilotage, trésorerie et organisation financière.","../expert-comptable-pme.html"],
         ["Expert-comptable à Paris","Un cabinet de proximité pour vos sujets comptables et financiers.","../expert-comptable-paris.html"]
       ],
       payroll: [
-        ["Expert-comptable pour PME","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
+        ["Expert-comptable indépendants & entreprises","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
         ["Implantation en France","Paie française et obligations sociales pour les groupes étrangers.","../expert-comptable-international.html"],
         ["Expert-comptable start-up","Paie, recrutements et croissance des équipes.","../expert-comptable-startup.html"]
       ],
@@ -27,7 +27,7 @@
         ["Implantation en France","Filiale, succursale et organisation locale.","../expert-comptable-international.html"]
       ],
       tax: [
-        ["Expert-comptable pour PME","Une fiscalité suivie avec la comptabilité et le pilotage du quotidien.","../expert-comptable-pme.html"],
+        ["Expert-comptable indépendants & entreprises","Une fiscalité suivie avec la comptabilité et le pilotage du quotidien.","../expert-comptable-pme.html"],
         ["Implantation en France","TVA, fiscalité locale et flux transfrontaliers pour les sociétés étrangères.","../expert-comptable-international.html"],
         ["Comptabilité & reporting","Des comptes fiables pour sécuriser les déclarations et les clôtures.","comptabilite.html"]
       ],
@@ -38,7 +38,7 @@
       ],
       tax: [
         ["Expert-comptable international","Fiscalité française, flux transfrontaliers et coordination groupe.","../expert-comptable-international.html"],
-        ["Expert-comptable pour PME","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
+        ["Expert-comptable indépendants & entreprises","Comptabilité, fiscalité, paie et pilotage au quotidien.","../expert-comptable-pme.html"],
         ["Comptabilité & reporting","Des données fiables pour préparer déclarations, clôture et reporting.","comptabilite.html"]
       ],
       implant: [
@@ -50,16 +50,16 @@
     en: {
       accounting: [
         ["Pennylane accounting firm","A digital and collaborative accounting workflow.","../expert-comptable-pennylane.html"],
-        ["Accountant for SMEs","End-to-end support from compliance to management decisions.","../expert-comptable-pme.html"],
+        ["Accountant for businesses & the self-employed","End-to-end support from compliance to management decisions.","../expert-comptable-pme.html"],
         ["Setting up in France","A local point of contact for foreign companies and groups.","../expert-comptable-international.html"]
       ],
       management: [
         ["Accountant for start-ups","Cash, budgets, reporting and growth support.","../expert-comptable-startup.html"],
-        ["Accountant for SMEs","Management reporting, cash and finance organisation.","../expert-comptable-pme.html"],
+        ["Accountant for businesses & the self-employed","Management reporting, cash and finance organisation.","../expert-comptable-pme.html"],
         ["Accountant in Paris","A responsive local firm for accounting and finance matters.","../expert-comptable-paris.html"]
       ],
       payroll: [
-        ["Accountant for SMEs","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
+        ["Accountant for businesses & the self-employed","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
         ["Setting up in France","French payroll and social compliance for international groups.","../expert-comptable-international.html"],
         ["Accountant for start-ups","Payroll, hiring and team growth support.","../expert-comptable-startup.html"]
       ],
@@ -69,7 +69,7 @@
         ["Setting up in France","Subsidiary, branch and local operating setup.","../international-accountant-france.html"]
       ],
       tax: [
-        ["Accountant for SMEs","Connect French tax compliance with day-to-day accounting and management.","../expert-comptable-pme.html"],
+        ["Accountant for businesses & the self-employed","Connect French tax compliance with day-to-day accounting and management.","../expert-comptable-pme.html"],
         ["Doing business in France","VAT, French tax and cross-border flows for foreign companies.","../international-accountant-france.html"],
         ["Accounting & reporting","Reliable local accounts supporting filings and closings.","comptabilite.html"]
       ],
@@ -80,7 +80,7 @@
       ],
       tax: [
         ["International accountant","French tax, cross-border flows and group coordination.","../expert-comptable-international.html"],
-        ["Accountant for SMEs","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
+        ["Accountant for businesses & the self-employed","Accounting, tax, payroll and day-to-day management support.","../expert-comptable-pme.html"],
         ["Accounting & reporting","Reliable data for filings, closings and reporting.","comptabilite.html"]
       ],
       implant: [
