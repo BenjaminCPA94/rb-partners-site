@@ -10,7 +10,13 @@
 .intl-moment-grid h3{margin:38px 0 10px;font-size:1.2rem}
 .intl-moment-grid p{margin:0;color:var(--gray-700);font-size:.89rem;line-height:1.7;text-align:justify!important;hyphens:auto!important}
 .intl-hq-outputs{background:var(--white)}
-.intl-hq-outputs + section:not(.section--cream):not(.section--navy){border-top:3px solid var(--gold-500)}
+/* Alternance des fonds : blanc / crème / blanc… (la section « Pourquoi » passe en crème, la FAQ en blanc) */
+.intl-why.section--cream .intl-why-grid article{background:var(--white)}
+.intl-faq{background:var(--white)}
+.intl-faq .faq-item{background:var(--cream)}
+/* Respiration entre les titres et les paragraphes des blocs texte */
+.intl-intro h2,.intl-hq h2,.intl-operations h2{margin-bottom:26px}
+.intl-operations-copy>p+p{margin-top:14px}
 .intl-output-head{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:end;margin-bottom:30px}
 .intl-output-head h2{font-size:clamp(2.1rem,4vw,3.45rem);line-height:1.08;margin:7px 0 0}
 .intl-output-head>p{margin:0;color:var(--gray-700);font-size:1rem;line-height:1.7;max-width:520px;text-align:justify;hyphens:auto}

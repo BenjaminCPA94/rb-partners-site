@@ -16,7 +16,7 @@
       outputs:[
         ['Calendrier local','Les échéances comptables, fiscales, sociales et juridiques françaises sont identifiées et partagées.'],
         ['Reporting FR / EN','Des situations ou packages adaptés au rythme de clôture et au format demandé par le groupe.'],
-        ['Suivi intercompany','Rapprochements, comptes réciproques et points ouverts sont préparés pour limiter les écarts de clôture.'],
+        ['Intercompany & conventions intragroupe','Comptes réciproques rapprochés et conventions intragroupe vérifiées (refacturations, management fees, prêts) pour limiter les risques fiscaux en France comme dans le pays de la maison mère.'],
         ['Liste des sujets ouverts','Un suivi clair des pièces manquantes, décisions attendues et prochaines actions côté France.']
       ],
       transition:'Une organisation française qui reste compréhensible depuis l’étranger.'
@@ -34,7 +34,7 @@
       outputs:[
         ['Local compliance calendar','French accounting, tax, payroll and recurring legal deadlines are identified and shared.'],
         ['FR / EN reporting','Interim accounts or packages aligned with group closing frequency and requested formats.'],
-        ['Intercompany follow-up','Reciprocal accounts, reconciliations and open items are prepared to reduce closing differences.'],
+        ['Intercompany & group agreements','Reciprocal accounts reconciled and intercompany agreements reviewed (recharges, management fees, loans) to limit tax exposure in France and in the parent company’s country.'],
         ['Open-item tracker','A clear view of missing documents, decisions required and next actions on the French side.']
       ],
       transition:'A French operation that remains understandable from abroad.'
