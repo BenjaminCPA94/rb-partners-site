@@ -8,7 +8,7 @@
     const cards = document.querySelectorAll('#secteurs .audience-card');
     const cardLinks = [
       ['expert-comptable-startup.html', lang === 'en' ? 'Discover our startup support' : 'Voir notre accompagnement start-up'],
-      ['expert-comptable-pme.html', lang === 'en' ? 'Discover our support for businesses' : 'Voir notre accompagnement indépendants & entreprises'],
+      ['expert-comptable-pme.html', lang === 'en' ? 'Discover our SME support' : 'Voir notre accompagnement PME'],
       ['expert-comptable-international.html', lang === 'en' ? 'Discover international support' : 'Voir notre accompagnement international']
     ];
     cardLinks.forEach(([href, label], index) => {

@@ -11,8 +11,7 @@
     fr: {
       paris: ['Expert-comptable à Paris','Un accompagnement comptable, fiscal, social et de pilotage pour entreprises à Paris.','expert-comptable-paris.html'],
       startup: ['Expert-comptable pour start-up','Cash, reporting, structuration, paie et accompagnement de la croissance.','expert-comptable-startup.html'],
-      pme: ['Expert-comptable indépendants & entreprises','Un suivi complet du quotidien aux décisions de gestion.','expert-comptable-pme.html'],
-      liberal: ['Professions libérales & santé','Médecins, paramédicaux, avocats, consultants : BNC, SEL, SCM et holding.','expert-comptable-professions-liberales.html'],
+      pme: ['Expert-comptable pour PME','Un suivi complet du quotidien aux décisions de gestion.','expert-comptable-pme.html'],
       pennylane: ['Expert-comptable Pennylane','Une organisation comptable digitale, lisible et collaborative.','expert-comptable-pennylane.html'],
       international: ['Implantation en France','Le point d’entrée local des sociétés et groupes étrangers en France.','expert-comptable-international.html'],
       creation: ['Créer une entreprise en France','Structurer, immatriculer et démarrer votre activité dans de bonnes conditions.','creation-entreprise-france.html']
@@ -20,8 +19,7 @@
     en: {
       paris: ['Accountant in Paris','Accounting, tax, payroll and management support for businesses operating in Paris.','expert-comptable-paris.html'],
       startup: ['Accountant for start-ups','Cash, reporting, structuring, payroll and growth support.','expert-comptable-startup.html'],
-      pme: ['Accountant for businesses & the self-employed','End-to-end support from recurring compliance to management decisions.','expert-comptable-pme.html'],
-      liberal: ['Liberal & healthcare professions','Doctors, therapists, lawyers, consultants: BNC, SEL, SCM and holding.','expert-comptable-professions-liberales.html'],
+      pme: ['Accountant for SMEs','End-to-end support from recurring compliance to management decisions.','expert-comptable-pme.html'],
       pennylane: ['Pennylane accounting firm','A digital and collaborative accounting workflow.','expert-comptable-pennylane.html'],
       international: ['Setting up in France','A local point of contact for foreign companies and international groups.','expert-comptable-international.html'],
       creation: ['Create a company in France','Structure, register and launch your French business.','creation-entreprise-france.html']
@@ -33,12 +31,11 @@
     'expertises/conseil-gestion.html':['startup','pme','paris'],
     'expertises/social-paie.html':['pme','international','startup'],
     'expertises/creation-juridique.html':['creation','startup','international'],
-    'conseil-dirigeant.html':['liberal','pme','startup'],
+    'conseil-dirigeant.html':['paris','pme','startup'],
     'facturation-electronique.html':['pennylane','pme','paris'],
     'expert-comptable-paris.html':['startup','pme','international'],
     'expert-comptable-startup.html':['pennylane','paris','creation'],
-    'expert-comptable-pme.html':['liberal','paris','startup'],
-    'expert-comptable-professions-liberales.html':['pme','paris','creation'],
+    'expert-comptable-pme.html':['paris','pennylane','startup'],
     'expert-comptable-pennylane.html':['pme','startup','paris'],
     'creation-entreprise-france.html':['international','paris','startup']
   };
