@@ -27,11 +27,11 @@ const RB_TRANSLATIONS = {
 
     'hero.eyebrow': 'Expertise comptable, sociale & fiscale',
     'hero.title': "Votre partenaire de confiance,<br>de la création à l'international.",
-    'hero.lead': "RB Partners accompagne les entrepreneurs français dans chaque étape de leur développement, et guide les sociétés étrangères qui souhaitent s'implanter et réussir en France.",
+    'hero.lead': "Meyvin accompagne les entrepreneurs français dans chaque étape de leur développement, et guide les sociétés étrangères qui souhaitent s'implanter et réussir en France.",
     'hero.cta_primary': 'Échanger avec un associé',
     'hero.cta_secondary': 'Découvrir nos expertises',
 
-    'intro.text': "Fondé par <strong>Rachel Illouz</strong> et <strong>Benjamin Haziza</strong>, RB Partners est un cabinet d'expertise comptable à taille humaine qui conjugue rigueur technique et proximité relationnelle. Nous accompagnons deux familles de clients&nbsp;: les <strong>sociétés franco-françaises</strong> que nous suivons de la création à l'accompagnement opérationnel du quotidien, et les <strong>sociétés étrangères</strong> qui souhaitent s'installer et se développer sereinement en France.",
+    'intro.text': "Fondé par <strong>Rachel Illouz</strong> et <strong>Benjamin Haziza</strong>, Meyvin est un cabinet d'expertise comptable à taille humaine qui conjugue rigueur technique et proximité relationnelle. Nous accompagnons deux familles de clients&nbsp;: les <strong>sociétés franco-françaises</strong> que nous suivons de la création à l'accompagnement opérationnel du quotidien, et les <strong>sociétés étrangères</strong> qui souhaitent s'installer et se développer sereinement en France.",
 
     'expertises.eyebrow': 'Nos expertises',
     'expertises.title': 'Une expertise complète, un seul interlocuteur',
@@ -66,7 +66,7 @@ const RB_TRANSLATIONS = {
 
     'international.eyebrow': 'Sociétés étrangères',
     'international.title': "S'implanter et se développer en France",
-    'international.text': "Vous dirigez une société étrangère et souhaitez ouvrir une filiale, une succursale ou un bureau de représentation en France&nbsp;? RB Partners est votre interlocuteur unique pour sécuriser chaque étape de votre implantation, en français comme en anglais.",
+    'international.text': "Vous dirigez une société étrangère et souhaitez ouvrir une filiale, une succursale ou un bureau de représentation en France&nbsp;? Meyvin est votre interlocuteur unique pour sécuriser chaque étape de votre implantation, en français comme en anglais.",
     'international.list.0': 'Choix de la structure la plus adaptée (filiale, succursale, bureau de liaison)',
     'international.list.1': 'Immatriculation, formalités administratives et bancaires',
     'international.list.2': "Fiscalité d'entrée, conventions fiscales et prix de transfert",
@@ -107,13 +107,13 @@ const RB_TRANSLATIONS = {
     'form.company_foreign': "Étrangère, en projet d'implantation en France",
     'form.message_label': 'Message',
     'form.submit': 'Envoyer ma demande',
-    'form.privacy': 'Les informations saisies sont transmises par email à RB Partners et ne sont utilisées que pour traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.',
+    'form.privacy': 'Les informations saisies sont transmises par email à Meyvin et ne sont utilisées que pour traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.',
     'form.success': 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
     'form.fallback': 'Votre messagerie va s’ouvrir avec votre demande préremplie.',
 
-    'footer.legal': 'RB Partners — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.',
+    'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.',
 
-    'meta.home_title': 'RB Partners — Expertise comptable & accompagnement franco-international',
+    'meta.home_title': 'Meyvin — Expertise comptable & accompagnement franco-international',
 
     'exp.eyebrow': 'Expertise',
     'services.title': 'Nos services clés',
@@ -121,7 +121,7 @@ const RB_TRANSLATIONS = {
     'exp.cta_button': 'Nous contacter',
 
     'exp.comptabilite.subtitle': 'Une production comptable fiable et des tableaux de bord clairs pour piloter votre activité en toute confiance, mois après mois.',
-    'exp.comptabilite.intro1': "La comptabilité est le socle de toute décision de gestion. Chez RB Partners, nous tenons vos comptes avec rigueur et vous restituons l'information sous une forme directement exploitable, pour que vous puissiez piloter votre entreprise sans avoir à déchiffrer des colonnes de chiffres.",
+    'exp.comptabilite.intro1': "La comptabilité est le socle de toute décision de gestion. Chez Meyvin, nous tenons vos comptes avec rigueur et vous restituons l'information sous une forme directement exploitable, pour que vous puissiez piloter votre entreprise sans avoir à déchiffrer des colonnes de chiffres.",
     'exp.comptabilite.intro2': "Selon la taille et la maturité de votre structure, nous adaptons la fréquence et le niveau de détail de nos restitutions&nbsp;: suivi mensuel pour un pilotage fin, points trimestriels pour une structure plus stable. Dans tous les cas, vous gardez une vision claire et à jour de votre situation financière.",
     'exp.comptabilite.intro3': "Nous assurons également l'établissement de vos comptes annuels et, lorsque votre structure y est soumise, nous coordonnons les échanges avec votre commissaire aux comptes pour une clôture sans accroc.",
     'exp.comptabilite.services.0': 'Tenue comptable mensuelle et rapprochements bancaires',
@@ -466,7 +466,7 @@ const RB_TRANSLATIONS = {
 
     'fe.eyebrow': 'Notre offre',
     'fe.title': 'Facturation électronique : passez à la réforme sereinement',
-    'fe.lead': "La facturation électronique devient progressivement obligatoire pour toutes les entreprises assujetties à la TVA en France. RB Partners vous accompagne à chaque étape pour que cette transition ne perturbe ni votre facturation, ni votre trésorerie.",
+    'fe.lead': "La facturation électronique devient progressivement obligatoire pour toutes les entreprises assujetties à la TVA en France. Meyvin vous accompagne à chaque étape pour que cette transition ne perturbe ni votre facturation, ni votre trésorerie.",
     'fe.intro1': "Choix de la plateforme de dématérialisation, compatibilité de vos outils, formation de vos équipes, archivage probant&nbsp;: la mise en conformité soulève de nombreuses questions techniques pour une entreprise qui n'a pas vocation à devenir experte en facturation électronique. C'est précisément le rôle que nous jouons à vos côtés.",
     'fe.intro2': "Nous commençons par un diagnostic de vos flux de facturation actuels (émission, réception, volumes, outils en place) pour identifier la solution la mieux adaptée à votre activité, avant de vous accompagner dans son déploiement.",
     'fe.intro3': "Cette offre s'adresse aussi bien aux entreprises qui souhaitent anticiper la réforme dès maintenant qu'à celles qui doivent encore choisir leur plateforme et sécuriser leur passage à l'échéance qui les concerne.",
@@ -509,11 +509,11 @@ const RB_TRANSLATIONS = {
 
     'hero.eyebrow': 'Accounting, HR & Tax Expertise',
     'hero.title': 'Your trusted partner,<br>from launch to international growth.',
-    'hero.lead': "RB Partners supports French entrepreneurs at every stage of their growth, and guides foreign companies looking to establish and thrive in France.",
+    'hero.lead': "Meyvin supports French entrepreneurs at every stage of their growth, and guides foreign companies looking to establish and thrive in France.",
     'hero.cta_primary': 'Talk to a partner',
     'hero.cta_secondary': 'Discover our expertise',
 
-    'intro.text': "Founded by <strong>Rachel Illouz</strong> and <strong>Benjamin Haziza</strong>, RB Partners is a boutique accounting firm that combines technical rigor with genuine personal attention. We support two types of clients: <strong>French companies</strong>, whom we accompany from formation through day-to-day operational management, and <strong>foreign companies</strong> looking to establish themselves and grow smoothly in France.",
+    'intro.text': "Founded by <strong>Rachel Illouz</strong> and <strong>Benjamin Haziza</strong>, Meyvin is a boutique accounting firm that combines technical rigor with genuine personal attention. We support two types of clients: <strong>French companies</strong>, whom we accompany from formation through day-to-day operational management, and <strong>foreign companies</strong> looking to establish themselves and grow smoothly in France.",
 
     'expertises.eyebrow': 'Our Expertise',
     'expertises.title': 'Complete expertise, a single point of contact',
@@ -548,7 +548,7 @@ const RB_TRANSLATIONS = {
 
     'international.eyebrow': 'Foreign Companies',
     'international.title': 'Establish and grow in France',
-    'international.text': "Do you run a foreign company looking to open a subsidiary, branch or representative office in France&nbsp;? RB Partners is your single point of contact to secure every step of your setup, in both French and English.",
+    'international.text': "Do you run a foreign company looking to open a subsidiary, branch or representative office in France&nbsp;? Meyvin is your single point of contact to secure every step of your setup, in both French and English.",
     'international.list.0': 'Choosing the most suitable structure (subsidiary, branch, liaison office)',
     'international.list.1': 'Registration, administrative and banking formalities',
     'international.list.2': 'Entry taxation, tax treaties and transfer pricing',
@@ -589,13 +589,13 @@ const RB_TRANSLATIONS = {
     'form.company_foreign': 'Foreign, planning to set up in France',
     'form.message_label': 'Message',
     'form.submit': 'Send my request',
-    'form.privacy': 'The information entered is sent by email to RB Partners and used only to handle your request. <a href="politique-confidentialite.html">Learn more</a>.',
+    'form.privacy': 'The information entered is sent by email to Meyvin and used only to handle your request. <a href="politique-confidentialite.html">Learn more</a>.',
     'form.success': 'Thank you, your request has been sent. We will get back to you shortly.',
     'form.fallback': 'Your email application will open with your request pre-filled.',
 
-    'footer.legal': 'RB Partners — Rachel Illouz & Benjamin Haziza, Chartered Accountants. All rights reserved.',
+    'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, Chartered Accountants. All rights reserved.',
 
-    'meta.home_title': 'RB Partners — Accounting Expertise & French-International Support',
+    'meta.home_title': 'Meyvin — Accounting Expertise & French-International Support',
 
     'exp.eyebrow': 'Expertise',
     'services.title': 'Our Key Services',
@@ -603,7 +603,7 @@ const RB_TRANSLATIONS = {
     'exp.cta_button': 'Contact us',
 
     'exp.comptabilite.subtitle': 'Reliable bookkeeping and clear dashboards to help you run your business with confidence, month after month.',
-    'exp.comptabilite.intro1': "Accounting is the foundation of every management decision. At RB Partners, we keep your books with rigor and deliver information in a directly usable form, so you can run your business without having to decode columns of figures.",
+    'exp.comptabilite.intro1': "Accounting is the foundation of every management decision. At Meyvin, we keep your books with rigor and deliver information in a directly usable form, so you can run your business without having to decode columns of figures.",
     'exp.comptabilite.intro2': "Depending on your company's size and maturity, we adapt the frequency and level of detail of our reporting: monthly follow-up for fine-grained control, quarterly check-ins for a more established structure. Either way, you keep a clear, up-to-date view of your financial position.",
     'exp.comptabilite.intro3': "We also prepare your annual accounts and, where your company is subject to a statutory audit, coordinate with your auditor for a smooth year-end close.",
     'exp.comptabilite.services.0': 'Monthly bookkeeping and bank reconciliations',
@@ -948,7 +948,7 @@ const RB_TRANSLATIONS = {
 
     'fe.eyebrow': 'Our offer',
     'fe.title': 'E-invoicing: navigate the reform with confidence',
-    'fe.lead': "E-invoicing is becoming mandatory, step by step, for every VAT-registered business in France. RB Partners supports you at every stage so this transition disrupts neither your invoicing nor your cash flow.",
+    'fe.lead': "E-invoicing is becoming mandatory, step by step, for every VAT-registered business in France. Meyvin supports you at every stage so this transition disrupts neither your invoicing nor your cash flow.",
     'fe.intro1': "Choosing a compliant platform, checking tool compatibility, training your teams, setting up legally compliant archiving&nbsp;: compliance raises many technical questions for a business that isn't meant to become an e-invoicing expert. That's exactly the role we play alongside you.",
     'fe.intro2': "We start with a diagnostic of your current invoicing flows (issuing, receiving, volumes, tools in place) to identify the solution best suited to your business, before supporting you through its rollout.",
     'fe.intro3': "This offer suits both businesses that want to get ahead of the reform now and those that still need to choose their platform and secure their transition ahead of their specific deadline.",
@@ -1001,7 +1001,7 @@ function rbApplyLang(lang) {
       document.title = rbStripEntities(rbTranslate('meta.home_title', lang));
     } else {
       const base = rbTranslate(key, lang);
-      document.title = base ? `${rbStripEntities(base)} — RB Partners` : document.title;
+      document.title = base ? `${rbStripEntities(base)} — Meyvin` : document.title;
     }
   }
 

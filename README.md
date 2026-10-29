@@ -1,6 +1,6 @@
-# Site RB Partners
+# Site Meyvin
 
-Site vitrine du cabinet d'expertise comptable RB Partners (Rachel Illouz & Benjamin Haziza).
+Site vitrine du cabinet d'expertise comptable Meyvin (Rachel Illouz & Benjamin Haziza).
 
 ## Aperçu en local
 
@@ -24,7 +24,7 @@ Puis rendez-vous sur `http://localhost:8000`.
 ## À personnaliser avant mise en ligne
 
 - **Coordonnées** : téléphone, email et adresse (actuellement des valeurs à remplacer) dans `index.html`.
-- **Nom de domaine / email** : `contact@rb-partners.fr` est un espace réservé.
+- **Nom de domaine / email** : `contact@meyvin.fr` est un espace réservé.
 - **Formulaire de contact** : le formulaire ne fait actuellement qu'une validation côté client (aucun envoi réel). Pour recevoir les messages, connectez-le à un service (Formspree, Netlify Forms, backend maison, etc.) en modifiant `js/main.js` et l'attribut `action`/`method` du `<form>`.
 - **Photos de l'équipe** : les avatars sont actuellement des initiales (RI / BH). Vous pouvez les remplacer par de vraies photos dans `.team-card__avatar`.
 - **Textes légaux** : ajoutez une page de mentions légales / politique de confidentialité si nécessaire (obligatoire en France pour un site professionnel).

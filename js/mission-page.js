@@ -118,7 +118,7 @@
             <p class="eyebrow">${lang === 'en' ? 'Related expertise' : 'À découvrir aussi'}</p>
             <h2>${lang === 'en' ? 'Continue with the topic that fits your situation.' : 'Poursuivez selon votre situation.'}</h2>
           </div>
-          <p>${lang === 'en' ? 'Useful entry points to understand how RB Partners can support your company in France.' : 'Des pages complémentaires pour comprendre rapidement l’accompagnement adapté à votre entreprise.'}</p>
+          <p>${lang === 'en' ? 'Useful entry points to understand how Meyvin can support your company in France.' : 'Des pages complémentaires pour comprendre rapidement l’accompagnement adapté à votre entreprise.'}</p>
         </div>
         <div class="rb-related__grid">
           ${items.map((x,i) => `<a class="rb-related__card" href="${x[2]}"><small>0${i+1}</small><h3>${x[0]}</h3><p>${x[1]}</p><span>${lang === 'en' ? 'Explore' : 'Découvrir'} →</span></a>`).join('')}

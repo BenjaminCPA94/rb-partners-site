@@ -55,7 +55,7 @@
     const description = document.querySelector('meta[name="description"]')?.content || '';
     ensureMeta('name','robots','index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1');
     ensureMeta('property','og:type','website');
-    ensureMeta('property','og:site_name','RB Partners');
+    ensureMeta('property','og:site_name','Meyvin');
     ensureMeta('property','og:title',document.title);
     ensureMeta('property','og:description',description);
     ensureMeta('name','twitter:card','summary');
@@ -79,8 +79,8 @@
     const serviceName=document.querySelector('h1')?.textContent?.trim() || document.title;
     const provider={
       '@type':'AccountingService',
-      name:'RB Partners',
-      email:'contact@rb-partners.fr',
+      name:'Meyvin',
+      email:'contact@meyvin.fr',
       areaServed:{'@type':'Country',name:'France'},
       availableLanguage:['fr','en']
     };
@@ -90,7 +90,7 @@
         '@context':'https://schema.org',
         '@graph':[
           {...provider,'@id':'#accounting-service',description},
-          {'@type':'WebSite','@id':'#website',name:'RB Partners',inLanguage:['fr','en']}
+          {'@type':'WebSite','@id':'#website',name:'Meyvin',inLanguage:['fr','en']}
         ]
       });
     } else if(!location.pathname.includes('/blog/') && (document.body.classList.contains('mission-page') || /expert-comptable|creation-entreprise|facturation-electronique|conseil-dirigeant/.test(location.pathname))){
@@ -139,7 +139,7 @@
             <p class="eyebrow">${l==='en'?'Related expertise':'À découvrir aussi'}</p>
             <h2>${l==='en'?'Continue with the topic that fits your situation.':'Poursuivez selon votre situation.'}</h2>
           </div>
-          <p>${l==='en'?'Useful entry points to understand how RB Partners can support your company in France.':'Des pages complémentaires pour comprendre rapidement l’accompagnement adapté à votre entreprise.'}</p>
+          <p>${l==='en'?'Useful entry points to understand how Meyvin can support your company in France.':'Des pages complémentaires pour comprendre rapidement l’accompagnement adapté à votre entreprise.'}</p>
         </div>
         <div class="rb-related__grid">
           ${keys.map((key,i)=>{

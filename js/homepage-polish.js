@@ -25,7 +25,7 @@
           </span>
         </button>
         <div class="rb-hero-flow rb-hero-flow--left"><i></i><i></i></div>
-        <div class="rb-hero-center"><b>RB</b><small>PARTNERS · FRANCE</small></div>
+        <div class="rb-hero-center"><b>M</b><small>MEYVIN · FRANCE</small></div>
         <div class="rb-hero-flow rb-hero-flow--right"><i></i><i></i></div>
         <button class="rb-hero-side rb-hero-side--intl" type="button" aria-expanded="false">
           <small>INTERNATIONAL</small>
