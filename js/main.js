@@ -39,6 +39,11 @@
   homepagePolishCss.href = `${base}css/homepage-polish.css`;
   document.head.appendChild(homepagePolishCss);
 
+  const immersiveCss = document.createElement('link');
+  immersiveCss.rel = 'stylesheet';
+  immersiveCss.href = `${base}css/immersive.css`;
+  document.head.appendChild(immersiveCss);
+
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
   upgrade.onload = () => {
@@ -77,6 +82,10 @@
       const homepagePolish = document.createElement('script');
       homepagePolish.src = `${base}js/homepage-polish.js`;
       document.head.appendChild(homepagePolish);
+
+      const immersive = document.createElement('script');
+      immersive.src = `${base}js/immersive.js`;
+      document.head.appendChild(immersive);
     };
     document.head.appendChild(polish);
   };

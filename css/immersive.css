@@ -1,0 +1,106 @@
+/* Meyvin — immersive scroll-storytelling layer (test branch) */
+
+:root {
+  --immersive-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scroll progress rail, fixed under the sticky header */
+.immersive-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-500, #c6a15b), var(--gold-400, #d8b876));
+  z-index: 310;
+  transition: width 80ms linear;
+  pointer-events: none;
+}
+
+/* Richer reveal: more travel, a touch of scale, a calmer settle than the
+   base 700ms ease — this is the main "more immersive" lever since the
+   .reveal/.is-visible mechanism already runs on every page via main.js. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition: opacity 800ms var(--immersive-ease), transform 800ms var(--immersive-ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Parallax targets: decorative hero/network visuals only — never applied
+   to text or interactive controls. */
+[data-immersive-parallax] {
+  will-change: transform;
+}
+
+/* Section rail-nav: a slim right-edge dot trail for pages with several
+   landmark sections. Desktop only — hidden below 1100px so it can never
+   contribute to mobile overflow or sit over content. */
+.immersive-rail {
+  position: fixed;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  z-index: 310;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.immersive-rail__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(14, 31, 53, 0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 220ms ease, transform 220ms ease;
+  position: relative;
+}
+.immersive-rail__dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--navy-900, #0e1f35);
+  background: var(--white, #fff);
+  padding: 5px 10px;
+  border-radius: 7px;
+  box-shadow: 0 8px 20px rgba(8, 20, 38, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.immersive-rail__dot:hover::after,
+.immersive-rail__dot:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+.immersive-rail__dot.is-active {
+  background: var(--gold-500, #c6a15b);
+  transform: scale(1.35);
+}
+
+@media (max-width: 1100px) {
+  .immersive-rail { display: none; }
+}
+
+/* Respect reduced-motion: no bar animation smoothing, no parallax, and
+   the base .reveal rule above is already neutralised by main.js (which
+   adds .is-visible immediately and sets transition-delay:0 when
+   prefers-reduced-motion is set), so nothing extra is required here
+   except disabling the progress-bar transition and parallax transforms. */
+@media (prefers-reduced-motion: reduce) {
+  .immersive-progress { transition: none; }
+  [data-immersive-parallax] { transform: none !important; }
+}
