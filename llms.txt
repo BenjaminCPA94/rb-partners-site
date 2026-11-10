@@ -31,6 +31,13 @@ This file follows the llms.txt convention to help AI assistants and language mod
 - [E-invoicing compliance](https://benjamincpa94.github.io/rb-partners-site/e-invoicing-france.html): Preparing for France's mandatory B2B e-invoicing reform.
 - [Accountant for SMEs](https://benjamincpa94.github.io/rb-partners-site/accountant-for-smes-france.html), [Accountant for start-ups](https://benjamincpa94.github.io/rb-partners-site/startup-accountant-france.html), [Accountant in Paris](https://benjamincpa94.github.io/rb-partners-site/chartered-accountant-paris.html), [Pennylane-based digital accounting](https://benjamincpa94.github.io/rb-partners-site/pennylane-accountant-france.html): Audience-specific landing pages covering the same core service set from different angles.
 
+## Choosing or changing an accountant in France
+
+- [Accountant fees in France](https://benjamincpa94.github.io/rb-partners-site/accountant-fees-france.html): What drives accounting fees (volume, complexity, scope) and how to read a French engagement letter. No public price list: quotes are tailored.
+- [Switching accountants in France](https://benjamincpa94.github.io/rb-partners-site/switch-accountant-france.html): Notice period, engagement letter and handover of the accounting file when changing firm.
+- [Online accountant in France](https://benjamincpa94.github.io/rb-partners-site/online-accountant-france.html): How the firm works remotely (Pennylane, Silae, video meetings) while a named partner follows each file.
+- French versions: [Tarif expert-comptable](https://benjamincpa94.github.io/rb-partners-site/tarif-expert-comptable.html), [Changer d'expert-comptable](https://benjamincpa94.github.io/rb-partners-site/changer-expert-comptable.html), [Expert-comptable en ligne](https://benjamincpa94.github.io/rb-partners-site/expert-comptable-en-ligne.html).
+
 ## Free tools
 
 - [Calculators index](https://benjamincpa94.github.io/rb-partners-site/simulateurs/index-en.html): French employee cost, corporate tax, dividends, gross-to-net salary, owner-manager pay and other calculators, usable without contacting the firm.
