@@ -1,10 +1,10 @@
-/* Meyvin — immersive scroll-storytelling layer (test branch) */
+/* Meyvin — immersive layer: scroll storytelling, ambient motion, reactive UI */
 
 :root {
   --immersive-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Scroll progress rail, fixed under the sticky header */
+/* ---------- Scroll progress bar ---------- */
 .immersive-progress {
   position: fixed;
   top: 0;
@@ -17,29 +17,205 @@
   pointer-events: none;
 }
 
-/* Richer reveal: more travel, a touch of scale, a calmer settle than the
-   base 700ms ease — this is the main "more immersive" lever since the
-   .reveal/.is-visible mechanism already runs on every page via main.js. */
+/* ---------- Reveal (restyles the .reveal/.is-visible system of main.js) ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(28px) scale(0.985);
   transition: opacity 800ms var(--immersive-ease), transform 800ms var(--immersive-ease);
-  will-change: opacity, transform;
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-/* Parallax targets: decorative hero/network visuals only — never applied
-   to text or interactive controls. */
-[data-immersive-parallax] {
-  will-change: transform;
+/* ---------- Ambient canvas behind dark sections ---------- */
+.imm-has-canvas {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.imm-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.imm-canvas--over {
+  z-index: auto;
 }
 
-/* Section rail-nav: a slim right-edge dot trail for pages with several
-   landmark sections. Desktop only — hidden below 1100px so it can never
-   contribute to mobile overflow or sit over content. */
+/* ---------- Hero headline: word-by-word rise ---------- */
+.imm-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.12em 0.04em 0.16em;
+  margin: -0.12em -0.04em -0.16em;
+}
+.imm-word__in {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 950ms var(--immersive-ease);
+  transition-delay: calc(var(--i, 0) * 55ms + 120ms);
+}
+.imm-split--in .imm-word__in {
+  transform: none;
+}
+
+/* ---------- Section heads: eyebrow tightens, title wipes in ---------- */
+.imm-ready .imm-head:not(.imm-in) .eyebrow {
+  letter-spacing: 0.34em;
+  opacity: 0;
+}
+.imm-ready .imm-head .eyebrow {
+  transition: letter-spacing 1100ms var(--immersive-ease), opacity 700ms ease;
+}
+.imm-ready .imm-head:not(.imm-in) h2 {
+  clip-path: inset(-12% 100% -12% 0);
+}
+.imm-ready .imm-head.imm-in h2 {
+  animation: imm-wipe 1000ms var(--immersive-ease) both;
+}
+@keyframes imm-wipe {
+  from { clip-path: inset(-12% 100% -12% 0); }
+  to { clip-path: inset(-12% -6% -12% 0); }
+}
+
+/* ---------- Marquee band under the homepage hero ---------- */
+.imm-marquee {
+  overflow: hidden;
+  background: var(--navy-900, #0b1d3a);
+  border-top: 1px solid rgba(216, 184, 118, 0.18);
+  border-bottom: 1px solid rgba(216, 184, 118, 0.18);
+  padding: 18px 0;
+  position: relative;
+}
+.imm-marquee::before,
+.imm-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9%;
+  z-index: 1;
+  pointer-events: none;
+}
+.imm-marquee::before { left: 0; background: linear-gradient(90deg, var(--navy-900, #0b1d3a), transparent); }
+.imm-marquee::after { right: 0; background: linear-gradient(270deg, var(--navy-900, #0b1d3a), transparent); }
+.imm-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: imm-marquee 46s linear infinite;
+}
+.imm-marquee:hover .imm-marquee__track {
+  animation-play-state: paused;
+}
+.imm-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  padding-right: 34px;
+  font-family: var(--font-head, Georgia, serif);
+  font-size: 1.28rem;
+  font-style: italic;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.78);
+}
+.imm-marquee__item:nth-child(even) {
+  color: var(--gold-400, #d8b876);
+}
+.imm-marquee__item::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: var(--gold-500, #c6a15b);
+  opacity: 0.7;
+}
+@keyframes imm-marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Reactive cards (tilt + moving shadow) and magnetic buttons ---------- */
+.imm-tilt {
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out, border-color 220ms ease !important;
+  transition-delay: 0s !important;
+  will-change: transform;
+}
+.imm-magnet {
+  transition: transform 160ms ease-out, background 220ms ease !important;
+}
+
+/* Small arrows and photos answer the hover too */
+.card__more span,
+.rb-related__card > span,
+.v8-path b,
+.v5-modern-links a,
+.seo-crosslink strong {
+  display: inline-block;
+  transition: transform 320ms var(--immersive-ease);
+}
+.card:hover .card__more span,
+.rb-related__card:hover > span,
+.v8-path:hover b,
+.v5-modern-links a:hover,
+.seo-crosslink:hover strong {
+  transform: translateX(6px);
+}
+.v3-founder-photo,
+.partner-contact__photo {
+  overflow: hidden;
+}
+.v3-founder-photo img,
+.partner-contact__photo img {
+  transition: transform 900ms var(--immersive-ease);
+}
+.v2-founder:hover .v3-founder-photo img,
+.partner-contact__card:hover .partner-contact__photo img {
+  transform: scale(1.08);
+}
+
+/* FAQ answers ease in when opened */
+details.faq-item[open] > p {
+  animation: imm-faq 420ms var(--immersive-ease);
+}
+@keyframes imm-faq {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Scroll-driven effects (progressive enhancement) ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Hero copy drifts up and dims as the page scrolls away from it */
+    .hero .hero__inner,
+    .seo-hero .seo-hero__inner,
+    .mission-hero .mission-hero__inner {
+      animation: imm-hero-out linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 720px;
+    }
+    /* Dark bands open up from a rounded card to full bleed as they enter */
+    main > .section--navy,
+    main > .mission-lanes,
+    main > .expertise-cta {
+      animation: imm-band-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 85%;
+    }
+  }
+}
+@keyframes imm-hero-out {
+  to { opacity: 0.2; transform: translateY(-44px) scale(0.985); }
+}
+@keyframes imm-band-in {
+  from { clip-path: inset(0 4.5% round 34px); }
+  to { clip-path: inset(0 0 round 0); }
+}
+
+/* ---------- Section rail-nav (desktop only) ---------- */
 .immersive-rail {
   position: fixed;
   top: 50%;
@@ -56,6 +232,7 @@
   height: 8px;
   border-radius: 50%;
   background: rgba(14, 31, 53, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -90,17 +267,65 @@
   background: var(--gold-500, #c6a15b);
   transform: scale(1.35);
 }
-
 @media (max-width: 1100px) {
   .immersive-rail { display: none; }
 }
 
-/* Respect reduced-motion: no bar animation smoothing, no parallax, and
-   the base .reveal rule above is already neutralised by main.js (which
-   adds .is-visible immediately and sets transition-delay:0 when
-   prefers-reduced-motion is set), so nothing extra is required here
-   except disabling the progress-bar transition and parallax transforms. */
+/* ---------- Back-to-top with progress ring ---------- */
+.imm-top {
+  --imm-p: 0;
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  z-index: 320;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: conic-gradient(var(--gold-500, #c6a15b) calc(var(--imm-p) * 1%), rgba(198, 161, 91, 0.22) 0);
+  box-shadow: 0 10px 26px rgba(8, 20, 38, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 260ms ease, transform 260ms var(--immersive-ease), visibility 260ms;
+}
+.imm-top.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.imm-top::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--navy-950, #081426);
+}
+.imm-top::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid var(--gold-400, #d8b876);
+  border-top: 2px solid var(--gold-400, #d8b876);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: top 220ms ease;
+}
+.imm-top:hover::after { top: 48%; }
+.imm-top:focus-visible { outline: 2px solid var(--gold-500, #c6a15b); outline-offset: 3px; }
+
+/* ---------- Reduced motion: keep navigation aids, drop the movement ---------- */
 @media (prefers-reduced-motion: reduce) {
   .immersive-progress { transition: none; }
-  [data-immersive-parallax] { transform: none !important; }
+  .imm-marquee__track { animation: none; }
+  .imm-word__in { transform: none; transition: none; }
+  .imm-ready .imm-head:not(.imm-in) .eyebrow { letter-spacing: inherit; opacity: 1; }
+  .imm-ready .imm-head:not(.imm-in) h2 { clip-path: none; }
+  .imm-ready .imm-head.imm-in h2 { animation: none; }
+  details.faq-item[open] > p { animation: none; }
+  .imm-top { transition: none; }
 }
