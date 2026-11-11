@@ -105,11 +105,15 @@
     document.getElementById('v4-reviews')?.remove();
   }
 
-  // Online booking pages, one per partner (Google Calendar appointment
-  // schedule, Microsoft Bookings, Calendly...). While both are empty the
-  // modal keeps showing the preview calendar below. Fill in a URL to switch
-  // that partner to the real, calendar-synced booking page.
-  const BOOKING_LINKS = { rachel: '', benjamin: '' };
+  // Online booking pages, one per partner (Microsoft Bookings "Bookings with
+  // me"). While both are empty the modal keeps showing the preview calendar
+  // below. Fill in a URL to switch that partner to the real, calendar-synced
+  // booking page. Microsoft forbids framing its pages (CSP frame-ancestors),
+  // so the page opens in a new tab instead of an iframe.
+  const BOOKING_LINKS = {
+    rachel: '',
+    benjamin: 'https://bookings.cloud.microsoft/bookwithme/user/76097a79c137416f80fff3340477264d@meyvin-experts.com/meetingtype/gTXh3zuDS0ycWsHJGiYOKw2?anonymous&ismsaljsauthenabled&ep=mlink',
+  };
   const PARTNER_NAMES = { rachel: 'Rachel Illouz', benjamin: 'Benjamin Haziza' };
   const MAX_MONTHS_AHEAD = 6;
 
@@ -141,6 +145,7 @@
     const layout = backdrop.querySelector('.rb-booking-layout');
     const smallEl = backdrop.querySelector('.rb-booking-title small');
     const subEl = backdrop.querySelector('.rb-booking-title p');
+    const titleEl = backdrop.querySelector('.rb-booking-title h3');
     const sideEl = backdrop.querySelector('.rb-booking-side-note');
     const person = backdrop.dataset.person || '';
     const live = Object.values(BOOKING_LINKS).some(Boolean);
@@ -162,11 +167,15 @@
       layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Choose the partner you would like to speak with to see their availability.' : 'Choisissez l’associé avec qui vous souhaitez échanger pour voir ses disponibilités.'}</div>`;
     } else if (!url) {
       if (subEl) subEl.textContent = PARTNER_NAMES[person];
-      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Online booking is not available for this partner yet. Please choose the other partner, or write to us.' : 'La réservation en ligne n’est pas encore disponible pour cet associé. Choisissez l’autre associé, ou écrivez-nous.'}</div>`;
+      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Online booking is not available for this partner yet. Please choose the other partner.' : 'La réservation en ligne n’est pas encore disponible pour cet associé. Choisissez l’autre associé.'}</div>`;
     } else {
       if (subEl) subEl.textContent = (l === 'en' ? 'Calendar of ' : 'Agenda de ') + PARTNER_NAMES[person];
-      const safe = url.replace(/"/g, '&quot;');
-      layout.innerHTML = `<div class="rb-booking-embed"><iframe src="${safe}" title="${l === 'en' ? 'Book a meeting with ' : 'Prendre rendez-vous avec '}${PARTNER_NAMES[person]}" loading="lazy"></iframe><a class="rb-booking-external" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'Page not showing? Open the booking page in a new tab' : 'La page ne s’affiche pas ? Ouvrir la réservation dans un nouvel onglet'} ↗</a></div>`;
+      if (titleEl) titleEl.textContent = l === 'en' ? 'Book your time slot' : 'Réservez votre créneau';
+      const safe = url.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+      const facts = l === 'en'
+        ? ['30 minutes', 'By video call (Teams)', 'Confirmation by email']
+        : ['30 minutes', 'En visio (Teams)', 'Confirmation par e-mail'];
+      layout.innerHTML = `<div class="rb-booking-handoff"><h4>${l === 'en' ? 'Pick a time in ' + PARTNER_NAMES[person] + '’s calendar' : 'Choisissez un créneau dans l’agenda de ' + PARTNER_NAMES[person]}</h4><ul>${facts.map(f => `<li>${f}</li>`).join('')}</ul><a class="btn btn--primary rb-booking-go" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'See available times' : 'Voir les créneaux disponibles'} ↗</a><p>${l === 'en' ? 'The booking page opens in a new tab. Once you have chosen a time, you receive a confirmation by email.' : 'La page de réservation s’ouvre dans un nouvel onglet. Une fois le créneau choisi, vous recevez une confirmation par e-mail.'}</p></div>`;
     }
   }
 
