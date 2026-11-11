@@ -105,23 +105,69 @@
     document.getElementById('v4-reviews')?.remove();
   }
 
-  function calendarMarkup() {
+  // Online booking pages, one per partner (Google Calendar appointment
+  // schedule, Microsoft Bookings, Calendly...). While both are empty the
+  // modal keeps showing the preview calendar below. Fill in a URL to switch
+  // that partner to the real, calendar-synced booking page.
+  const BOOKING_LINKS = { rachel: '', benjamin: '' };
+  const PARTNER_NAMES = { rachel: 'Rachel Illouz', benjamin: 'Benjamin Haziza' };
+  const MAX_MONTHS_AHEAD = 6;
+
+  function calendarMarkup(monthOffset) {
     const l = getLang();
-    const now = new Date();
-    const first = new Date(now.getFullYear(), now.getMonth(), 1);
-    const month = new Intl.DateTimeFormat(l === 'en' ? 'en-GB' : 'fr-FR', { month: 'long', year: 'numeric' }).format(now);
+    const today = new Date();
+    const view = new Date(today.getFullYear(), today.getMonth() + monthOffset, 1);
+    const month = new Intl.DateTimeFormat(l === 'en' ? 'en-GB' : 'fr-FR', { month: 'long', year: 'numeric' }).format(view);
     const days = l === 'en' ? ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] : ['lun.','mar.','mer.','jeu.','ven.','sam.','dim.'];
-    const offset = (first.getDay() + 6) % 7;
-    const count = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    const offset = (view.getDay() + 6) % 7;
+    const count = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+    const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     let cells = days.map(d => `<span>${d}</span>`).join('');
     for (let i = 0; i < offset; i++) cells += '<span></span>';
     for (let d = 1; d <= count; d++) {
-      const date = new Date(now.getFullYear(), now.getMonth(), d);
-      const past = date < new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const date = new Date(view.getFullYear(), view.getMonth(), d);
+      const past = date < startOfToday;
       const weekend = date.getDay() === 0 || date.getDay() === 6;
       cells += `<button type="button" data-day="${d}" ${past || weekend ? 'disabled' : ''}>${d}</button>`;
     }
-    return `<div class="rb-calendar"><div class="rb-calendar__head"><strong>${month.charAt(0).toUpperCase() + month.slice(1)}</strong></div><div class="rb-calendar__grid">${cells}</div></div>`;
+    const label = month.charAt(0).toUpperCase() + month.slice(1);
+    const prevLabel = l === 'en' ? 'Previous month' : 'Mois précédent';
+    const nextLabel = l === 'en' ? 'Next month' : 'Mois suivant';
+    return `<div class="rb-calendar"><div class="rb-calendar__head"><button type="button" class="rb-calendar__nav" data-month-nav="-1" aria-label="${prevLabel}" ${monthOffset <= 0 ? 'disabled' : ''}>‹</button><strong aria-live="polite">${label}</strong><button type="button" class="rb-calendar__nav" data-month-nav="1" aria-label="${nextLabel}" ${monthOffset >= MAX_MONTHS_AHEAD ? 'disabled' : ''}>›</button></div><div class="rb-calendar__grid">${cells}</div></div>`;
+  }
+
+  function renderBooking(backdrop) {
+    const l = getLang();
+    const layout = backdrop.querySelector('.rb-booking-layout');
+    const smallEl = backdrop.querySelector('.rb-booking-title small');
+    const subEl = backdrop.querySelector('.rb-booking-title p');
+    const sideEl = backdrop.querySelector('.rb-booking-side-note');
+    const person = backdrop.dataset.person || '';
+    const live = Object.values(BOOKING_LINKS).some(Boolean);
+
+    if (!live) {
+      const offset = Number(backdrop.dataset.month || 0);
+      layout.innerHTML = `${calendarMarkup(offset)}<div class="rb-time-panel"><h4>${l === 'en' ? 'Available times' : 'Créneaux disponibles'}</h4><div class="rb-time-list">${['09:00','10:00','11:30','14:00','15:30','17:00'].map(t => `<button type="button" data-time="${t}">${t}</button>`).join('')}</div><div class="rb-booking-placeholder">${l === 'en' ? 'Test interface only. These sample slots do not create a booking. The real partner availability and confirmation flow will be connected before launch.' : 'Interface de test uniquement. Ces créneaux sont fictifs et ne créent aucun rendez-vous. Les disponibilités réelles et la confirmation seront connectées avant la mise en ligne.'}</div></div>`;
+      return;
+    }
+
+    if (smallEl) smallEl.textContent = '';
+    if (sideEl) sideEl.textContent = l === 'en'
+      ? 'You book straight into the chosen partner’s calendar and receive a confirmation by email.'
+      : 'Vous réservez directement dans l’agenda de l’associé choisi et recevez une confirmation par e-mail.';
+    const url = BOOKING_LINKS[person];
+    layout.classList.add('rb-booking-layout--live');
+    if (!person) {
+      if (subEl) subEl.textContent = '';
+      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Choose the partner you would like to speak with to see their availability.' : 'Choisissez l’associé avec qui vous souhaitez échanger pour voir ses disponibilités.'}</div>`;
+    } else if (!url) {
+      if (subEl) subEl.textContent = PARTNER_NAMES[person];
+      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Online booking is not available for this partner yet. Please choose the other partner, or write to us.' : 'La réservation en ligne n’est pas encore disponible pour cet associé. Choisissez l’autre associé, ou écrivez-nous.'}</div>`;
+    } else {
+      if (subEl) subEl.textContent = (l === 'en' ? 'Calendar of ' : 'Agenda de ') + PARTNER_NAMES[person];
+      const safe = url.replace(/"/g, '&quot;');
+      layout.innerHTML = `<div class="rb-booking-embed"><iframe src="${safe}" title="${l === 'en' ? 'Book a meeting with ' : 'Prendre rendez-vous avec '}${PARTNER_NAMES[person]}" loading="lazy"></iframe><a class="rb-booking-external" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'Page not showing? Open the booking page in a new tab' : 'La page ne s’affiche pas ? Ouvrir la réservation dans un nouvel onglet'} ↗</a></div>`;
+    }
   }
 
   function ensureBookingModal() {
@@ -133,11 +179,12 @@
     const backdrop = document.createElement('div');
     backdrop.id = 'rb-booking-backdrop';
     backdrop.className = 'rb-booking-backdrop';
+    backdrop.dataset.month = '0';
     backdrop.innerHTML = `<div class="rb-booking-modal" role="dialog" aria-modal="true" aria-label="${l === 'en' ? 'Book a meeting' : 'Prendre rendez-vous'}">
       <aside class="rb-booking-side">
         <p class="eyebrow">${l === 'en' ? 'First conversation' : 'Premier échange'}</p>
         <h2>${l === 'en' ? '30 minutes to discuss your project' : '30 minutes pour parler de votre projet'}</h2>
-        <p>${l === 'en' ? 'Choose the partner you would like to speak with. The real availability will be connected to Calendly before launch.' : 'Choisissez l’associé avec qui vous souhaitez échanger. Les disponibilités réelles seront connectées à Calendly avant la mise en ligne.'}</p>
+        <p class="rb-booking-side-note">${l === 'en' ? 'Choose the partner you would like to speak with. The real availability will be connected before launch.' : 'Choisissez l’associé avec qui vous souhaitez échanger. Les disponibilités réelles seront connectées avant la mise en ligne.'}</p>
         <div class="rb-booking-persons">
           <button type="button" class="rb-booking-person" data-person="rachel"><img src="${rachelSrc}" alt="Rachel Illouz"><span><strong>Rachel Illouz</strong><span>${l === 'en' ? 'International & France market entry' : 'International & implantation en France'}</span></span></button>
           <button type="button" class="rb-booking-person" data-person="benjamin"><img src="${benjaminSrc}" alt="Benjamin Haziza"><span><strong>Benjamin Haziza</strong><span>${l === 'en' ? 'Start-ups & entrepreneurs' : 'Start-up, entrepreneurs & indépendants'}</span></span></button>
@@ -146,7 +193,7 @@
       <div class="rb-booking-main">
         <button class="rb-booking-close" type="button" aria-label="${l === 'en' ? 'Close' : 'Fermer'}">×</button>
         <div class="rb-booking-title"><small>${l === 'en' ? 'Preview' : 'Aperçu'}</small><h3>${l === 'en' ? 'Choose a date and time' : 'Sélectionnez une date et un horaire'}</h3><p>${l === 'en' ? 'Central European time' : 'Heure d’Europe centrale'}</p></div>
-        <div class="rb-booking-layout">${calendarMarkup()}<div class="rb-time-panel"><h4>${l === 'en' ? 'Available times' : 'Créneaux disponibles'}</h4><div class="rb-time-list">${['09:00','10:00','11:30','14:00','15:30','17:00'].map(t => `<button type="button" data-time="${t}">${t}</button>`).join('')}</div><div class="rb-booking-placeholder">${l === 'en' ? 'Test interface only. These sample slots do not create a booking. Calendly will provide the real partner availability and confirmation flow.' : 'Interface de test uniquement. Ces créneaux sont fictifs et ne créent aucun rendez-vous. Calendly fournira ensuite les disponibilités réelles et la confirmation.'}</div></div></div>
+        <div class="rb-booking-layout"></div>
       </div>
     </div>`;
     document.body.appendChild(backdrop);
@@ -156,21 +203,38 @@
     backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && backdrop.classList.contains('is-open')) close(); });
     backdrop.querySelectorAll('[data-person]').forEach(btn => btn.addEventListener('click', () => selectPerson(btn.dataset.person)));
-    backdrop.querySelectorAll('[data-day]').forEach(btn => btn.addEventListener('click', () => {
-      backdrop.querySelectorAll('[data-day]').forEach(x => x.classList.remove('is-selected'));
-      btn.classList.add('is-selected');
-    }));
-    backdrop.querySelectorAll('[data-time]').forEach(btn => btn.addEventListener('click', () => {
-      backdrop.querySelectorAll('[data-time]').forEach(x => x.classList.remove('is-selected'));
-      btn.classList.add('is-selected');
-    }));
+
+    // Delegated so the layout can be re-rendered (month change, partner change).
+    backdrop.querySelector('.rb-booking-layout').addEventListener('click', e => {
+      const nav = e.target.closest('[data-month-nav]');
+      if (nav) {
+        const next = Math.min(MAX_MONTHS_AHEAD, Math.max(0, Number(backdrop.dataset.month || 0) + Number(nav.dataset.monthNav)));
+        backdrop.dataset.month = String(next);
+        renderBooking(backdrop);
+        return;
+      }
+      const day = e.target.closest('[data-day]');
+      if (day && !day.disabled) {
+        backdrop.querySelectorAll('[data-day]').forEach(x => x.classList.remove('is-selected'));
+        day.classList.add('is-selected');
+        return;
+      }
+      const time = e.target.closest('[data-time]');
+      if (time) {
+        backdrop.querySelectorAll('[data-time]').forEach(x => x.classList.remove('is-selected'));
+        time.classList.add('is-selected');
+      }
+    });
+    renderBooking(backdrop);
     return backdrop;
   }
 
   function selectPerson(person) {
     const backdrop = document.getElementById('rb-booking-backdrop');
     if (!backdrop) return;
+    backdrop.dataset.person = person || '';
     backdrop.querySelectorAll('[data-person]').forEach(btn => btn.classList.toggle('is-selected', btn.dataset.person === person));
+    renderBooking(backdrop);
   }
 
   function bindBooking() {
