@@ -105,16 +105,17 @@
     document.getElementById('v4-reviews')?.remove();
   }
 
-  // Online booking pages, one per partner (Microsoft Bookings "Bookings with
-  // me"). While both are empty the modal keeps showing the preview calendar
-  // below. Fill in a URL to switch that partner to the real, calendar-synced
-  // booking page. Microsoft forbids framing its pages (CSP frame-ancestors),
-  // so the page opens in a new tab instead of an iframe.
+  // Online booking pages, one per partner. While both are empty the modal
+  // keeps showing the preview calendar below. A Cal.com link is displayed
+  // inside the modal (calendar + time slots); a Microsoft Bookings link
+  // cannot be framed (CSP frame-ancestors) and opens in a new tab instead.
   const BOOKING_LINKS = {
     rachel: '',
     benjamin: 'https://bookings.cloud.microsoft/bookwithme/user/76097a79c137416f80fff3340477264d@meyvin-experts.com/meetingtype/gTXh3zuDS0ycWsHJGiYOKw2?anonymous&ismsaljsauthenabled&ep=mlink',
   };
   const PARTNER_NAMES = { rachel: 'Rachel Illouz', benjamin: 'Benjamin Haziza' };
+  // Booking pages that accept being shown inside the site (Cal.com).
+  const EMBEDDABLE = /^https:\/\/([a-z0-9-]+\.)?cal\.(com|eu)\//i;
   const MAX_MONTHS_AHEAD = 6;
 
   function calendarMarkup(monthOffset) {
@@ -156,26 +157,33 @@
       return;
     }
 
-    if (smallEl) smallEl.textContent = '';
-    if (sideEl) sideEl.textContent = l === 'en'
-      ? 'You book straight into the chosen partner’s calendar and receive a confirmation by email.'
-      : 'Vous réservez directement dans l’agenda de l’associé choisi et recevez une confirmation par e-mail.';
-    const url = BOOKING_LINKS[person];
+    // Live mode: step 1 = choose a partner, step 2 = that partner's calendar.
+    const modal = backdrop.querySelector('.rb-booking-modal');
+    modal.classList.add('rb-booking-modal--live');
+    modal.dataset.liveState = person ? 'book' : 'choose';
     layout.classList.add('rb-booking-layout--live');
+    if (smallEl) smallEl.textContent = '';
+    if (subEl) subEl.textContent = '';
+    if (sideEl) sideEl.textContent = person
+      ? (l === 'en' ? 'Your meeting with:' : 'Votre rendez-vous avec :')
+      : (l === 'en' ? 'Who would you like to speak with? Choose a partner to see their availability.' : 'Avec qui souhaitez-vous échanger ? Choisissez un associé pour voir ses disponibilités.');
+    const url = BOOKING_LINKS[person];
     if (!person) {
-      if (subEl) subEl.textContent = '';
-      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Choose the partner you would like to speak with to see their availability.' : 'Choisissez l’associé avec qui vous souhaitez échanger pour voir ses disponibilités.'}</div>`;
+      layout.innerHTML = '';
     } else if (!url) {
-      if (subEl) subEl.textContent = PARTNER_NAMES[person];
-      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Online booking is not available for this partner yet. Please choose the other partner.' : 'La réservation en ligne n’est pas encore disponible pour cet associé. Choisissez l’autre associé.'}</div>`;
+      layout.innerHTML = `<div class="rb-booking-empty">${l === 'en' ? 'Online booking is not available for ' + PARTNER_NAMES[person] + ' yet. Please choose the other partner above.' : 'La réservation en ligne n’est pas encore disponible pour ' + PARTNER_NAMES[person] + '. Choisissez l’autre associé ci-dessus.'}</div>`;
     } else {
-      if (subEl) subEl.textContent = (l === 'en' ? 'Calendar of ' : 'Agenda de ') + PARTNER_NAMES[person];
-      if (titleEl) titleEl.textContent = l === 'en' ? 'Book your time slot' : 'Réservez votre créneau';
       const safe = url.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-      const facts = l === 'en'
-        ? ['30 minutes', 'By video call (Teams)', 'Confirmation by email']
-        : ['30 minutes', 'En visio (Teams)', 'Confirmation par e-mail'];
-      layout.innerHTML = `<div class="rb-booking-handoff"><h4>${l === 'en' ? 'Pick a time in ' + PARTNER_NAMES[person] + '’s calendar' : 'Choisissez un créneau dans l’agenda de ' + PARTNER_NAMES[person]}</h4><ul>${facts.map(f => `<li>${f}</li>`).join('')}</ul><a class="btn btn--primary rb-booking-go" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'See available times' : 'Voir les créneaux disponibles'} ↗</a><p>${l === 'en' ? 'The booking page opens in a new tab. Once you have chosen a time, you receive a confirmation by email.' : 'La page de réservation s’ouvre dans un nouvel onglet. Une fois le créneau choisi, vous recevez une confirmation par e-mail.'}</p></div>`;
+      if (EMBEDDABLE.test(url)) {
+        // Cal.com pages may be framed: the calendar and time slots show right here.
+        layout.innerHTML = `<div class="rb-booking-embed"><iframe src="${safe}" title="${l === 'en' ? 'Book a meeting with ' : 'Prendre rendez-vous avec '}${PARTNER_NAMES[person]}"></iframe><a class="rb-booking-external" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'Calendar not showing? Open it in a new tab' : 'Le calendrier ne s’affiche pas ? L’ouvrir dans un nouvel onglet'} ↗</a></div>`;
+      } else {
+        // Microsoft Bookings forbids framing: hand over to its page in a new tab.
+        const facts = l === 'en'
+          ? ['30 minutes', 'By video call (Teams)', 'Confirmation by email']
+          : ['30 minutes', 'En visio (Teams)', 'Confirmation par e-mail'];
+        layout.innerHTML = `<div class="rb-booking-handoff"><h4>${l === 'en' ? 'Pick a time in ' + PARTNER_NAMES[person] + '’s calendar' : 'Choisissez un créneau dans l’agenda de ' + PARTNER_NAMES[person]}</h4><ul>${facts.map(f => `<li>${f}</li>`).join('')}</ul><a class="btn btn--primary rb-booking-go" href="${safe}" target="_blank" rel="noopener">${l === 'en' ? 'See available times' : 'Voir les créneaux disponibles'} ↗</a><p>${l === 'en' ? 'The booking page opens in a new tab. Once you have chosen a time, you receive a confirmation by email.' : 'La page de réservation s’ouvre dans un nouvel onglet. Une fois le créneau choisi, vous recevez une confirmation par e-mail.'}</p></div>`;
+      }
     }
   }
 
