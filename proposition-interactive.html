@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="ed" data-ed-home>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meyvin — proposition de page d'accueil interactive</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try{localStorage.setItem('meyvin-apercu','1')}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -27,9 +28,15 @@
     --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    /* aliases used by the shared booking modal */
+    --navy-950: #081426; --navy-900: #0b1d3a; --navy-800: #142c54;
+    --gold-500: #c6a15b; --gold-400: #d8b876; --gold-600: #a8853f;
+    --gray-500: #6b7380; --gray-600: #5a6472; --gray-700: #3f4855;
+    --border: #e7e2d8; --font-body: var(--sans); --font-head: var(--serif);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  main section[id] { scroll-margin-top: 74px; }
   body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
@@ -264,9 +271,50 @@
   .foot__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
   .foot__bottom a { color: var(--gold-light); }
 
+  /* ---------- header extras: language, burger ---------- */
+  .top__end { display: flex; align-items: center; gap: 14px; }
+  .top__lang { font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: var(--navy); padding: 8px 10px; border-radius: 999px; border: 1px solid var(--line); }
+  .top__lang:hover { border-color: var(--navy); }
+  .burger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; padding: 8px; cursor: pointer; }
+  .burger span { width: 22px; height: 2px; background: var(--navy); transition: transform .3s var(--ease), opacity .3s ease; }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---------- contact ---------- */
+  .cta { text-align: left; }
+  .cta__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .cta__copy h2 { margin: 14px 0 18px; }
+  .cta__copy p { margin: 0 0 30px; }
+  .cta__info { margin: 40px 0 0; display: grid; gap: 18px; }
+  .cta__info dt { font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px; }
+  .cta__info dd { margin: 0; color: rgba(255,255,255,.8); display: flex; flex-direction: column; gap: 4px; }
+  .cta__info a:hover { color: #fff; }
+  .cta__form { background: var(--paper); color: var(--ink); border-radius: 8px; padding: 34px; box-shadow: 0 30px 60px rgba(0,0,0,.25); display: flex; flex-direction: column; }
+  .cta__form h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--navy); margin: 0 0 18px; }
+  .cta__form label { font-size: .8rem; font-weight: 600; color: var(--navy); margin: 14px 0 6px; }
+  .cta__form :is(input, select, textarea) { font: inherit; font-size: .95rem; padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%; }
+  .cta__form :is(input, select, textarea):focus { outline: 2px solid rgba(198,161,91,.35); border-color: var(--gold); }
+  .cta__form textarea { resize: vertical; min-height: 110px; }
+  .cta__form .btn { margin-top: 22px; justify-content: center; border: 0; cursor: pointer; font-family: var(--sans); }
+  .cta__form .btn:disabled { opacity: .6; cursor: wait; }
+  .cta__privacy { font-size: .78rem !important; color: var(--muted) !important; margin: 14px 0 0 !important; max-width: none !important; text-align: left; }
+  .cta__privacy a { text-decoration: underline; }
+  .cta__status { margin: 10px 0 0 !important; font-size: .88rem; font-weight: 600; color: var(--navy) !important; max-width: none !important; text-align: left; }
+  .btn--primary { background: var(--navy); color: #fff; }
+  .cta__form .btn--dark { background: var(--navy); color: #fff; }
+  .cta__form .btn--dark:hover { background: #142c54; }
+  main section#contact.cta { padding: 120px 0; }
+  @media (max-width: 560px) { main section#contact.cta { padding: 80px 0; } }
+
   /* ---------- responsive ---------- */
   @media (max-width: 960px) {
     .top nav { display: none; }
+    .top nav.is-open { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 24px 40px rgba(11,29,58,.12); padding: 8px 20px 16px; }
+    .top nav.is-open a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
+    .top nav.is-open a::after { display: none; }
+    .burger { display: flex; }
+    .cta__grid { grid-template-columns: 1fr; gap: 40px; }
     .hero .wrap { grid-template-columns: 1fr; }
     .stage { height: 470px; }
     .coin-wrap { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
@@ -297,6 +345,8 @@
     .foot__brand { grid-column: 1 / -1; }
   }
   @media (max-width: 560px) {
+    .top__cta { display: none; }
+    .cta__form { padding: 24px 20px; }
     .stage { height: 420px; }
     .person { grid-template-columns: 96px 1fr; gap: 16px; }
     .person__photo { width: 96px; height: 116px; }
@@ -335,18 +385,23 @@
 </head>
 <body>
 
-<div class="preview-bar">Aperçu — proposition de nouvelle page d'accueil. Le site actuel n'est pas modifié. <a href="index.html">Voir le site actuel</a></div>
+<div class="preview-bar">Aperçu du nouveau design : le site public n’est pas modifié. <a href="index.html?apercu=0">Quitter l’aperçu</a></div>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html"><i>M</i>Meyvin</a>
-    <nav aria-label="Navigation principale">
+    <nav aria-label="Navigation principale" id="nav">
       <a href="#missions">Nos missions</a>
       <a href="#intl">Implantation en France</a>
       <a href="#associes">Le cabinet</a>
       <a href="#guides">Ressources</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--dark btn--sm" href="index.html#contact">Prendre rendez-vous <span>→</span></a>
+    <div class="top__end">
+      <a class="top__lang" href="french-accountant-paris.html" hreflang="en" lang="en" title="English version">EN</a>
+      <a class="btn btn--dark btn--sm top__cta" href="#contact" data-booking="general">Prendre rendez-vous <span>→</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -362,7 +417,7 @@
         </h1>
         <p class="lead">Comptabilité, fiscalité, paie et conseil pour les indépendants, les PME et les sociétés étrangères qui s'implantent en France. Deux associés, un seul interlocuteur.</p>
         <div class="hero__actions">
-          <a class="btn btn--dark" href="index.html#contact">Prendre rendez-vous <span>→</span></a>
+          <a class="btn btn--dark" href="#contact" data-booking="general">Prendre rendez-vous <span>→</span></a>
           <a class="btn btn--ghost" href="#missions">Découvrir nos missions</a>
         </div>
         <div class="hero__proof">
@@ -448,7 +503,7 @@
         <article class="aud__card"><span class="outline" aria-hidden="true">01</span><small>FRANCE</small><h3>Entreprise française</h3><p>Dirigeants, indépendants, start-up et PME : comptabilité, fiscalité, paie, pilotage et accompagnement de la croissance.</p><a href="expert-comptable-pme.html">Découvrir →</a></article>
         <article class="aud__card"><span class="outline" aria-hidden="true">02</span><small>FR ↔ SIÈGE</small><h3>Filiale française d'un groupe international</h3><p>Normes comptables françaises, fiscalité locale, paie française, comptes intragroupe et reporting vers la maison mère.</p><a href="expert-comptable-international.html">Découvrir →</a></article>
         <article class="aud__card aud__card--dark"><span class="outline" aria-hidden="true">03</span><small>SIÈGE → FRANCE</small><h3>Société étrangère qui s'implante en France</h3><p>Structure, création, premières obligations, premiers salariés et mise en place d'une organisation française durable.</p><a href="expert-comptable-international.html">Découvrir →</a></article>
-        <article class="aud__card aud__card--cta"><small>VOTRE CAS</small><h3>Votre situation est différente&nbsp;?</h3><p>Décrivez-la-nous : nous vous orientons vers le bon accompagnement.</p><a href="index.html#contact">Prendre rendez-vous →</a></article>
+        <article class="aud__card aud__card--cta"><small>VOTRE CAS</small><h3>Votre situation est différente&nbsp;?</h3><p>Décrivez-la-nous : nous vous orientons vers le bon accompagnement.</p><a href="#contact" data-booking="general">Prendre rendez-vous →</a></article>
       </div>
     </div>
   </section>
@@ -525,13 +580,38 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="contact">
     <span class="cta__ring" style="width:520px;height:520px;left:-160px;top:-200px"></span>
     <span class="cta__ring" style="width:380px;height:380px;right:-120px;bottom:-160px"></span>
-    <div class="wrap">
-      <h2>Parlons de <em>votre projet.</em></h2>
-      <p>Un premier échange de 30 minutes, sans engagement, avec l'un des deux associés.</p>
-      <a class="btn btn--dark" href="index.html#contact">Prendre rendez-vous <span>→</span></a>
+    <div class="wrap cta__grid">
+      <div class="cta__copy rv">
+        <span class="kicker kicker--light">Contact</span>
+        <h2>Parlons de <em>votre projet.</em></h2>
+        <p>Un premier échange de 30 minutes, sans engagement, avec l'un des deux associés. Ou écrivez-nous : nous répondons directement.</p>
+        <a class="btn btn--gold" href="#contact" data-booking="general">Choisir un créneau <span>→</span></a>
+        <dl class="cta__info">
+          <div><dt>Téléphone</dt><dd><a href="tel:+33624126769">Rachel · 06 24 12 67 69</a><a href="tel:+33761534670">Benjamin · 07 61 53 46 70</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@meyvin.fr">contact@meyvin.fr</a></dd></div>
+          <div><dt>Adresse</dt><dd>Paris, France</dd></div>
+        </dl>
+      </div>
+      <form class="cta__form rv" id="contact-form" novalidate style="--rd:.1s">
+        <h3>Écrivez-nous</h3>
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <label for="company">Votre société est…</label>
+        <select id="company" name="company">
+          <option value="fr">Française</option>
+          <option value="etrangere">Étrangère, en projet d'implantation en France</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit" class="btn btn--dark">Envoyer ma demande <span>→</span></button>
+        <p class="cta__privacy">Vos informations servent uniquement à traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.</p>
+        <p class="cta__status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 </main>
@@ -542,9 +622,9 @@
       <div class="foot__brand"><a class="brand" href="index.html"><i>M</i>Meyvin</a><p>Cabinet d'expertise comptable accompagnant les dirigeants et les sociétés internationales en France.</p></div>
       <div><strong>Nos missions</strong><a href="expertises/comptabilite.html">Comptabilité &amp; conformité</a><a href="expertises/conseil-gestion.html">Pilotage &amp; reporting</a><a href="expertises/social-paie.html">Social &amp; RH</a><a href="expertises/creation-juridique.html">Juridique &amp; création</a><a href="conseil-dirigeant.html">Conseil au dirigeant</a><a href="facturation-electronique.html">Facturation électronique</a></div>
       <div><strong>International</strong><a href="expert-comptable-international.html">Implantation en France</a><a href="immatriculation-tva-france.html">Immatriculation TVA</a><a href="daf-externalise.html">DAF externalisé</a><a href="french-accountant-paris.html">English version</a></div>
-      <div><strong>Ressources</strong><a href="tarif-expert-comptable.html">Tarifs d'un expert-comptable</a><a href="changer-expert-comptable.html">Changer d'expert-comptable</a><a href="simulateurs/index.html">Simulateurs</a><a href="blog/index.html">Blog</a><a href="index.html#contact">Contact</a></div>
+      <div><strong>Ressources</strong><a href="tarif-expert-comptable.html">Tarifs d'un expert-comptable</a><a href="changer-expert-comptable.html">Changer d'expert-comptable</a><a href="simulateurs/index.html">Simulateurs</a><a href="blog/index.html">Blog</a><a href="#contact">Contact</a></div>
     </div>
-    <div class="foot__bottom"><span>© 2026 Meyvin — page d'aperçu, non référencée.</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="index.html">Revenir au site actuel</a></span></div>
+    <div class="foot__bottom"><span>© <span id="year">2026</span> Meyvin</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="index.html?apercu=0">Quitter l’aperçu</a></span></div>
   </div>
 </footer>
 
@@ -740,5 +820,6 @@
   });
 })();
 </script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -2,6 +2,29 @@
 (() => {
   const here = document.currentScript?.src || '';
   const base = here ? here.replace(/js\/main\.js(?:\?.*)?$/, '') : '';
+  const root = document.documentElement;
+  const editorial = root.classList.contains('ed');
+  const addCss = (href, onload) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `${base}${href}`;
+    if (onload) { link.onload = onload; link.onerror = onload; }
+    document.head.appendChild(link);
+  };
+  const addJs = (src) => {
+    const script = document.createElement('script');
+    script.src = `${base}${src}`;
+    document.head.appendChild(script);
+    return script;
+  };
+
+  // Preview homepage of the new design: it carries its own layout and only
+  // needs the booking modal from the shared layer.
+  if (root.hasAttribute('data-ed-home')) {
+    addCss('css/final-polish.css');
+    addJs('js/final-polish.js');
+    return;
+  }
   const css = document.createElement('link');
   css.rel = 'stylesheet';
   css.href = `${base}css/site-upgrade.css`;
@@ -43,6 +66,10 @@
   immersiveCss.rel = 'stylesheet';
   immersiveCss.href = `${base}css/immersive.css`;
   document.head.appendChild(immersiveCss);
+
+  // New editorial design, only in preview mode (?apercu=1). Loaded last so it
+  // re-skins every component above it.
+  if (editorial) addCss('css/editorial.css', () => root.classList.remove('ed-wait'));
 
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
@@ -86,6 +113,8 @@
       const immersive = document.createElement('script');
       immersive.src = `${base}js/immersive.js`;
       document.head.appendChild(immersive);
+
+      if (editorial) addJs('js/editorial.js');
     };
     document.head.appendChild(polish);
   };

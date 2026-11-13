@@ -151,6 +151,9 @@
 
 /* Terminal landing pages: no related-pages drawer after the main content */
 .seo-crosslinks{display:none!important}
+/* ...but keep the "before you choose" guides, and drop the sections the hidden drawer left empty */
+.rb-guides .seo-crosslinks{display:grid!important}
+main>section:has(>.container>.seo-crosslinks):not(.rb-guides){display:none!important}
 
 @media(max-width:1000px){
   .v5-modern-grid{grid-template-columns:1fr;gap:42px}
