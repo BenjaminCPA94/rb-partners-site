@@ -156,6 +156,114 @@
   .foot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .foot a { color: var(--gold-light); }
 
+
+  /* ---------- shared editorial pieces ---------- */
+  .kicker { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep); }
+  .kicker--light { color: var(--gold-light); }
+  .sec { padding: 120px 0; }
+  .sec--paper { background: var(--paper); }
+  .sec__head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; margin-bottom: 56px; }
+  .sec__head h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4.4vw, 3.6rem); line-height: 1.04; color: var(--navy); margin: 14px 0 0; max-width: 680px; }
+  .sec__head p { max-width: 400px; color: var(--muted); line-height: 1.7; margin: 0; }
+  .outline { font-family: var(--serif); font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1.3px rgba(198,161,91,.65); }
+  .chip { display: inline-block; padding: 9px 15px; border-radius: 4px; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 12px 26px rgba(11,29,58,.1); font-family: var(--serif); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; color: var(--navy); white-space: nowrap; }
+  .rv { opacity: 0; transform: translateY(34px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--rd, 0s); }
+  .rv.in { opacity: 1; transform: none; }
+
+  /* ---------- missions index ---------- */
+  .missions { border-top: 1px solid var(--line); }
+  .mission { position: relative; display: grid; grid-template-columns: 120px 1fr 1.15fr 56px; align-items: center; gap: 30px; padding: 30px 10px; border-bottom: 1px solid var(--line); transition: background .35s ease, padding .5s var(--ease); }
+  .mission__num { font-size: 3.6rem; transition: color .35s ease; }
+  .mission h3 { font-family: var(--serif); font-size: clamp(1.4rem, 2.3vw, 2rem); line-height: 1.15; color: var(--navy); margin: 0; }
+  .mission p { margin: 0; color: var(--muted); line-height: 1.65; }
+  .mission__arrow { width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(11,29,58,.2); display: grid; place-items: center; color: var(--navy); font-size: 1.1rem; transition: background .35s ease, color .35s ease, transform .5s var(--ease), border-color .35s ease; }
+  .mission .chip { position: absolute; right: 110px; top: -16px; opacity: 0; transform: translateY(10px) rotate(var(--r, -5deg)); transition: opacity .35s ease, transform .5s var(--ease); pointer-events: none; }
+  .mission:hover, .mission:focus-visible { background: var(--paper); padding-left: 26px; outline: none; }
+  .mission:hover .mission__num, .mission:focus-visible .mission__num { color: var(--gold); -webkit-text-stroke-color: var(--gold); }
+  .mission:hover .mission__arrow, .mission:focus-visible .mission__arrow { background: var(--navy); border-color: var(--navy); color: #fff; transform: rotate(-45deg); }
+  .mission:hover .chip, .mission:focus-visible .chip { opacity: 1; transform: translateY(0) rotate(var(--r, -5deg)); }
+
+  /* ---------- audiences: horizontal pinned scroll ---------- */
+  .aud { position: relative; height: 320vh; background: var(--sand); }
+  .aud__sticky { position: sticky; top: 74px; height: calc(100vh - 74px); overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+  .aud__head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+  .aud__head h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; color: var(--navy); margin: 14px 0 0; max-width: 640px; }
+  .aud__count { font-family: var(--serif); font-size: 1.1rem; color: var(--gold-deep); }
+  .aud__track { display: flex; gap: 28px; padding-left: max(20px, calc((100vw - 1220px) / 2 + 20px)); padding-right: 20vw; will-change: transform; }
+  .aud__card { position: relative; flex: 0 0 min(470px, 80vw); min-height: min(420px, 52vh); padding: 38px 36px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; }
+  .aud__card .outline { position: absolute; right: -10px; bottom: -34px; font-size: 13rem; opacity: .9; }
+  .aud__card small { font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: var(--gold-deep); }
+  .aud__card h3 { font-family: var(--serif); font-size: 2rem; line-height: 1.1; color: var(--navy); margin: 16px 0 16px; max-width: 340px; }
+  .aud__card p { color: var(--muted); line-height: 1.7; margin: 0 0 26px; max-width: 360px; position: relative; }
+  .aud__card a { margin-top: auto; align-self: flex-start; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 2px; position: relative; }
+  .aud__card--dark { background: var(--navy); border-color: var(--navy); }
+  .aud__card--dark h3, .aud__card--dark a { color: #fff; }
+  .aud__card--dark p { color: rgba(255,255,255,.72); }
+  .aud__card--dark small { color: var(--gold-light); }
+  .aud__card--cta { background: transparent; border: 1px dashed rgba(11,29,58,.3); justify-content: center; }
+  .aud__card--cta h3 { font-style: italic; font-weight: 600; }
+
+  /* ---------- international ---------- */
+  .intl { position: relative; overflow: hidden; background: var(--navy-950); color: #fff; padding: 120px 0; }
+  .intl__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+  .intl h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4.4vw, 3.7rem); line-height: 1.04; margin: 14px 0 22px; }
+  .intl h2 em { font-style: italic; font-weight: 600; color: var(--gold-light); }
+  .intl p { color: rgba(255,255,255,.72); line-height: 1.75; margin: 0 0 26px; max-width: 520px; }
+  .intl__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .intl__badges span { padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(226,196,138,.35); color: var(--gold-light); font-size: .78rem; font-weight: 600; }
+  .btn--gold { background: var(--gold); color: var(--navy-950); }
+  .btn--gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .intl__map { position: relative; height: 440px; min-width: 0; }
+  .intl__map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .intl__node { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 10px; transform: translate(-50%, -50%); text-align: center; }
+  .intl__node b { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 1.6rem; }
+  .intl__node--hq b { border: 1px solid rgba(255,255,255,.35); color: #fff; background: rgba(255,255,255,.06); font-size: .9rem; font-family: var(--sans); font-weight: 700; letter-spacing: .1em; }
+  .intl__node--fr b { width: 104px; height: 104px; background: radial-gradient(circle at 35% 30%, #1d3763, var(--navy) 60%); color: var(--gold); box-shadow: inset 0 0 0 4px var(--gold), 0 0 0 10px rgba(198,161,91,.08), 0 0 50px rgba(198,161,91,.25); font-size: 2.6rem; }
+  .intl__node small { font-size: .7rem; font-weight: 700; letter-spacing: .16em; color: rgba(255,255,255,.6); }
+  .intl .chip { position: absolute; background: rgba(255,255,255,.06); color: #fff; border-color: rgba(226,196,138,.35); box-shadow: none; backdrop-filter: blur(4px); opacity: 0; transform: translateY(14px) rotate(var(--r)); transition: opacity .5s ease, transform .7s var(--ease); }
+  .intl .chip.is-on { opacity: 1; transform: translateY(0) rotate(var(--r)); }
+
+  /* ---------- guides ---------- */
+  .guides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .guide { position: relative; display: flex; flex-direction: column; min-height: 270px; padding: 30px; background: var(--cream); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: transform .4s var(--ease), box-shadow .35s ease, background .35s ease; }
+  .guide .outline { position: absolute; right: 16px; top: 4px; font-size: 4.4rem; opacity: .8; }
+  .guide h3 { font-family: var(--serif); font-size: 1.45rem; line-height: 1.2; color: var(--navy); margin: 74px 0 12px; max-width: 280px; }
+  .guide p { margin: 0 0 22px; color: var(--muted); line-height: 1.65; font-size: .94rem; }
+  .guide__go { margin-top: auto; font-weight: 600; color: var(--navy); }
+  .guide:hover { transform: translateY(-6px); box-shadow: 0 26px 50px rgba(11,29,58,.12); background: #fff; }
+  .tools { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .tools a { display: inline-flex; align-items: center; gap: 12px; padding: 16px 22px; border: 1px solid var(--line); border-radius: 999px; font-weight: 600; color: var(--navy); background: var(--cream); transition: background .3s ease, color .3s ease, border-color .3s ease; }
+  .tools a:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .tools a b { font-family: var(--serif); color: var(--gold-deep); }
+  .tools a:hover b { color: var(--gold-light); }
+
+  /* ---------- FAQ ---------- */
+  .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+  .faq__aside h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.04; color: var(--navy); margin: 14px 0 18px; }
+  .faq__aside p { color: var(--muted); line-height: 1.7; margin: 0; }
+  .faq__aside .faq__big { font-size: 10rem; margin-top: 30px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq details:first-child { border-top: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 4px; font-family: var(--serif); font-size: 1.3rem; color: var(--navy); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary i { flex: 0 0 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(11,29,58,.2); display: grid; place-items: center; font-style: normal; transition: transform .4s var(--ease), background .3s ease, color .3s ease; }
+  .faq details[open] summary i { transform: rotate(45deg); background: var(--navy); color: #fff; border-color: var(--navy); }
+  .faq details p { margin: 0 0 26px; padding-right: 50px; color: var(--muted); line-height: 1.75; animation: faq-in .5s var(--ease); }
+  @keyframes faq-in { from { opacity: 0; transform: translateY(-8px); } }
+
+  /* ---------- full footer ---------- */
+  .foot { padding: 70px 0 30px; }
+  .foot__grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 40px; padding-bottom: 46px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .foot__grid strong { display: block; color: var(--gold-light); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
+  .foot__grid a { display: block; color: rgba(255,255,255,.72); margin-bottom: 10px; font-size: .88rem; transition: color .25s ease; }
+  .foot__grid a:hover { color: #fff; }
+  .foot .wrap { display: block; }
+  .foot__grid a.brand { display: flex; margin-bottom: 0; color: #fff; font-size: 1.35rem; }
+  .foot__brand p { color: rgba(255,255,255,.6); line-height: 1.7; max-width: 300px; margin: 18px 0 0; }
+  .foot__brand .brand { color: #fff; }
+  .foot__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
+  .foot__bottom a { color: var(--gold-light); }
+
   /* ---------- responsive ---------- */
   @media (max-width: 960px) {
     .top nav { display: none; }
@@ -171,6 +279,22 @@
     .story__sticky { grid-template-columns: 40px 1fr; gap: 18px; }
     .story__visual { display: none; }
     .partners__grid { grid-template-columns: 1fr; }
+    .mission { grid-template-columns: 70px 1fr; gap: 6px 18px; padding: 24px 6px; }
+    .mission__num { font-size: 2.4rem; grid-row: span 2; }
+    .mission p { grid-column: 2; font-size: .92rem; }
+    .mission__arrow, .mission .chip { display: none; }
+    .mission:hover { padding-left: 6px; }
+    .aud { height: auto; padding: 90px 0; }
+    .aud__sticky { position: static; height: auto; overflow: visible; }
+    .aud__track { flex-direction: column; padding: 0 max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px)); transform: none !important; }
+    .aud__card { flex: none; width: 100%; min-height: 0; }
+    .intl__grid { grid-template-columns: 1fr; }
+    .intl__map { height: 360px; }
+    .guides { grid-template-columns: 1fr; }
+    .faq { grid-template-columns: 1fr; gap: 30px; }
+    .faq__aside .faq__big { display: none; }
+    .foot__grid { grid-template-columns: 1fr 1fr; }
+    .foot__brand { grid-column: 1 / -1; }
   }
   @media (max-width: 560px) {
     .stage { height: 420px; }
@@ -178,6 +302,15 @@
     .person__photo { width: 96px; height: 116px; }
     .hero__proof { gap: 16px; }
     .stage__hint { display: none; }
+    .sec, .intl { padding: 80px 0; }
+    .aud__card h3 { font-size: 1.6rem; }
+    .aud__card .outline { font-size: 9rem; }
+    .intl__map { height: 320px; }
+    .intl__node--fr b { width: 84px; height: 84px; font-size: 2.1rem; }
+    .intl .chip { font-size: .66rem; padding: 7px 10px; }
+    .faq summary { font-size: 1.1rem; }
+    .faq details p { padding-right: 0; }
+    .foot__grid { grid-template-columns: 1fr; }
     .stage .tag:nth-of-type(2) { left: auto !important; right: 2%; }
     .stage .tag:nth-of-type(3) { left: auto !important; right: 0; top: 47% !important; }
     .stage .tag:nth-of-type(4) { left: auto !important; right: 2%; top: 82% !important; }
@@ -191,6 +324,12 @@
     .story__rail, .story__visual { display: none; }
     .story__steps { height: auto; display: grid; gap: 48px; }
     .step { position: static; opacity: 1; transform: none; pointer-events: auto; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    .aud { height: auto; padding: 90px 0; }
+    .aud__sticky { position: static; height: auto; overflow: visible; }
+    .aud__track { flex-wrap: wrap; transform: none !important; padding-right: 20px; }
+    .intl .chip { opacity: 1; transform: rotate(var(--r)); transition: none; }
+    .faq details p { animation: none; }
   }
 </style>
 </head>
@@ -202,10 +341,10 @@
   <div class="wrap">
     <a class="brand" href="index.html"><i>M</i>Meyvin</a>
     <nav aria-label="Navigation principale">
-      <a href="index.html#expertises">Nos missions</a>
-      <a href="expert-comptable-international.html">Implantation en France</a>
+      <a href="#missions">Nos missions</a>
+      <a href="#intl">Implantation en France</a>
       <a href="#associes">Le cabinet</a>
-      <a href="blog/index.html">Ressources</a>
+      <a href="#guides">Ressources</a>
     </nav>
     <a class="btn btn--dark btn--sm" href="index.html#contact">Prendre rendez-vous <span>→</span></a>
   </div>
@@ -224,7 +363,7 @@
         <p class="lead">Comptabilité, fiscalité, paie et conseil pour les indépendants, les PME et les sociétés étrangères qui s'implantent en France. Deux associés, un seul interlocuteur.</p>
         <div class="hero__actions">
           <a class="btn btn--dark" href="index.html#contact">Prendre rendez-vous <span>→</span></a>
-          <a class="btn btn--ghost" href="index.html#expertises">Découvrir nos missions</a>
+          <a class="btn btn--ghost" href="#missions">Découvrir nos missions</a>
         </div>
         <div class="hero__proof">
           <div><strong>2 associés</strong>en contact direct</div>
@@ -294,6 +433,51 @@
     </div>
   </section>
 
+
+  <section class="sec" id="missions">
+    <div class="wrap">
+      <div class="sec__head rv"><div><span class="kicker">Nos missions</span><h2>Six missions, un seul cabinet.</h2></div><p>Conformité, pilotage, social, juridique, conseil au dirigeant et facturation électronique, coordonnés par les mêmes associés.</p></div>
+      <div class="missions"><a class="mission rv" href="expertises/comptabilite.html" style="--rd:0.00s"><span class="mission__num outline">01</span><h3>Conformité &amp; comptabilité</h3><p>Tenue, comptes annuels, TVA et obligations fiscales récurrentes.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-6deg" aria-hidden="true">Bilan</span></a><a class="mission rv" href="expertises/conseil-gestion.html" style="--rd:0.06s"><span class="mission__num outline">02</span><h3>Pilotage &amp; reporting</h3><p>Trésorerie, tableaux de bord, prévisionnels, reporting et aide à la décision.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:5deg" aria-hidden="true">Trésorerie</span></a><a class="mission rv" href="expertises/social-paie.html" style="--rd:0.12s"><span class="mission__num outline">03</span><h3>Social &amp; RH</h3><p>Paie, embauches et obligations sociales récurrentes.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-4deg" aria-hidden="true">Bulletins</span></a><a class="mission rv" href="expertises/creation-juridique.html" style="--rd:0.18s"><span class="mission__num outline">04</span><h3>Juridique &amp; création</h3><p>Création de société, juridique annuel et structuration.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:6deg" aria-hidden="true">Statuts</span></a><a class="mission rv" href="conseil-dirigeant.html" style="--rd:0.24s"><span class="mission__num outline">05</span><h3>Conseil au dirigeant</h3><p>Rémunération, dividendes, holding et arbitrages du dirigeant.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-5deg" aria-hidden="true">Dividendes</span></a><a class="mission rv" href="facturation-electronique.html" style="--rd:0.30s"><span class="mission__num outline">06</span><h3>Facturation électronique</h3><p>Préparation, organisation et accompagnement autour de la réforme française.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:4deg" aria-hidden="true">Factur-X</span></a></div>
+    </div>
+  </section>
+
+  <section class="aud" id="aud">
+    <div class="aud__sticky">
+      <div class="wrap aud__head"><div><span class="kicker">Qui accompagnons-nous ?</span><h2>Trois situations. Un même point de contact en France.</h2></div><span class="aud__count" id="audCount">01 / 03</span></div>
+      <div class="aud__track" id="audTrack">
+        <article class="aud__card"><span class="outline" aria-hidden="true">01</span><small>FRANCE</small><h3>Entreprise française</h3><p>Dirigeants, indépendants, start-up et PME : comptabilité, fiscalité, paie, pilotage et accompagnement de la croissance.</p><a href="expert-comptable-pme.html">Découvrir →</a></article>
+        <article class="aud__card"><span class="outline" aria-hidden="true">02</span><small>FR ↔ SIÈGE</small><h3>Filiale française d'un groupe international</h3><p>Normes comptables françaises, fiscalité locale, paie française, comptes intragroupe et reporting vers la maison mère.</p><a href="expert-comptable-international.html">Découvrir →</a></article>
+        <article class="aud__card aud__card--dark"><span class="outline" aria-hidden="true">03</span><small>SIÈGE → FRANCE</small><h3>Société étrangère qui s'implante en France</h3><p>Structure, création, premières obligations, premiers salariés et mise en place d'une organisation française durable.</p><a href="expert-comptable-international.html">Découvrir →</a></article>
+        <article class="aud__card aud__card--cta"><small>VOTRE CAS</small><h3>Votre situation est différente&nbsp;?</h3><p>Décrivez-la-nous : nous vous orientons vers le bon accompagnement.</p><a href="index.html#contact">Prendre rendez-vous →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="intl" id="intl">
+    <div class="wrap intl__grid">
+      <div class="rv">
+        <span class="kicker kicker--light">Pôle international · France</span>
+        <h2>Votre point d'entrée pour <em>opérer en France.</em></h2>
+        <p>Meyvin fait le lien entre les exigences françaises et les attentes du siège : création ou reprise d'une entité, comptabilité locale, fiscalité, paie, reporting FR / EN et coordination des interlocuteurs en France.</p>
+        <div class="intl__badges"><span>FR / EN</span><span>Conformité française</span><span>Reporting groupe</span></div>
+        <a class="btn btn--gold" href="expert-comptable-international.html">Découvrir l'implantation en France <span>→</span></a>
+      </div>
+      <div class="intl__map" id="intlMap" aria-hidden="true">
+        <svg viewBox="0 0 520 440" preserveAspectRatio="xMidYMid meet">
+          <path d="M80 330 C 150 90, 360 40, 430 200" fill="none" stroke="rgba(226,196,138,.18)" stroke-width="2" stroke-dasharray="4 8"/>
+          <path id="intlPath" d="M80 330 C 150 90, 360 40, 430 200" fill="none" stroke="#c6a15b" stroke-width="2.5" stroke-linecap="round"/>
+          <circle id="intlDot" r="7" fill="#e2c48a"/>
+        </svg>
+        <div class="intl__node intl__node--hq" style="left:15.4%;top:75%"><b>HQ</b><small>MAISON MÈRE</small></div>
+        <div class="intl__node intl__node--fr" style="left:82.7%;top:45.5%"><b>M</b><small>MEYVIN · FRANCE</small></div>
+        <span class="chip" style="left:6%;top:30%;--r:-6deg">Création</span>
+        <span class="chip" style="left:36%;top:6%;--r:5deg">Comptabilité locale</span>
+        <span class="chip" style="left:44%;top:56%;--r:-4deg">TVA &amp; fiscalité</span>
+        <span class="chip" style="left:60%;top:80%;--r:6deg">Reporting FR / EN</span>
+      </div>
+    </div>
+  </section>
+
   <section class="partners" id="associes">
     <div class="wrap">
       <div class="partners__head">
@@ -313,6 +497,34 @@
     </div>
   </section>
 
+
+  <section class="sec sec--paper" id="guides">
+    <div class="wrap">
+      <div class="sec__head rv"><div><span class="kicker">Avant de choisir</span><h2>Les questions qu'on nous pose avant de signer.</h2></div><p>Trois guides pour comparer sereinement, et des simulateurs pour faire vos premiers calculs.</p></div>
+      <div class="guides">
+        <a class="guide rv" href="tarif-expert-comptable.html"><span class="outline" aria-hidden="true">01</span><h3>Combien coûte un expert-comptable&nbsp;?</h3><p>Ce qui détermine les honoraires, et comment lire un devis.</p><span class="guide__go">Lire le guide →</span></a>
+        <a class="guide rv" href="changer-expert-comptable.html" style="--rd:.08s"><span class="outline" aria-hidden="true">02</span><h3>Comment changer d'expert-comptable&nbsp;?</h3><p>Lettre de mission, préavis et reprise du dossier, étape par étape.</p><span class="guide__go">Lire le guide →</span></a>
+        <a class="guide rv" href="expert-comptable-en-ligne.html" style="--rd:.16s"><span class="outline" aria-hidden="true">03</span><h3>Un expert-comptable en ligne, est-ce fiable&nbsp;?</h3><p>Ce qui se fait à distance, et ce qui reste suivi par un associé.</p><span class="guide__go">Lire le guide →</span></a>
+      </div>
+      <div class="tools rv">
+        <a href="simulateurs/index.html"><b>%</b>Simulateurs : coût d'un salarié, IS, dividendes, brut-net</a>
+        <a href="blog/index.html"><b>¶</b>Actualités fiscales et sociales</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap faq">
+      <div class="faq__aside rv"><span class="kicker">FAQ</span><h2>Questions fréquentes.</h2><p>Une autre question&nbsp;? Posez-la directement à un associé lors du premier échange.</p><div class="faq__big outline" aria-hidden="true">?</div></div>
+      <div class="rv" style="--rd:.1s">
+        <details><summary>Accompagnez-vous les indépendants&nbsp;?<i>+</i></summary><p>Oui. Meyvin accompagne les indépendants et dirigeants de la création au suivi comptable, fiscal et social.</p></details>
+        <details><summary>Accompagnez-vous les start-up&nbsp;?<i>+</i></summary><p>Oui, avec une approche adaptée à la croissance : reporting, trésorerie, fiscalité, paie et outils digitaux.</p></details>
+        <details><summary>Une société étrangère peut-elle vous confier toute sa gestion française&nbsp;?<i>+</i></summary><p>Oui. Nous pouvons coordonner la création ou l'implantation puis la comptabilité, la fiscalité, la TVA, la paie et le reporting en France.</p></details>
+        <details><summary>Travaillez-vous en anglais&nbsp;?<i>+</i></summary><p>Oui. Notre accompagnement international est pensé pour faciliter les échanges avec les équipes et maisons mères étrangères.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="cta">
     <span class="cta__ring" style="width:520px;height:520px;left:-160px;top:-200px"></span>
     <span class="cta__ring" style="width:380px;height:380px;right:-120px;bottom:-160px"></span>
@@ -326,8 +538,13 @@
 
 <footer class="foot">
   <div class="wrap">
-    <span>© 2026 Meyvin — page d'aperçu, non référencée.</span>
-    <a href="index.html">Revenir au site actuel →</a>
+    <div class="foot__grid">
+      <div class="foot__brand"><a class="brand" href="index.html"><i>M</i>Meyvin</a><p>Cabinet d'expertise comptable accompagnant les dirigeants et les sociétés internationales en France.</p></div>
+      <div><strong>Nos missions</strong><a href="expertises/comptabilite.html">Comptabilité &amp; conformité</a><a href="expertises/conseil-gestion.html">Pilotage &amp; reporting</a><a href="expertises/social-paie.html">Social &amp; RH</a><a href="expertises/creation-juridique.html">Juridique &amp; création</a><a href="conseil-dirigeant.html">Conseil au dirigeant</a><a href="facturation-electronique.html">Facturation électronique</a></div>
+      <div><strong>International</strong><a href="expert-comptable-international.html">Implantation en France</a><a href="immatriculation-tva-france.html">Immatriculation TVA</a><a href="daf-externalise.html">DAF externalisé</a><a href="french-accountant-paris.html">English version</a></div>
+      <div><strong>Ressources</strong><a href="tarif-expert-comptable.html">Tarifs d'un expert-comptable</a><a href="changer-expert-comptable.html">Changer d'expert-comptable</a><a href="simulateurs/index.html">Simulateurs</a><a href="blog/index.html">Blog</a><a href="index.html#contact">Contact</a></div>
+    </div>
+    <div class="foot__bottom"><span>© 2026 Meyvin — page d'aperçu, non référencée.</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="index.html">Revenir au site actuel</a></span></div>
   </div>
 </footer>
 
@@ -467,6 +684,50 @@
   };
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+
+  // ---------- Reveal on scroll ----------
+  const rvIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvIO.unobserve(e.target); } }), { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.rv').forEach(el => reduced ? el.classList.add('in') : rvIO.observe(el));
+
+  // ---------- Audiences: horizontal pinned scroll ----------
+  const aud = document.getElementById('aud');
+  const audTrack = document.getElementById('audTrack');
+  const audCount = document.getElementById('audCount');
+  const audCards = [...audTrack.children];
+  const audPinned = () => !reduced && innerWidth > 960;
+  const onAud = () => {
+    if (!audPinned()) { audTrack.style.transform = ''; return; }
+    const r = aud.getBoundingClientRect();
+    const total = aud.offsetHeight - (innerHeight - 74);
+    const p = Math.min(1, Math.max(0, -r.top / total));
+    const shift = Math.max(0, audTrack.scrollWidth - innerWidth);
+    audTrack.style.transform = `translate3d(${(-shift * p).toFixed(1)}px, 0, 0)`;
+    const idx = Math.min(audCards.length - 2, Math.round(p * (audCards.length - 2)));
+    audCount.textContent = `0${idx + 1} / 03`;
+  };
+
+  // ---------- International: route drawn with the scroll ----------
+  const intlMap = document.getElementById('intlMap');
+  const path = document.getElementById('intlPath');
+  const dot = document.getElementById('intlDot');
+  const intlChips = [...intlMap.querySelectorAll('.chip')];
+  const len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  const onIntl = () => {
+    const r = intlMap.getBoundingClientRect();
+    const p = reduced ? 1 : Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * 0.55 + r.height * 0.6)));
+    path.style.strokeDashoffset = (len * (1 - p)).toFixed(1);
+    const pt = path.getPointAtLength(len * p);
+    dot.setAttribute('cx', pt.x.toFixed(1)); dot.setAttribute('cy', pt.y.toFixed(1));
+    intlChips.forEach((c, i) => c.classList.toggle('is-on', p > 0.18 + i * 0.2));
+  };
+
+  let ticking = false;
+  const onAny = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { onAud(); onIntl(); ticking = false; }); } };
+  addEventListener('scroll', onAny, { passive: true });
+  addEventListener('resize', onAny);
+  onAud(); onIntl();
 
   // ---------- Partner cards tilt ----------
   if (fine && !reduced) document.querySelectorAll('[data-tilt]').forEach(card => {
