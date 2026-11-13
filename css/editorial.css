@@ -1,8 +1,7 @@
 /* ==========================================================================
-   Meyvin — editorial design (preview)
-   Active only when <html> carries the class "ed" (visit any page with
-   ?apercu=1, leave with ?apercu=0). Re-skins the existing components in the
-   style of the new homepage: warm cream stage, big serif titles, outline
+   Meyvin — editorial design
+   Applies to every page (<html class="ed">). Re-skins the shared components
+   in the style of the homepage: warm cream stage, big serif titles, outline
    numbers, tilted paper tags, navy/gold contrast sections.
    ========================================================================== */
 
@@ -25,11 +24,6 @@ html.ed {
 }
 html.ed body { background: var(--cream) !important; color: var(--ed-ink); }
 html.ed ::selection { background: var(--ed-gold-light); color: var(--ed-navy-950); }
-
-/* ---------- preview bar ---------- */
-.ed-preview-bar { display: none; }
-html.ed .ed-preview-bar { display: block; position: relative; z-index: 301; background: var(--ed-navy); color: #e9e2d2; font: 500 .8rem/1.4 'Inter', sans-serif; text-align: center; padding: 9px 16px; }
-html.ed .ed-preview-bar a { color: var(--ed-gold-light); font-weight: 600; border-bottom: 1px solid rgba(226,196,138,.5); margin-left: 6px; white-space: nowrap; }
 
 /* ---------- type ---------- */
 html.ed h1, html.ed h2, html.ed h3 { font-family: 'Playfair Display', Georgia, serif; }
@@ -269,7 +263,6 @@ html.ed .reveal { transition: opacity .9s var(--ed-ease), transform .9s var(--ed
   html.ed .expertise-cta { padding: 84px 0 !important; }
   html.ed .faq-item summary { font-size: 1.1rem !important; }
   html.ed .faq-item > :not(summary) { padding-right: 0 !important; }
-  html.ed .ed-preview-bar { font-size: .74rem; }
   html.ed :is(.seo-hero, .mission-hero, main#top > .hero, .expertise-banner, .article-banner) h1 { font-size: clamp(1.85rem, 8.4vw, 2.4rem) !important; }
 }
 

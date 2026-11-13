@@ -18,8 +18,8 @@
     return script;
   };
 
-  // Preview homepage of the new design: it carries its own layout and only
-  // needs the booking modal from the shared layer.
+  // Homepage: it carries its own layout and only needs the booking modal
+  // and the motion layer from the shared scripts.
   if (root.hasAttribute('data-ed-home')) {
     addCss('css/final-polish.css');
     addJs('js/final-polish.js');
@@ -68,8 +68,7 @@
   immersiveCss.href = `${base}css/immersive.css`;
   document.head.appendChild(immersiveCss);
 
-  // New editorial design, only in preview mode (?apercu=1). Loaded last so it
-  // re-skins every component above it.
+  // Editorial design. Loaded last so it re-skins every component above it.
   if (editorial) {
     addCss('css/editorial.css', () => root.classList.remove('ed-wait'));
     addJs('js/ed-motion.js');

@@ -1,5 +1,5 @@
-// Meyvin — editorial design (preview only, see css/editorial.css).
-// Adds the preview bar, the gold italic accent at the end of the main
+// Meyvin — editorial design (see css/editorial.css).
+// Adds the gold italic accent at the end of the main
 // titles, and the Meyvin medallion with tilted tags in the page heroes.
 (() => {
   const root = document.documentElement;
@@ -9,25 +9,6 @@
   const lang = () => window.rbI18n?.getLang?.() || root.lang || 'fr';
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const exitHref = () => {
-    const url = new URL(location.href);
-    url.searchParams.set('apercu', '0');
-    return url.pathname + url.search + url.hash;
-  };
-
-  // ---------- preview bar ----------
-  const previewBar = () => {
-    let bar = document.querySelector('.ed-preview-bar');
-    if (!bar) {
-      bar = document.createElement('div');
-      bar.className = 'ed-preview-bar';
-      document.body.prepend(bar);
-    }
-    bar.innerHTML = lang() === 'en'
-      ? `Preview of the new design: the public website is unchanged. <a href="${exitHref()}">Leave the preview</a>`
-      : `Aperçu du nouveau design : le site public n’est pas modifié. <a href="${exitHref()}">Quitter l’aperçu</a>`;
-  };
-
   // ---------- gold italic accent on the last words of key titles ----------
   const accent = (h) => {
     if (!h || h.querySelector('.ed-em')) return;
@@ -99,7 +80,6 @@
   };
 
   const run = () => {
-    previewBar();
     accents();
     medallion();
   };

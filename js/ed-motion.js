@@ -1,4 +1,4 @@
-// Meyvin — motion layer of the new design (preview only): page-to-page
+// Meyvin — motion layer of the editorial design: page-to-page
 // curtain, trailing cursor ring, marquees that react to scroll speed.
 (() => {
   const root = document.documentElement;
