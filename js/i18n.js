@@ -331,7 +331,7 @@ const RB_TRANSLATIONS = {
 
     'sim.eyebrow': 'Simulateurs',
     'sim.title': 'Estimez vos coûts et votre fiscalité',
-    'sim.subtitle': "Trois calculateurs pour obtenir un premier ordre de grandeur avant d'échanger avec nous sur votre situation précise.",
+    'sim.subtitle': "Dix calculateurs pour obtenir un premier ordre de grandeur avant d'échanger avec nous sur votre situation précise.",
     'sim.back': 'Retour aux simulateurs',
     'sim.disclaimer_label': 'Estimation indicative',
     'sim.disclaimer_text': "Ce simulateur fournit un ordre de grandeur simplifié à partir de taux moyens. Il ne constitue pas un conseil personnalisé ni un calcul définitif&nbsp;: votre situation réelle peut inclure des paramètres (conventions collectives, régimes particuliers, seuils spécifiques) que seul un échange avec nos équipes permet de prendre en compte.",
@@ -821,7 +821,7 @@ const RB_TRANSLATIONS = {
 
     'sim.eyebrow': 'Calculators',
     'sim.title': 'Estimate your costs and taxes',
-    'sim.subtitle': 'Three calculators to get a first order of magnitude before discussing your exact situation with us.',
+    'sim.subtitle': 'Ten calculators to get a first order of magnitude before discussing your exact situation with us.',
     'sim.back': 'Back to calculators',
     'sim.disclaimer_label': 'Indicative estimate',
     'sim.disclaimer_text': "This calculator gives a simplified order of magnitude based on average rates. It is not personalized advice or a final calculation&nbsp;: your real situation may include factors (collective bargaining agreements, special regimes, specific thresholds) that only a conversation with our team can properly account for.",

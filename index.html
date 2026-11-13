@@ -200,16 +200,34 @@
   .partners__head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; margin-bottom: 44px; }
   .partners__head h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.06; color: var(--navy); margin: 10px 0 0; max-width: 620px; }
   .partners__head p { max-width: 380px; color: var(--muted); line-height: 1.7; margin: 0; }
+  .match { display: grid; gap: 14px; margin-bottom: 30px; padding: 24px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+  .match__q { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+  .match__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .match__chips button { padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(11,29,58,.2); background: transparent; font: 600 .88rem var(--sans); color: var(--navy); cursor: pointer; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease); }
+  .match__chips button:hover { border-color: var(--navy); transform: translateY(-2px); }
+  .match__chips button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .match__out { margin: 0; font-size: .92rem; color: var(--muted); min-height: 1.5em; }
+  .match__out.is-set { color: var(--gold-deep); font-weight: 600; }
   .partners__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .person { display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: center; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; transition: transform .2s ease-out, box-shadow .25s ease; will-change: transform; }
+  .person { position: relative; display: flex; flex-direction: column; padding: 30px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .25s ease-out, box-shadow .3s ease, border-color .3s ease, opacity .4s ease; will-change: transform; }
   .person:hover { box-shadow: 0 24px 50px rgba(11,29,58,.14); }
-  .person__photo { width: 150px; height: 170px; border-radius: 6px; overflow: hidden; }
-  .person__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+  .person__mark { position: absolute; right: 6px; top: -26px; font-size: 11rem; opacity: .55; pointer-events: none; }
+  .person__flag { position: absolute; left: 30px; top: 0; padding: 6px 12px; border-radius: 0 0 6px 6px; background: var(--gold); color: var(--navy-950); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; transform: translateY(-100%); transition: transform .5s var(--ease); }
+  .person.is-match { border-color: var(--gold); box-shadow: 0 28px 60px rgba(143,107,46,.22); }
+  .person.is-match .person__flag { transform: none; }
+  .partners__grid.is-matched .person:not(.is-match) { opacity: .5; }
+  .person__top { position: relative; display: flex; align-items: center; gap: 20px; margin: 10px 0 20px; }
+  .person__photo { flex: none; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--gold), 0 14px 26px rgba(11,29,58,.18); }
+  .person__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; transition: transform .9s var(--ease); }
   .person:hover .person__photo img { transform: scale(1.07); }
-  .person h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--navy); margin: 0 0 6px; }
-  .person b { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
-  .person p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.65; }
-  .person__in { display: inline-block; margin-top: 12px; font-size: .84rem; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+  .person h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--navy); margin: 0 0 6px; }
+  .person b { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 8px; }
+  .person__focus { display: block; font-size: .92rem; font-weight: 600; color: var(--navy); }
+  .person p { position: relative; margin: 0 0 18px; color: var(--muted); font-size: .95rem; line-height: 1.7; }
+  .person__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; padding: 0; list-style: none; }
+  .person__tags li { padding: 6px 12px; border-radius: 999px; background: var(--cream); border: 1px solid var(--line); font-size: .78rem; font-weight: 600; color: var(--navy); }
+  .person__actions { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+  .person__in { font-size: .86rem; font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
 
   /* ---------- final CTA ---------- */
   .cta { position: relative; overflow: hidden; background: var(--navy-950); color: #fff; padding: 110px 0; text-align: center; }
@@ -420,8 +438,12 @@
     .top__cta { display: none; }
     .cta__form { padding: 24px 20px; }
     .stage { height: 420px; }
-    .person { grid-template-columns: 96px 1fr; gap: 16px; }
-    .person__photo { width: 96px; height: 116px; }
+    .person { padding: 24px 20px; }
+    .person__mark { font-size: 8rem; opacity: .3; top: -18px; right: -4px; }
+    .person__photo { width: 88px; height: 88px; }
+    .person h3 { font-size: 1.35rem; }
+    .match { padding: 20px 18px; }
+    .match__chips button { font-size: .82rem; padding: 10px 14px; }
     .hero__proof { gap: 16px; }
     .stage__hint { display: none; }
     .sec, .intl { padding: 80px 0; }
@@ -787,14 +809,38 @@
         <div><span class="pill"><b></b>Le cabinet</span><h2>Deux associés, des expertises complémentaires.</h2></div>
         <p>Vous échangez directement avec l'associé qui suit votre dossier, en français ou en anglais.</p>
       </div>
-      <div class="partners__grid">
-        <article class="person" data-tilt>
-          <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" loading="lazy"></div>
-          <div><h3>Rachel Illouz</h3><b>Associée · Expert-comptable</b><p>International et implantation en France : création de filiales, obligations locales et reporting vers la maison mère.</p><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      <div class="match rv" id="match">
+        <span class="match__q">Quelle est votre situation ?</span>
+        <div class="match__chips" role="group" aria-label="Votre situation">
+          <button type="button" data-partner="benjamin">Je crée ou développe mon entreprise</button>
+          <button type="button" data-partner="benjamin">Indépendant ou profession libérale</button>
+          <button type="button" data-partner="rachel">Société étrangère qui s'implante en France</button>
+          <button type="button" data-partner="rachel">Filiale française d'un groupe</button>
+        </div>
+        <p class="match__out" id="matchOut" aria-live="polite" data-idle="Choisissez votre situation : nous vous indiquons l'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza.">Choisissez votre situation : nous vous indiquons l'associé à contacter.</p>
+      </div>
+      <div class="partners__grid" id="partnersGrid">
+        <article class="person rv" data-tilt data-person="rachel">
+          <span class="person__mark outline" aria-hidden="true">R</span>
+          <span class="person__flag">Votre interlocutrice</span>
+          <div class="person__top">
+            <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" width="150" height="268" loading="lazy"></div>
+            <div><h3>Rachel Illouz</h3><b>Associée · Expert-comptable</b><span class="person__focus">International &amp; implantation en France</span></div>
+          </div>
+          <p>Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.</p>
+          <ul class="person__tags"><li>Sociétés étrangères</li><li>Filiales de groupes</li><li>Reporting FR / EN</li></ul>
+          <div class="person__actions"><a class="btn btn--dark btn--sm" href="tel:+33624126769">Appeler Rachel <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
-        <article class="person" data-tilt>
-          <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" loading="lazy"></div>
-          <div><h3>Benjamin Haziza</h3><b>Associé · Expert-comptable</b><p>Start-up, entrepreneurs et indépendants : comptabilité, fiscalité, financement et structuration.</p><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        <article class="person rv" data-tilt data-person="benjamin" style="--rd:.1s">
+          <span class="person__mark outline" aria-hidden="true">B</span>
+          <span class="person__flag">Votre interlocuteur</span>
+          <div class="person__top">
+            <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" width="147" height="270" loading="lazy"></div>
+            <div><h3>Benjamin Haziza</h3><b>Associé · Expert-comptable</b><span class="person__focus">Start-up, entrepreneurs &amp; indépendants</span></div>
+          </div>
+          <p>Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.</p>
+          <ul class="person__tags"><li>Start-up</li><li>Indépendants</li><li>Structuration</li></ul>
+          <div class="person__actions"><a class="btn btn--dark btn--sm" href="#contact" data-booking="benjamin">Prendre rendez-vous avec Benjamin <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
       </div>
     </div>
@@ -1257,6 +1303,20 @@
   addEventListener('scroll', onAny, { passive: true });
   addEventListener('resize', onAny);
   onAud(); onIntl();
+
+  // ---------- Which partner for which situation ----------
+  const matchOut = document.getElementById('matchOut');
+  const partnersGrid = document.getElementById('partnersGrid');
+  const matchBtns = [...document.querySelectorAll('.match__chips button')];
+  matchBtns.forEach((btn) => btn.addEventListener('click', () => {
+    const on = btn.getAttribute('aria-pressed') !== 'true';
+    matchBtns.forEach((b) => b.setAttribute('aria-pressed', String(on && b === btn)));
+    const who = on ? btn.dataset.partner : '';
+    partnersGrid.classList.toggle('is-matched', !!who);
+    partnersGrid.querySelectorAll('.person').forEach((card) => card.classList.toggle('is-match', card.dataset.person === who));
+    matchOut.textContent = matchOut.dataset[who || 'idle'];
+    matchOut.classList.toggle('is-set', !!who);
+  }));
 
   // ---------- Partner cards tilt ----------
   if (fine && !reduced) document.querySelectorAll('[data-tilt]').forEach(card => {

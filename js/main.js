@@ -34,6 +34,7 @@
   // editorial.js goes first: it sets the accent of the main title, which changes how the title wraps
   if (editorial) { addJs('js/editorial.js'); addJs('js/ed-motion.js'); }
   if (document.querySelector('main > .mission-hero')) addJs('js/scenes.js');
+  if (document.querySelector('.article-body, .blog-card__category')) addJs('js/blog.js');
 
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
