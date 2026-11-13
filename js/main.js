@@ -32,6 +32,7 @@
   const SHEETS = ['site-upgrade', 'final-polish', 'final-polish-hotfix', 'mission-polish', 'seo-enhance', 'international-enhance', 'homepage-polish', 'immersive', 'editorial'];
   if (!document.querySelector('link[href$="css/editorial.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
   if (editorial) addJs('js/ed-motion.js');
+  if (document.querySelector('main > .mission-hero')) addJs('js/scenes.js');
 
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;

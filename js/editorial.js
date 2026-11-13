@@ -1,6 +1,7 @@
 // Meyvin — editorial design (see css/editorial.css).
 // Adds the gold italic accent at the end of the main
-// titles, and the Meyvin medallion with tilted tags in the page heroes.
+// titles, and the Meyvin medallion with tilted tags in the page heroes
+// (mission pages get an animated scene instead, see js/scenes.js).
 (() => {
   const root = document.documentElement;
   if (!root.classList.contains('ed')) return;
@@ -49,7 +50,7 @@
   };
   const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const medallion = () => {
-    document.querySelectorAll('main > .seo-hero:not(.international-hero), main > .mission-hero, main#top > .hero').forEach((hero) => {
+    document.querySelectorAll('main > .seo-hero:not(.international-hero), main#top > .hero').forEach((hero) => {
       hero.querySelector('.ed-coin')?.remove();
       if (!hero.matches('.hero')) hero.classList.add('ed-has-coin');
       const tags = tagsFor();

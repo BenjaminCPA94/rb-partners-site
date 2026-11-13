@@ -18,7 +18,7 @@ T = {
  "2 associés":"2 partners", "en contact direct":"direct access", "accompagnement bilingue":"bilingual support", "outils connectés":"connected tools",
  "Faire tourner la pièce Meyvin":"Spin the Meyvin coin",
  "Comptabilité":"Accounting", "Fiscalité":"Tax", "Paie &amp; RH":"Payroll &amp; HR", "Juridique":"Legal", "Implantation":"Market entry",
- "Bougez la souris ·":"Move your mouse ·", "cliquez sur la pièce":"click the coin",
+ "Bougez la souris ·":"Move your mouse ·", "faites tourner la pièce":"drag the coin to spin it",
  "Créer":"Launch", "Tenir":"Run", "Piloter":"Steer", "S'implanter":"Land",
  "Étape 1 · Créer":"Step 1 · Launch", "Démarrer sur de bonnes bases.":"Start on solid ground.",
  "Statut juridique, formalités, banque et outils : votre société est organisée avant même la première facture.":"Legal form, formalities, bank and tools: your company is organised before the first invoice goes out.",
