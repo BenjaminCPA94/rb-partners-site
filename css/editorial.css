@@ -226,6 +226,7 @@ html.ed #contact .form :is(input, select, textarea):focus { border-color: var(--
 /* ---------- marquee from the immersive layer, restyled as the homepage band ---------- */
 html.ed .imm-marquee { background: var(--ed-navy) !important; padding: 20px 0 !important; border: 0 !important; }
 html.ed .imm-marquee__item { font-family: 'Playfair Display', Georgia, serif !important; font-style: italic; font-size: 1.4rem !important; text-transform: none !important; letter-spacing: 0 !important; color: #fff !important; }
+html.ed .imm-marquee__item { transform: skewX(calc(var(--lean, 0deg) * -1)); transition: transform .2s linear; }
 html.ed .imm-marquee__item:nth-child(even) { color: var(--ed-gold-light) !important; }
 
 /* ---------- blog / simulators ---------- */

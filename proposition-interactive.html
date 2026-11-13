@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="ed" data-ed-home>
+<html lang="fr" class="ed ed-wait" data-ed-home>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,8 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>try{localStorage.setItem('meyvin-apercu','1')}catch(e){}</script>
+<script>setTimeout(function(){document.documentElement.classList.remove('ed-wait')},2500)</script>
+<style>html.ed::before{content:"M";position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#081426;color:#c6a15b;font:700 72px/1 'Playfair Display',Georgia,serif;transform:translateY(-101%);transition:transform .7s cubic-bezier(.76,0,.24,1);pointer-events:none}html.ed.ed-wait::before,html.ed.ed-leave::before{transform:none}html.ed.ed-wait::before{transition:none}html.ed.ed-leave::before{transition-duration:.4s}@media(prefers-reduced-motion:reduce){html.ed::before{transition:none!important}}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -114,27 +116,74 @@
   .band__track { display: flex; width: max-content; animation: scroll-x 40s linear infinite; }
   .band__track span { display: inline-flex; align-items: center; gap: 30px; padding-right: 30px; font-family: var(--serif); font-style: italic; font-size: 1.4rem; white-space: nowrap; }
   .band__track span:nth-child(even) { color: var(--gold-light); }
+  .band__track span { transform: skewX(calc(var(--lean, 0deg) * -1)); transition: transform .2s linear; }
   .band__track span::after { content: ""; width: 8px; height: 8px; transform: rotate(45deg); background: var(--gold); }
   @keyframes scroll-x { to { transform: translateX(-50%); } }
 
-  /* ---------- scroll story ---------- */
-  .story { position: relative; height: 420vh; background: var(--paper); }
-  .story__sticky { position: sticky; top: 74px; height: calc(100vh - 74px); display: grid; grid-template-columns: 90px 1fr 1fr; align-items: center; gap: 40px; overflow: hidden; }
-  .story__rail { position: relative; height: 62%; width: 2px; background: var(--line); justify-self: center; }
-  .story__fill { position: absolute; left: 0; top: 0; width: 2px; height: 0; background: var(--gold); }
-  .story__dot { position: absolute; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--paper); border: 2px solid var(--line); transition: border-color .3s ease, background .3s ease, transform .3s var(--ease); }
-  .story__dot.is-on { border-color: var(--gold); background: var(--gold); transform: scale(1.25); }
-  .story__steps { position: relative; height: 340px; min-width: 0; }
-  .step { position: absolute; inset: 0; opacity: 0; transform: translateY(40px); transition: opacity .6s var(--ease), transform .6s var(--ease); pointer-events: none; }
+  /* ---------- scroll story: pinned journey, a living scene per step ---------- */
+  .story { position: relative; height: 520vh; --st-bg: var(--paper); --st-ink: var(--navy); --st-muted: var(--muted); --st-line: var(--line); --st-accent: var(--gold-deep); --st-board: #ffffff; --st-board-line: rgba(11,29,58,.1); background: var(--st-bg); transition: background .9s ease; }
+  .story[data-step="1"] { --st-bg: var(--cream); }
+  .story[data-step="2"] { --st-bg: var(--sand); }
+  .story[data-step="3"] { --st-bg: var(--navy-950); --st-ink: #fff; --st-muted: rgba(255,255,255,.72); --st-line: rgba(255,255,255,.16); --st-accent: var(--gold-light); --st-board: #0d1f3f; --st-board-line: rgba(226,196,138,.28); }
+  .story__sticky { position: sticky; top: 74px; height: calc(100vh - 74px); display: grid; grid-template-columns: .92fr 1.08fr; grid-template-rows: auto 1fr; align-items: center; column-gap: 56px; overflow: hidden; padding-top: 26px; padding-bottom: 26px; }
+  .story__tabs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .story__tab { position: relative; display: flex; align-items: baseline; gap: 10px; padding: 0 0 14px; border: 0; background: none; cursor: pointer; text-align: left; font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--st-ink); opacity: .42; transition: opacity .4s ease, color .6s ease; }
+  .story__tab span { font-family: var(--sans); font-size: .7rem; font-weight: 700; letter-spacing: .14em; color: var(--st-accent); transition: color .6s ease; }
+  .story__tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--st-line); transition: background .6s ease; }
+  .story__tab i { position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--f, 0) * 100%); background: var(--gold); z-index: 1; }
+  .story__tab.is-on, .story__tab:hover, .story__tab.is-done { opacity: 1; }
+  .story__tab:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .story__steps { position: relative; height: 360px; min-width: 0; }
+  .step { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(46px); transition: opacity .55s var(--ease), transform .7s var(--ease); pointer-events: none; }
   .step.is-on { opacity: 1; transform: none; pointer-events: auto; }
-  .step .kicker { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep); }
-  .step h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4.4vw, 3.8rem); line-height: 1.04; color: var(--navy); margin: 14px 0 18px; }
-  .step p { font-size: 1.04rem; line-height: 1.75; color: var(--muted); max-width: 470px; margin: 0 0 24px; }
-  .step a { font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
-  .story__visual { position: relative; height: 70%; min-width: 0; display: grid; place-items: center; }
-  .story__num { font-family: var(--serif); font-weight: 800; font-size: clamp(9rem, 20vw, 17rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(198,161,91,.55); transition: transform .7s var(--ease); }
-  .story__chip { position: absolute; padding: 10px 16px; border-radius: 4px; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 12px 26px rgba(11,29,58,.1); font-family: var(--serif); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .85rem; color: var(--navy); opacity: 0; transform: translateY(20px) rotate(var(--r)); transition: opacity .5s ease, transform .6s var(--ease); }
-  .story__chip.is-on { opacity: 1; transform: translateY(0) rotate(var(--r)); }
+  .step.is-past { transform: translateY(-46px); }
+  .step .kicker { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--st-accent); transition: color .6s ease; }
+  .step h2 { font-family: var(--serif); font-size: clamp(2.1rem, 4vw, 3.6rem); line-height: 1.04; color: var(--st-ink); margin: 14px 0 18px; transition: color .6s ease; }
+  .step p { font-size: 1.04rem; line-height: 1.75; color: var(--st-muted); max-width: 470px; margin: 0 0 24px; transition: color .6s ease; }
+  .step a { align-self: flex-start; font-weight: 600; color: var(--st-ink); border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color .6s ease; }
+  .story__visual { position: relative; min-width: 0; perspective: 1400px; display: grid; place-items: center; }
+  .board { width: min(100%, 600px, calc((100vh - 250px) * 1.28)); transform-style: preserve-3d; }
+  .board__in { position: relative; border-radius: 14px; background: var(--st-board); border: 1px solid var(--st-board-line); box-shadow: 0 50px 90px rgba(11,29,58,.20), 0 12px 24px rgba(11,29,58,.08); overflow: hidden; transform: rotateX(var(--rx, 5deg)) rotateY(var(--ry, -9deg)); transition: background .7s ease, border-color .7s ease; will-change: transform; }
+  .board__bar { display: flex; align-items: center; gap: 7px; height: 40px; padding: 0 16px; border-bottom: 1px solid var(--st-board-line); font-size: .74rem; font-weight: 600; color: var(--st-muted); transition: border-color .7s ease, color .6s ease; }
+  .board__bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--st-line); transition: background .6s ease; }
+  .board__bar i:first-child { background: var(--gold); }
+  .board__bar span { margin-left: 10px; }
+  .board__bar b { margin-left: auto; font-family: var(--serif); font-weight: 700; color: var(--st-accent); transition: color .6s ease; }
+  .board__stage { position: relative; aspect-ratio: 480 / 340; }
+  .scene { position: absolute; inset: 0; width: 100%; height: 100%; --q: 0; opacity: 0; transform: scale(.96) translateY(14px); transition: opacity .5s ease, transform .7s var(--ease); }
+  .scene.is-on { opacity: 1; transform: none; }
+  .scene text { font-family: var(--sans); }
+  .scene .t-serif { font-family: var(--serif); font-weight: 700; }
+  .scene .t-caps { font-weight: 700; letter-spacing: .14em; }
+  .scene .b { font-weight: 600; }
+  /* every staged element reads the scroll progress of its scene (--q, 0 to 1) */
+  .st, .row, .chk, .stamp, .mo, .bar, .fan, .thumb, .thumb-l, .draw { --k: clamp(0, calc((var(--q) - var(--a, 0)) * var(--s, 6)), 1); }
+  .st { opacity: var(--k); transform: translateY(calc((1 - var(--k)) * 14px)); }
+  .row { opacity: var(--k); transform: translateX(calc((1 - var(--k)) * -26px)); }
+  .draw { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--k)); opacity: clamp(0, calc((var(--q) - var(--a, 0)) * 60), 1); }
+  .ln { fill: none; stroke: #ddd5c4; stroke-width: 5; stroke-linecap: round; }
+  .sig { fill: none; stroke: var(--navy); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .stamp { opacity: var(--k); transform-box: fill-box; transform-origin: center; transform: rotate(-14deg) scale(calc(1.9 - var(--k) * .9)); }
+  .chk text { font-size: 11.5px; font-weight: 600; fill: var(--navy); opacity: calc(.42 + var(--k) * .58); }
+  .chk__o { fill: none; stroke: #cdc4b0; stroke-width: 1.5; }
+  .chk__f { fill: var(--gold); opacity: var(--k); transform-box: fill-box; transform-origin: center; transform: scale(calc(.4 + var(--k) * .6)); }
+  .chk__v { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: var(--k); }
+  .chk--s text { font-size: 10.5px; }
+  .chk--d text { fill: #fff; }
+  .chk--d .chk__o { stroke: rgba(255,255,255,.3); }
+  .chk--d .chk__v { stroke: var(--navy-950); }
+  .mo circle { fill: #e3dccb; }
+  .mo text { fill: #5d6573; font-weight: 600; }
+  .mo { --s: 14; }
+  .mo circle { fill: color-mix(in srgb, var(--gold) calc(var(--k) * 100%), #e3dccb); }
+  .bar { fill: var(--navy); transform-box: fill-box; transform-origin: bottom; transform: scaleY(var(--k)); }
+  .bar--f { fill: var(--gold); }
+  .tip { opacity: 0; }
+  .fan { --s: 3.4; transform-origin: 150px 330px; transform: translateX(calc(var(--tx) * var(--k))) rotate(calc(var(--deg) * var(--k))); }
+  .thumb { --s: 9; transform: translateX(calc(var(--k) * 36px)); opacity: clamp(0, calc((var(--q) - .8) * 8), 1); }
+  .thumb-l { --s: 9; font-weight: 700; fill: var(--navy-950); }
+  .thumb-l--fr { opacity: calc(clamp(0, calc((var(--q) - .8) * 8), 1) * (1 - var(--k))); }
+  .thumb-l--en { opacity: var(--k); }
 
   /* ---------- partners ---------- */
   .partners { padding: 110px 0; background: var(--cream); }
@@ -324,8 +373,24 @@
     .coin-shadow { width: 160px; margin-left: -80px; }
     .tag__in { font-size: .78rem; padding: 10px 13px 10px 10px; }
     .tag__in i { width: 22px; height: 22px; font-size: .62rem; }
-    .story__sticky { grid-template-columns: 40px 1fr; gap: 18px; }
-    .story__visual { display: none; }
+    .story { height: 460vh; }
+    .story__sticky { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; row-gap: 14px; padding-top: 16px; padding-bottom: 12px; align-items: start; }
+    .story__visual { order: 2; }
+    .story__steps { order: 3; height: 100%; min-height: 230px; }
+    .step { justify-content: flex-start; }
+    .board { width: min(100%, 440px, 46vh); }
+    .board__in { transform: none; border-radius: 10px; box-shadow: 0 22px 40px rgba(11,29,58,.16); }
+    .board__bar { height: 30px; font-size: .68rem; }
+    .story__tab { font-size: .82rem; gap: 6px; padding-bottom: 10px; flex-direction: column; align-items: flex-start; }
+    .story__tabs { gap: 8px; }
+    .step h2 { font-size: clamp(1.6rem, 6.4vw, 2.4rem); margin: 8px 0 10px; }
+    .step p { font-size: .95rem; line-height: 1.6; margin-bottom: 14px; }
+  }
+  @media (max-width: 960px) and (max-height: 720px) {
+    .board { width: min(100%, 38vh); }
+    .step p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  }
+  @media (max-width: 960px) {
     .partners__grid { grid-template-columns: 1fr; }
     .mission { grid-template-columns: 70px 1fr; gap: 6px 18px; padding: 24px 6px; }
     .mission__num { font-size: 2.4rem; grid-row: span 2; }
@@ -369,9 +434,9 @@
   @media (prefers-reduced-motion: reduce) {
     h1 .line > span, .lead, .hero__actions, .hero__proof, .tag__in, .stage__hint { animation: none; opacity: 1; transform: none; }
     .tag__bob, .band__track { animation: none; }
-    .story { height: auto; }
-    .story__sticky { position: static; height: auto; display: block; padding: 70px 0; }
-    .story__rail, .story__visual { display: none; }
+    .story { height: auto; --st-bg: var(--paper) !important; --st-ink: var(--navy) !important; --st-muted: var(--muted) !important; --st-accent: var(--gold-deep) !important; }
+    .story__sticky { position: static; height: auto; display: block; padding: 70px 20px; }
+    .story__tabs, .story__visual { display: none; }
     .story__steps { height: auto; display: grid; gap: 48px; }
     .step { position: static; opacity: 1; transform: none; pointer-events: auto; }
     .rv { opacity: 1; transform: none; transition: none; }
@@ -449,9 +514,14 @@
 
   <div class="band" aria-hidden="true"><div class="band__track" id="bandTrack"></div></div>
 
-  <section class="story" id="story">
-    <div class="wrap story__sticky">
-      <div class="story__rail" id="rail"><span class="story__fill" id="railFill"></span></div>
+  <section class="story" id="story" data-step="0">
+    <div class="wrap story__sticky" id="storySticky">
+      <div class="story__tabs" id="storyTabs">
+        <button type="button" class="story__tab is-on"><span>01</span>Créer<i></i></button>
+        <button type="button" class="story__tab"><span>02</span>Tenir<i></i></button>
+        <button type="button" class="story__tab"><span>03</span>Piloter<i></i></button>
+        <button type="button" class="story__tab"><span>04</span>S'implanter<i></i></button>
+      </div>
       <div class="story__steps">
         <article class="step is-on">
           <span class="kicker">Étape 1 · Créer</span>
@@ -479,11 +549,184 @@
         </article>
       </div>
       <div class="story__visual" aria-hidden="true">
-        <div class="story__num" id="storyNum">01</div>
-        <span class="story__chip" style="left:6%;top:14%;--r:-6deg">Statuts</span>
-        <span class="story__chip" style="right:4%;top:26%;--r:5deg">TVA</span>
-        <span class="story__chip" style="left:10%;bottom:16%;--r:4deg">Trésorerie</span>
-        <span class="story__chip" style="right:8%;bottom:10%;--r:-5deg">Maison mère</span>
+        <div class="board" id="board">
+          <div class="board__in" id="boardIn">
+            <div class="board__bar"><i></i><i></i><i></i><span id="boardTitle">Création de société</span><b id="boardCount">01 / 04</b></div>
+            <div class="board__stage">
+
+              <!-- 01 · Créer : the articles get written, signed and stamped -->
+              <svg class="scene is-on" viewBox="0 0 480 340" role="presentation">
+                <g class="st" style="--a:-1">
+                  <rect x="28" y="22" width="206" height="292" rx="8" fill="#fffdf8" stroke="#e7e0d0"/>
+                  <text x="48" y="58" class="t-serif" font-size="18" fill="#0b1d3a">STATUTS</text>
+                  <text x="48" y="75" class="t-caps" font-size="8.5" fill="#8f6b2e">ACTE CONSTITUTIF</text>
+                  <line x1="48" y1="278" x2="214" y2="278" stroke="#e7e0d0"/>
+                  <text x="48" y="294" class="t-sans" font-size="9" fill="#5d6573">Signature</text>
+                </g>
+                <path class="draw ln" pathLength="1" d="M48 102H214" style="--a:.04;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 119H196" style="--a:.10;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 136H208" style="--a:.16;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 153H150" style="--a:.22;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 180H214" style="--a:.30;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 197H188" style="--a:.36;--s:9"/>
+                <path class="draw ln" pathLength="1" d="M48 214H120" style="--a:.42;--s:9"/>
+                <path class="draw sig" pathLength="1" d="M112 268c8-16 15-20 19-9s8 11 14-2 11-13 15 0 12 9 21-7 12-4 19 5" style="--a:.52;--s:5"/>
+                <g class="stamp" style="--a:.78">
+                  <circle cx="176" cy="232" r="36" fill="rgba(198,161,91,.08)" stroke="#c6a15b" stroke-width="2.5"/>
+                  <circle cx="176" cy="232" r="29" fill="none" stroke="#c6a15b" stroke-width="1"/>
+                  <text x="176" y="229" text-anchor="middle" class="t-caps" font-size="9" fill="#8f6b2e">SOCIÉTÉ</text>
+                  <text x="176" y="243" text-anchor="middle" class="t-caps" font-size="9" fill="#8f6b2e">CRÉÉE</text>
+                </g>
+                <g class="st" style="--a:-1">
+                  <rect x="258" y="38" width="196" height="214" rx="8" fill="#f7f2e9" stroke="#e7e0d0"/>
+                  <text x="276" y="66" class="t-caps" font-size="8.5" fill="#8f6b2e">AVANT LA 1RE FACTURE</text>
+                </g>
+                <g class="chk" style="--a:.14"><circle class="chk__o" cx="286" cy="100" r="10"/><circle class="chk__f" cx="286" cy="100" r="10"/><path class="chk__v" d="M281 100l4 4 7-8"/><text x="306" y="104">Statut juridique</text></g>
+                <g class="chk" style="--a:.34"><circle class="chk__o" cx="286" cy="138" r="10"/><circle class="chk__f" cx="286" cy="138" r="10"/><path class="chk__v" d="M281 138l4 4 7-8"/><text x="306" y="142">Dépôt du capital</text></g>
+                <g class="chk" style="--a:.56"><circle class="chk__o" cx="286" cy="176" r="10"/><circle class="chk__f" cx="286" cy="176" r="10"/><path class="chk__v" d="M281 176l4 4 7-8"/><text x="306" y="180">Immatriculation</text></g>
+                <g class="chk" style="--a:.80"><circle class="chk__o" cx="286" cy="214" r="10"/><circle class="chk__f" cx="286" cy="214" r="10"/><path class="chk__v" d="M281 214l4 4 7-8"/><text x="306" y="218">Banque &amp; outils</text></g>
+                <g transform="rotate(-6 370 288)"><g class="st" style="--a:.86"><rect x="312" y="270" width="116" height="36" rx="4" fill="#fffdf8" stroke="#e7e0d0"/><text x="370" y="293" text-anchor="middle" class="t-serif" font-size="12" fill="#0b1d3a" letter-spacing="1">PRÊTE À FACTURER</text></g></g>
+              </svg>
+
+              <!-- 02 · Tenir : bank lines come in and get reconciled, all year long -->
+              <svg class="scene" viewBox="0 0 480 340" role="presentation">
+                <g class="st" style="--a:-1">
+                  <rect x="28" y="22" width="252" height="296" rx="8" fill="#fffdf8" stroke="#e7e0d0"/>
+                  <text x="46" y="52" class="t-caps" font-size="8.5" fill="#8f6b2e">RELEVÉ BANCAIRE</text>
+                  <text x="262" y="52" text-anchor="end" class="t-sans" font-size="9" fill="#5d6573">Rapproché</text>
+                </g>
+                <g class="row" style="--a:.02"><rect x="40" y="66" width="228" height="38" rx="6" fill="#f7f2e9"/><text x="54" y="89" class="t-sans b" font-size="11" fill="#0b1d3a">Facture client</text><rect x="168" y="82" width="44" height="6" rx="3" fill="#c6a15b" opacity=".55"/></g>
+                <g class="row" style="--a:.16"><rect x="40" y="112" width="228" height="38" rx="6" fill="#f7f2e9"/><text x="54" y="135" class="t-sans b" font-size="11" fill="#0b1d3a">Loyer</text><rect x="168" y="128" width="30" height="6" rx="3" fill="#0b1d3a" opacity=".25"/></g>
+                <g class="row" style="--a:.30"><rect x="40" y="158" width="228" height="38" rx="6" fill="#f7f2e9"/><text x="54" y="181" class="t-sans b" font-size="11" fill="#0b1d3a">Salaires</text><rect x="168" y="174" width="38" height="6" rx="3" fill="#0b1d3a" opacity=".25"/></g>
+                <g class="row" style="--a:.44"><rect x="40" y="204" width="228" height="38" rx="6" fill="#f7f2e9"/><text x="54" y="227" class="t-sans b" font-size="11" fill="#0b1d3a">Fournisseur</text><rect x="168" y="220" width="26" height="6" rx="3" fill="#0b1d3a" opacity=".25"/></g>
+                <g class="row" style="--a:.58"><rect x="40" y="250" width="228" height="38" rx="6" fill="#f7f2e9"/><text x="54" y="273" class="t-sans b" font-size="11" fill="#0b1d3a">Facture client</text><rect x="168" y="266" width="50" height="6" rx="3" fill="#c6a15b" opacity=".55"/></g>
+                <g class="chk" style="--a:.12"><circle class="chk__o" cx="246" cy="85" r="9"/><circle class="chk__f" cx="246" cy="85" r="9"/><path class="chk__v" d="M241.500 85l3.600 3.600 6.300-7.200"/></g>
+                <g class="chk" style="--a:.26"><circle class="chk__o" cx="246" cy="131" r="9"/><circle class="chk__f" cx="246" cy="131" r="9"/><path class="chk__v" d="M241.500 131l3.600 3.600 6.300-7.200"/></g>
+                <g class="chk" style="--a:.40"><circle class="chk__o" cx="246" cy="177" r="9"/><circle class="chk__f" cx="246" cy="177" r="9"/><path class="chk__v" d="M241.500 177l3.600 3.600 6.300-7.200"/></g>
+                <g class="chk" style="--a:.54"><circle class="chk__o" cx="246" cy="223" r="9"/><circle class="chk__f" cx="246" cy="223" r="9"/><path class="chk__v" d="M241.500 223l3.600 3.600 6.300-7.200"/></g>
+                <g class="chk" style="--a:.68"><circle class="chk__o" cx="246" cy="269" r="9"/><circle class="chk__f" cx="246" cy="269" r="9"/><path class="chk__v" d="M241.500 269l3.600 3.600 6.300-7.200"/></g>
+                <g class="st" style="--a:-1">
+                  <rect x="298" y="22" width="156" height="150" rx="8" fill="#f7f2e9" stroke="#e7e0d0"/>
+                  <path d="M376 52a42 42 0 1 1-.01 0" fill="none" stroke="#e7e0d0" stroke-width="8"/>
+                  <text x="376" y="101" text-anchor="middle" class="t-serif" font-size="20" fill="#0b1d3a">TVA</text>
+                  <text x="376" y="158" text-anchor="middle" class="t-caps" font-size="8" fill="#8f6b2e">DÉCLARATIONS À JOUR</text>
+                </g>
+                <path class="draw" pathLength="1" d="M376 52a42 42 0 1 1-.01 0" fill="none" stroke="#c6a15b" stroke-width="8" stroke-linecap="round" style="--a:.08;--s:1.15"/>
+                <g class="st" style="--a:-1">
+                  <rect x="298" y="186" width="156" height="78" rx="8" fill="#fffdf8" stroke="#e7e0d0"/>
+                  <text x="312" y="208" class="t-caps" font-size="8" fill="#8f6b2e">TOUTE L'ANNÉE</text>
+                </g>
+                <g class="months" font-size="7.5" text-anchor="middle">
+                  <g class="mo" style="--a:.04"><circle cx="314" cy="230" r="4.500"/><text x="314" y="250">J</text></g>
+                  <g class="mo" style="--a:.11"><circle cx="326" cy="230" r="4.500"/><text x="326" y="250">F</text></g>
+                  <g class="mo" style="--a:.18"><circle cx="338" cy="230" r="4.500"/><text x="338" y="250">M</text></g>
+                  <g class="mo" style="--a:.25"><circle cx="350" cy="230" r="4.500"/><text x="350" y="250">A</text></g>
+                  <g class="mo" style="--a:.32"><circle cx="362" cy="230" r="4.500"/><text x="362" y="250">M</text></g>
+                  <g class="mo" style="--a:.39"><circle cx="374" cy="230" r="4.500"/><text x="374" y="250">J</text></g>
+                  <g class="mo" style="--a:.46"><circle cx="386" cy="230" r="4.500"/><text x="386" y="250">J</text></g>
+                  <g class="mo" style="--a:.53"><circle cx="398" cy="230" r="4.500"/><text x="398" y="250">A</text></g>
+                  <g class="mo" style="--a:.60"><circle cx="410" cy="230" r="4.500"/><text x="410" y="250">S</text></g>
+                  <g class="mo" style="--a:.67"><circle cx="422" cy="230" r="4.500"/><text x="422" y="250">O</text></g>
+                  <g class="mo" style="--a:.74"><circle cx="434" cy="230" r="4.500"/><text x="434" y="250">N</text></g>
+                  <g class="mo" style="--a:.81"><circle cx="446" cy="230" r="4.500"/><text x="446" y="250">D</text></g>
+                </g>
+                <g transform="rotate(5 376 296)"><g class="st" style="--a:.84"><rect x="312" y="278" width="128" height="36" rx="4" fill="#0b1d3a"/><text x="376" y="301" text-anchor="middle" class="t-serif" font-size="12" fill="#e2c48a" letter-spacing="1">COMPTES À JOUR</text></g></g>
+              </svg>
+
+              <!-- 03 · Piloter : the cash curve draws itself, then the forecast -->
+              <svg class="scene" viewBox="0 0 480 340" role="presentation">
+                <defs>
+                  <clipPath id="st3clip"><rect x="40" y="40" width="0" height="180" data-clip="270" data-a=".05" data-b=".72"/></clipPath>
+                  <linearGradient id="st3fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6a15b" stop-opacity=".28"/><stop offset="1" stop-color="#c6a15b" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g class="st" style="--a:-1">
+                  <rect x="28" y="22" width="296" height="206" rx="8" fill="#fffdf8" stroke="#e7e0d0"/>
+                  <text x="46" y="50" class="t-caps" font-size="8.5" fill="#8f6b2e">TRÉSORERIE</text>
+                  <line x1="206" y1="46" x2="222" y2="46" stroke="#0b1d3a" stroke-width="2.5"/><text x="227" y="49" class="t-sans" font-size="8.5" fill="#5d6573">Réel</text>
+                  <line x1="254" y1="46" x2="270" y2="46" stroke="#c6a15b" stroke-width="2.5" stroke-dasharray="4 3"/><text x="275" y="49" class="t-sans" font-size="8.5" fill="#5d6573">Prévu</text>
+                  <path d="M44 90H308M44 130H308M44 170H308M44 210H308" stroke="#efe9db" stroke-width="1"/>
+                </g>
+                <g clip-path="url(#st3clip)">
+                  <path d="M44 192C68 184 86 152 112 158S148 178 170 142 198 112 214 120V210H44Z" fill="url(#st3fill)"/>
+                  <path d="M44 192C68 184 86 152 112 158S148 178 170 142 198 112 214 120" fill="none" stroke="#0b1d3a" stroke-width="2.6" stroke-linecap="round"/>
+                  <path d="M214 120C236 112 250 88 272 82S296 66 306 60" fill="none" stroke="#c6a15b" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="6 5"/>
+                </g>
+                <path id="st3path" d="M44 192C68 184 86 152 112 158S148 178 170 142 198 112 214 120C236 112 250 88 272 82S296 66 306 60" fill="none" stroke="none"/>
+                <g class="st" style="--a:.42;--s:8"><line x1="214" y1="66" x2="214" y2="210" stroke="#0b1d3a" stroke-width="1" stroke-dasharray="3 4" opacity=".45"/><text x="214" y="78" text-anchor="middle" class="t-sans b" font-size="8.5" fill="#0b1d3a" stroke="#fffdf8" stroke-width="5" paint-order="stroke">Aujourd'hui</text></g>
+                <circle class="tip" r="6.500" fill="#c6a15b" stroke="#fffdf8" stroke-width="2.5" data-follow="#st3path" data-a=".05" data-b=".72"/>
+                <g class="st" style="--a:-1">
+                  <rect x="28" y="240" width="296" height="78" rx="8" fill="#f7f2e9" stroke="#e7e0d0"/>
+                  <text x="46" y="262" class="t-caps" font-size="8" fill="#8f6b2e">MARGE, MOIS PAR MOIS</text>
+                  <line x1="46" y1="306" x2="306" y2="306" stroke="#e0d8c6"/>
+                </g>
+                <g class="bars">
+                  <rect class="bar" x="52" y="286" width="18" height="20" rx="2" style="--a:.10"/>
+                  <rect class="bar" x="84" y="280" width="18" height="26" rx="2" style="--a:.17"/>
+                  <rect class="bar" x="116" y="290" width="18" height="16" rx="2" style="--a:.24"/>
+                  <rect class="bar" x="148" y="276" width="18" height="30" rx="2" style="--a:.31"/>
+                  <rect class="bar" x="180" y="272" width="18" height="34" rx="2" style="--a:.38"/>
+                  <rect class="bar bar--f" x="212" y="270" width="18" height="36" rx="2" style="--a:.50"/>
+                  <rect class="bar bar--f" x="244" y="268" width="18" height="38" rx="2" style="--a:.57"/>
+                  <rect class="bar bar--f" x="276" y="270" width="18" height="36" rx="2" style="--a:.64"/>
+                </g>
+                <g class="st" style="--a:.08"><rect x="338" y="22" width="116" height="62" rx="8" fill="#0b1d3a"/><text x="352" y="44" class="t-caps" font-size="8" fill="#e2c48a">TABLEAU DE BORD</text><path d="M352 70l14-8 12 5 14-12 14 4 14-10" fill="none" stroke="#e2c48a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+                <g class="st" style="--a:.24"><rect x="338" y="94" width="116" height="62" rx="8" fill="#fffdf8" stroke="#e7e0d0"/><text x="352" y="116" class="t-caps" font-size="8" fill="#8f6b2e">PRÉVISIONNEL</text><path d="M352 142c16-2 24-14 40-14s24-8 48-12" fill="none" stroke="#c6a15b" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/></g>
+                <g class="st" style="--a:.60">
+                  <rect x="338" y="166" width="116" height="152" rx="8" fill="#f7f2e9" stroke="#e7e0d0"/>
+                  <text x="352" y="188" class="t-caps" font-size="8" fill="#8f6b2e">VOS ARBITRAGES</text>
+                </g>
+                <g class="chk chk--s" style="--a:.68"><circle class="chk__o" cx="360" cy="216" r="8"/><circle class="chk__f" cx="360" cy="216" r="8"/><path class="chk__v" d="M356 216l3.200 3.200 5.600-6.400"/><text x="376" y="220">Embaucher</text></g>
+                <g class="chk chk--s" style="--a:.78"><circle class="chk__o" cx="360" cy="250" r="8"/><circle class="chk__f" cx="360" cy="250" r="8"/><path class="chk__v" d="M356 250l3.200 3.200 5.600-6.400"/><text x="376" y="254">Investir</text></g>
+                <g class="chk chk--s" style="--a:.88"><circle class="chk__o" cx="360" cy="284" r="8"/><circle class="chk__f" cx="360" cy="284" r="8"/><path class="chk__v" d="M356 284l3.200 3.200 5.600-6.400"/><text x="376" y="288">Se rémunérer</text></g>
+              </svg>
+
+              <!-- 04 · S'implanter : three possible structures fan out, the French relay ticks -->
+              <svg class="scene scene--dark" viewBox="0 0 480 340" role="presentation">
+                <circle cx="150" cy="186" r="150" fill="none" stroke="rgba(226,196,138,.10)"/>
+                <circle cx="150" cy="186" r="104" fill="none" stroke="rgba(226,196,138,.14)"/>
+                <text x="28" y="44" class="t-caps st" style="--a:-1" font-size="8.500" fill="#e2c48a">3 STRUCTURES POSSIBLES</text>
+                <g class="fan" style="--deg:-11deg;--tx:-54px">
+                  <rect x="104" y="96" width="92" height="146" rx="8" fill="#12264a" stroke="rgba(226,196,138,.4)"/>
+                  <text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Filiale</text>
+                  <path d="M116 142H184M116 155H170M116 168H178" stroke="rgba(255,255,255,.22)" stroke-width="4" stroke-linecap="round"/>
+                  <text x="116" y="216" class="t-caps" font-size="7" fill="#e2c48a">SOCIÉTÉ</text><text x="116" y="227" class="t-caps" font-size="7" fill="#e2c48a">FRANÇAISE</text>
+                </g>
+                <g class="fan" style="--deg:11deg;--tx:55px">
+                  <rect x="104" y="96" width="92" height="146" rx="8" fill="#12264a" stroke="rgba(226,196,138,.4)"/>
+                  <text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Bureau</text>
+                  <text x="116" y="141" class="t-serif" font-size="14" fill="#fff">de liaison</text>
+                  <path d="M116 160H182M116 173H166" stroke="rgba(255,255,255,.22)" stroke-width="4" stroke-linecap="round"/>
+                  <text x="186" y="216" text-anchor="end" class="t-caps" font-size="7" fill="#e2c48a">SANS ACTIVITÉ</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#e2c48a">COMMERCIALE</text>
+                </g>
+                <g class="fan" style="--deg:0deg;--tx:0px">
+                  <rect x="104" y="96" width="92" height="146" rx="8" fill="#183262" stroke="#c6a15b"/>
+                  <text x="116" y="124" class="t-serif" font-size="13.500" fill="#fff">Succursale</text>
+                  <path d="M116 142H184M116 155H172M116 168H158" stroke="rgba(255,255,255,.22)" stroke-width="4" stroke-linecap="round"/>
+                  <text x="116" y="216" class="t-caps" font-size="7" fill="#e2c48a">ÉTABLISSEMENT</text><text x="116" y="227" class="t-caps" font-size="7" fill="#e2c48a">EN FRANCE</text>
+                </g>
+                <g class="st" style="--a:.28">
+                  <rect x="292" y="26" width="162" height="212" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(226,196,138,.3)"/>
+                  <text x="306" y="54" class="t-caps" font-size="8" fill="#e2c48a">VOTRE RELAIS EN FRANCE</text>
+                </g>
+                <g class="chk chk--d" style="--a:.36"><circle class="chk__o" cx="316" cy="88" r="10"/><circle class="chk__f" cx="316" cy="88" r="10"/><path class="chk__v" d="M311 88l4 4 7-8"/><text x="334" y="92">Création</text></g>
+                <g class="chk chk--d" style="--a:.50"><circle class="chk__o" cx="316" cy="126" r="10"/><circle class="chk__f" cx="316" cy="126" r="10"/><path class="chk__v" d="M311 126l4 4 7-8"/><text x="334" y="130">Comptabilité locale</text></g>
+                <g class="chk chk--d" style="--a:.64"><circle class="chk__o" cx="316" cy="164" r="10"/><circle class="chk__f" cx="316" cy="164" r="10"/><path class="chk__v" d="M311 164l4 4 7-8"/><text x="334" y="168">Paie &amp; salariés</text></g>
+                <g class="chk chk--d" style="--a:.78"><circle class="chk__o" cx="316" cy="202" r="10"/><circle class="chk__f" cx="316" cy="202" r="10"/><path class="chk__v" d="M311 202l4 4 7-8"/><text x="334" y="206">Reporting au siège</text></g>
+                <g class="st" style="--a:.80">
+                  <rect x="292" y="252" width="162" height="62" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(226,196,138,.3)"/>
+                  <text x="306" y="288" class="t-sans b" font-size="11" fill="#fff">Reporting</text>
+                  <rect x="368" y="270" width="72" height="28" rx="14" fill="rgba(255,255,255,.08)" stroke="rgba(226,196,138,.4)"/>
+                  <text x="386" y="288" text-anchor="middle" class="t-sans b" font-size="9.500" fill="rgba(255,255,255,.7)">FR</text>
+                  <text x="422" y="288" text-anchor="middle" class="t-sans b" font-size="9.500" fill="rgba(255,255,255,.7)">EN</text>
+                </g>
+                <g class="thumb" style="--a:.90"><rect x="370" y="272" width="32" height="24" rx="12" fill="#c6a15b"/></g>
+                <text class="thumb-l thumb-l--fr" x="386" y="288" text-anchor="middle" font-size="9.500" style="--a:.90">FR</text>
+                <text class="thumb-l thumb-l--en" x="422" y="288" text-anchor="middle" font-size="9.500" style="--a:.90">EN</text>
+              </svg>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -731,39 +974,92 @@
   function start() { if (!running) { running = true; requestAnimationFrame(frame); } }
   start();
 
-  // ---------- Pinned scroll story ----------
+  // ---------- Pinned scroll story: each step scrubs its own scene ----------
   const story = document.getElementById('story');
   const steps = [...story.querySelectorAll('.step')];
-  const chips = [...story.querySelectorAll('.story__chip')];
-  const rail = document.getElementById('rail');
-  const fill = document.getElementById('railFill');
-  const num = document.getElementById('storyNum');
-  const dots = steps.map((_, i) => {
-    const d = document.createElement('span');
-    d.className = 'story__dot';
-    d.style.top = `calc(${(i / (steps.length - 1)) * 100}% - 7px)`;
-    rail.appendChild(d);
-    return d;
+  const scenes = [...story.querySelectorAll('.scene')];
+  const tabs = [...story.querySelectorAll('.story__tab')];
+  const boardIn = document.getElementById('boardIn');
+  const boardTitle = document.getElementById('boardTitle');
+  const boardCount = document.getElementById('boardCount');
+  const TITLES = ['Création de société', 'Comptabilité au fil de l’eau', 'Tableau de bord', 'Implantation en France'];
+  const N = steps.length;
+  const clamp01 = (v) => Math.min(1, Math.max(0, v));
+  // elements that travel along a path, and clip rectangles that widen, with the scene progress
+  const followers = [...story.querySelectorAll('[data-follow]')].map((el) => {
+    const path = story.querySelector(el.dataset.follow);
+    return { el, path, len: path.getTotalLength(), a: +el.dataset.a, b: +el.dataset.b, scene: el.closest('.scene') };
   });
-  let current = -1;
-  const onScroll = () => {
-    if (reduced) return;
+  const clips = [...story.querySelectorAll('[data-clip]')].map((el) => ({ el, w: +el.dataset.clip, a: +el.dataset.a, b: +el.dataset.b, scene: el.closest('.scene') }));
+  let current = -1, target = 0, value = 0, rafStory = 0, tiltX = 0, tiltY = 0;
+  const storyProgress = () => {
     const r = story.getBoundingClientRect();
     const total = story.offsetHeight - innerHeight;
-    const p = Math.min(1, Math.max(0, -r.top / total));
-    fill.style.height = (p * 100) + '%';
-    const idx = Math.min(steps.length - 1, Math.floor(p * steps.length));
+    return clamp01(-r.top / total);
+  };
+  const paint = (v) => {
+    const idx = Math.min(N - 1, Math.floor(v));
+    const local = clamp01(v - idx);
+    // the scene plays between 6% and 86% of its step, then rests before the next one
+    const q = clamp01((local - 0.06) / 0.8);
+    scenes.forEach((sc, i) => {
+      const qi = i < idx ? 1 : i > idx ? 0 : q;
+      sc.style.setProperty('--q', qi.toFixed(4));
+      sc._q = qi;
+    });
+    tabs.forEach((t, i) => t.querySelector('i').style.setProperty('--f', (i < idx ? 1 : i > idx ? 0 : local).toFixed(4)));
+    followers.forEach((f) => {
+      const t = clamp01((f.scene._q - f.a) / (f.b - f.a));
+      const pt = f.path.getPointAtLength(f.len * t);
+      f.el.setAttribute('cx', pt.x.toFixed(1)); f.el.setAttribute('cy', pt.y.toFixed(1));
+      f.el.style.opacity = t > 0.01 ? 1 : 0;
+    });
+    clips.forEach((c) => c.el.setAttribute('width', (c.w * clamp01((c.scene._q - c.a) / (c.b - c.a))).toFixed(1)));
+    if (innerWidth > 960) boardIn.style.setProperty('--ry', `${(-9 + (v / N) * 18 + tiltX).toFixed(2)}deg`);
+    if (innerWidth > 960) boardIn.style.setProperty('--rx', `${(5 + tiltY).toFixed(2)}deg`);
     if (idx !== current) {
       current = idx;
-      steps.forEach((s, i) => s.classList.toggle('is-on', i === idx));
-      dots.forEach((d, i) => d.classList.toggle('is-on', i <= idx));
-      chips.forEach((c, i) => c.classList.toggle('is-on', i <= idx));
-      num.textContent = '0' + (idx + 1);
-      num.style.transform = `rotate(${idx % 2 ? 4 : -4}deg)`;
+      story.dataset.step = idx;
+      steps.forEach((s, i) => { s.classList.toggle('is-on', i === idx); s.classList.toggle('is-past', i < idx); });
+      scenes.forEach((sc, i) => sc.classList.toggle('is-on', i === idx));
+      tabs.forEach((t, i) => { t.classList.toggle('is-on', i === idx); t.classList.toggle('is-done', i < idx); });
+      boardTitle.textContent = TITLES[idx];
+      boardCount.textContent = `0${idx + 1} / 0${N}`;
     }
   };
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  const tickStory = () => {
+    value += (target - value) * 0.16;
+    if (Math.abs(target - value) < 0.0006) value = target;
+    paint(value);
+    rafStory = value === target ? 0 : requestAnimationFrame(tickStory);
+  };
+  const kickStory = () => { if (!rafStory) rafStory = requestAnimationFrame(tickStory); };
+  const onScroll = () => {
+    if (reduced) return;
+    target = Math.min(N - 0.0001, storyProgress() * N);
+    kickStory();
+  };
+  if (!reduced) {
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll);
+    target = value = Math.min(N - 0.0001, storyProgress() * N);
+    paint(value);
+    tabs.forEach((t, i) => t.addEventListener('click', () => {
+      const top = story.getBoundingClientRect().top + scrollY;
+      const total = story.offsetHeight - innerHeight;
+      scrollTo({ top: top + total * ((i + 0.62) / N), behavior: 'smooth' });
+    }));
+    if (fine) {
+      const sticky = document.getElementById('storySticky');
+      sticky.addEventListener('pointermove', (e) => {
+        const r = sticky.getBoundingClientRect();
+        tiltX = ((e.clientX - r.left) / r.width - 0.5) * 10;
+        tiltY = -((e.clientY - r.top) / r.height - 0.5) * 8;
+        kickStory(); paint(value);
+      });
+      sticky.addEventListener('pointerleave', () => { tiltX = 0; tiltY = 0; paint(value); });
+    }
+  }
 
 
   // ---------- Reveal on scroll ----------

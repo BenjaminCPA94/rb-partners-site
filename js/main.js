@@ -23,6 +23,7 @@
   if (root.hasAttribute('data-ed-home')) {
     addCss('css/final-polish.css');
     addJs('js/final-polish.js');
+    addJs('js/ed-motion.js');
     return;
   }
   const css = document.createElement('link');
@@ -69,7 +70,10 @@
 
   // New editorial design, only in preview mode (?apercu=1). Loaded last so it
   // re-skins every component above it.
-  if (editorial) addCss('css/editorial.css', () => root.classList.remove('ed-wait'));
+  if (editorial) {
+    addCss('css/editorial.css', () => root.classList.remove('ed-wait'));
+    addJs('js/ed-motion.js');
+  }
 
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
