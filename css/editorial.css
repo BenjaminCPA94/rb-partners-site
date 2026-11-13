@@ -109,8 +109,9 @@ html.ed .intl-v8-label:nth-of-type(odd) { rotate: -5deg; }
 html.ed .intl-v8-label:nth-of-type(even) { rotate: 4deg; }
 /* leave room for the medallion on wide screens */
 @media (min-width: 1100px) {
-  html.ed .ed-has-coin > .container { max-width: 1180px !important; padding-right: 400px !important; }
-  html.ed .ed-has-coin h1 { max-width: 760px; }
+  /* set in CSS, not by the script that adds the medallion, so the text does not move when it arrives */
+  html.ed main > :is(.seo-hero:not(.international-hero), .mission-hero) > .container { max-width: 1180px !important; padding-right: 400px !important; }
+  html.ed main > :is(.seo-hero:not(.international-hero), .mission-hero) h1 { max-width: 760px; }
 }
 /* mission hero side panels */
 html.ed :is(.mission-hero__proofs, .intl-hero-proof) { background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; gap: 8px !important; flex-wrap: wrap; }
