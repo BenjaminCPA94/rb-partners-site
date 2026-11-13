@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>/* Visiteur ayant choisi l'anglais sur une autre page : version anglaise de l'accueil (?lang=fr pour revenir au français) */(function(){try{if(/[?&]lang=fr/.test(location.search))localStorage.setItem('rb-lang','fr');else if(localStorage.getItem('rb-lang')==='en')location.replace('french-accountant-paris.html'+location.hash)}catch(e){}})();</script>
-<script>/* Rideau d'ouverture : levé dès que la page est prête (2,5 s au plus tard) */(function(){var d=document.documentElement;d.classList.add('ed-wait');setTimeout(function(){d.classList.remove('ed-wait')},2500)})();</script>
-<style>html.ed::before{content:"M";position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#081426;color:#c6a15b;font:700 72px/1 'Playfair Display',Georgia,serif;transform:translateY(-101%);transition:transform .7s cubic-bezier(.76,0,.24,1);pointer-events:none}html.ed.ed-wait::before,html.ed.ed-leave::before{transform:none}html.ed.ed-wait::before{transition:none}html.ed.ed-leave::before{transition-duration:.4s}@media(prefers-reduced-motion:reduce){html.ed::before{transition:none!important}}</style>
+<script>/* Rideau d'ouverture : levé dès que la page est lisible (2,5 s au plus tard) */(function(){var d=document.documentElement,up=function(){d.classList.remove('ed-wait')};d.classList.add('ed-wait');document.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(function(){requestAnimationFrame(up)})});setTimeout(up,2500)})();</script>
+<style>html.ed::before{content:"M";position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#081426;color:#c6a15b;font:700 72px/1 'Playfair Display',Georgia,serif;transform:translateY(-101%);transition:transform .55s cubic-bezier(.76,0,.24,1);pointer-events:none}html.ed.ed-wait::before,html.ed.ed-leave::before{transform:none}html.ed.ed-wait::before{transition:none}html.ed.ed-leave::before{transition-duration:.4s}@media(prefers-reduced-motion:reduce){html.ed::before{transition:none!important}}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
     --navy-950: #081426;
     --gold: #c6a15b;
     --gold-light: #e2c48a;
-    --gold-deep: #8f6b2e;
+    --gold-deep: #86632a;
     --ink: #16202e;
     --muted: #5d6573;
     --line: rgba(11, 29, 58, 0.12);
@@ -79,7 +79,7 @@
   .hero .wrap { display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; gap: 24px; }
   .hero__copy { min-width: 0; position: relative; z-index: 2; }
   .pill { display: inline-flex; align-items: center; gap: 9px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,253,248,.7); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); }
-  .pill b { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(198,161,91,.2); }
+  .pill b { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(198,161,91,.2); }
   h1 { font-family: var(--serif); font-weight: 800; text-transform: uppercase; color: var(--navy); font-size: clamp(2.3rem, 3.9vw, 3.75rem); line-height: 1; letter-spacing: -.01em; margin: 26px 0 26px; }
   h1 .line { display: block; overflow: hidden; padding-bottom: .06em; }
   h1 .line > span { display: inline-block; transform: translateY(110%); animation: rise 1.1s var(--ease) forwards; }

@@ -13,7 +13,7 @@ html.ed {
   --ed-navy-950: #081426;
   --ed-gold: #c6a15b;
   --ed-gold-light: #e2c48a;
-  --ed-gold-deep: #8f6b2e;
+  --ed-gold-deep: #86632a;
   --ed-ink: #16202e;
   --ed-muted: #5d6573;
   --ed-line: rgba(11, 29, 58, .12);
@@ -269,4 +269,18 @@ html.ed .reveal { transition: opacity .9s var(--ed-ease), transform .9s var(--ed
 @media (prefers-reduced-motion: reduce) {
   html.ed .ed-coin__in, html.ed .ed-coin__chip { animation: none; }
   html.ed .reveal:not(.is-visible) { transform: none; }
+}
+
+/* ---------- header on laptops: keep the booking button, drop the stray burger ---------- */
+@media (min-width: 1121px) {
+  html.ed .header__cta { display: inline-flex !important; }
+  html.ed .burger { display: none !important; }
+  html.ed .lang-toggle { display: flex !important; }
+}
+@media (min-width: 1121px) and (max-width: 1360px) {
+  html.ed .header__inner { gap: 14px !important; padding-left: 20px !important; padding-right: 20px !important; }
+  html.ed .logo__text { font-size: 1.15rem; }
+  html.ed .nav { gap: 8px !important; }
+  html.ed .header__cta { padding: 9px 14px !important; font-size: .78rem !important; }
+  html.ed .lang-toggle { gap: 4px; }
 }

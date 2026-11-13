@@ -26,53 +26,12 @@
     addJs('js/ed-motion.js');
     return;
   }
-  const css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = `${base}css/site-upgrade.css`;
-  document.head.appendChild(css);
-
-  // Final polish is intentionally loaded after the main upgrade stylesheet so
-  // the narrow-card typography and booking/reassurance UI win the cascade.
-  const polishCss = document.createElement('link');
-  polishCss.rel = 'stylesheet';
-  polishCss.href = `${base}css/final-polish.css`;
-  document.head.appendChild(polishCss);
-
-  const hotfixCss = document.createElement('link');
-  hotfixCss.rel = 'stylesheet';
-  hotfixCss.href = `${base}css/final-polish-hotfix.css`;
-  document.head.appendChild(hotfixCss);
-
-  const missionPolishCss = document.createElement('link');
-  missionPolishCss.rel = 'stylesheet';
-  missionPolishCss.href = `${base}css/mission-polish.css`;
-  document.head.appendChild(missionPolishCss);
-
-  const seoEnhanceCss = document.createElement('link');
-  seoEnhanceCss.rel = 'stylesheet';
-  seoEnhanceCss.href = `${base}css/seo-enhance.css`;
-  document.head.appendChild(seoEnhanceCss);
-
-  const internationalEnhanceCss = document.createElement('link');
-  internationalEnhanceCss.rel = 'stylesheet';
-  internationalEnhanceCss.href = `${base}css/international-enhance.css`;
-  document.head.appendChild(internationalEnhanceCss);
-
-  const homepagePolishCss = document.createElement('link');
-  homepagePolishCss.rel = 'stylesheet';
-  homepagePolishCss.href = `${base}css/homepage-polish.css`;
-  document.head.appendChild(homepagePolishCss);
-
-  const immersiveCss = document.createElement('link');
-  immersiveCss.rel = 'stylesheet';
-  immersiveCss.href = `${base}css/immersive.css`;
-  document.head.appendChild(immersiveCss);
-
-  // Editorial design. Loaded last so it re-skins every component above it.
-  if (editorial) {
-    addCss('css/editorial.css', () => root.classList.remove('ed-wait'));
-    addJs('js/ed-motion.js');
-  }
+  // The stylesheets are linked in each page's <head>, so the first paint is
+  // already the final layout (no jump when they arrive). A page that does not
+  // link them gets them here, in the same cascade order.
+  const SHEETS = ['site-upgrade', 'final-polish', 'final-polish-hotfix', 'mission-polish', 'seo-enhance', 'international-enhance', 'homepage-polish', 'immersive', 'editorial'];
+  if (!document.querySelector('link[href$="css/editorial.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
+  if (editorial) addJs('js/ed-motion.js');
 
   const upgrade = document.createElement('script');
   upgrade.src = `${base}js/site-upgrade.js`;
@@ -245,7 +204,7 @@ if (form) {
       const body = lang === 'en'
         ? `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${company}\n\nMessage:\n${data.get('message')}`
         : `Nom : ${data.get('name')}\nEmail : ${data.get('email')}\nSociété : ${company}\n\nMessage :\n${data.get('message')}`;
-      status.textContent = window.rbI18n ? window.rbI18n.get('form.fallback') : 'Votre messagerie va s’ouvrir avec votre demande préremplie.';
+      status.textContent = window.rbI18n ? window.rbI18n.get('form.fallback') : (lang === 'en' ? 'Your email app will open with your request pre-filled.' : 'Votre messagerie va s’ouvrir avec votre demande préremplie.');
       window.location.href = `mailto:contact@meyvin.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 
@@ -265,7 +224,7 @@ if (form) {
         }),
       });
       if (!res.ok) throw new Error('FormSubmit error');
-      status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.';
+      status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : (lang === 'en' ? 'Thank you, your request has been sent. We will get back to you shortly.' : 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.');
       form.reset();
     } catch (err) {
       fallbackToMailto();
