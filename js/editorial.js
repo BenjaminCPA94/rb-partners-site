@@ -32,8 +32,17 @@
     em.textContent = tail;
     h.appendChild(em);
   };
+  // The accent changes how the title wraps, so it has to be in place before
+  // the title is painted: it is re-applied in the same frame whenever another
+  // script rewrites the title (language switch, word-by-word split).
+  const watched = new WeakSet();
   const accents = () => {
-    document.querySelectorAll('main :is(.seo-hero, .mission-hero, .hero, .expertise-banner, .article-banner) h1, main .expertise-cta h2').forEach(accent);
+    document.querySelectorAll('main :is(.seo-hero, .mission-hero, .hero, .expertise-banner, .article-banner) h1, main .expertise-cta h2').forEach((h) => {
+      accent(h);
+      if (watched.has(h)) return;
+      watched.add(h);
+      new MutationObserver(() => accent(h)).observe(h, { childList: true });
+    });
   };
 
   // ---------- medallion + tags in the heroes ----------

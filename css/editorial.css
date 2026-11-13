@@ -273,7 +273,7 @@ html.ed .reveal { transition: opacity .9s var(--ed-ease), transform .9s var(--ed
 }
 
 /* ---------- mission pages: an animated scene in the hero (markup and player: js/scenes.js) ---------- */
-html.ed .ed-board { --navy: #0b1d3a; --navy-950: #081426; --gold: #c6a15b; --serif: 'Playfair Display', Georgia, serif; --sans: 'Inter', sans-serif; position: absolute; z-index: 1; top: 50%; right: max(24px, calc((100vw - 1180px) / 2 + 24px)); width: 470px; transform: translateY(-50%); perspective: 1400px; }
+html.ed .ed-board { --navy: #0b1d3a; --navy-950: #081426; --gold: #c6a15b; --serif: 'Playfair Display', Georgia, serif; --sans: 'Inter', sans-serif; position: absolute; z-index: 1; top: 150px; right: max(24px, calc((100vw - 1180px) / 2 + 24px)); width: 470px; perspective: 1400px; }
 html.ed .ed-board__in { border-radius: 14px; background: #fff; border: 1px solid rgba(11,29,58,.1); box-shadow: 0 50px 90px rgba(11,29,58,.18), 0 12px 24px rgba(11,29,58,.08); overflow: hidden; transform: rotateX(var(--rx, 4deg)) rotateY(var(--ry, -8deg)); transition: transform .5s var(--ed-ease); }
 html.ed .ed-board--dark .ed-board__in { background: #0d1f3f; border-color: rgba(226,196,138,.28); }
 html.ed .ed-board__bar { display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 10px 0 16px; border-bottom: 1px solid rgba(11,29,58,.1); }

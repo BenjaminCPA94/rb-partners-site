@@ -31,7 +31,8 @@
   // link them gets them here, in the same cascade order.
   const SHEETS = ['site-upgrade', 'final-polish', 'final-polish-hotfix', 'mission-polish', 'seo-enhance', 'international-enhance', 'homepage-polish', 'immersive', 'editorial'];
   if (!document.querySelector('link[href$="css/editorial.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
-  if (editorial) addJs('js/ed-motion.js');
+  // editorial.js goes first: it sets the accent of the main title, which changes how the title wraps
+  if (editorial) { addJs('js/editorial.js'); addJs('js/ed-motion.js'); }
   if (document.querySelector('main > .mission-hero')) addJs('js/scenes.js');
 
   const upgrade = document.createElement('script');
@@ -77,7 +78,6 @@
       immersive.src = `${base}js/immersive.js`;
       document.head.appendChild(immersive);
 
-      if (editorial) addJs('js/editorial.js');
     };
     document.head.appendChild(polish);
   };
