@@ -8,6 +8,7 @@ fr=open(REPO+'index.html',encoding='utf-8').read()
 en_old=open(REPO+'french-accountant-paris.html',encoding='utf-8').read() if len(sys.argv)<2 else open(sys.argv[1],encoding='utf-8').read()
 
 T = {
+ "Les associés":"The partners", "Notre approche":"Our approach", "Guides pratiques":"Practical guides",
  "Quelle est votre situation ?":"What is your situation?", "Votre situation":"Your situation",
  "Je crée ou développe mon entreprise":"I am starting or growing my business", "Indépendant ou profession libérale":"Self-employed or independent professional",
  "Société étrangère qui s'implante en France":"Foreign company setting up in France", "Filiale française d'un groupe":"French subsidiary of a group",

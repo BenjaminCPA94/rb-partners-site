@@ -58,10 +58,18 @@
   .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 74px; }
   .brand { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: var(--navy); }
   .brand i { width: 38px; height: 38px; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; font-style: normal; font-size: 1.05rem; }
-  .top nav { display: flex; gap: 28px; font-size: .86rem; font-weight: 500; color: var(--navy); }
-  .top nav a { position: relative; }
-  .top nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -5px; height: 1px; background: var(--gold); transition: right .35s var(--ease); }
-  .top nav a:hover::after { right: 0; }
+  .top nav { display: flex; align-items: center; gap: 28px; font-size: .86rem; font-weight: 500; color: var(--navy); }
+  .menu { position: relative; }
+  .menu__top { position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 10px 0; }
+  .menu__top::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 5px; height: 1px; background: var(--gold); transition: right .35s var(--ease); }
+  .menu__top:hover::after, .menu:hover .menu__top::after, .menu:focus-within .menu__top::after { right: 0; }
+  .menu > .menu__top::before { content: ""; order: 2; width: 6px; height: 6px; margin-top: -3px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .3s var(--ease); }
+  .menu:hover > .menu__top::before, .menu:focus-within > .menu__top::before { transform: translateY(3px) rotate(225deg); }
+  .menu__drop { position: absolute; left: -18px; top: 100%; min-width: 250px; padding: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 24px 50px rgba(11,29,58,.14); display: grid; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .25s ease, transform .35s var(--ease), visibility .25s; }
+  .menu__drop--right { left: auto; right: -18px; }
+  .menu:hover .menu__drop, .menu:focus-within .menu__drop { opacity: 1; visibility: visible; transform: none; }
+  .menu__drop a { padding: 11px 12px; border-radius: 6px; font-weight: 500; white-space: nowrap; transition: background .2s ease; }
+  .menu__drop a:hover, .menu__drop a:focus-visible { background: var(--cream); }
   .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: .9rem; transition: transform .25s var(--ease), background .25s ease, color .25s ease, box-shadow .25s ease; }
   .btn--dark { background: var(--navy); color: #fff; box-shadow: 0 10px 24px rgba(11,29,58,.18); }
   .btn--dark:hover { background: #142c54; transform: translateY(-2px); }
@@ -385,8 +393,11 @@
   @media (max-width: 960px) {
     .top nav { display: none; }
     .top nav.is-open { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 24px 40px rgba(11,29,58,.12); padding: 8px 20px 16px; }
-    .top nav.is-open a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
-    .top nav.is-open a::after { display: none; }
+    .top nav.is-open { align-items: stretch; max-height: calc(100vh - 74px); overflow-y: auto; }
+    .top nav.is-open .menu__top { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1rem; font-weight: 600; }
+    .top nav.is-open .menu__top::after, .top nav.is-open .menu__top::before { display: none; }
+    .top nav.is-open .menu__drop { position: static; min-width: 0; padding: 4px 0 4px 14px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; background: none; opacity: 1; visibility: visible; transform: none; }
+    .top nav.is-open .menu__drop a { padding: 10px 0; font-size: .93rem; color: var(--muted); white-space: normal; }
     .burger { display: flex; }
     .cta__grid { grid-template-columns: 1fr; gap: 40px; }
     .hero .wrap { grid-template-columns: 1fr; }
@@ -489,11 +500,20 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Meyvin, accueil"><i>M</i>Meyvin</a>
     <nav aria-label="Navigation principale" id="nav">
-      <a href="#missions">Nos missions</a>
-      <a href="#intl">Implantation en France</a>
-      <a href="#associes">Le cabinet</a>
-      <a href="#guides">Ressources</a>
-      <a href="#contact">Contact</a>
+      <div class="menu">
+        <a class="menu__top" href="#associes">Le cabinet</a>
+        <div class="menu__drop"><a href="#associes">Les associés</a><a href="#story">Notre approche</a></div>
+      </div>
+      <div class="menu">
+        <a class="menu__top" href="#missions">Nos missions</a>
+        <div class="menu__drop"><a href="expertises/comptabilite.html">Conformité &amp; comptabilité</a><a href="expertises/conseil-gestion.html">Pilotage &amp; reporting</a><a href="expertises/social-paie.html">Social &amp; RH</a><a href="expertises/creation-juridique.html">Juridique &amp; création</a><a href="conseil-dirigeant.html">Conseil au dirigeant</a><a href="facturation-electronique.html">Facturation électronique</a></div>
+      </div>
+      <a class="menu__top" href="#intl">Implantation en France</a>
+      <div class="menu">
+        <a class="menu__top" href="#guides">Ressources</a>
+        <div class="menu__drop menu__drop--right"><a href="blog/index.html">Blog</a><a href="simulateurs/index.html">Simulateurs</a><a href="#guides">Guides pratiques</a></div>
+      </div>
+      <a class="menu__top" href="#contact">Contact</a>
     </nav>
     <div class="top__end">
       <a class="top__lang" href="french-accountant-paris.html" hreflang="en" lang="en" title="English version">EN</a>
@@ -546,6 +566,49 @@
   </section>
 
   <div class="band" aria-hidden="true"><div class="band__track" id="bandTrack"></div></div>
+
+  <section class="partners" id="associes">
+    <div class="wrap">
+      <div class="partners__head">
+        <div><span class="pill"><b></b>Le cabinet</span><h2>Deux associés, des expertises complémentaires.</h2></div>
+        <p>Vous échangez directement avec l'associé qui suit votre dossier, en français ou en anglais.</p>
+      </div>
+      <div class="match rv" id="match">
+        <span class="match__q">Quelle est votre situation ?</span>
+        <div class="match__chips" role="group" aria-label="Votre situation">
+          <button type="button" data-partner="benjamin">Je crée ou développe mon entreprise</button>
+          <button type="button" data-partner="benjamin">Indépendant ou profession libérale</button>
+          <button type="button" data-partner="rachel">Société étrangère qui s'implante en France</button>
+          <button type="button" data-partner="rachel">Filiale française d'un groupe</button>
+        </div>
+        <p class="match__out" id="matchOut" aria-live="polite" data-idle="Choisissez votre situation : nous vous indiquons l'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza.">Choisissez votre situation : nous vous indiquons l'associé à contacter.</p>
+      </div>
+      <div class="partners__grid" id="partnersGrid">
+        <article class="person rv" data-tilt data-person="rachel">
+          <span class="person__mark outline" aria-hidden="true">R</span>
+          <span class="person__flag">Votre interlocutrice</span>
+          <div class="person__top">
+            <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" width="150" height="268" loading="lazy"></div>
+            <div><h3>Rachel Illouz</h3><b>Associée · Expert-comptable</b><span class="person__focus">International &amp; implantation en France</span></div>
+          </div>
+          <p>Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.</p>
+          <ul class="person__tags"><li>Sociétés étrangères</li><li>Filiales de groupes</li><li>Reporting FR / EN</li></ul>
+          <div class="person__actions"><a class="btn btn--dark btn--sm" href="tel:+33624126769">Appeler Rachel <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        </article>
+        <article class="person rv" data-tilt data-person="benjamin" style="--rd:.1s">
+          <span class="person__mark outline" aria-hidden="true">B</span>
+          <span class="person__flag">Votre interlocuteur</span>
+          <div class="person__top">
+            <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" width="147" height="270" loading="lazy"></div>
+            <div><h3>Benjamin Haziza</h3><b>Associé · Expert-comptable</b><span class="person__focus">Start-up, entrepreneurs &amp; indépendants</span></div>
+          </div>
+          <p>Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.</p>
+          <ul class="person__tags"><li>Start-up</li><li>Indépendants</li><li>Structuration</li></ul>
+          <div class="person__actions"><a class="btn btn--dark btn--sm" href="#contact" data-booking="benjamin">Prendre rendez-vous avec Benjamin <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="story" id="story" data-step="0">
     <div class="wrap story__sticky" id="storySticky">
@@ -803,48 +866,7 @@
     </div>
   </section>
 
-  <section class="partners" id="associes">
-    <div class="wrap">
-      <div class="partners__head">
-        <div><span class="pill"><b></b>Le cabinet</span><h2>Deux associés, des expertises complémentaires.</h2></div>
-        <p>Vous échangez directement avec l'associé qui suit votre dossier, en français ou en anglais.</p>
-      </div>
-      <div class="match rv" id="match">
-        <span class="match__q">Quelle est votre situation ?</span>
-        <div class="match__chips" role="group" aria-label="Votre situation">
-          <button type="button" data-partner="benjamin">Je crée ou développe mon entreprise</button>
-          <button type="button" data-partner="benjamin">Indépendant ou profession libérale</button>
-          <button type="button" data-partner="rachel">Société étrangère qui s'implante en France</button>
-          <button type="button" data-partner="rachel">Filiale française d'un groupe</button>
-        </div>
-        <p class="match__out" id="matchOut" aria-live="polite" data-idle="Choisissez votre situation : nous vous indiquons l'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza.">Choisissez votre situation : nous vous indiquons l'associé à contacter.</p>
-      </div>
-      <div class="partners__grid" id="partnersGrid">
-        <article class="person rv" data-tilt data-person="rachel">
-          <span class="person__mark outline" aria-hidden="true">R</span>
-          <span class="person__flag">Votre interlocutrice</span>
-          <div class="person__top">
-            <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" width="150" height="268" loading="lazy"></div>
-            <div><h3>Rachel Illouz</h3><b>Associée · Expert-comptable</b><span class="person__focus">International &amp; implantation en France</span></div>
-          </div>
-          <p>Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.</p>
-          <ul class="person__tags"><li>Sociétés étrangères</li><li>Filiales de groupes</li><li>Reporting FR / EN</li></ul>
-          <div class="person__actions"><a class="btn btn--dark btn--sm" href="tel:+33624126769">Appeler Rachel <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-        </article>
-        <article class="person rv" data-tilt data-person="benjamin" style="--rd:.1s">
-          <span class="person__mark outline" aria-hidden="true">B</span>
-          <span class="person__flag">Votre interlocuteur</span>
-          <div class="person__top">
-            <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" width="147" height="270" loading="lazy"></div>
-            <div><h3>Benjamin Haziza</h3><b>Associé · Expert-comptable</b><span class="person__focus">Start-up, entrepreneurs &amp; indépendants</span></div>
-          </div>
-          <p>Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.</p>
-          <ul class="person__tags"><li>Start-up</li><li>Indépendants</li><li>Structuration</li></ul>
-          <div class="person__actions"><a class="btn btn--dark btn--sm" href="#contact" data-booking="benjamin">Prendre rendez-vous avec Benjamin <span>→</span></a><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-        </article>
-      </div>
-    </div>
-  </section>
+
 
 
   <section class="sec sec--paper" id="guides">
