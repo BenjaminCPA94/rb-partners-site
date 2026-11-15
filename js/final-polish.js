@@ -111,7 +111,8 @@
   // cannot be framed (CSP frame-ancestors) and opens in a new tab instead.
   const BOOKING_LINKS = {
     rachel: '',
-    benjamin: 'https://bookings.cloud.microsoft/bookwithme/user/76097a79c137416f80fff3340477264d@meyvin-experts.com/meetingtype/gTXh3zuDS0ycWsHJGiYOKw2?anonymous&ismsaljsauthenabled&ep=mlink',
+    // Shared Microsoft Bookings page "MEYVIN" (logo, navy theme, qualification questions)
+    benjamin: 'https://bookings.cloud.microsoft/book/MEYVIN1@meyvin-experts.com/?ismsaljsauthenabled',
   };
   const PARTNER_NAMES = { rachel: 'Rachel Illouz', benjamin: 'Benjamin Haziza' };
   // Booking pages that accept being shown inside the site (Cal.com).
