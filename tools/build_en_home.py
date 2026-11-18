@@ -18,7 +18,7 @@ T = {
  "Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.":"Rachel built her expertise within international accounting firms, supporting European, US and Asian companies with their establishment and development in France. She assists foreign groups with the accounting, tax and operational challenges of entering the French market.",
  "Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.":"Benjamin began his career at Ernst &amp; Young (EY), auditing large corporate accounts, before moving into public accounting and entrepreneurial advisory. He now supports start-ups and independent professionals with accounting, tax, finance and structuring matters.",
  "Sociétés étrangères":"Foreign companies", "Filiales de groupes":"Group subsidiaries", "Start-up":"Start-ups", "Indépendants":"Independent professionals", "Structuration":"Structuring",
- "Appeler Rachel":"Call Rachel", "Prendre rendez-vous avec Benjamin":"Book a meeting with Benjamin",
+ "Appeler Rachel":"Call Rachel", "Téléphone &amp; WhatsApp":"Phone &amp; WhatsApp", "Prendre rendez-vous avec Benjamin":"Book a meeting with Benjamin",
  "Meyvin, accueil":"Meyvin, home", "Navigation principale":"Main navigation",
  "Nos missions":"Our services", "Implantation en France":"Setting up in France", "Le cabinet":"The firm", "Ressources":"Resources",
  "Prendre rendez-vous":"Book a meeting", "Ouvrir le menu":"Open menu",
@@ -98,7 +98,7 @@ T = {
  "Mentions légales":"Legal notice", "Confidentialité":"Privacy",
 }
 SAME = {"M","Meyvin","Contact","→","FR · EN","Pennylane · Silae","MEYVIN · FRANCE","01","02","03","04","05","06","Reporting FR / EN","01 / 04","Signature","J","F","A","S","O","N","D",
- "Reporting","FR","EN","R","B","Subsidiary","FRENCH","COMPANY","Liaison","office","NON-TRADING","PRESENCE","Version française","Factur-X","01 / 03","FRANCE","FR / EN","HQ","Rachel Illouz","Benjamin Haziza","LinkedIn ↗","%","¶","FAQ","?","+","contact@meyvin.fr","Paris, France","Message",".","International","Blog","©","2026","·"}
+ "Reporting","FR","EN","WhatsApp","WhatsApp Rachel","WhatsApp Benjamin","R","B","Subsidiary","FRENCH","COMPANY","Liaison","office","NON-TRADING","PRESENCE","Version française","Factur-X","01 / 03","FRANCE","FR / EN","HQ","Rachel Illouz","Benjamin Haziza","LinkedIn ↗","%","¶","FAQ","?","+","contact@meyvin.fr","Paris, France","Message",".","International","Blog","©","2026","·"}
 LINKS = {
  "expertises/comptabilite.html":"expertises/accounting-compliance-france.html", "expertises/fiscalite.html":"expertises/french-tax-advisory.html",
  "expertises/social-paie.html":"expertises/payroll-hr-france.html", "expertises/conseil-gestion.html":"expertises/management-reporting-france.html",
@@ -168,6 +168,8 @@ assert not missing, missing
 
 rep('data-idle="Choisissez votre situation : nous vous indiquons l\'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza."','data-idle="Pick your situation: we point you to the partner to contact." data-rachel="Your contact: Rachel Illouz." data-benjamin="Your contact: Benjamin Haziza."')
 rep('href="tel:+33624126769">Call Rachel','href="tel:+33624126769">Call Rachel')
+rep('Bonjour%20Rachel%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Rachel%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
+rep('Bonjour%20Benjamin%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Benjamin%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
 # ---- strings held in the page script ----
 rep("const words = ['Comptabilité', 'Fiscalité', 'Paie & social', 'Juridique', 'Création d’entreprise', 'Implantation en France', 'Reporting FR / EN', 'Conseil au dirigeant'];","const words = ['Accounting', 'French tax', 'Payroll & HR', 'Legal', 'Company formation', 'France market entry', 'FR / EN reporting', 'Owner-manager advisory'];")
 rep("const TITLES = ['Création de société', 'Comptabilité au fil de l’eau', 'Tableau de bord', 'Implantation en France'];","const TITLES = ['Company formation', 'Day-to-day bookkeeping', 'Dashboard', 'Setting up in France'];")

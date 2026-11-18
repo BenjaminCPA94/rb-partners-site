@@ -24,6 +24,7 @@
     addCss('css/final-polish.css');
     addJs('js/final-polish.js');
     addJs('js/ed-motion.js');
+    addJs('js/contact-fab.js');
     return;
   }
   // The stylesheets are linked in each page's <head>, so the first paint is
@@ -33,6 +34,7 @@
   if (!document.querySelector('link[href$="css/editorial.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
   // editorial.js goes first: it sets the accent of the main title, which changes how the title wraps
   if (editorial) { addJs('js/editorial.js'); addJs('js/ed-motion.js'); }
+  addJs('js/contact-fab.js');
   if (document.querySelector('main > .mission-hero')) addJs('js/scenes.js');
   if (document.querySelector('.article-body, .blog-card__category')) addJs('js/blog.js');
 
