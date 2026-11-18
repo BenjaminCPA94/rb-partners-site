@@ -109,11 +109,10 @@
   // keeps showing the preview calendar below. A Cal.com link is displayed
   // inside the modal (calendar + time slots); a Microsoft Bookings link
   // cannot be framed (CSP frame-ancestors) and opens in a new tab instead.
-  const BOOKING_LINKS = {
-    rachel: '',
-    // Shared Microsoft Bookings page "MEYVIN" (logo, navy theme, qualification questions)
-    benjamin: 'https://bookings.cloud.microsoft/book/MEYVIN1@meyvin-experts.com/?ismsaljsauthenabled',
-  };
+  // One shared Microsoft Bookings page "MEYVIN" (logo, navy theme, qualification
+  // questions) for both partners: the client picks the partner on that page.
+  const MEYVIN_BOOKING = 'https://bookings.cloud.microsoft/book/MEYVIN1@meyvin-experts.com/?ismsaljsauthenabled';
+  const BOOKING_LINKS = { rachel: MEYVIN_BOOKING, benjamin: MEYVIN_BOOKING };
   const PARTNER_NAMES = { rachel: 'Rachel Illouz', benjamin: 'Benjamin Haziza' };
   // Booking pages that accept being shown inside the site (Cal.com).
   const EMBEDDABLE = /^https:\/\/([a-z0-9-]+\.)?cal\.(com|eu)\//i;
