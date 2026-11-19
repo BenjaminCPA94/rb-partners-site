@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meyvin — pistes de logo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+  :root { --navy: #0b1d3a; --acc: #c6a15b; --paper: #ffffff; --soft: #f3f4f6; --ink: #16202e; --muted: #5d6573; --line: rgba(11,29,58,.12); }
+  body[data-acc="teal"] { --acc: #1f8a7a; }
+  body[data-acc="navy"] { --acc: #0b1d3a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif; color: var(--ink); background: var(--soft); -webkit-font-smoothing: antialiased; }
+  .wrap { width: min(1180px, 100%); margin: 0 auto; padding: 0 20px; }
+  .top { padding: 44px 0 20px; }
+  .top h1 { margin: 0 0 10px; font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.1; letter-spacing: -.02em; }
+  .top p { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.65; }
+  .tools { position: sticky; top: 0; z-index: 5; background: rgba(243,244,246,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .tools .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding-top: 12px; padding-bottom: 12px; }
+  .tools b { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+  .seg button { padding: 8px 14px; border: 0; background: transparent; font: 600 .84rem 'Inter', sans-serif; color: var(--navy); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+  .replay { margin-left: auto; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--navy); background: transparent; font: 600 .84rem 'Inter', sans-serif; color: var(--navy); cursor: pointer; }
+  .replay:hover { background: var(--navy); color: #fff; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; padding: 22px 0 70px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .card__tag { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 22px 0; }
+  .card__tag strong { font-size: 1.02rem; }
+  .card__tag span { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .stage { display: grid; place-items: center; min-height: 190px; padding: 26px; }
+  .stage--dark { background: var(--navy); }
+  .stage--dark .word { color: #fff; }
+  .row { display: grid; grid-template-columns: 1.5fr 1fr; border-top: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 18px; background: #fffdf8; border-right: 1px solid var(--line); }
+  .bar nav { display: flex; gap: 14px; font-size: .74rem; font-weight: 500; color: var(--navy); white-space: nowrap; }
+  .tiny { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 12px; background: #fff; }
+  .why { margin: 0; padding: 16px 22px 22px; font-size: .9rem; line-height: 1.6; color: var(--muted); border-top: 1px solid var(--line); }
+
+  /* ---- logo parts ---- */
+  .logo { display: inline-flex; align-items: center; gap: 12px; color: var(--navy); }
+  .stage--dark .logo { color: #fff; }
+  .logo svg { display: block; overflow: visible; }
+  .logo--l svg { width: 74px; height: 74px; }
+  .logo--m svg { width: 34px; height: 34px; }
+  .logo--s svg { width: 20px; height: 20px; }
+  .word { font-weight: 600; letter-spacing: -.02em; color: var(--navy); line-height: 1; }
+  .logo--l .word { font-size: 2.6rem; }
+  .logo--m .word { font-size: 1.25rem; }
+  .word--low { font-weight: 600; letter-spacing: -.03em; text-transform: none; }
+  .st { stroke: currentColor; }
+  .acc { fill: var(--acc); }
+  .accs { stroke: var(--acc); }
+  .stage--dark .st { stroke: #fff; }
+  .stage--dark .tile { fill: #fff; }
+  .stage--dark .tile-m { stroke: var(--navy); }
+
+  /* the "i" of the dotted wordmark: dotless i + a square */
+  .i { position: relative; display: inline-block; }
+  .i::after { content: ""; position: absolute; left: 50%; top: -.04em; width: .17em; height: .17em; margin-left: -.085em; background: var(--acc); transform-origin: center; }
+
+  /* ---- animations (run on load, replayed by the button) ---- */
+  .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .play .draw { animation: draw 1.1s cubic-bezier(.6,0,.2,1) forwards; animation-delay: var(--d, 0s); }
+  .play .draw2 { animation-delay: .5s; }
+  .pop { opacity: 0; transform-box: fill-box; transform-origin: center; }
+  .play .pop { animation: pop .6s cubic-bezier(.16,1,.3,1) forwards; animation-delay: var(--d, 0s); }
+  .slide { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); }
+  .play .slide { animation: slide .7s cubic-bezier(.16,1,.3,1) forwards; animation-delay: var(--d, 0s); }
+  .rise { opacity: 0; transform: translateY(8px); display: inline-block; }
+  .play .rise { animation: rise .7s cubic-bezier(.16,1,.3,1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
+  @keyframes slide { to { transform: scaleX(1); } }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .logo .idle { opacity: 1; transform: none; stroke-dashoffset: 0; }
+  @media (prefers-reduced-motion: reduce) { .draw { stroke-dashoffset: 0 !important; animation: none !important; } .pop, .rise { opacity: 1 !important; transform: none !important; animation: none !important; } .slide { transform: none !important; animation: none !important; } }
+
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } .bar { border-right: 0; border-bottom: 1px solid var(--line); } .replay { margin-left: 0; } }
+</style>
+</head>
+<body data-acc="gold">
+
+<header class="top"><div class="wrap">
+  <h1>Pistes de logo pour Meyvin</h1>
+  <p>Le logo actuel (pièce dorée, serif, médaillon) évoque plus la confiserie ou la bijouterie que l'expertise comptable. Voici cinq pistes plus sobres, avec chacune sa logique. Ce sont des esquisses : une fois la direction choisie, on les affine (tracé définitif, lettres dessinées). Changez la couleur d'accent en haut pour voir l'effet de l'or.</p>
+</div></header>
+
+<div class="tools"><div class="wrap">
+  <b>Accent</b>
+  <div class="seg" role="group" aria-label="Couleur d'accent" id="accSeg">
+    <button type="button" data-acc="gold" aria-pressed="true">Or</button>
+    <button type="button" data-acc="teal" aria-pressed="false">Vert d'eau</button>
+    <button type="button" data-acc="navy" aria-pressed="false">Aucun</button>
+  </div>
+  <button type="button" class="replay" id="replay">↻ Rejouer les animations</button>
+</div></div>
+
+<main class="wrap"><div class="grid" id="grid">
+
+  <!-- 0 · actuel -->
+  <article class="card">
+    <div class="card__tag"><strong>Actuel</strong><span>Pour comparer</span></div>
+    <div class="stage"><span class="logo logo--l"><img src="assets/logo-meyvin-mark.png" alt="" width="74" height="74" style="border-radius:50%"><span class="word" style="font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:0">Meyvin</span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l"><img src="assets/logo-meyvin-mark.png" alt="" width="74" height="74" style="border-radius:50%"><span class="word" style="font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:0;color:#fff">Meyvin</span></span></div>
+    <p class="why">Un médaillon rond, un « M » doré et une police à empattements : ces trois codes sont ceux du chocolat, de la bijouterie, du « luxe ». Ils disent peu de choses de la rigueur chiffrée.</p>
+  </article>
+
+  <!-- A · tuile -->
+  <article class="card" data-logo="a">
+    <div class="card__tag"><strong>A · La tuile</strong><span>Sobre</span></div>
+    <div class="stage"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect class="tile pop" style="--d:0s" width="64" height="64" rx="14" fill="#0b1d3a"/><path class="draw tile-m" style="--d:.25s" pathLength="1" d="M17 48V19L32 37 47 19V48" fill="none" stroke="#fff" stroke-width="6.5" stroke-linejoin="miter" stroke-miterlimit="6"/><rect class="acc pop" style="--d:1.1s" x="45" y="9" width="9" height="9"/></svg>
+      <span class="word rise" style="--d:.9s">Meyvin</span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect class="tile pop" style="--d:0s" width="64" height="64" rx="14" fill="#fff"/><path class="draw tile-m" style="--d:.25s" pathLength="1" d="M17 48V19L32 37 47 19V48" fill="none" stroke="#0b1d3a" stroke-width="6.5" stroke-miterlimit="6"/><rect class="acc pop" style="--d:1.1s" x="45" y="9" width="9" height="9"/></svg>
+      <span class="word rise" style="--d:.9s">Meyvin</span></span></div>
+    <div class="row">
+      <div class="bar"><span class="logo logo--m"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b1d3a"/><path d="M17 48V19L32 37 47 19V48" fill="none" stroke="#fff" stroke-width="6.5" stroke-miterlimit="6"/><rect class="acc" x="45" y="9" width="9" height="9"/></svg><span class="word">Meyvin</span></span><nav><span>Le cabinet</span><span>Missions</span><span>Contact</span></nav></div>
+      <div class="tiny"><svg width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1d3a"/><path d="M17 48V19L32 37 47 19V48" fill="none" stroke="#fff" stroke-width="6.5" stroke-miterlimit="6"/><rect class="acc" x="45" y="9" width="9" height="9"/></svg><svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1d3a"/><path d="M17 48V19L32 37 47 19V48" fill="none" stroke="#fff" stroke-width="7.5" stroke-miterlimit="6"/><rect class="acc" x="45" y="9" width="9" height="9"/></svg></div>
+    </div>
+    <p class="why">Un carré aux angles arrondis et un M géométrique blanc : net, lisible jusqu'à 16 pixels (icône du navigateur, avatar LinkedIn). Le petit carré d'accent rappelle une case cochée ou un point de pointage. Aucun ornement.</p>
+  </article>
+
+  <!-- B · trait de total -->
+  <article class="card" data-logo="b">
+    <div class="card__tag"><strong>B · Le trait de total</strong><span>Clin d'œil métier</span></div>
+    <div class="stage"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="draw st" style="--d:0s" pathLength="1" d="M10 44V10L32 34 54 10V44" fill="none" stroke="#0b1d3a" stroke-width="7" stroke-miterlimit="6"/><rect class="slide" style="--d:.95s;fill:currentColor" x="10" y="51" width="44" height="3.5"/><rect class="slide acc" style="--d:1.15s" x="10" y="58" width="44" height="3.5"/></svg>
+      <span class="word rise" style="--d:.7s">Meyvin</span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="draw st" style="--d:0s" pathLength="1" d="M10 44V10L32 34 54 10V44" fill="none" stroke="#fff" stroke-width="7" stroke-miterlimit="6"/><rect class="slide" style="--d:.95s" x="10" y="51" width="44" height="3.5" fill="#fff"/><rect class="slide acc" style="--d:1.15s" x="10" y="58" width="44" height="3.5"/></svg>
+      <span class="word rise" style="--d:.7s">Meyvin</span></span></div>
+    <div class="row">
+      <div class="bar"><span class="logo logo--m"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 44V10L32 34 54 10V44" fill="none" stroke="#0b1d3a" stroke-width="7" stroke-miterlimit="6"/><rect x="10" y="51" width="44" height="3.5" fill="#0b1d3a"/><rect class="acc" x="10" y="58" width="44" height="3.5"/></svg><span class="word">Meyvin</span></span><nav><span>Le cabinet</span><span>Missions</span><span>Contact</span></nav></div>
+      <div class="tiny"><svg width="32" height="32" viewBox="0 0 64 64"><path d="M10 44V10L32 34 54 10V44" fill="none" stroke="#0b1d3a" stroke-width="7" stroke-miterlimit="6"/><rect x="10" y="51" width="44" height="3.5" fill="#0b1d3a"/><rect class="acc" x="10" y="58" width="44" height="3.5"/></svg><svg width="16" height="16" viewBox="0 0 64 64"><path d="M10 44V10L32 34 54 10V44" fill="none" stroke="#0b1d3a" stroke-width="8" stroke-miterlimit="6"/><rect x="10" y="51" width="44" height="5" fill="#0b1d3a"/><rect class="acc" x="10" y="59" width="44" height="5"/></svg></div>
+    </div>
+    <p class="why">Le double trait sous le M est celui qu'on tire sous un total dans une comptabilité. Vos confrères le reconnaissent, les autres y voient un soulignement discret. À l'animation, les deux traits se tirent l'un après l'autre : le geste du comptable qui arrête un compte.</p>
+  </article>
+
+  <!-- C · arches -->
+  <article class="card" data-logo="c">
+    <div class="card__tag"><strong>C · Les arches</strong><span>Lien avec l'international</span></div>
+    <div class="stage"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="draw st" style="--d:0s" pathLength="1" d="M10 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#0b1d3a" stroke-width="7"/><path class="draw accs" style="--d:.55s" pathLength="1" d="M32 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#c6a15b" stroke-width="7"/></svg>
+      <span class="word word--low rise" style="--d:.9s">meyvin</span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="draw st" style="--d:0s" pathLength="1" d="M10 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#fff" stroke-width="7"/><path class="draw accs" style="--d:.55s" pathLength="1" d="M32 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#c6a15b" stroke-width="7"/></svg>
+      <span class="word word--low rise" style="--d:.9s">meyvin</span></span></div>
+    <div class="row">
+      <div class="bar"><span class="logo logo--m"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#0b1d3a" stroke-width="7"/><path class="accs" d="M32 54V30a11 11 0 0 1 22 0V54" fill="none" stroke-width="7"/></svg><span class="word word--low">meyvin</span></span><nav><span>Le cabinet</span><span>Missions</span><span>Contact</span></nav></div>
+      <div class="tiny"><svg width="32" height="32" viewBox="0 0 64 64"><path d="M10 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#0b1d3a" stroke-width="7"/><path class="accs" d="M32 54V30a11 11 0 0 1 22 0V54" fill="none" stroke-width="7"/></svg><svg width="16" height="16" viewBox="0 0 64 64"><path d="M10 54V30a11 11 0 0 1 22 0V54" fill="none" stroke="#0b1d3a" stroke-width="9"/><path class="accs" d="M32 54V30a11 11 0 0 1 22 0V54" fill="none" stroke-width="9"/></svg></div>
+    </div>
+    <p class="why">Deux arches côte à côte forment un « m » minuscule, et l'image d'un pont : le lien entre un siège à l'étranger et la France, qui est votre pôle international. La seconde arche prend la couleur d'accent. Le plus original des cinq, et celui qui s'éloigne le plus des codes habituels.</p>
+  </article>
+
+  <!-- D · mot seul -->
+  <article class="card" data-logo="d">
+    <div class="card__tag"><strong>D · Le mot seul</strong><span>Le plus épuré</span></div>
+    <div class="stage"><span class="logo logo--l" data-anim><span class="word word--low"><span class="rise" style="--d:0s">mey</span><span class="rise" style="--d:.1s">v</span><span class="rise i" style="--d:.2s">&#305;</span><span class="rise" style="--d:.3s">n</span></span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l" data-anim><span class="word word--low"><span class="rise" style="--d:0s">mey</span><span class="rise" style="--d:.1s">v</span><span class="rise i" style="--d:.2s">&#305;</span><span class="rise" style="--d:.3s">n</span></span></span></div>
+    <div class="row">
+      <div class="bar"><span class="logo logo--m"><span class="word word--low">mey<span style="position:relative;display:inline-block">v</span><span class="i">&#305;</span>n</span></span><nav><span>Le cabinet</span><span>Missions</span><span>Contact</span></nav></div>
+      <div class="tiny"><svg width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1d3a"/><text x="32" y="46" text-anchor="middle" font-family="Inter" font-weight="700" font-size="40" fill="#fff" letter-spacing="-2">m</text><rect class="acc" x="46" y="12" width="9" height="9"/></svg><svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1d3a"/><text x="32" y="47" text-anchor="middle" font-family="Inter" font-weight="700" font-size="42" fill="#fff" letter-spacing="-2">m</text><rect class="acc" x="46" y="10" width="10" height="10"/></svg></div>
+    </div>
+    <p class="why">Aucun symbole : le nom, en minuscules, avec le point du « i » remplacé par un petit carré, celui d'une case de pointage. Le plus moderne et le moins chargé. Pour l'icône du navigateur, on garde un « m » dans une tuile.</p>
+  </article>
+
+  <!-- E · pièce -->
+  <article class="card" data-logo="e">
+    <div class="card__tag"><strong>E · La pièce comptable</strong><span>Raconte le métier</span></div>
+    <div class="stage"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="pop" style="--d:0s" d="M4 14a10 10 0 0 1 10-10H42L60 22V50a10 10 0 0 1-10 10H14A10 10 0 0 1 4 50Z" fill="#0b1d3a"/><path class="acc pop" style="--d:.5s" d="M42 4 60 22H46a4 4 0 0 1-4-4Z"/><path class="draw" style="--d:.3s" pathLength="1" d="M17 47V25L30 39 43 25V47" fill="none" stroke="#fff" stroke-width="5.5" stroke-miterlimit="6"/></svg>
+      <span class="word rise" style="--d:.9s">Meyvin</span></span></div>
+    <div class="stage stage--dark"><span class="logo logo--l" data-anim>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path class="pop" style="--d:0s" d="M4 14a10 10 0 0 1 10-10H42L60 22V50a10 10 0 0 1-10 10H14A10 10 0 0 1 4 50Z" fill="#fff"/><path class="acc pop" style="--d:.5s" d="M42 4 60 22H46a4 4 0 0 1-4-4Z"/><path class="draw" style="--d:.3s" pathLength="1" d="M17 47V25L30 39 43 25V47" fill="none" stroke="#0b1d3a" stroke-width="5.5" stroke-miterlimit="6"/></svg>
+      <span class="word rise" style="--d:.9s">Meyvin</span></span></div>
+    <div class="row">
+      <div class="bar"><span class="logo logo--m"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M4 14a10 10 0 0 1 10-10H42L60 22V50a10 10 0 0 1-10 10H14A10 10 0 0 1 4 50Z" fill="#0b1d3a"/><path class="acc" d="M42 4 60 22H46a4 4 0 0 1-4-4Z"/><path d="M17 47V25L30 39 43 25V47" fill="none" stroke="#fff" stroke-width="5.5" stroke-miterlimit="6"/></svg><span class="word">Meyvin</span></span><nav><span>Le cabinet</span><span>Missions</span><span>Contact</span></nav></div>
+      <div class="tiny"><svg width="32" height="32" viewBox="0 0 64 64"><path d="M4 14a10 10 0 0 1 10-10H42L60 22V50a10 10 0 0 1-10 10H14A10 10 0 0 1 4 50Z" fill="#0b1d3a"/><path class="acc" d="M42 4 60 22H46a4 4 0 0 1-4-4Z"/><path d="M17 47V25L30 39 43 25V47" fill="none" stroke="#fff" stroke-width="5.5" stroke-miterlimit="6"/></svg><svg width="16" height="16" viewBox="0 0 64 64"><path d="M4 14a10 10 0 0 1 10-10H42L60 22V50a10 10 0 0 1-10 10H14A10 10 0 0 1 4 50Z" fill="#0b1d3a"/><path class="acc" d="M42 4 60 22H46a4 4 0 0 1-4-4Z"/><path d="M17 47V25L30 39 43 25V47" fill="none" stroke="#fff" stroke-width="7" stroke-miterlimit="6"/></svg></div>
+    </div>
+    <p class="why">Une feuille au coin plié, une pièce, une facture, un justificatif : l'objet du quotidien du cabinet, avec le M dessus. Le coin plié prend la couleur d'accent. Plus parlant que la tuile A, un peu moins épuré.</p>
+  </article>
+
+</div></main>
+
+<script>
+(() => {
+  const logos = [...document.querySelectorAll('[data-anim]')];
+  const play = () => {
+    logos.forEach((l) => l.classList.remove('play'));
+    void document.body.offsetWidth;
+    logos.forEach((l) => l.classList.add('play'));
+  };
+  document.getElementById('replay').addEventListener('click', play);
+  document.querySelectorAll('#accSeg button').forEach((b) => b.addEventListener('click', () => {
+    document.body.dataset.acc = b.dataset.acc;
+    document.querySelectorAll('#accSeg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    // arches draw their second stroke in the accent colour
+    document.querySelectorAll('[data-logo="c"] .logo--l path:nth-of-type(2)').forEach((p) => { p.setAttribute('stroke', getComputedStyle(document.body).getPropertyValue('--acc')); });
+  }));
+  // play when a card scrolls into view
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('play'); io.unobserve(e.target); } }), { threshold: 0.4 });
+  logos.forEach((l) => io.observe(l));
+})();
+</script>
+</body>
+</html>
