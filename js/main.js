@@ -103,6 +103,17 @@ if (nav) nav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+// Escape closes the mobile menu and gives the focus back to its button
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const b = document.getElementById('burger');
+  const n = document.getElementById('nav');
+  if (!b || !n || !n.classList.contains('is-open')) return;
+  n.classList.remove('is-open');
+  b.setAttribute('aria-expanded', 'false');
+  b.focus();
+});
+
 // Call dropdown
 const callToggle = document.getElementById('call-toggle');
 const callPanel = document.getElementById('call-panel');
@@ -184,32 +195,74 @@ document.addEventListener('rb:content-upgraded', () => {
   requestAnimationFrame(addProgressiveReveals);
 });
 
+// Skip link: lets keyboard users jump past the header to the content.
+(() => {
+  const target = document.querySelector('main');
+  if (!target || document.querySelector('.skip-link')) return;
+  if (!target.id) target.id = 'contenu';
+  target.setAttribute('tabindex', '-1');
+  const lang = (document.documentElement.lang || 'fr') === 'en' ? 'en' : 'fr';
+  const link = document.createElement('a');
+  link.className = 'skip-link';
+  link.href = `#${target.id}`;
+  link.textContent = lang === 'en' ? 'Skip to content' : 'Aller au contenu';
+  const style = document.createElement('style');
+  style.textContent = '.skip-link{position:fixed;left:12px;top:-60px;z-index:100000;padding:12px 18px;border-radius:6px;background:#0b1d3a;color:#fff;font:600 .9rem Inter,sans-serif;text-decoration:none;transition:top .2s ease}.skip-link:focus{top:12px;outline:3px solid #9bb5ff;outline-offset:2px}main:focus{outline:none}';
+  document.head.appendChild(style);
+  document.body.prepend(link);
+})();
+
 // Contact form — submits the lead by email via FormSubmit (formsubmit.co), a
 // zero-backend relay: the first real submission triggers a one-time
 // confirmation link sent to contact@meyvin.fr that must be clicked to
-// activate delivery. Falls back to a pre-filled mailto: draft if the
-// request fails (offline, relay down, confirmation not yet done), so a
-// lead is never silently lost.
+// activate delivery. If the relay refuses (offline, relay down, activation
+// not done) the visitor's mail app opens with the request pre-filled, and the
+// page says plainly that the message still has to be sent from there.
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
+const PROJECTS = {
+  fr: { suivi: 'Suivre ma comptabilité', creation: 'Créer mon entreprise', filiale: 'Accompagner ma filiale française', autre: 'Autre demande' },
+  en: { suivi: 'Keep my accounts', creation: 'Start my company', filiale: 'Support my French subsidiary', autre: 'Other request' },
+};
+const FORM_TEXT = {
+  fr: {
+    subject: 'Demande de contact — Meyvin',
+    success: 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
+    fallback: 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin.fr.',
+    labels: { name: 'Nom', email: 'E-mail', project: 'Projet', message: 'Message' },
+  },
+  en: {
+    subject: 'Contact request — Meyvin',
+    success: 'Thank you, your request has been sent. We will get back to you shortly.',
+    fallback: 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin.fr.',
+    labels: { name: 'Name', email: 'Email', project: 'Project', message: 'Message' },
+  },
+};
+const setStatus = (text, state) => {
+  if (!status) return;
+  status.textContent = text;
+  status.dataset.state = state || '';
+  if (state) status.focus({ preventScroll: false });
+};
+// Opening the mail app is isolated here so it can be observed in tests.
+const openMail = (url) => (window.rbOpenMail || ((u) => { window.location.href = u; }))(url);
+
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     const data = new FormData(form);
-    const lang = window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr';
-    const company = data.get('company') === 'etrangere'
-      ? (lang === 'en' ? 'Foreign company / France market entry' : 'Société étrangère / implantation en France')
-      : (lang === 'en' ? 'French company' : 'Société française');
-    const subject = lang === 'en' ? 'Contact request — Meyvin' : 'Demande de contact — Meyvin';
+    const lang = (window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr') === 'en' ? 'en' : 'fr';
+    const t = FORM_TEXT[lang];
+    const project = PROJECTS[lang][data.get('project')] || PROJECTS[lang].autre;
+    const subject = `${t.subject} · ${project}`;
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const fallbackToMailto = () => {
-      const body = lang === 'en'
-        ? `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${company}\n\nMessage:\n${data.get('message')}`
-        : `Nom : ${data.get('name')}\nEmail : ${data.get('email')}\nSociété : ${company}\n\nMessage :\n${data.get('message')}`;
-      status.textContent = window.rbI18n ? window.rbI18n.get('form.fallback') : (lang === 'en' ? 'Your email app will open with your request pre-filled.' : 'Votre messagerie va s’ouvrir avec votre demande préremplie.');
-      window.location.href = `mailto:contact@meyvin.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const c = lang === 'fr' ? ' : ' : ': ';
+      const body = `${t.labels.name}${c}${data.get('name')}\n${t.labels.email}${c}${data.get('email')}\n${t.labels.project}${c}${project}\n\n${t.labels.message}${c.trim()}\n${data.get('message')}`;
+      setStatus(window.rbI18n?.get?.('form.fallback') || t.fallback, 'fallback');
+      openMail(`mailto:contact@meyvin.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
     };
 
     if (submitBtn) submitBtn.disabled = true;
@@ -220,15 +273,18 @@ if (form) {
         body: JSON.stringify({
           name: data.get('name'),
           email: data.get('email'),
-          company,
+          [t.labels.project]: project,
           message: data.get('message'),
           _subject: subject,
+          _replyto: data.get('email'),
           _template: 'table',
           _captcha: 'false',
         }),
       });
-      if (!res.ok) throw new Error('FormSubmit error');
-      status.textContent = window.rbI18n ? window.rbI18n.get('form.success') : (lang === 'en' ? 'Thank you, your request has been sent. We will get back to you shortly.' : 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.');
+      // FormSubmit answers 200 with success:"false" while the address is not yet activated.
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || String(out.success).toLowerCase() === 'false') throw new Error('FormSubmit refused');
+      setStatus(window.rbI18n?.get?.('form.success') || t.success, 'ok');
       form.reset();
     } catch (err) {
       fallbackToMailto();

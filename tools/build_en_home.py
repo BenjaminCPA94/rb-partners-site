@@ -8,6 +8,12 @@ fr=open(REPO+'index.html',encoding='utf-8').read()
 en_old=open(REPO+'french-accountant-paris.html',encoding='utf-8').read() if len(sys.argv)<2 else open(sys.argv[1],encoding='utf-8').read()
 
 T = {
+ "Expertise comptable à Paris · France &amp; international":"Accounting firm in Paris · France &amp; international",
+ "Vos comptes en France.":"Your accounts in France.", "Un associé à vos côtés.":"A partner by your side.",
+ "Rachel Illouz et Benjamin Haziza accompagnent les entrepreneurs et les filiales de groupes étrangers, de la création d'entreprise au reporting en anglais.":"Rachel Illouz and Benjamin Haziza support entrepreneurs and subsidiaries of foreign groups, from company formation to English-language reporting.",
+ "Réserver un premier échange":"Book a first conversation", "Découvrir le cabinet":"Discover the firm", "30 min en visio avec un associé":"30 min by video call with a partner",
+ "Les deux associés":"The two partners",
+ "Quel est votre projet ?":"What is your project?", "Choisir une réponse":"Choose an answer", "Suivre ma comptabilité":"Keep my accounts", "Créer mon entreprise":"Start my company", "Accompagner ma filiale française":"Support my French subsidiary", "Autre demande":"Other request",
  "Les associés":"The partners", "Notre approche":"Our approach", "Guides pratiques":"Practical guides",
  "Quelle est votre situation ?":"What is your situation?", "Votre situation":"Your situation",
  "Je crée ou développe mon entreprise":"I am starting or growing my business", "Indépendant ou profession libérale":"Self-employed or independent professional",
@@ -120,8 +126,8 @@ def rep(old,new,count=1):
 rep('<html lang="fr" class="ed" data-ed-home>','<html lang="en" class="ed" data-ed-home>')
 rep('<a class="top__lang" href="french-accountant-paris.html" hreflang="en" lang="en" title="English version">EN</a>','<a class="top__lang" href="index.html?lang=fr" hreflang="fr" lang="fr" title="Version française">FR</a>')
 rep('<a href="french-accountant-paris.html">English version</a>','<a href="index.html?lang=fr" hreflang="fr" lang="fr">Version française</a>')
-rep('>SOCIÉTÉ</text><text x="116" y="227" class="t-caps" font-size="7" fill="#e2c48a">FRANÇAISE<','>FRENCH</text><text x="116" y="227" class="t-caps" font-size="7" fill="#e2c48a">COMPANY<')
-rep('>SANS ACTIVITÉ</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#e2c48a">COMMERCIALE<','>NON-TRADING</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#e2c48a">PRESENCE<')
+rep('>SOCIÉTÉ</text><text x="116" y="227" class="t-caps" font-size="7" fill="#9bb5ff">FRANÇAISE<','>FRENCH</text><text x="116" y="227" class="t-caps" font-size="7" fill="#9bb5ff">COMPANY<')
+rep('>SANS ACTIVITÉ</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#9bb5ff">COMMERCIALE<','>NON-TRADING</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#9bb5ff">PRESENCE<')
 rep('<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Filiale</text>','<text x="116" y="124" class="t-serif" font-size="12.500" fill="#fff">Subsidiary</text>')
 rep('<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Bureau</text>','<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Liaison</text>')
 rep('<text x="116" y="141" class="t-serif" font-size="14" fill="#fff">de liaison</text>','<text x="116" y="141" class="t-serif" font-size="14" fill="#fff">office</text>')
@@ -171,7 +177,6 @@ rep('href="tel:+33624126769">Call Rachel','href="tel:+33624126769">Call Rachel')
 rep('Bonjour%20Rachel%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Rachel%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
 rep('Bonjour%20Benjamin%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Benjamin%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
 # ---- strings held in the page script ----
-rep("const words = ['Comptabilité', 'Fiscalité', 'Paie & social', 'Juridique', 'Création d’entreprise', 'Implantation en France', 'Reporting FR / EN', 'Conseil au dirigeant'];","const words = ['Accounting', 'French tax', 'Payroll & HR', 'Legal', 'Company formation', 'France market entry', 'FR / EN reporting', 'Owner-manager advisory'];")
 rep("const TITLES = ['Création de société', 'Comptabilité au fil de l’eau', 'Tableau de bord', 'Implantation en France'];","const TITLES = ['Company formation', 'Day-to-day bookkeeping', 'Dashboard', 'Setting up in France'];")
 open(REPO+'french-accountant-paris.html','w',encoding='utf-8').write(s)
 # leftovers: French-looking words still in the visible body

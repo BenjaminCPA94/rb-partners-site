@@ -4,9 +4,9 @@
   --navy-900: #0b1d3a;
   --navy-800: #142c54;
   --navy-700: #1e3a63;
-  --gold-500: #c6a15b;
-  --gold-400: #d8b876;
-  --gold-100: #f1e4c8;
+  --gold-500: #1f4fd6;
+  --gold-400: #3a63e0;
+  --gold-100: #dfe7ff;
   --cream: #f7f4ee;
   --white: #ffffff;
   --ink: #16202e;
@@ -184,7 +184,7 @@ p { color: var(--gray-600); }
 .hero__bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(circle at 85% 15%, rgba(198,161,91,0.16), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(31,79,214,0.16), transparent 45%),
     linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 55%, var(--navy-800) 100%);
 }
 .hero__inner { position: relative; max-width: 760px; }
@@ -256,7 +256,7 @@ p { color: var(--gray-600); }
 .expertise-banner::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 90% 10%, rgba(198,161,91,0.16), transparent 45%);
+  background: radial-gradient(circle at 90% 10%, rgba(31,79,214,0.16), transparent 45%);
 }
 .expertise-banner__inner { position: relative; max-width: 720px; }
 .expertise-banner .eyebrow { color: var(--gold-400); }
@@ -308,7 +308,7 @@ p { color: var(--gray-600); }
 .article-banner { background: var(--navy-950); padding: 64px 0; position: relative; overflow: hidden; }
 .article-banner::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 90% 10%, rgba(198,161,91,0.16), transparent 45%);
+  background: radial-gradient(circle at 90% 10%, rgba(31,79,214,0.16), transparent 45%);
 }
 .article-banner__inner { position: relative; max-width: 760px; }
 .article-banner .blog-card__category { background: var(--gold-500); }

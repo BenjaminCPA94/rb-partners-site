@@ -255,6 +255,17 @@
   }
 
   function bindBooking() {
+    // Both partners share one agenda: every booking button goes straight to it,
+    // with no intermediate "choose a partner" step.
+    const shared = [...new Set(Object.values(BOOKING_LINKS))];
+    if (shared.length === 1 && shared[0]) {
+      document.querySelectorAll('[data-booking]').forEach(link => {
+        link.setAttribute('href', shared[0]);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      });
+      return;
+    }
     ensureBookingModal();
     document.querySelectorAll('[data-booking]').forEach(link => {
       if (link.dataset.rbBookingBound) return;

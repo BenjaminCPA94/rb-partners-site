@@ -27,7 +27,7 @@
 
 /* Keep the four differentiator numbers consistent with their gold labels. */
 .v5-modern-card-top > span {
-  color: var(--gold-400, #d5ad59) !important;
+  color: var(--gold-400, #3a63e0) !important;
   opacity: 1 !important;
 }
 
@@ -78,7 +78,7 @@ body:not(.mission-page) #contact {
   color: #fff;
 }
 .rb-trust-stat__stars {
-  color: var(--gold-400, #d5ad59);
+  color: var(--gold-400, #3a63e0);
   font-size: .42em;
   letter-spacing: .04em;
   white-space: nowrap;

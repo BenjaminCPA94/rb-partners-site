@@ -1,7 +1,6 @@
 // Meyvin — editorial design (see css/editorial.css).
-// Adds the gold italic accent at the end of the main
-// titles, and the Meyvin medallion with tilted tags in the page heroes
-// (mission pages get an animated scene instead, see js/scenes.js).
+// Sets the accent (cobalt) on the last words of the main titles.
+// Mission pages get an animated scene in their hero, see js/scenes.js.
 (() => {
   const root = document.documentElement;
   if (!root.classList.contains('ed')) return;
@@ -45,53 +44,8 @@
     });
   };
 
-  // ---------- medallion + tags in the heroes ----------
-  const GENERIC = {
-    fr: ['Comptabilité', 'Fiscalité', 'Paie & RH'],
-    en: ['Accounting', 'Tax', 'Payroll'],
-  };
-  const tagsFor = () => {
-    const picked = [...document.querySelectorAll('main section:not(.seo-hero):not(.mission-hero) h3')]
-      .map((h) => h.textContent.trim())
-      .filter((t) => t.length > 2 && t.length <= 20)
-      .slice(0, 3);
-    return picked.length === 3 ? picked : GENERIC[lang()] || GENERIC.fr;
-  };
-  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const medallion = () => {
-    document.querySelectorAll('main > .seo-hero:not(.international-hero), main#top > .hero').forEach((hero) => {
-      hero.querySelector('.ed-coin')?.remove();
-      if (!hero.matches('.hero')) hero.classList.add('ed-has-coin');
-      const tags = tagsFor();
-      const coin = document.createElement('div');
-      coin.className = 'ed-coin';
-      coin.setAttribute('aria-hidden', 'true');
-      coin.innerHTML = `<div class="ed-coin__in"><div class="ed-coin__face"><b>M</b><small>MEYVIN · FRANCE</small></div></div>
-        <span class="ed-coin__chip" style="left:-120px;top:-6px;--r:-6deg;--bob:0s"><i>01</i>${esc(tags[0])}</span>
-        <span class="ed-coin__chip" style="left:calc(100% - 40px);top:44%;--r:5deg;--bob:-2s"><i>02</i>${esc(tags[1])}</span>
-        <span class="ed-coin__chip" style="left:-90px;bottom:-14px;--r:4deg;--bob:-4s"><i>03</i>${esc(tags[2])}</span>`;
-      hero.appendChild(coin);
-      if (!fine || reduced || hero.dataset.edTilt) return;
-      hero.dataset.edTilt = '1';
-      hero.addEventListener('pointermove', (e) => {
-        const r = hero.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        const inner = hero.querySelector('.ed-coin__in');
-        inner?.style.setProperty('--ry', `${(-18 + x * 40).toFixed(1)}deg`);
-        inner?.style.setProperty('--rx', `${(8 - y * 24).toFixed(1)}deg`);
-      });
-      hero.addEventListener('pointerleave', () => {
-        const inner = hero.querySelector('.ed-coin__in');
-        inner?.style.removeProperty('--ry');
-        inner?.style.removeProperty('--rx');
-      });
-    });
-  };
-
   const run = () => {
     accents();
-    medallion();
   };
 
   run();

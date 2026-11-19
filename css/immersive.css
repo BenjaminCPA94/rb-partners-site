@@ -11,7 +11,7 @@
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--gold-500, #c6a15b), var(--gold-400, #d8b876));
+  background: linear-gradient(90deg, var(--gold-500, #1f4fd6), var(--gold-400, #3a63e0));
   z-index: 310;
   transition: width 80ms linear;
   pointer-events: none;
@@ -124,14 +124,14 @@
   color: rgba(255, 255, 255, 0.78);
 }
 .imm-marquee__item:nth-child(even) {
-  color: var(--gold-400, #d8b876);
+  color: var(--gold-400, #3a63e0);
 }
 .imm-marquee__item::after {
   content: "";
   width: 7px;
   height: 7px;
   transform: rotate(45deg);
-  background: var(--gold-500, #c6a15b);
+  background: var(--gold-500, #1f4fd6);
   opacity: 0.7;
 }
 @keyframes imm-marquee {
@@ -264,7 +264,7 @@ details.faq-item[open] > p {
   visibility: visible;
 }
 .immersive-rail__dot.is-active {
-  background: var(--gold-500, #c6a15b);
+  background: var(--gold-500, #1f4fd6);
   transform: scale(1.35);
 }
 @media (max-width: 1100px) {
@@ -284,7 +284,7 @@ details.faq-item[open] > p {
   padding: 0;
   border-radius: 50%;
   cursor: pointer;
-  background: conic-gradient(var(--gold-500, #c6a15b) calc(var(--imm-p) * 1%), rgba(198, 161, 91, 0.22) 0);
+  background: conic-gradient(var(--gold-500, #1f4fd6) calc(var(--imm-p) * 1%), rgba(31, 79, 214, 0.22) 0);
   box-shadow: 0 10px 26px rgba(8, 20, 38, 0.22);
   opacity: 0;
   visibility: hidden;
@@ -310,13 +310,13 @@ details.faq-item[open] > p {
   top: 54%;
   width: 10px;
   height: 10px;
-  border-left: 2px solid var(--gold-400, #d8b876);
-  border-top: 2px solid var(--gold-400, #d8b876);
+  border-left: 2px solid var(--gold-400, #3a63e0);
+  border-top: 2px solid var(--gold-400, #3a63e0);
   transform: translate(-50%, -50%) rotate(45deg);
   transition: top 220ms ease;
 }
 .imm-top:hover::after { top: 48%; }
-.imm-top:focus-visible { outline: 2px solid var(--gold-500, #c6a15b); outline-offset: 3px; }
+.imm-top:focus-visible { outline: 2px solid var(--gold-500, #1f4fd6); outline-offset: 3px; }
 
 /* ---------- Reduced motion: keep navigation aids, drop the movement ---------- */
 @media (prefers-reduced-motion: reduce) {

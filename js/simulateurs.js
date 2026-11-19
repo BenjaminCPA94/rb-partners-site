@@ -5,7 +5,7 @@ function rbFormatEUR(value) {
 
 // Animated breakdown under the figures: one stacked bar per scenario, redrawn
 // on every input. `rows` = [{ name, parts: [amounts] }], `legend` = labels of the parts.
-const RB_SIM_TONES = ['gold', 'light', 'pale', 'line'];
+const RB_SIM_TONES = ['accent', 'light', 'pale', 'line'];
 function rbSimLang() {
   return (window.rbI18n?.getLang?.() || document.documentElement.lang || 'fr') === 'en' ? 'en' : 'fr';
 }

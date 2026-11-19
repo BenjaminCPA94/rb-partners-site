@@ -29,9 +29,9 @@
   // ---------- cursor ring ----------
   if (fine && !reduced) {
     const style = document.createElement('style');
-    style.textContent = `.ed-cursor{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1px solid rgba(198,161,91,.9);pointer-events:none;z-index:99998;opacity:0;transition:opacity .3s ease,width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),margin .3s cubic-bezier(.16,1,.3,1),background .3s ease;will-change:transform}
+    style.textContent = `.ed-cursor{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1px solid rgba(31,79,214,.9);pointer-events:none;z-index:99998;opacity:0;transition:opacity .3s ease,width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),margin .3s cubic-bezier(.16,1,.3,1),background .3s ease;will-change:transform}
 .ed-cursor.is-in{opacity:1}
-.ed-cursor.is-hot{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(198,161,91,.14)}
+.ed-cursor.is-hot{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(31,79,214,.14)}
 .ed-cursor.is-down{width:26px;height:26px;margin:-13px 0 0 -13px}`;
     document.head.appendChild(style);
     const ring = document.createElement('div');

@@ -24,7 +24,7 @@
 
   const css = `
 .mw-fab{position:fixed;left:18px;bottom:18px;z-index:9000;font-family:'Inter',-apple-system,'Segoe UI',sans-serif}
-.mw-fab__btn{display:grid;place-items:center;width:56px;height:56px;border:0;border-radius:50%;background:#25d366;color:#fff;cursor:pointer;box-shadow:0 12px 28px rgba(8,20,38,.28),0 0 0 4px rgba(255,255,255,.9);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.mw-fab__btn{display:grid;place-items:center;width:56px;height:56px;border:0;border-radius:50%;background:#0f7a45;color:#fff;cursor:pointer;box-shadow:0 12px 28px rgba(8,20,38,.28),0 0 0 4px rgba(255,255,255,.9);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
 .mw-fab__btn:hover{transform:translateY(-3px) scale(1.05)}
 .mw-fab__btn:focus-visible{outline:3px solid #0b1d3a;outline-offset:3px}
 .mw-fab__btn svg{width:28px;height:28px}
@@ -36,14 +36,14 @@
 .mw-fab__panel h2{margin:0 0 6px;font:700 1.25rem/1.2 'Playfair Display',Georgia,serif;color:#0b1d3a}
 .mw-fab__panel p{margin:0 0 14px;font-size:.86rem;line-height:1.5;color:#5d6573}
 .mw-p{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(11,29,58,.1)}
-.mw-p img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 18%;box-shadow:0 0 0 2px #fffdf8,0 0 0 3.5px #c6a15b}
+.mw-p img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 18%;box-shadow:0 0 0 2px #fffdf8,0 0 0 3.5px #1f4fd6}
 .mw-p strong{display:block;font-size:.95rem;color:#0b1d3a}
 .mw-p small{display:block;font-size:.76rem;color:#5d6573;line-height:1.35}
 .mw-p__act{grid-column:1 / -1;display:flex;gap:8px}
 .mw-p__act a{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-radius:999px;font-size:.82rem;font-weight:600;white-space:nowrap;text-decoration:none;transition:transform .25s ease,background .25s ease}
 .mw-p__act a:hover{transform:translateY(-2px)}
 .mw-p__act svg{width:17px;height:17px;flex:none}
-.mw-p__wa{background:#25d366;color:#fff}
+.mw-p__wa{background:#0f7a45;color:#fff}
 .mw-p__wa:hover{background:#1ebe5b}
 .mw-p__tel{background:#0b1d3a;color:#fff}
 .mw-p__tel:hover{background:#142c54}

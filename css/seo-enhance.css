@@ -42,7 +42,7 @@
 }
 .rb-related__card:hover{
   transform:translateY(-4px);
-  border-color:rgba(198,161,91,.7);
+  border-color:rgba(31,79,214,.7);
   box-shadow:0 14px 34px rgba(8,20,38,.07);
 }
 .rb-related__card small{
@@ -108,7 +108,7 @@
 }
 .seo-depth-card:hover{
   transform:translateY(-4px);
-  border-color:rgba(198,161,91,.68);
+  border-color:rgba(31,79,214,.68);
   box-shadow:0 14px 34px rgba(8,20,38,.07);
 }
 .seo-depth-card>span{

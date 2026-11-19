@@ -5,7 +5,7 @@
   --mission-light:#ffffff;
   --mission-soft:#f7f4ee;
   --mission-navy:#081426;
-  --mission-gold:#d8b876;
+  --mission-gold:#3a63e0;
   --mission-border:#e7e2d8;
 }
 
@@ -120,7 +120,7 @@
 .mission-page .mission-scope-grid article:hover,
 .mission-page .mission-promise-grid article:hover,
 .mission-page .mission-question-card:hover{
-  border-color:rgba(198,161,91,.70);
+  border-color:rgba(31,79,214,.70);
   box-shadow:0 14px 34px rgba(8,20,38,.07);
 }
 
@@ -202,7 +202,7 @@
   box-shadow:0 8px 24px rgba(8,20,38,.035);
 }
 .mission-page .mission-lane-grid article:hover{
-  border-color:rgba(198,161,91,.62);
+  border-color:rgba(31,79,214,.62);
   box-shadow:0 14px 34px rgba(8,20,38,.07);
 }
 .mission-page .mission-lane-grid span{
@@ -316,7 +316,7 @@
   border-top:1px solid var(--mission-border);
 }
 .mission-page .mission-situations + .mission-faq{
-  border-top:1px solid rgba(198,161,91,.16);
+  border-top:1px solid rgba(31,79,214,.16);
 }
 .mission-page .mission-faq + .mission-final{
   border-top:1px solid var(--mission-border);
@@ -328,7 +328,7 @@
   overflow:hidden;
   padding:74px 0 76px;
   background:
-    radial-gradient(circle at 82% 18%, rgba(198,161,91,.18), transparent 36%),
+    radial-gradient(circle at 82% 18%, rgba(31,79,214,.18), transparent 36%),
     radial-gradient(circle at 12% 92%, rgba(30,58,99,.58), transparent 42%),
     linear-gradient(145deg, #071426 0%, #0b1d3a 58%, #142c54 100%);
   border-top:0;
@@ -381,7 +381,7 @@
   min-height:48px;
 }
 .mission-page .mission-final .btn--primary{
-  box-shadow:0 10px 28px rgba(198,161,91,.18);
+  box-shadow:0 10px 28px rgba(31,79,214,.18);
 }
 .mission-page .mission-final .btn--ghost{
   color:#fff;

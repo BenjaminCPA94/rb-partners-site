@@ -110,14 +110,17 @@ const RB_TRANSLATIONS = {
 
     'form.name_label': 'Nom complet',
     'form.email_label': 'Email',
-    'form.company_label': 'Votre société est&hellip;',
-    'form.company_fr': 'Française',
-    'form.company_foreign': "Étrangère, en projet d'implantation en France",
+    'form.project_label': 'Quel est votre projet ?',
+    'form.project_choose': 'Choisir une réponse',
+    'form.project_suivi': 'Suivre ma comptabilité',
+    'form.project_creation': 'Créer mon entreprise',
+    'form.project_filiale': 'Accompagner ma filiale française',
+    'form.project_autre': 'Autre demande',
     'form.message_label': 'Message',
     'form.submit': 'Envoyer ma demande',
     'form.privacy': 'Les informations saisies sont transmises par email à Meyvin et ne sont utilisées que pour traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.',
     'form.success': 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
-    'form.fallback': 'Votre messagerie va s’ouvrir avec votre demande préremplie.',
+    'form.fallback': 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin.fr.',
 
     'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.',
 
@@ -600,14 +603,17 @@ const RB_TRANSLATIONS = {
 
     'form.name_label': 'Full name',
     'form.email_label': 'Email',
-    'form.company_label': 'Your company is&hellip;',
-    'form.company_fr': 'French',
-    'form.company_foreign': 'Foreign, planning to set up in France',
+    'form.project_label': 'What is your project?',
+    'form.project_choose': 'Choose an answer',
+    'form.project_suivi': 'Keep my accounts',
+    'form.project_creation': 'Start my company',
+    'form.project_filiale': 'Support my French subsidiary',
+    'form.project_autre': 'Other request',
     'form.message_label': 'Message',
     'form.submit': 'Send my request',
     'form.privacy': 'The information entered is sent by email to Meyvin and used only to handle your request. <a href="politique-confidentialite.html">Learn more</a>.',
     'form.success': 'Thank you, your request has been sent. We will get back to you shortly.',
-    'form.fallback': 'Your email application will open with your request pre-filled.',
+    'form.fallback': 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin.fr.',
 
     'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, Chartered Accountants. All rights reserved.',
 

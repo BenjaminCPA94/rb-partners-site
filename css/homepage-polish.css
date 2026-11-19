@@ -237,8 +237,8 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline{
 }
 body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
   color:var(--navy-950,#081426)!important;
-  background:var(--gold-400,#d8b876)!important;
-  border-color:var(--gold-400,#d8b876)!important;
+  background:var(--gold-400,#3a63e0)!important;
+  border-color:var(--gold-400,#3a63e0)!important;
 }
 
 /* Hero identity visual: two client universes, one French partner. */
@@ -267,7 +267,7 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
 .rb-hero-client small{
   display:block;
   margin-bottom:7px;
-  color:var(--gold-400,#d8b876);
+  color:var(--gold-400,#3a63e0);
   font-size:.58rem;
   font-weight:800;
   letter-spacing:.14em;
@@ -310,7 +310,7 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
   height:4px;
   flex:0 0 4px;
   border-radius:50%;
-  background:var(--gold-400,#d8b876);
+  background:var(--gold-400,#3a63e0);
   box-shadow:0 0 7px rgba(216,184,118,.75);
 }
 .rb-hero-client:hover,
@@ -341,7 +341,7 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
 }
 .rb-hero-client__hint::after{
   content:"+";
-  color:var(--gold-400,#d8b876);
+  color:var(--gold-400,#3a63e0);
   font-size:.72rem;
 }
 .rb-hero-client:hover .rb-hero-client__hint::after{content:"−"}
@@ -389,7 +389,7 @@ body:has(main#top .hero) .hero .hero__actions .btn--outline:hover{
 /* V2 — homepage rhythm, hero CTA contrast and interactive client paths */
 body:has(main#top .hero) #v2-steps{
   background:var(--cream)!important;
-  border-top:1px solid rgba(198,161,91,.12);
+  border-top:1px solid rgba(31,79,214,.12);
   border-bottom:1px solid var(--border);
 }
 body:has(main#top .hero) #v4-reviews{background:#fff!important}
@@ -588,16 +588,16 @@ body:has(main#top .hero) #contact .split__text h2{
 body:has(main#top .hero) .hero .hero__actions .btn,
 body:has(main#top .hero) .hero .hero__actions .btn--primary,
 body:has(main#top .hero) .hero .hero__actions .btn--outline{
-  background:var(--gold-500,#c6a15b)!important;
+  background:var(--gold-500,#1f4fd6)!important;
   color:var(--navy-950,#081426)!important;
-  border:1px solid var(--gold-500,#c6a15b)!important;
+  border:1px solid var(--gold-500,#1f4fd6)!important;
   box-shadow:none!important;
 }
 body:has(main#top .hero) .hero .hero__actions .btn:hover,
 body:has(main#top .hero) .hero .hero__actions .btn:focus-visible{
-  background:var(--gold-400,#d8b876)!important;
+  background:var(--gold-400,#3a63e0)!important;
   color:var(--navy-950,#081426)!important;
-  border-color:var(--gold-400,#d8b876)!important;
+  border-color:var(--gold-400,#3a63e0)!important;
   transform:translateY(-1px);
 }
 
