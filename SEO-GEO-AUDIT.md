@@ -1,5 +1,5 @@
 # Audit SEO / GEO / CRO — RB Partners
-Site audité : https://benjamincpa94.github.io/rb-partners-site/ · 73 pages HTML (72 indexables + 1 page d'erreur) · Date : 5 octobre 2026
+Site audité : https://meyvin-experts.com/ · 73 pages HTML (72 indexables + 1 page d'erreur) · Date : 5 octobre 2026
 
 ---
 

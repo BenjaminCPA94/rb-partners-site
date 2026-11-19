@@ -104,7 +104,7 @@ T = {
  "Mentions légales":"Legal notice", "Confidentialité":"Privacy",
 }
 SAME = {"M","Meyvin","Contact","→","FR · EN","Pennylane · Silae","MEYVIN · FRANCE","01","02","03","04","05","06","Reporting FR / EN","01 / 04","Signature","J","F","A","S","O","N","D",
- "Reporting","FR","EN","WhatsApp","WhatsApp Rachel","WhatsApp Benjamin","R","B","Subsidiary","FRENCH","COMPANY","Liaison","office","NON-TRADING","PRESENCE","Version française","Factur-X","01 / 03","FRANCE","FR / EN","HQ","Rachel Illouz","Benjamin Haziza","LinkedIn ↗","%","¶","FAQ","?","+","contact@meyvin.fr","Paris, France","Message",".","International","Blog","©","2026","·"}
+ "Reporting","FR","EN","WhatsApp","WhatsApp Rachel","WhatsApp Benjamin","R","B","Subsidiary","FRENCH","COMPANY","Liaison","office","NON-TRADING","PRESENCE","Version française","Factur-X","01 / 03","FRANCE","FR / EN","HQ","Rachel Illouz","Benjamin Haziza","LinkedIn ↗","%","¶","FAQ","?","+","contact@meyvin-experts.com","Paris, France","Message",".","International","Blog","©","2026","·"}
 LINKS = {
  "expertises/comptabilite.html":"expertises/accounting-compliance-france.html", "expertises/fiscalite.html":"expertises/french-tax-advisory.html",
  "expertises/social-paie.html":"expertises/payroll-hr-france.html", "expertises/conseil-gestion.html":"expertises/management-reporting-france.html",

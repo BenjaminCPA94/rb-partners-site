@@ -120,7 +120,7 @@ const RB_TRANSLATIONS = {
     'form.submit': 'Envoyer ma demande',
     'form.privacy': 'Les informations saisies sont transmises par email à Meyvin et ne sont utilisées que pour traiter votre demande. <a href="politique-confidentialite.html">En savoir plus</a>.',
     'form.success': 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
-    'form.fallback': 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin.fr.',
+    'form.fallback': 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin-experts.com.',
 
     'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, experts-comptables. Tous droits réservés.',
 
@@ -613,7 +613,7 @@ const RB_TRANSLATIONS = {
     'form.submit': 'Send my request',
     'form.privacy': 'The information entered is sent by email to Meyvin and used only to handle your request. <a href="politique-confidentialite.html">Learn more</a>.',
     'form.success': 'Thank you, your request has been sent. We will get back to you shortly.',
-    'form.fallback': 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin.fr.',
+    'form.fallback': 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin-experts.com.',
 
     'footer.legal': 'Meyvin — Rachel Illouz & Benjamin Haziza, Chartered Accountants. All rights reserved.',
 

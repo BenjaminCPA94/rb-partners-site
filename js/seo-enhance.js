@@ -80,7 +80,7 @@
     const provider={
       '@type':'AccountingService',
       name:'Meyvin',
-      email:'contact@meyvin.fr',
+      email:'contact@meyvin-experts.com',
       areaServed:{'@type':'Country',name:'France'},
       availableLanguage:['fr','en']
     };

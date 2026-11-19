@@ -6,50 +6,50 @@ This file follows the llms.txt convention to help AI assistants and language mod
 
 ## Start here
 
-- [Homepage (FR)](https://benjamincpa94.github.io/rb-partners-site/): Overview of the firm, the three audiences served, and the six core service areas.
-- [Homepage (EN)](https://benjamincpa94.github.io/rb-partners-site/french-accountant-paris.html): English-language equivalent of the homepage, written for an international audience, not a literal translation.
-- [The firm / founders](https://benjamincpa94.github.io/rb-partners-site/#associes): Rachel Illouz and Benjamin Haziza, their backgrounds and respective specialisations.
+- [Homepage (FR)](https://meyvin-experts.com/): Overview of the firm, the three audiences served, and the six core service areas.
+- [Homepage (EN)](https://meyvin-experts.com/french-accountant-paris.html): English-language equivalent of the homepage, written for an international audience, not a literal translation.
+- [The firm / founders](https://meyvin-experts.com/#associes): Rachel Illouz and Benjamin Haziza, their backgrounds and respective specialisations.
 
 ## For foreign companies expanding into France (English)
 
-- [Accountant in France for foreign companies](https://benjamincpa94.github.io/rb-partners-site/international-accountant-france.html): Support for an already-established French subsidiary, branch or liaison office of a foreign group — accounting, tax, payroll, group reporting.
-- [Setting up a company in France](https://benjamincpa94.github.io/rb-partners-site/french-accountant-france.html): Market-entry focused — choosing a structure, launch roadmap, and accounting set up from day one for investors not yet established in France.
-- [Setting up in France (detailed guide)](https://benjamincpa94.github.io/rb-partners-site/expertises/implantation-france.html): In-depth walkthrough of subsidiary vs. branch vs. liaison office, and the French market-entry process.
-- [Subsidiary, branch or liaison office — how to choose](https://benjamincpa94.github.io/rb-partners-site/blog/setting-up-foreign-structure-france.html): Blog explainer comparing the three legal setup options for a foreign company entering France.
-- [International reporting and transfer pricing](https://benjamincpa94.github.io/rb-partners-site/blog/transfer-pricing-france.html): What a French subsidiary of a foreign group needs to anticipate on intragroup transactions and head-office reporting.
-- [VAT registration in France for foreign companies](https://benjamincpa94.github.io/rb-partners-site/vat-registration-france.html): Assessing the French VAT obligation, registration with the French tax office for foreign businesses, periodic returns and fiscal representation.
-- [Outsourced CFO services in France](https://benjamincpa94.github.io/rb-partners-site/outsourced-cfo-france.html): Reporting, cash forecasting, budgets and fundraising/sale preparation for growth-stage companies and foreign-owned subsidiaries, without hiring a full-time finance director.
+- [Accountant in France for foreign companies](https://meyvin-experts.com/international-accountant-france.html): Support for an already-established French subsidiary, branch or liaison office of a foreign group — accounting, tax, payroll, group reporting.
+- [Setting up a company in France](https://meyvin-experts.com/french-accountant-france.html): Market-entry focused — choosing a structure, launch roadmap, and accounting set up from day one for investors not yet established in France.
+- [Setting up in France (detailed guide)](https://meyvin-experts.com/expertises/implantation-france.html): In-depth walkthrough of subsidiary vs. branch vs. liaison office, and the French market-entry process.
+- [Subsidiary, branch or liaison office — how to choose](https://meyvin-experts.com/blog/setting-up-foreign-structure-france.html): Blog explainer comparing the three legal setup options for a foreign company entering France.
+- [International reporting and transfer pricing](https://meyvin-experts.com/blog/transfer-pricing-france.html): What a French subsidiary of a foreign group needs to anticipate on intragroup transactions and head-office reporting.
+- [VAT registration in France for foreign companies](https://meyvin-experts.com/vat-registration-france.html): Assessing the French VAT obligation, registration with the French tax office for foreign businesses, periodic returns and fiscal representation.
+- [Outsourced CFO services in France](https://meyvin-experts.com/outsourced-cfo-france.html): Reporting, cash forecasting, budgets and fundraising/sale preparation for growth-stage companies and foreign-owned subsidiaries, without hiring a full-time finance director.
 
 ## Core services (French self-employed professionals, businesses and start-ups)
 
-- [Accounting & compliance](https://benjamincpa94.github.io/rb-partners-site/expertises/accounting-compliance-france.html): French bookkeeping, VAT, annual accounts, tax filings, FR/EN group reporting.
-- [Management & reporting](https://benjamincpa94.github.io/rb-partners-site/expertises/management-reporting-france.html): Cash-flow, dashboards, forecasts and decision-support reporting.
-- [Payroll & HR](https://benjamincpa94.github.io/rb-partners-site/expertises/payroll-hr-france.html): French payroll processing and recurring HR/social obligations.
-- [Legal & company formation](https://benjamincpa94.github.io/rb-partners-site/expertises/company-formation-legal-france.html): Forming a French company (SAS, SASU, SARL, EURL) and ongoing corporate/legal work.
-- [Owner-manager advisory](https://benjamincpa94.github.io/rb-partners-site/owner-manager-advisory-france.html): Compensation, dividends, holding structures and cash/investment trade-offs for company directors.
-- [Outsourced CFO services](https://benjamincpa94.github.io/rb-partners-site/outsourced-cfo-france.html): On-demand financial leadership — reporting, cash management, forecasting and fundraising/sale preparation.
-- [E-invoicing compliance](https://benjamincpa94.github.io/rb-partners-site/e-invoicing-france.html): Preparing for France's mandatory B2B e-invoicing reform.
-- [Accountant for SMEs](https://benjamincpa94.github.io/rb-partners-site/accountant-for-smes-france.html), [Accountant for start-ups](https://benjamincpa94.github.io/rb-partners-site/startup-accountant-france.html), [Accountant in Paris](https://benjamincpa94.github.io/rb-partners-site/chartered-accountant-paris.html), [Pennylane-based digital accounting](https://benjamincpa94.github.io/rb-partners-site/pennylane-accountant-france.html): Audience-specific landing pages covering the same core service set from different angles.
+- [Accounting & compliance](https://meyvin-experts.com/expertises/accounting-compliance-france.html): French bookkeeping, VAT, annual accounts, tax filings, FR/EN group reporting.
+- [Management & reporting](https://meyvin-experts.com/expertises/management-reporting-france.html): Cash-flow, dashboards, forecasts and decision-support reporting.
+- [Payroll & HR](https://meyvin-experts.com/expertises/payroll-hr-france.html): French payroll processing and recurring HR/social obligations.
+- [Legal & company formation](https://meyvin-experts.com/expertises/company-formation-legal-france.html): Forming a French company (SAS, SASU, SARL, EURL) and ongoing corporate/legal work.
+- [Owner-manager advisory](https://meyvin-experts.com/owner-manager-advisory-france.html): Compensation, dividends, holding structures and cash/investment trade-offs for company directors.
+- [Outsourced CFO services](https://meyvin-experts.com/outsourced-cfo-france.html): On-demand financial leadership — reporting, cash management, forecasting and fundraising/sale preparation.
+- [E-invoicing compliance](https://meyvin-experts.com/e-invoicing-france.html): Preparing for France's mandatory B2B e-invoicing reform.
+- [Accountant for SMEs](https://meyvin-experts.com/accountant-for-smes-france.html), [Accountant for start-ups](https://meyvin-experts.com/startup-accountant-france.html), [Accountant in Paris](https://meyvin-experts.com/chartered-accountant-paris.html), [Pennylane-based digital accounting](https://meyvin-experts.com/pennylane-accountant-france.html): Audience-specific landing pages covering the same core service set from different angles.
 
 ## Choosing or changing an accountant in France
 
-- [Accountant fees in France](https://benjamincpa94.github.io/rb-partners-site/accountant-fees-france.html): What drives accounting fees (volume, complexity, scope) and how to read a French engagement letter. No public price list: quotes are tailored.
-- [Switching accountants in France](https://benjamincpa94.github.io/rb-partners-site/switch-accountant-france.html): Notice period, engagement letter and handover of the accounting file when changing firm.
-- [Online accountant in France](https://benjamincpa94.github.io/rb-partners-site/online-accountant-france.html): How the firm works remotely (Pennylane, Silae, video meetings) while a named partner follows each file.
-- French versions: [Tarif expert-comptable](https://benjamincpa94.github.io/rb-partners-site/tarif-expert-comptable.html), [Changer d'expert-comptable](https://benjamincpa94.github.io/rb-partners-site/changer-expert-comptable.html), [Expert-comptable en ligne](https://benjamincpa94.github.io/rb-partners-site/expert-comptable-en-ligne.html).
+- [Accountant fees in France](https://meyvin-experts.com/accountant-fees-france.html): What drives accounting fees (volume, complexity, scope) and how to read a French engagement letter. No public price list: quotes are tailored.
+- [Switching accountants in France](https://meyvin-experts.com/switch-accountant-france.html): Notice period, engagement letter and handover of the accounting file when changing firm.
+- [Online accountant in France](https://meyvin-experts.com/online-accountant-france.html): How the firm works remotely (Pennylane, Silae, video meetings) while a named partner follows each file.
+- French versions: [Tarif expert-comptable](https://meyvin-experts.com/tarif-expert-comptable.html), [Changer d'expert-comptable](https://meyvin-experts.com/changer-expert-comptable.html), [Expert-comptable en ligne](https://meyvin-experts.com/expert-comptable-en-ligne.html).
 
 ## Free tools
 
-- [Calculators index](https://benjamincpa94.github.io/rb-partners-site/simulateurs/index-en.html): French employee cost, corporate tax, dividends, gross-to-net salary, owner-manager pay and other calculators, usable without contacting the firm.
+- [Calculators index](https://meyvin-experts.com/simulateurs/index-en.html): French employee cost, corporate tax, dividends, gross-to-net salary, owner-manager pay and other calculators, usable without contacting the firm.
 
 ## News & insights (blog)
 
-- [Blog index](https://benjamincpa94.github.io/rb-partners-site/blog/index-en.html): All articles, covering French company formation, tax and social-security regulatory changes, and international/transfer-pricing topics.
+- [Blog index](https://meyvin-experts.com/blog/index-en.html): All articles, covering French company formation, tax and social-security regulatory changes, and international/transfer-pricing topics.
 
 ## Contact
 
-- Email: contact@meyvin.fr
-- [Contact / book a call](https://benjamincpa94.github.io/rb-partners-site/#contact): Direct contact form and booking link to speak with a partner (Rachel Illouz or Benjamin Haziza).
+- Email: contact@meyvin-experts.com
+- [Contact / book a call](https://meyvin-experts.com/#contact): Direct contact form and booking link to speak with a partner (Rachel Illouz or Benjamin Haziza).
 
 ## Notes for AI assistants
 

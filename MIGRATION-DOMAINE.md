@@ -1,69 +1,72 @@
-# Migration vers meyvin.fr : ce qui change, et ce qui ne change pas
+# Bascule vers meyvin-experts.com
 
-État au moment de la rédaction : le site est servi par GitHub Pages à l'adresse
-`https://benjamincpa94.github.io/rb-partners-site/`. Le domaine `meyvin.fr` n'est pas
-configuré dans ce dépôt (pas de fichier `CNAME`) et n'a pas été confirmé comme étant la
-propriété du cabinet. **Rien n'a été modifié côté DNS.** Tant que le domaine n'est pas
-confirmé, la version GitHub Pages reste la référence et fonctionne telle quelle : tous les
-liens internes du site sont relatifs et les canoniques sont absolus vers github.io.
+Cette branche (`test/domaine-meyvin-experts`) change **toutes les adresses de référence** du site
+de `https://benjamincpa94.github.io/rb-partners-site/` vers `https://meyvin-experts.com/`, et l'adresse
+de contact de `contact@meyvin.fr` vers `contact@meyvin-experts.com`.
 
-## 1. Avant de toucher à quoi que ce soit
+**Ne pas fusionner cette branche dans `main` avant que le domaine serve réellement le site.**
+Tant que `https://meyvin-experts.com/` ne répond pas, les balises canoniques, le plan du site et les
+données structurées pointeraient vers une adresse qui ne fonctionne pas, ce qui nuit au référencement.
+Rien n'a été modifié côté DNS.
 
-- [ ] Confirmer que `meyvin.fr` appartient bien au cabinet (registrar, titulaire).
-- [ ] Décider si l'adresse définitive est `https://meyvin.fr/` ou `https://www.meyvin.fr/`
-      (une seule des deux, l'autre redirige vers elle).
-- [ ] Vérifier que les boîtes `contact@meyvin.fr` existent. Aujourd'hui le formulaire et les
-      liens `mailto:` utilisent `contact@meyvin.fr`, mais les boîtes créées sont en
-      `@meyvin-experts.com`. Le relais FormSubmit doit aussi être activé pour cette adresse
-      (clic sur le lien de confirmation reçu au premier envoi).
+## Ce qui est déjà fait dans cette branche
 
-## 2. Configuration (hors dépôt, par le titulaire du domaine)
+- Canoniques, `hreflang` (y compris `x-default`), données structurées (`@id`, `url`, `logo`, fil d'Ariane),
+  `sitemap.xml`, `robots.txt`, `llms.txt`, `index.html` et la version anglaise de l'accueil.
+- Adresse de contact `contact@meyvin-experts.com` : liens `mailto:`, formulaire (relais FormSubmit et repli
+  par messagerie), mentions légales, politique de confidentialité, textes français et anglais.
+- Les liens internes sont relatifs : ils fonctionnent identiquement sur GitHub Pages et sur le nouveau domaine.
 
-1. Dans GitHub : *Settings → Pages → Custom domain*, saisir le domaine, puis cocher
-   *Enforce HTTPS* une fois le certificat émis. Cela crée un fichier `CNAME` dans le dépôt.
-2. Chez le registrar : enregistrements DNS indiqués par la documentation GitHub Pages
-   (enregistrements `A` / `AAAA` vers GitHub pour le domaine nu, `CNAME` vers
-   `benjamincpa94.github.io` pour `www`).
-3. Attendre la propagation et l'émission du certificat avant l'étape suivante.
+## Ce que vous devez faire (hors dépôt)
 
-## 3. Changements dans le dépôt, à faire le jour de la bascule
+### 1. Vérifier que le domaine est bien à vous
+`meyvin-experts.com` est déjà enregistré, et vos boîtes e-mail l'utilisent. Retrouvez le registrar et le
+titulaire (compte OVH ou autre) avant de toucher quoi que ce soit.
 
-Remplacer `https://benjamincpa94.github.io/rb-partners-site/` par l'adresse définitive,
-et **uniquement ces occurrences absolues** (les liens relatifs restent inchangés) :
+### 2. Zone DNS chez le registrar : attention à la messagerie
+Le domaine porte vos e-mails Microsoft 365. **Ne supprimez ni ne modifiez** les enregistrements `MX`,
+`TXT` (SPF, vérification Microsoft), `CNAME` `autodiscover`, `selector1/2._domainkey` (DKIM) ni `_dmarc`.
+Seuls les enregistrements du **site web** changent :
 
-| Où | Quoi |
-|---|---|
-| Toutes les pages `.html` (≈ 80) | `<link rel="canonical">`, `<link rel="alternate" hreflang=…>` (y compris `x-default`), URL des données structurées (`@id`, `url`, `logo`, `image`, `item` des fils d'Ariane). Il n'y a pas de balise `og:url` ni `og:image` aujourd'hui : voir la liste des données à fournir (image de partage) |
-| `sitemap.xml` (78 URL) | toutes les balises `<loc>` |
-| `robots.txt` | ligne `Sitemap:` |
-| `llms.txt` | tous les liens (25) |
-| `index.html` et `french-accountant-paris.html` | données structurées `rb-schema-*` |
-| `SEO-GEO-AUDIT.md` | liens de référence (documentation) |
+| Type | Nom | Valeur |
+|---|---|---|
+| `A` (4 lignes) | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| `AAAA` (facultatif) | `@` | les adresses IPv6 de GitHub Pages |
+| `CNAME` | `www` | `benjamincpa94.github.io` |
 
-Commande à adapter puis à relire avant de valider (exemple, ne pas lancer sans relecture) :
+À faire : supprimer les anciens `A` / `CNAME` du site (ceux qui pointent vers l'hébergement actuel) pour les
+remplacer par ceux-ci. Vérifiez les valeurs exactes dans la documentation GitHub Pages le jour de la bascule,
+elles peuvent évoluer.
 
-```
-grep -rl "benjamincpa94.github.io/rb-partners-site" . --include=*.html --include=*.xml \
-  --include=*.txt --include=*.md | xargs sed -i 's|https://benjamincpa94.github.io/rb-partners-site/|https://meyvin.fr/|g'
-```
+### 3. GitHub : domaine personnalisé
+*Settings → Pages → Custom domain* : saisir `meyvin-experts.com`, enregistrer, attendre la validation du DNS,
+puis cocher *Enforce HTTPS* quand le certificat est émis. (Conseil : vérifier d'abord le domaine dans
+*Settings → Pages → Verified domains* pour empêcher qu'un tiers le réclame.)
 
-Points d'attention :
-- la racine du site passe de `/rb-partners-site/` à `/` : les chemins **relatifs** du dépôt
-  fonctionnent dans les deux cas ; vérifier qu'aucun lien n'est écrit en `/…` absolu
-  (une recherche dans les pages, les feuilles de style et les scripts n'en a trouvé aucun).
-- Les liens `https://benjamincpa94.github.io/…` dans `llms.txt` doivent être mis à jour, sinon
-  les assistants IA continueront d'être renvoyés vers l'ancienne adresse.
+### 4. E-mail de contact
+- [ ] La boîte `contact@meyvin-experts.com` existe (boîte partagée ou alias) et reçoit bien du courrier.
+- [ ] Le formulaire utilise le relais FormSubmit : au **premier envoi réel**, FormSubmit envoie un e-mail
+      d'activation à cette adresse. Il faut cliquer sur le lien, sinon les messages ne partent pas (le site
+      bascule alors sur l'ouverture de la messagerie du visiteur, qui doit cliquer sur « Envoyer »).
 
-## 4. Après la bascule
+## Ordre conseillé le jour J
 
-- [ ] Redirection de l'ancienne adresse : GitHub Pages ne sait pas faire de redirection 301
-      depuis `github.io` vers un domaine personnalisé pour un site de projet. Prévoir de laisser
-      les pages en place (les canoniques pointeront vers le nouveau domaine) ou de déposer un
-      petit fichier de redirection (`<meta http-equiv="refresh">` + canonique) sur l'ancien
-      chemin si le dépôt est conservé.
-- [ ] Déclarer le nouveau site dans Google Search Console et Bing Webmaster Tools, soumettre
-      `sitemap.xml`.
-- [ ] Mettre à jour les liens extérieurs : fiche Google, LinkedIn, signatures e-mail, page de
-      réservation Microsoft Bookings (liens de retour éventuels).
-- [ ] Relancer les vérifications : canoniques, hreflang réciproques, liens, formulaire,
-      boutons de rendez-vous.
+1. DNS (étape 2), attendre la propagation.
+2. Domaine personnalisé dans GitHub (étape 3), HTTPS actif.
+3. **Seulement ensuite**, fusionner cette branche dans `main` : le site est redéployé avec les nouvelles adresses.
+4. Test réel du formulaire et activation FormSubmit (étape 4).
+
+## Après la bascule
+
+- [ ] `https://www.meyvin-experts.com/` renvoie vers `https://meyvin-experts.com/` (GitHub le fait quand les deux
+      enregistrements existent).
+- [ ] Redirection de l'ancienne adresse `github.io` : GitHub Pages ne fait pas de 301 pour un site de projet.
+      Les pages restent en place et leurs canoniques pointent vers le nouveau domaine.
+- [ ] Déclarer le site dans Google Search Console et Bing Webmaster Tools, soumettre `sitemap.xml`.
+- [ ] Mettre à jour les liens extérieurs : fiche Google, LinkedIn, signatures e-mail.
+- [ ] Relancer les vérifications : canoniques, `hreflang` réciproques, liens, formulaire, boutons de rendez-vous.
+
+## Retour arrière
+
+Si quelque chose se passe mal après la fusion, il suffit d'annuler le commit de fusion dans `main` : les
+adresses `github.io` redeviennent les adresses de référence. Les enregistrements DNS peuvent rester en place.

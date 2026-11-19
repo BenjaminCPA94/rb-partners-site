@@ -214,7 +214,7 @@ document.addEventListener('rb:content-upgraded', () => {
 
 // Contact form — submits the lead by email via FormSubmit (formsubmit.co), a
 // zero-backend relay: the first real submission triggers a one-time
-// confirmation link sent to contact@meyvin.fr that must be clicked to
+// confirmation link sent to contact@meyvin-experts.com that must be clicked to
 // activate delivery. If the relay refuses (offline, relay down, activation
 // not done) the visitor's mail app opens with the request pre-filled, and the
 // page says plainly that the message still has to be sent from there.
@@ -228,13 +228,13 @@ const FORM_TEXT = {
   fr: {
     subject: 'Demande de contact — Meyvin',
     success: 'Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.',
-    fallback: 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin.fr.',
+    fallback: 'Nous n’avons pas pu envoyer votre message depuis le site. Votre messagerie s’ouvre avec votre demande préremplie : il vous reste à cliquer sur « Envoyer » dans votre messagerie, sinon votre message ne partira pas. Vous pouvez aussi écrire à contact@meyvin-experts.com.',
     labels: { name: 'Nom', email: 'E-mail', project: 'Projet', message: 'Message' },
   },
   en: {
     subject: 'Contact request — Meyvin',
     success: 'Thank you, your request has been sent. We will get back to you shortly.',
-    fallback: 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin.fr.',
+    fallback: 'We could not send your message from the site. Your email app is opening with your request pre-filled: you still need to click “Send” in your email app, otherwise your message will not leave. You can also write to contact@meyvin-experts.com.',
     labels: { name: 'Name', email: 'Email', project: 'Project', message: 'Message' },
   },
 };
@@ -262,12 +262,12 @@ if (form) {
       const c = lang === 'fr' ? ' : ' : ': ';
       const body = `${t.labels.name}${c}${data.get('name')}\n${t.labels.email}${c}${data.get('email')}\n${t.labels.project}${c}${project}\n\n${t.labels.message}${c.trim()}\n${data.get('message')}`;
       setStatus(window.rbI18n?.get?.('form.fallback') || t.fallback, 'fallback');
-      openMail(`mailto:contact@meyvin.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+      openMail(`mailto:contact@meyvin-experts.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
     };
 
     if (submitBtn) submitBtn.disabled = true;
     try {
-      const res = await fetch('https://formsubmit.co/ajax/contact@meyvin.fr', {
+      const res = await fetch('https://formsubmit.co/ajax/contact@meyvin-experts.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
