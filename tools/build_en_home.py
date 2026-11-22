@@ -21,6 +21,8 @@ T = {
  "Choisissez votre situation : nous vous indiquons l'associé à contacter.":"Pick your situation: we point you to the partner to contact.",
  "Votre interlocutrice":"Your contact", "Votre interlocuteur":"Your contact",
  "International &amp; implantation en France":"International &amp; setting up in France", "Start-up, entrepreneurs &amp; indépendants":"Start-ups, entrepreneurs &amp; independent professionals",
+ "Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France.":"Rachel built her expertise within international accounting firms, supporting European, US and Asian companies with their establishment and development in France.",
+ "Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial.":"Benjamin began his career at Ernst &amp; Young (EY), auditing large corporate accounts, before moving into public accounting and entrepreneurial advisory.",
  "Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.":"Rachel built her expertise within international accounting firms, supporting European, US and Asian companies with their establishment and development in France. She assists foreign groups with the accounting, tax and operational challenges of entering the French market.",
  "Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.":"Benjamin began his career at Ernst &amp; Young (EY), auditing large corporate accounts, before moving into public accounting and entrepreneurial advisory. He now supports start-ups and independent professionals with accounting, tax, finance and structuring matters.",
  "Sociétés étrangères":"Foreign companies", "Filiales de groupes":"Group subsidiaries", "Start-up":"Start-ups", "Indépendants":"Independent professionals", "Structuration":"Structuring",
@@ -126,11 +128,6 @@ def rep(old,new,count=1):
 rep('<html lang="fr" class="ed" data-ed-home>','<html lang="en" class="ed" data-ed-home>')
 rep('<a class="top__lang" href="french-accountant-paris.html" hreflang="en" lang="en" title="English version">EN</a>','<a class="top__lang" href="index.html?lang=fr" hreflang="fr" lang="fr" title="Version française">FR</a>')
 rep('<a href="french-accountant-paris.html">English version</a>','<a href="index.html?lang=fr" hreflang="fr" lang="fr">Version française</a>')
-rep('>SOCIÉTÉ</text><text x="116" y="227" class="t-caps" font-size="7" fill="#9bb5ff">FRANÇAISE<','>FRENCH</text><text x="116" y="227" class="t-caps" font-size="7" fill="#9bb5ff">COMPANY<')
-rep('>SANS ACTIVITÉ</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#9bb5ff">COMMERCIALE<','>NON-TRADING</text><text x="186" y="227" text-anchor="end" class="t-caps" font-size="7" fill="#9bb5ff">PRESENCE<')
-rep('<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Filiale</text>','<text x="116" y="124" class="t-serif" font-size="12.500" fill="#fff">Subsidiary</text>')
-rep('<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Bureau</text>','<text x="116" y="124" class="t-serif" font-size="14" fill="#fff">Liaison</text>')
-rep('<text x="116" y="141" class="t-serif" font-size="14" fill="#fff">de liaison</text>','<text x="116" y="141" class="t-serif" font-size="14" fill="#fff">office</text>')
 # language redirect only makes sense on the French home
 m=re.search(r"<script>/\* Visiteur ayant choisi l'anglais.*?</script>\n",s,re.S); assert m; s=s.replace(m.group(0),'',1)
 
@@ -172,12 +169,9 @@ for p in parts:
 s=s[:ba]+''.join(out)+s[bb:]
 assert not missing, missing
 
-rep('data-idle="Choisissez votre situation : nous vous indiquons l\'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza."','data-idle="Pick your situation: we point you to the partner to contact." data-rachel="Your contact: Rachel Illouz." data-benjamin="Your contact: Benjamin Haziza."')
 rep('href="tel:+33624126769">Call Rachel','href="tel:+33624126769">Call Rachel')
 rep('Bonjour%20Rachel%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Rachel%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
 rep('Bonjour%20Benjamin%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Benjamin%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
-# ---- strings held in the page script ----
-rep("const TITLES = ['Création de société', 'Comptabilité au fil de l’eau', 'Tableau de bord', 'Implantation en France'];","const TITLES = ['Company formation', 'Day-to-day bookkeeping', 'Dashboard', 'Setting up in France'];")
 open(REPO+'french-accountant-paris.html','w',encoding='utf-8').write(s)
 # leftovers: French-looking words still in the visible body
 vis=re.sub(r'<[^>]+>',' ',''.join(out))
