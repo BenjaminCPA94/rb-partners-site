@@ -143,14 +143,6 @@
   .partners__head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; margin-bottom: 44px; }
   .partners__head h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.06; color: var(--navy); margin: 10px 0 0; max-width: 620px; }
   .partners__head p { max-width: 380px; color: var(--muted); line-height: 1.7; margin: 0; }
-  .match { display: grid; gap: 14px; margin-bottom: 30px; padding: 24px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
-  .match__q { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
-  .match__chips { display: flex; flex-wrap: wrap; gap: 10px; }
-  .match__chips button { padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(11,29,58,.2); background: transparent; font: 600 .88rem var(--sans); color: var(--navy); cursor: pointer; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease); }
-  .match__chips button:hover { border-color: var(--navy); transform: translateY(-2px); }
-  .match__chips button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .match__out { margin: 0; font-size: .92rem; color: var(--muted); min-height: 1.5em; }
-  .match__out.is-set { color: var(--gold-deep); font-weight: 600; }
   .partners__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .person { position: relative; display: flex; flex-direction: column; padding: 30px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .25s ease-out, box-shadow .3s ease, border-color .3s ease, opacity .4s ease; will-change: transform; }
   .person:hover { box-shadow: 0 24px 50px rgba(11,29,58,.14); }
@@ -372,9 +364,7 @@
     .person__mark { font-size: 8rem; opacity: .3; top: -18px; right: -4px; }
     .person__photo { width: 88px; height: 88px; }
     .person h3 { font-size: 1.35rem; }
-    .match { padding: 20px 18px; }
-    .match__chips button { font-size: .82rem; padding: 10px 14px; }
-    .hero__proof { gap: 16px; }
+        .hero__proof { gap: 16px; }
     .stage__hint { display: none; }
     .sec, .intl { padding: 80px 0; }
     .aud__card .outline { font-size: 6.5rem; }
@@ -413,6 +403,13 @@
     .mission { padding-top: 22px; padding-bottom: 22px; }
     .tools a { padding: 12px 16px; }
   }
+
+  /* "Le cabinet": links towards the partners and approach pages */
+  .partners__more { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin: 30px 0 0; }
+  .partners__link { font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 2px; text-decoration: none; }
+  .sec__head p .partners__link { display: inline-block; margin-top: 8px; }
+  .foot__firm { display: flex; gap: 6px 16px; flex-wrap: wrap; margin: 14px 0 0 !important; }
+  .foot__firm a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 3px; }
 </style>
 <script type="application/ld+json" id="rb-schema-main">
 {"@context":"https://schema.org","@graph":[{"@type":"AccountingService","name":"Meyvin","email":"contact@meyvin.fr","areaServed":{"@type":"Country","name":"France"},"availableLanguage":["fr","en"],"@id":"#accounting-service","description":"French accounting firm supporting entrepreneurs, start-ups, SMEs and foreign companies setting up and operating in France."},{"@type":"WebSite","@id":"#website","name":"Meyvin","inLanguage":["fr","en"]}]}
@@ -428,9 +425,10 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Meyvin, home"><i>M</i>Meyvin</a>
     <nav aria-label="Main navigation" id="nav">
+      <a class="menu__top" href="#top">Home</a>
       <div class="menu">
-        <a class="menu__top" href="#associes">The firm</a>
-        <div class="menu__drop"><a href="#associes">The partners</a><a href="#missions">Our approach</a></div>
+        <a class="menu__top" href="the-partners.html">The firm</a>
+        <div class="menu__drop"><a href="the-partners.html">The partners</a><a href="our-approach.html">Our approach</a></div>
       </div>
       <div class="menu">
         <a class="menu__top" href="#missions">Our services</a>
@@ -501,16 +499,6 @@
         <div><span class="pill"><b></b>The firm</span><h2>Two partners, complementary expertise.</h2></div>
         <p>You speak directly with the partner handling your file, in French or in English.</p>
       </div>
-      <div class="match rv" id="match">
-        <span class="match__q">What is your situation?</span>
-        <div class="match__chips" role="group" aria-label="Your situation">
-          <button type="button" data-partner="benjamin">I am starting or growing my business</button>
-          <button type="button" data-partner="benjamin">Self-employed or independent professional</button>
-          <button type="button" data-partner="rachel">Foreign company setting up in France</button>
-          <button type="button" data-partner="rachel">French subsidiary of a group</button>
-        </div>
-        <p class="match__out" id="matchOut" aria-live="polite" data-idle="Pick your situation: we point you to the partner to contact." data-rachel="Your contact: Rachel Illouz." data-benjamin="Your contact: Benjamin Haziza.">Pick your situation: we point you to the partner to contact.</p>
-      </div>
       <div class="partners__grid" id="partnersGrid">
         <article class="person rv" data-tilt data-person="rachel">
           <span class="person__mark outline" aria-hidden="true">R</span>
@@ -519,8 +507,7 @@
             <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" width="150" height="268" loading="lazy"></div>
             <div><h3>Rachel Illouz</h3><b>Partner · Chartered Accountant</b><span class="person__focus">International &amp; setting up in France</span></div>
           </div>
-          <p>Rachel built her expertise within international accounting firms, supporting European, US and Asian companies with their establishment and development in France. She assists foreign groups with the accounting, tax and operational challenges of entering the French market.</p>
-          <ul class="person__tags"><li>Foreign companies</li><li>Group subsidiaries</li><li>Reporting FR / EN</li></ul>
+          <p>Rachel built her expertise within international accounting firms, supporting European, US and Asian companies with their establishment and development in France.</p>
           <div class="person__actions"><a class="btn btn--dark btn--sm" href="tel:+33624126769">Call Rachel <span>→</span></a><a class="wa-chip wa-chip--light" href="https://wa.me/33624126769?text=Hello%20Rachel%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website." target="_blank" rel="noopener" aria-label="WhatsApp Rachel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
         <article class="person rv" data-tilt data-person="benjamin" style="--rd:.1s">
@@ -530,11 +517,11 @@
             <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" width="147" height="270" loading="lazy"></div>
             <div><h3>Benjamin Haziza</h3><b>Partner · Chartered Accountant</b><span class="person__focus">Start-ups, entrepreneurs &amp; independent professionals</span></div>
           </div>
-          <p>Benjamin began his career at Ernst &amp; Young (EY), auditing large corporate accounts, before moving into public accounting and entrepreneurial advisory. He now supports start-ups and independent professionals with accounting, tax, finance and structuring matters.</p>
-          <ul class="person__tags"><li>Start-ups</li><li>Independent professionals</li><li>Structuring</li></ul>
+          <p>Benjamin began his career at Ernst &amp; Young (EY), auditing large corporate accounts, before moving into public accounting and entrepreneurial advisory.</p>
           <div class="person__actions"><a class="btn btn--dark btn--sm" href="#contact" data-booking="benjamin">Book a meeting with Benjamin <span>→</span></a><a class="wa-chip wa-chip--light" href="https://wa.me/33761534670?text=Hello%20Benjamin%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website." target="_blank" rel="noopener" aria-label="WhatsApp Benjamin"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
       </div>
+      <p class="partners__more"><a class="btn btn--dark btn--sm" href="the-partners.html">Meet the partners <span>→</span></a><a class="partners__link" href="our-approach.html">Our approach →</a></p>
     </div>
   </section>
 
@@ -543,7 +530,7 @@
 
   <section class="sec" id="missions">
     <div class="wrap">
-      <div class="sec__head rv"><div><span class="kicker">Our services</span><h2>Six services, one firm.</h2></div><p>Compliance, management, people, legal, owner-manager advice and e-invoicing, coordinated by the same partners.</p></div>
+      <div class="sec__head rv"><div><span class="kicker">Our services</span><h2>Six services, one firm.</h2></div><p>Compliance, management, people, legal, owner-manager advice and e-invoicing, coordinated by the same partners. <a class="partners__link" href="our-approach.html">Discover our approach →</a></p></div>
       <div class="missions"><a class="mission rv" href="expertises/accounting-compliance-france.html" style="--rd:0.00s"><span class="mission__num outline">01</span><h3>Compliance &amp; accounting</h3><p>Bookkeeping, annual accounts, VAT and recurring French tax obligations.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-6deg" aria-hidden="true">Accounts</span></a><a class="mission rv" href="expertises/management-reporting-france.html" style="--rd:0.06s"><span class="mission__num outline">02</span><h3>Management &amp; reporting</h3><p>Cash, dashboards, forecasts, reporting and decision support.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:5deg" aria-hidden="true">Cash</span></a><a class="mission rv" href="expertises/payroll-hr-france.html" style="--rd:0.12s"><span class="mission__num outline">03</span><h3>Payroll &amp; HR</h3><p>Payroll, hiring administration and recurring social obligations.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-4deg" aria-hidden="true">Payslips</span></a><a class="mission rv" href="expertises/company-formation-legal-france.html" style="--rd:0.18s"><span class="mission__num outline">04</span><h3>Legal &amp; company formation</h3><p>Company formation, annual legal work and corporate structuring.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:6deg" aria-hidden="true">Articles</span></a><a class="mission rv" href="owner-manager-advisory-france.html" style="--rd:0.24s"><span class="mission__num outline">05</span><h3>Owner-manager advisory</h3><p>Compensation, dividends, holding structures and owner-manager trade-offs.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-5deg" aria-hidden="true">Dividends</span></a><a class="mission rv" href="e-invoicing-france.html" style="--rd:0.30s"><span class="mission__num outline">06</span><h3>E-invoicing</h3><p>Preparation, organisation and support for French e-invoicing requirements.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:4deg" aria-hidden="true">Factur-X</span></a></div>
     </div>
   </section>
@@ -641,7 +628,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot__grid">
-      <div class="foot__brand"><a class="brand" href="#top" aria-label="Meyvin, home"><i>M</i>Meyvin</a><p>French accounting firm supporting business owners and international companies in France.</p></div>
+      <div class="foot__brand"><a class="brand" href="#top" aria-label="Meyvin, home"><i>M</i>Meyvin</a><p>French accounting firm supporting business owners and international companies in France.</p><p class="foot__firm"><a href="the-partners.html">The partners</a><a href="our-approach.html">Our approach</a></p></div>
       <div><strong>Our services</strong><a href="expertises/accounting-compliance-france.html">Accounting &amp; compliance</a><a href="expertises/management-reporting-france.html">Management &amp; reporting</a><a href="expertises/payroll-hr-france.html">Payroll &amp; HR</a><a href="expertises/company-formation-legal-france.html">Legal &amp; company formation</a><a href="owner-manager-advisory-france.html">Owner-manager advisory</a><a href="e-invoicing-france.html">E-invoicing</a></div>
       <div><strong>International</strong><a href="international-accountant-france.html">Setting up in France</a><a href="vat-registration-france.html">VAT registration</a><a href="outsourced-cfo-france.html">Outsourced CFO</a><a href="index.html?lang=fr" hreflang="fr" lang="fr">Version française</a></div>
       <div><strong>Resources</strong><a href="accountant-fees-france.html">Accountant fees</a><a href="switch-accountant-france.html">Switching accountants</a><a href="simulateurs/index-en.html">Calculators</a><a href="blog/index-en.html">Blog</a><a href="#contact">Contact</a></div>
@@ -794,20 +781,6 @@
   // ---------- Reveal on scroll ----------
   const rvIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvIO.unobserve(e.target); } }), { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.rv').forEach(el => reduced ? el.classList.add('in') : rvIO.observe(el));
-
-  // ---------- Which partner for which situation ----------
-  const matchOut = document.getElementById('matchOut');
-  const partnersGrid = document.getElementById('partnersGrid');
-  const matchBtns = [...document.querySelectorAll('.match__chips button')];
-  matchBtns.forEach((btn) => btn.addEventListener('click', () => {
-    const on = btn.getAttribute('aria-pressed') !== 'true';
-    matchBtns.forEach((b) => b.setAttribute('aria-pressed', String(on && b === btn)));
-    const who = on ? btn.dataset.partner : '';
-    partnersGrid.classList.toggle('is-matched', !!who);
-    partnersGrid.querySelectorAll('.person').forEach((card) => card.classList.toggle('is-match', card.dataset.person === who));
-    matchOut.textContent = matchOut.dataset[who || 'idle'];
-    matchOut.classList.toggle('is-set', !!who);
-  }));
 
   // ---------- Partner cards tilt ----------
   if (fine && !reduced) document.querySelectorAll('[data-tilt]').forEach(card => {

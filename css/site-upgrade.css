@@ -543,3 +543,8 @@ main>section:has(>.container>.seo-crosslinks):not(.rb-guides){display:none!impor
   #v2-faq{padding-top:38px!important}
 }
 .v4-footer-grid .v4-footer-sub{margin-top:14px}
+
+/* footer: quick links to the two "Le cabinet" pages */
+.v4-footer-firm{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px}
+.v4-footer-firm a{color:inherit;opacity:.85;text-decoration:underline;text-underline-offset:3px}
+.v4-footer-firm a:hover{opacity:1}

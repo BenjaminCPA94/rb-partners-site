@@ -143,14 +143,6 @@
   .partners__head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; margin-bottom: 44px; }
   .partners__head h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.06; color: var(--navy); margin: 10px 0 0; max-width: 620px; }
   .partners__head p { max-width: 380px; color: var(--muted); line-height: 1.7; margin: 0; }
-  .match { display: grid; gap: 14px; margin-bottom: 30px; padding: 24px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
-  .match__q { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
-  .match__chips { display: flex; flex-wrap: wrap; gap: 10px; }
-  .match__chips button { padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(11,29,58,.2); background: transparent; font: 600 .88rem var(--sans); color: var(--navy); cursor: pointer; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease); }
-  .match__chips button:hover { border-color: var(--navy); transform: translateY(-2px); }
-  .match__chips button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .match__out { margin: 0; font-size: .92rem; color: var(--muted); min-height: 1.5em; }
-  .match__out.is-set { color: var(--gold-deep); font-weight: 600; }
   .partners__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .person { position: relative; display: flex; flex-direction: column; padding: 30px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .25s ease-out, box-shadow .3s ease, border-color .3s ease, opacity .4s ease; will-change: transform; }
   .person:hover { box-shadow: 0 24px 50px rgba(11,29,58,.14); }
@@ -372,9 +364,7 @@
     .person__mark { font-size: 8rem; opacity: .3; top: -18px; right: -4px; }
     .person__photo { width: 88px; height: 88px; }
     .person h3 { font-size: 1.35rem; }
-    .match { padding: 20px 18px; }
-    .match__chips button { font-size: .82rem; padding: 10px 14px; }
-    .hero__proof { gap: 16px; }
+        .hero__proof { gap: 16px; }
     .stage__hint { display: none; }
     .sec, .intl { padding: 80px 0; }
     .aud__card .outline { font-size: 6.5rem; }
@@ -413,6 +403,13 @@
     .mission { padding-top: 22px; padding-bottom: 22px; }
     .tools a { padding: 12px 16px; }
   }
+
+  /* "Le cabinet": links towards the partners and approach pages */
+  .partners__more { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin: 30px 0 0; }
+  .partners__link { font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 2px; text-decoration: none; }
+  .sec__head p .partners__link { display: inline-block; margin-top: 8px; }
+  .foot__firm { display: flex; gap: 6px 16px; flex-wrap: wrap; margin: 14px 0 0 !important; }
+  .foot__firm a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 3px; }
 </style>
 <script type="application/ld+json" id="rb-schema-main">
 {"@context":"https://schema.org","@graph":[{"@type":"AccountingService","name":"Meyvin","email":"contact@meyvin.fr","areaServed":{"@type":"Country","name":"France"},"availableLanguage":["fr","en"],"@id":"#accounting-service","description":"Cabinet d’expertise comptable à Paris pour indépendants, professions libérales, dirigeants, entreprises, start-up et sociétés étrangères souhaitant s’implanter en France."},{"@type":"WebSite","@id":"#website","name":"Meyvin","inLanguage":["fr","en"]}]}
@@ -428,9 +425,10 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Meyvin, accueil"><i>M</i>Meyvin</a>
     <nav aria-label="Navigation principale" id="nav">
+      <a class="menu__top" href="#top">Accueil</a>
       <div class="menu">
-        <a class="menu__top" href="#associes">Le cabinet</a>
-        <div class="menu__drop"><a href="#associes">Les associés</a><a href="#missions">Notre approche</a></div>
+        <a class="menu__top" href="les-associes.html">Le cabinet</a>
+        <div class="menu__drop"><a href="les-associes.html">Les associés</a><a href="notre-approche.html">Notre approche</a></div>
       </div>
       <div class="menu">
         <a class="menu__top" href="#missions">Nos missions</a>
@@ -501,16 +499,6 @@
         <div><span class="pill"><b></b>Le cabinet</span><h2>Deux associés, des expertises complémentaires.</h2></div>
         <p>Vous échangez directement avec l'associé qui suit votre dossier, en français ou en anglais.</p>
       </div>
-      <div class="match rv" id="match">
-        <span class="match__q">Quelle est votre situation ?</span>
-        <div class="match__chips" role="group" aria-label="Votre situation">
-          <button type="button" data-partner="benjamin">Je crée ou développe mon entreprise</button>
-          <button type="button" data-partner="benjamin">Indépendant ou profession libérale</button>
-          <button type="button" data-partner="rachel">Société étrangère qui s'implante en France</button>
-          <button type="button" data-partner="rachel">Filiale française d'un groupe</button>
-        </div>
-        <p class="match__out" id="matchOut" aria-live="polite" data-idle="Choisissez votre situation : nous vous indiquons l'associé à contacter." data-rachel="Votre interlocutrice : Rachel Illouz." data-benjamin="Votre interlocuteur : Benjamin Haziza.">Choisissez votre situation : nous vous indiquons l'associé à contacter.</p>
-      </div>
       <div class="partners__grid" id="partnersGrid">
         <article class="person rv" data-tilt data-person="rachel">
           <span class="person__mark outline" aria-hidden="true">R</span>
@@ -519,8 +507,7 @@
             <div class="person__photo"><img src="assets/rachel-rb.jpg" alt="Rachel Illouz" width="150" height="268" loading="lazy"></div>
             <div><h3>Rachel Illouz</h3><b>Associée · Expert-comptable</b><span class="person__focus">International &amp; implantation en France</span></div>
           </div>
-          <p>Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France. Elle intervient notamment sur les enjeux comptables, fiscaux et organisationnels liés à l'arrivée de sociétés étrangères sur le marché français.</p>
-          <ul class="person__tags"><li>Sociétés étrangères</li><li>Filiales de groupes</li><li>Reporting FR / EN</li></ul>
+          <p>Rachel a développé son expertise au sein de cabinets internationaux, où elle a accompagné des entreprises européennes, américaines et asiatiques dans leur implantation et leur développement en France.</p>
           <div class="person__actions"><a class="btn btn--dark btn--sm" href="tel:+33624126769">Appeler Rachel <span>→</span></a><a class="wa-chip wa-chip--light" href="https://wa.me/33624126769?text=Bonjour%20Rachel%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin." target="_blank" rel="noopener" aria-label="WhatsApp Rachel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a><a class="person__in" href="https://www.linkedin.com/in/rachel-illouz-42932b14a/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
         <article class="person rv" data-tilt data-person="benjamin" style="--rd:.1s">
@@ -530,11 +517,11 @@
             <div class="person__photo"><img src="assets/benjamin-rb.jpg" alt="Benjamin Haziza" width="147" height="270" loading="lazy"></div>
             <div><h3>Benjamin Haziza</h3><b>Associé · Expert-comptable</b><span class="person__focus">Start-up, entrepreneurs &amp; indépendants</span></div>
           </div>
-          <p>Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial. Il accompagne aujourd'hui notamment des start-up et indépendants sur leurs enjeux comptables, fiscaux, financiers et de structuration.</p>
-          <ul class="person__tags"><li>Start-up</li><li>Indépendants</li><li>Structuration</li></ul>
+          <p>Benjamin a débuté sa carrière chez Ernst &amp; Young (EY) en audit auprès de grands comptes, avant de s'orienter vers l'expertise comptable et l'accompagnement entrepreneurial.</p>
           <div class="person__actions"><a class="btn btn--dark btn--sm" href="#contact" data-booking="benjamin">Prendre rendez-vous avec Benjamin <span>→</span></a><a class="wa-chip wa-chip--light" href="https://wa.me/33761534670?text=Bonjour%20Benjamin%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin." target="_blank" rel="noopener" aria-label="WhatsApp Benjamin"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a><a class="person__in" href="https://www.linkedin.com/in/benjamin-haziza-924981185/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </article>
       </div>
+      <p class="partners__more"><a class="btn btn--dark btn--sm" href="les-associes.html">Découvrir les associés <span>→</span></a><a class="partners__link" href="notre-approche.html">Notre approche →</a></p>
     </div>
   </section>
 
@@ -543,7 +530,7 @@
 
   <section class="sec" id="missions">
     <div class="wrap">
-      <div class="sec__head rv"><div><span class="kicker">Nos missions</span><h2>Six missions, un seul cabinet.</h2></div><p>Conformité, pilotage, social, juridique, conseil au dirigeant et facturation électronique, coordonnés par les mêmes associés.</p></div>
+      <div class="sec__head rv"><div><span class="kicker">Nos missions</span><h2>Six missions, un seul cabinet.</h2></div><p>Conformité, pilotage, social, juridique, conseil au dirigeant et facturation électronique, coordonnés par les mêmes associés. <a class="partners__link" href="notre-approche.html">Découvrir notre approche →</a></p></div>
       <div class="missions"><a class="mission rv" href="expertises/comptabilite.html" style="--rd:0.00s"><span class="mission__num outline">01</span><h3>Conformité &amp; comptabilité</h3><p>Tenue, comptes annuels, TVA et obligations fiscales récurrentes.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-6deg" aria-hidden="true">Bilan</span></a><a class="mission rv" href="expertises/conseil-gestion.html" style="--rd:0.06s"><span class="mission__num outline">02</span><h3>Pilotage &amp; reporting</h3><p>Trésorerie, tableaux de bord, prévisionnels, reporting et aide à la décision.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:5deg" aria-hidden="true">Trésorerie</span></a><a class="mission rv" href="expertises/social-paie.html" style="--rd:0.12s"><span class="mission__num outline">03</span><h3>Social &amp; RH</h3><p>Paie, embauches et obligations sociales récurrentes.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-4deg" aria-hidden="true">Bulletins</span></a><a class="mission rv" href="expertises/creation-juridique.html" style="--rd:0.18s"><span class="mission__num outline">04</span><h3>Juridique &amp; création</h3><p>Création de société, juridique annuel et structuration.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:6deg" aria-hidden="true">Statuts</span></a><a class="mission rv" href="conseil-dirigeant.html" style="--rd:0.24s"><span class="mission__num outline">05</span><h3>Conseil au dirigeant</h3><p>Rémunération, dividendes, holding et arbitrages du dirigeant.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:-5deg" aria-hidden="true">Dividendes</span></a><a class="mission rv" href="facturation-electronique.html" style="--rd:0.30s"><span class="mission__num outline">06</span><h3>Facturation électronique</h3><p>Préparation, organisation et accompagnement autour de la réforme française.</p><span class="mission__arrow" aria-hidden="true">→</span><span class="chip" style="--r:4deg" aria-hidden="true">Factur-X</span></a></div>
     </div>
   </section>
@@ -641,7 +628,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot__grid">
-      <div class="foot__brand"><a class="brand" href="#top" aria-label="Meyvin, accueil"><i>M</i>Meyvin</a><p>Cabinet d'expertise comptable accompagnant les dirigeants et les sociétés internationales en France.</p></div>
+      <div class="foot__brand"><a class="brand" href="#top" aria-label="Meyvin, accueil"><i>M</i>Meyvin</a><p>Cabinet d'expertise comptable accompagnant les dirigeants et les sociétés internationales en France.</p><p class="foot__firm"><a href="les-associes.html">Les associés</a><a href="notre-approche.html">Notre approche</a></p></div>
       <div><strong>Nos missions</strong><a href="expertises/comptabilite.html">Comptabilité &amp; conformité</a><a href="expertises/conseil-gestion.html">Pilotage &amp; reporting</a><a href="expertises/social-paie.html">Social &amp; RH</a><a href="expertises/creation-juridique.html">Juridique &amp; création</a><a href="conseil-dirigeant.html">Conseil au dirigeant</a><a href="facturation-electronique.html">Facturation électronique</a></div>
       <div><strong>International</strong><a href="expert-comptable-international.html">Implantation en France</a><a href="immatriculation-tva-france.html">Immatriculation TVA</a><a href="daf-externalise.html">DAF externalisé</a><a href="french-accountant-paris.html">English version</a></div>
       <div><strong>Ressources</strong><a href="tarif-expert-comptable.html">Tarifs d'un expert-comptable</a><a href="changer-expert-comptable.html">Changer d'expert-comptable</a><a href="simulateurs/index.html">Simulateurs</a><a href="blog/index.html">Blog</a><a href="#contact">Contact</a></div>
@@ -794,20 +781,6 @@
   // ---------- Reveal on scroll ----------
   const rvIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvIO.unobserve(e.target); } }), { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.rv').forEach(el => reduced ? el.classList.add('in') : rvIO.observe(el));
-
-  // ---------- Which partner for which situation ----------
-  const matchOut = document.getElementById('matchOut');
-  const partnersGrid = document.getElementById('partnersGrid');
-  const matchBtns = [...document.querySelectorAll('.match__chips button')];
-  matchBtns.forEach((btn) => btn.addEventListener('click', () => {
-    const on = btn.getAttribute('aria-pressed') !== 'true';
-    matchBtns.forEach((b) => b.setAttribute('aria-pressed', String(on && b === btn)));
-    const who = on ? btn.dataset.partner : '';
-    partnersGrid.classList.toggle('is-matched', !!who);
-    partnersGrid.querySelectorAll('.person').forEach((card) => card.classList.toggle('is-match', card.dataset.person === who));
-    matchOut.textContent = matchOut.dataset[who || 'idle'];
-    matchOut.classList.toggle('is-set', !!who);
-  }));
 
   // ---------- Partner cards tilt ----------
   if (fine && !reduced) document.querySelectorAll('[data-tilt]').forEach(card => {

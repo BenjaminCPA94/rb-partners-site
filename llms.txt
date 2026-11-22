@@ -8,7 +8,10 @@ This file follows the llms.txt convention to help AI assistants and language mod
 
 - [Homepage (FR)](https://benjamincpa94.github.io/rb-partners-site/): Overview of the firm, the three audiences served, and the six core service areas.
 - [Homepage (EN)](https://benjamincpa94.github.io/rb-partners-site/french-accountant-paris.html): English-language equivalent of the homepage, written for an international audience, not a literal translation.
-- [The firm / founders](https://benjamincpa94.github.io/rb-partners-site/#associes): Rachel Illouz and Benjamin Haziza, their backgrounds and respective specialisations.
+- [Les associés (FR)](https://benjamincpa94.github.io/rb-partners-site/les-associes.html): Rachel Illouz and Benjamin Haziza, their backgrounds, specialisations and direct contact details.
+- [The partners (EN)](https://benjamincpa94.github.io/rb-partners-site/the-partners.html): English version of the partners page.
+- [Notre approche (FR)](https://benjamincpa94.github.io/rb-partners-site/notre-approche.html): The four steps of the firm's approach (create, keep the books, steer, set up in France) and how a collaboration starts.
+- [Our approach (EN)](https://benjamincpa94.github.io/rb-partners-site/our-approach.html): English version of the approach page.
 
 ## For foreign companies expanding into France (English)
 
