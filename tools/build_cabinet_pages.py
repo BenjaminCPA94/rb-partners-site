@@ -8,7 +8,7 @@
 Nothing is invented: every sentence below comes from a page of the site (home, tariff page, contact block).
 Run from the repository root:  python3 tools/build_cabinet_pages.py
 """
-import re, subprocess, html
+import os, re, subprocess, html
 
 BASE = 'https://benjamincpa94.github.io/rb-partners-site/'
 BOOK = 'https://bookings.cloud.microsoft/book/MEYVIN1@meyvin-experts.com/?ismsaljsauthenabled'
@@ -80,7 +80,15 @@ TX = {
          ('Implantation en France','Un point d’entrée local pour les groupes étrangers.','intl')],
   rel_h2='Poursuivre la visite', rel_lead='Trois pages pour mieux connaître le cabinet.',
   cta_h2='Parlons de votre projet.', cta_p='Un premier échange de 30 minutes, sans engagement, avec l’un des deux associés.', cta_btn='Réserver un premier échange',
-  aria_scene='Illustration animée : ', crumb_home='Accueil'),
+  aria_scene='Illustration animée : ', crumb_home='Accueil',
+  w_h2='Notre cabinet vous accueille',
+  w_p=['Meyvin est un cabinet d’expertise comptable installé à Paris, fondé et dirigé par deux associés : Rachel Illouz et Benjamin Haziza.',
+       'Comptabilité, fiscalité, paie et conseil pour les indépendants, les PME et les sociétés étrangères qui s’implantent en France.'],
+  w_list=['Deux associés, un seul interlocuteur','Français et anglais','Outils connectés : Pennylane, Silae'],
+  c_h3='Nous rencontrer', c_p='Un premier échange de 30 minutes, sans engagement, avec l’un des deux associés.',
+  c_city='Paris, France', c_mail='E-mail', c_phone='Téléphone',
+  role_f='Associée', role_m='Associé', team_alt='Rachel Illouz et Benjamin Haziza, associés du cabinet Meyvin',
+  hero_promise='Vous échangez <b>directement</b> avec l’associé qui suit votre dossier, en <b>français ou en anglais</b>.'),
  'en': dict(
   lang='en', og='en_GB',
   p_title='The partners: Rachel Illouz and Benjamin Haziza — Meyvin',
@@ -114,7 +122,15 @@ TX = {
          ('Setting up in France','A local point of entry for foreign groups.','intl')],
   rel_h2='Keep exploring', rel_lead='Three pages to get to know the firm.',
   cta_h2='Let’s talk about your project.', cta_p='A first 30-minute conversation, free of obligation, with one of the two partners.', cta_btn='Book a first conversation',
-  aria_scene='Animated illustration: ', crumb_home='Home'),
+  aria_scene='Animated illustration: ', crumb_home='Home',
+  w_h2='Our firm welcomes you',
+  w_p=['Meyvin is an accounting firm based in Paris, founded and run by two partners: Rachel Illouz and Benjamin Haziza.',
+       'Accounting, tax, payroll and advice for self-employed professionals, SMEs and foreign companies setting up in France.'],
+  w_list=['Two partners, one point of contact','French and English','Connected tools: Pennylane, Silae'],
+  c_h3='Meet us', c_p='A first 30-minute conversation, free of obligation, with one of the two partners.',
+  c_city='Paris, France', c_mail='Email', c_phone='Phone',
+  role_f='Partner', role_m='Partner', team_alt='Rachel Illouz and Benjamin Haziza, partners of Meyvin',
+  hero_promise='You deal <b>directly</b> with the partner who follows your file, in <b>French or in English</b>.'),
 }
 TITLES = {'fr': ['Création de société', 'Comptabilité au fil de l’eau', 'Tableau de bord', 'Implantation en France'],
           'en': ['Company formation', 'Day-to-day bookkeeping', 'Dashboard', 'Setting up in France']}
@@ -122,23 +138,30 @@ LINK = {  # where each page of a language is, relative to the site root
  'fr': {'missions': 'index.html#missions', 'intl': 'expert-comptable-international.html', 'fees': 'tarif-expert-comptable.html'},
  'en': {'missions': 'french-accountant-paris.html#missions', 'intl': 'international-accountant-france.html', 'fees': 'accountant-fees-france.html'}}
 
+TEAM_PHOTO = 'assets/associes.jpg'  # photo of the two partners together: shown on the partners page as soon as the file exists
+
+def fmt_phone(tel):
+    d = tel.replace('tel:+33', '0')
+    return ' '.join(d[i:i + 2] for i in range(0, len(d), 2))
+
 def e(s): return html.escape(s, quote=False)
 
 # ---------- pieces ----------
-def profile(lang, key, t):
+def person_card(lang, key, t):
     d = person(lang, key)
+    first = d['name'].split()[0]
+    role = t['role_f'] if key == 'rachel' and lang == 'fr' else t['role_m']
     tags = ''.join(f'<li>{x}</li>' for x in d['tags'])
     book = f'<a class="btn btn--primary btn--sm" href="{BOOK}" target="_blank" rel="noopener" data-booking="general">{t["book"]}</a>'
-    return f'''<article class="cab-profile" id="{key}">
-<figure class="cab-profile__photo"><img src="{d['img']}" alt="{d['alt']}" width="420" height="560" loading="lazy"></figure>
-<div class="cab-profile__body">
-<p class="cab-profile__role">{d['role']}</p>
+    return f'''<article class="cab-person" id="{key}">
+<figure class="cab-person__photo"><img src="{d['img']}" alt="{d['alt']}" width="180" height="240" loading="lazy"></figure>
 <h2>{d['name']}</h2>
-<p class="cab-profile__focus">{d['focus']}</p>
-<p class="cab-profile__bio">{d['bio']}</p>
+<p class="cab-person__role">{role}</p>
+<p class="cab-person__focus">{d['focus']}</p>
+<p class="cab-person__bio">{d['bio']}</p>
 <ul class="cab-tags">{tags}</ul>
-<div class="cab-actions">{book}<a class="cab-link" href="{d['tel']}">{t['call']} {d['name'].split()[0]}</a><a class="cab-wa" href="{d['wa']}" target="_blank" rel="noopener" aria-label="WhatsApp {d['name'].split()[0]}">{WA_SVG}{t['wa']}</a><a class="cab-link" href="{d['linkedin']}" target="_blank" rel="noopener">{t['linkedin']}</a></div>
-</div></article>'''
+<div class="cab-actions">{book}<a class="cab-link" href="{d['tel']}">{t['call']} {first}</a><a class="cab-wa" href="{d['wa']}" target="_blank" rel="noopener" aria-label="WhatsApp {first}">{WA_SVG}{t['wa']}</a><a class="cab-link" href="{d['linkedin']}" target="_blank" rel="noopener">{t['linkedin']}</a></div>
+</article>'''
 
 def points(items):
     return '<div class="seo-points">' + ''.join(f'<article class="seo-point"><span>0{i+1}</span><h3>{h}</h3><p>{p}</p></article>' for i, (h, p) in enumerate(items)) + '</div>'
@@ -182,11 +205,22 @@ def main_partners(lang, t):
         nm = 'Benjamin Haziza' if key == 'benjamin' else 'Rachel Illouz'
         out = (t['m_out_f'] if (key == 'rachel' and lang == 'fr') else t['m_out']) + nm
         rows += f'<li><b>{label}</b><span>{out}</span><a href="#{key}">{t["see"]}</a></li>'
+    r, bz = person(lang, 'rachel'), person(lang, 'benjamin')
+    phones = ''.join(f'<li><a href="{d["tel"]}">{d["name"].split()[0]} · {fmt_phone(d["tel"])}</a><a class="cab-wa" href="{d["wa"]}" target="_blank" rel="noopener" aria-label="WhatsApp {d["name"].split()[0]}">{WA_SVG}{t["wa"]}</a></li>' for d in (r, bz))
+    team = ''
+    if os.path.exists(TEAM_PHOTO):
+        team = f'<figure class="cab-team"><img src="{TEAM_PHOTO}" alt="{t["team_alt"]}" loading="eager"></figure>'
+    checks = ''.join(f'<li>{x}</li>' for x in t['w_list'])
+    welcome = f'''<section class="section cab-welcome"><div class="container cab-welcome__grid">
+<div class="cab-welcome__text"><h2>{t['w_h2']}</h2><p>{t['w_p'][0]}</p><p>{t['w_p'][1]}</p><ul class="cab-check">{checks}</ul></div>
+<aside class="cab-contact"><h3>{t['c_h3']}</h3><p>{t['c_p']}</p><p class="cab-contact__city">{t['c_city']}</p><ul class="cab-contact__list">{phones}<li><span>{t['c_mail']}</span> <a href="mailto:contact@meyvin.fr">contact@meyvin.fr</a></li></ul><a class="btn btn--primary" href="{BOOK}" target="_blank" rel="noopener" data-booking="general">{t['book']}</a></aside>
+</div></section>'''
     return '\n'.join([
-        hero(t['p_eyebrow'], t['p_h1'], t['p_lead']),
-        f'<section class="section"><div class="container"><div class="cab-profiles">{profile(lang, "rachel", t)}{profile(lang, "benjamin", t)}</div></div></section>',
+        f'<section class="cab-hero"><div class="container"><p class="eyebrow">{t["p_eyebrow"]}</p><h1>{t["p_h1"]}</h1><p class="cab-hero__lead">{t["hero_promise"]}</p></div></section>',
+        f'<div class="container">{team}</div>' if team else '',
+        welcome,
+        f'<section class="section cab-duo-section"><div class="container"><div class="cab-duo">{person_card(lang, "rachel", t)}{person_card(lang, "benjamin", t)}</div></div></section>',
         f'<section class="section section--cream"><div class="container"><div class="section__head"><p class="eyebrow">{t["m_eyebrow"]}</p><h2>{t["m_h2"]}</h2></div><ul class="cab-match">{rows}</ul></div></section>',
-        f'<section class="section"><div class="container"><div class="section__head"><p class="eyebrow">{t["pts_eyebrow"]}</p><h2>{t["pts_h2"]}</h2></div>{points(t["pts"])}</div></section>',
         related(lang, t, t['rel_p'], t['rel_h2'], t['rel_lead']),
         cta(t)])
 
