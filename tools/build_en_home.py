@@ -81,6 +81,17 @@ T = {
  "MAISON MÈRE":"HEAD OFFICE", "TVA &amp; fiscalité":"VAT &amp; tax",
  "Deux associés, des expertises complémentaires.":"Two partners, complementary expertise.",
  "Vous échangez directement avec l'associé qui suit votre dossier, en français ou en anglais.":"You speak directly with the partner handling your file, in French or in English.",
+ "Expertise comptable à Paris · France &amp; international":"French accounting in Paris · France &amp; international",
+ "Deux associés. Un seul interlocuteur pour vos comptes en France.":"Two partners. One point of contact for your accounts in France.",
+ "Rachel Illouz et Benjamin Haziza accompagnent les entrepreneurs et les filiales de groupes étrangers, de la création d'entreprise au reporting en anglais.":"Rachel Illouz and Benjamin Haziza support entrepreneurs and subsidiaries of foreign groups, from company formation to reporting in English.",
+ "Réserver un premier échange":"Book a first conversation",
+ "Découvrir le cabinet":"Discover the firm",
+ "30 min en visio avec un associé":"30 min by video call with a partner",
+ "Les deux associés":"The two partners",
+ "Associée · International et implantation en France":"Partner · International &amp; France market entry",
+ "Associé · Start-up, entrepreneurs et indépendants":"Partner · Start-ups, entrepreneurs &amp; independents",
+ "Voir le profil":"View profile",
+ "Associée":"Partner", "Associé":"Partner",
  "Associée · Expert-comptable":"Partner · Chartered Accountant", "Associé · Expert-comptable":"Partner · Chartered Accountant",
  "International et implantation en France : création de filiales, obligations locales et reporting vers la maison mère.":"International and setting up in France: subsidiary formation, local obligations and reporting to head office.",
  "Start-up, entrepreneurs et indépendants : comptabilité, fiscalité, financement et structuration.":"Start-ups, entrepreneurs and independent professionals: accounting, tax, financing and structuring.",
@@ -167,12 +178,11 @@ for p in parts:
 s=s[:ba]+''.join(out)+s[bb:]
 assert not missing, missing
 
-rep('href="les-associes.html"','href="the-partners.html"',4)
-rep('href="notre-approche.html"','href="our-approach.html"',4)
+rep('les-associes.html','the-partners.html',0)
+rep('notre-approche.html','our-approach.html',0)
 rep('href="tel:+33624126769">Call Rachel','href="tel:+33624126769">Call Rachel')
 rep('Bonjour%20Rachel%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Rachel%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
 rep('Bonjour%20Benjamin%2C%20je%20vous%20contacte%20depuis%20le%20site%20Meyvin.','Hello%20Benjamin%2C%20I%20am%20contacting%20you%20from%20the%20Meyvin%20website.',2)
-rep("const words = ['Comptabilité', 'Fiscalité', 'Paie & social', 'Juridique', 'Création d’entreprise', 'Implantation en France', 'Reporting FR / EN', 'Conseil au dirigeant'];","const words = ['Accounting', 'French tax', 'Payroll & HR', 'Legal', 'Company formation', 'France market entry', 'FR / EN reporting', 'Owner-manager advisory'];")
 open(REPO+'french-accountant-paris.html','w',encoding='utf-8').write(s)
 # leftovers: French-looking words still in the visible body
 vis=re.sub(r'<[^>]+>',' ',''.join(out))
