@@ -30,12 +30,9 @@
   // The stylesheets are linked in each page's <head>, so the first paint is
   // already the final layout (no jump when they arrive). A page that does not
   // link them gets them here, in the same cascade order.
-  const SHEETS = ['site-upgrade', 'final-polish', 'final-polish-hotfix', 'mission-polish', 'seo-enhance', 'international-enhance', 'homepage-polish', 'immersive', 'editorial'];
-  if (!document.querySelector('link[href$="css/editorial.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
-  // editorial.js goes first: it sets the accent of the main title, which changes how the title wraps
-  if (editorial) { addJs('js/editorial.js'); addJs('js/ed-motion.js'); }
+  const SHEETS = ['site-upgrade', 'final-polish', 'final-polish-hotfix', 'mission-polish', 'seo-enhance', 'international-enhance', 'da-site'];
+  if (!document.querySelector('link[href$="css/da-site.css"]')) SHEETS.forEach((name) => addCss(`css/${name}.css`));
   addJs('js/contact-fab.js');
-  if (document.querySelector('main > .mission-hero')) addJs('js/scenes.js');
   if (document.querySelector('.article-body, .blog-card__category')) addJs('js/blog.js');
 
   const upgrade = document.createElement('script');
@@ -72,14 +69,6 @@
       const revealSafety = document.createElement('script');
       revealSafety.src = `${base}js/reveal-safety.js`;
       document.head.appendChild(revealSafety);
-
-      const homepagePolish = document.createElement('script');
-      homepagePolish.src = `${base}js/homepage-polish.js`;
-      document.head.appendChild(homepagePolish);
-
-      const immersive = document.createElement('script');
-      immersive.src = `${base}js/immersive.js`;
-      document.head.appendChild(immersive);
 
     };
     document.head.appendChild(polish);

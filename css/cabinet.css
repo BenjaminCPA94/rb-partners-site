@@ -1,67 +1,61 @@
-/* "Le cabinet" pages: Les associés / The partners, Notre approche / Our approach.
-   Builds on the editorial skin (html.ed): cream stage, serif titles, gold accents, navy blocks. */
+/* "Le cabinet" pages (Les associés / The partners, Notre approche / Our approach): DA Figma. */
 
-/* ---------- hero: title, one-line promise (no medallion on this page) ---------- */
-html.ed .cab-hero { padding: 84px 0 34px; text-align: center; }
-html.ed .cab-hero .eyebrow { justify-content: center; }
-html.ed .cab-hero h1 { max-width: 820px; margin: 14px auto 0; color: var(--ed-navy); font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.06; }
-html.ed .cab-hero__lead { max-width: 640px; margin: 22px auto 0; font-size: 1.2rem; line-height: 1.6; color: var(--ed-ink); }
-html.ed .cab-hero__lead b { color: var(--ed-gold-deep); font-weight: 700; }
+/* ---------- hero ---------- */
+.cab-hero { padding: 84px 0 40px; border-bottom: 1px solid var(--border); }
+.cab-hero .eyebrow { margin-bottom: 26px; }
+.cab-hero h1 { max-width: 16ch; font-size: clamp(2.4rem, 5.2vw, 4.4rem); }
+.cab-hero__lead { max-width: 56ch; margin: 26px 0 40px; font-size: 1.1rem; color: var(--gray-600); }
+.cab-hero__lead b { color: var(--ink); font-weight: 500; }
+.cab-team { margin: 0 0 40px; }
+.cab-team img { width: 100%; max-width: 1100px; }
 
-/* optional photo of the two partners together (assets/associes.jpg) */
-html.ed .cab-team { margin: 18px 0 0; }
-html.ed .cab-team img { display: block; width: 100%; max-width: 980px; margin: 0 auto; border-radius: 10px; box-shadow: var(--rb-shadow); }
+/* ---------- welcome: text on the left, how to meet us on the right ---------- */
+.cab-welcome__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: start; }
+.cab-welcome__text h2 { margin: 0 0 22px; font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.cab-welcome__text p { margin: 0 0 14px; max-width: 56ch; color: var(--gray-600); }
+.cab-check { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 10px; }
+.cab-check li { position: relative; padding-left: 24px; font-weight: 500; }
+.cab-check li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.cab-contact { padding-top: 24px; border-top: 1px solid var(--border); }
+.cab-contact h3 { margin: 0 0 10px; font-size: 1.5rem; }
+.cab-contact p { margin: 0 0 12px; color: var(--gray-600); }
+.cab-contact .cab-contact__city { color: var(--ink); font-weight: 500; }
+.cab-contact__list { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 10px; }
+.cab-contact__list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.cab-contact__list a:not(.cab-wa) { border-bottom: 1px solid var(--border); }
+.cab-contact__list a:not(.cab-wa):hover { color: var(--accent); border-color: var(--accent); }
+.cab-contact__list span { color: var(--gray-600); }
 
-/* ---------- "our firm welcomes you": text on the left, how to meet us on the right ---------- */
-html.ed .cab-welcome__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: start; }
-html.ed .cab-welcome__text h2 { margin: 0 0 18px; font-size: clamp(1.7rem, 3vw, 2.3rem); }
-html.ed .cab-welcome__text p { margin: 0 0 14px; max-width: 58ch; color: var(--ed-muted); line-height: 1.75; font-size: 1.04rem; }
-html.ed .cab-check { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
-html.ed .cab-check li { position: relative; padding-left: 30px; font-weight: 600; color: var(--ed-navy); }
-html.ed .cab-check li::before { content: ""; position: absolute; left: 0; top: .25em; width: 18px; height: 18px; border-radius: 50%; background: var(--ed-gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.6L13 6.6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
-html.ed .cab-contact { padding: 28px; background: var(--ed-paper); border: 1px solid var(--ed-line); border-radius: 10px; box-shadow: var(--rb-shadow); }
-html.ed .cab-contact h3 { margin: 0 0 8px; font-size: 1.5rem; color: var(--ed-navy); }
-html.ed .cab-contact p { margin: 0 0 12px; color: var(--ed-muted); line-height: 1.6; }
-html.ed .cab-contact .cab-contact__city { color: var(--ed-navy); font-weight: 700; }
-html.ed .cab-contact__list { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
-html.ed .cab-contact__list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-html.ed .cab-contact__list a:not(.cab-wa) { color: var(--ed-navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--ed-gold); }
-html.ed .cab-contact__list span { color: var(--ed-muted); }
-
-/* ---------- the two partners, side by side ---------- */
-html.ed .cab-duo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-html.ed .cab-person { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 34px 30px; background: var(--ed-paper); border: 1px solid var(--ed-line); border-radius: 10px; box-shadow: var(--rb-shadow); scroll-margin-top: 110px; }
-/* the portraits are small files (about 150 px wide): they are shown at 180 px at most, to stay sharp */
-html.ed .cab-person__photo { margin: 0 0 20px; width: 180px; aspect-ratio: 3 / 4; border-radius: 8px; overflow: hidden; background: var(--ed-sand); }
-html.ed .cab-person__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-html.ed .cab-person h2 { margin: 0; font-size: clamp(1.7rem, 2.6vw, 2.2rem); line-height: 1.1; }
-html.ed .cab-person__role { margin: 6px 0 12px; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ed-gold-deep); }
-html.ed .cab-person__focus { margin: 0 0 14px; padding: 6px 12px; border-radius: 999px; background: var(--ed-sand); color: var(--ed-navy); font-size: .86rem; font-weight: 600; }
-html.ed .cab-person__bio { margin: 0 0 16px; color: var(--ed-muted); line-height: 1.7; font-size: 1rem; }
-html.ed .cab-tags { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 22px; padding: 0; }
-html.ed .cab-tags li { padding: 6px 12px; border: 1px solid var(--ed-line); border-radius: 999px; font-size: .82rem; font-weight: 600; color: var(--ed-navy); background: #fff; }
-html.ed .cab-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 14px; align-items: center; margin-top: auto; }
-html.ed .cab-actions a { font-weight: 600; }
-html.ed .cab-actions .cab-link { color: var(--ed-navy); border-bottom: 1px solid var(--ed-gold); padding-bottom: 2px; text-decoration: none; }
-html.ed .cab-wa { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px 8px 11px; border-radius: 999px; background: #0f7a45; color: #fff !important; font-size: .86rem; font-weight: 600; text-decoration: none; border: 0 !important; }
-html.ed .cab-wa svg { width: 16px; height: 16px; flex: none; }
-html.ed .cab-wa:hover { background: #0c6b3c; }
+/* ---------- the two partners ---------- */
+.cab-duo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px; }
+.cab-person { display: flex; flex-direction: column; gap: 6px; padding-top: 30px; border-top: 1px solid var(--border); scroll-margin-top: 110px; }
+.cab-person__ini { font-size: clamp(3.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: -.07em; line-height: 1; }
+.cab-person__ini::after { content: "."; color: var(--accent); }
+.cab-person h2 { margin: 26px 0 0; font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500; letter-spacing: -.03em; }
+.cab-person__role { margin: 0 0 12px; color: var(--gray-500); font-size: .85rem; }
+.cab-person__focus { margin: 0 0 14px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: .92rem; }
+.cab-person__bio { margin: 0 0 16px; max-width: 54ch; color: var(--gray-600); }
+.cab-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; }
+.cab-tags li { padding: 6px 12px; border: 1px solid var(--border); font-size: .82rem; color: var(--ink); }
+.cab-actions { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-top: auto; }
+.cab-actions .cab-link { border-bottom: 1px solid var(--border); padding-bottom: 2px; font-weight: 500; }
+.cab-actions .cab-link:hover { color: var(--accent); border-color: var(--accent); }
+.cab-wa { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px 8px 11px; background: #0f7a45; color: #fff !important; font-size: .85rem; font-weight: 500; border: 0 !important; }
+.cab-wa svg { width: 16px; height: 16px; flex: none; }
+.cab-wa:hover { background: #0c6b3c; }
 
 /* ---------- which partner for which situation ---------- */
-html.ed .cab-match { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 0; padding: 0; }
-html.ed .cab-match li { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; background: var(--ed-paper); border: 1px solid var(--ed-line); border-radius: 8px; }
-html.ed .cab-match b { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: var(--ed-navy); }
-html.ed .cab-match span { color: var(--ed-muted); }
-html.ed .cab-match a { color: var(--ed-navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--ed-gold); align-self: flex-start; }
+.cab-match { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.cab-match li { display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.cab-match b { font-size: 1.15rem; font-weight: 500; letter-spacing: -.02em; }
+.cab-match span { color: var(--gray-600); }
+.cab-match a { align-self: flex-start; border-bottom: 1px solid var(--accent); color: var(--accent); font-weight: 500; font-size: .9rem; }
 
-/* ---------- the four steps (animated scenes, see story-scene.css) ---------- */
-html.ed .sc-copy .sc-link { display: inline-block; margin-top: 22px; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--st-ink); text-decoration: none; border-bottom: 1px solid var(--ed-gold); padding-bottom: 2px; }
-html.ed .sc-copy h2 { color: var(--st-ink); }
+/* ---------- the four steps (animated boards, see story-scene.css) ---------- */
+.sc-copy .sc-link { display: inline-block; margin-top: 22px; font-weight: 500; color: var(--st-ink); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 
 @media (max-width: 900px) {
-  html.ed .cab-hero { padding: 56px 0 24px; }
-  html.ed .cab-welcome__grid { grid-template-columns: 1fr; gap: 30px; }
-  html.ed .cab-duo { grid-template-columns: 1fr; }
-  html.ed .cab-person { padding: 26px 22px; }
-  html.ed .cab-match { grid-template-columns: 1fr; }
+  .cab-hero { padding: 52px 0 28px; }
+  .cab-welcome__grid, .cab-duo, .cab-match { grid-template-columns: 1fr; gap: 40px; }
+  .cab-match { gap: 0; }
 }

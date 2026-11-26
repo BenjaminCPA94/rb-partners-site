@@ -154,7 +154,7 @@ def person_card(lang, key, t):
     tags = ''.join(f'<li>{x}</li>' for x in d['tags'])
     book = f'<a class="btn btn--primary btn--sm" href="{BOOK}" target="_blank" rel="noopener" data-booking="general">{t["book"]}</a>'
     return f'''<article class="cab-person" id="{key}">
-<figure class="cab-person__photo"><img src="{d['img']}" alt="{d['alt']}" width="180" height="240" loading="lazy"></figure>
+<span class="cab-person__ini" aria-hidden="true">{''.join(w[0] for w in d['name'].split())}</span>
 <h2>{d['name']}</h2>
 <p class="cab-person__role">{role}</p>
 <p class="cab-person__focus">{d['focus']}</p>
@@ -179,8 +179,13 @@ def cta(t):
 def hero(eyebrow, h1, lead):
     return f'<section class="seo-hero"><div class="container seo-hero__inner"><p class="eyebrow">{eyebrow}</p><h1>{h1}</h1><p class="seo-hero__lead">{lead}</p></div></section>'
 
+RECOLOR = [('#0b1d3a', '#102b57'), ('#12264a', '#17376e'), ('#183262', '#1f4486'), ('#5d6573', '#535e70'), ('#8f6b2e', '#1f45b3'), ('#c6a15b', '#2856d8'), ('#e0d8c6', '#d5e2f5'), ('#e2c48a', '#9bb8f5'), ('#e7e0d0', '#d5e2f5'), ('#efe9db', '#eef3fb'), ('#f7f2e9', '#f4f7fc'), ('#fffdf8', '#ffffff'), ('rgba(198,161,91,', 'rgba(40,86,216,'), ('rgba(226,196,138,', 'rgba(155,184,245,')]
+def recolor(s):
+    for a, b in RECOLOR: s = re.sub(re.escape(a), b, s, flags=re.I)
+    return s
+
 def scenes(lang):
-    return re.findall(r'<svg class="scene[^"]*" viewBox="0 0 480 340".*?</svg>', old[lang], re.S)
+    return [recolor(x) for x in re.findall(r'<svg class="scene[^"]*" viewBox="0 0 480 340".*?</svg>', old[lang], re.S)]
 def steps(lang):
     out = []
     for m in re.finditer(r'<article class="step[^"]*">\s*<span class="kicker">(.*?)</span>\s*<h2>(.*?)</h2>\s*<p>(.*?)</p>\s*<a href="([^"]*)">(.*?)</a>', old[lang], re.S):
@@ -279,7 +284,7 @@ def build(lang, kind):
     # stylesheets (the animated scenes need story-scene.css, loaded before the page skin)
     extra = '<link rel="stylesheet" href="css/cabinet.css">'
     if kind == 'approach': extra = '<link rel="stylesheet" href="css/story-scene.css">\n' + extra
-    anchor = '<link rel="stylesheet" href="css/editorial.css">'
+    anchor = '<link rel="stylesheet" href="css/da-site.css">'
     assert anchor in s; s = s.replace(anchor, anchor + '\n' + extra, 1)
     body = main_partners(lang, t) if kind == 'partners' else main_approach(lang, t)
     sub(r'<main>.*?</main>', '<main>\n' + body + '\n</main>')

@@ -255,6 +255,17 @@
   }
 
   function bindBooking() {
+    // Both partners are on the same shared Microsoft Bookings page: every booking button goes straight to it,
+    // with no intermediate "choose a partner" step.
+    const urls = [...new Set(Object.values(BOOKING_LINKS).filter(Boolean))];
+    if (urls.length === 1) {
+      document.querySelectorAll('[data-booking]').forEach(link => {
+        link.setAttribute('href', urls[0]);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      });
+      return;
+    }
     ensureBookingModal();
     document.querySelectorAll('[data-booking]').forEach(link => {
       if (link.dataset.rbBookingBound) return;
