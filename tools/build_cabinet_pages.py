@@ -176,8 +176,9 @@ def related(lang, t, items, h2, lead):
 def cta(t):
     return f'<section class="expertise-cta"><div class="container"><h2>{t["cta_h2"]}</h2><p>{t["cta_p"]}</p><a href="{BOOK}" target="_blank" rel="noopener" class="btn btn--primary" data-booking="general">{t["cta_btn"]}</a></div></section>'
 
-def hero(eyebrow, h1, lead):
-    return f'<section class="seo-hero"><div class="container seo-hero__inner"><p class="eyebrow">{eyebrow}</p><h1>{h1}</h1><p class="seo-hero__lead">{lead}</p></div></section>'
+def hero(eyebrow, h1, lead, btn=''):
+    act = f'<div class="seo-hero__actions"><a href="{BOOK}" target="_blank" rel="noopener" class="btn btn--primary" data-booking="general">{btn}</a></div>' if btn else ''
+    return f'<section class="seo-hero"><div class="container seo-hero__inner"><p class="eyebrow">{eyebrow}</p><h1>{h1}</h1><p class="seo-hero__lead">{lead}</p>{act}</div></section>'
 
 RECOLOR = [('#0b1d3a', '#102b57'), ('#12264a', '#17376e'), ('#183262', '#1f4486'), ('#5d6573', '#535e70'), ('#8f6b2e', '#1f45b3'), ('#c6a15b', '#2856d8'), ('#e0d8c6', '#d5e2f5'), ('#e2c48a', '#9bb8f5'), ('#e7e0d0', '#d5e2f5'), ('#efe9db', '#eef3fb'), ('#f7f2e9', '#f4f7fc'), ('#fffdf8', '#ffffff'), ('rgba(198,161,91,', 'rgba(40,86,216,'), ('rgba(226,196,138,', 'rgba(155,184,245,')]
 def recolor(s):
@@ -221,7 +222,7 @@ def main_partners(lang, t):
 <aside class="cab-contact"><h3>{t['c_h3']}</h3><p>{t['c_p']}</p><p class="cab-contact__city">{t['c_city']}</p><ul class="cab-contact__list">{phones}<li><span>{t['c_mail']}</span> <a href="mailto:contact@meyvin.fr">contact@meyvin.fr</a></li></ul><a class="btn btn--primary" href="{BOOK}" target="_blank" rel="noopener" data-booking="general">{t['book']}</a></aside>
 </div></section>'''
     return '\n'.join([
-        f'<section class="cab-hero"><div class="container"><p class="eyebrow">{t["p_eyebrow"]}</p><h1>{t["p_h1"]}</h1><p class="cab-hero__lead">{t["hero_promise"]}</p></div></section>',
+        f'<section class="cab-hero"><div class="container"><p class="eyebrow">{t["p_eyebrow"]}</p><h1>{t["p_h1"]}</h1><p class="cab-hero__lead">{t["hero_promise"]}</p><div class="cab-hero__actions"><a href="{BOOK}" target="_blank" rel="noopener" class="btn btn--primary" data-booking="general">{t["cta_btn"]}</a></div></div></section>',
         f'<div class="container">{team}</div>' if team else '',
         welcome,
         f'<section class="section cab-duo-section"><div class="container"><div class="cab-duo">{person_card(lang, "rachel", t)}{person_card(lang, "benjamin", t)}</div></div></section>',
@@ -232,7 +233,7 @@ def main_partners(lang, t):
 def main_approach(lang, t):
     sc, st = scenes(lang), steps(lang)
     assert len(sc) == 4 and len(st) == 4, (lang, len(sc), len(st))
-    parts = [hero(t['a_eyebrow'], t['a_h1'], t['a_lead'])]
+    parts = [hero(t['a_eyebrow'], t['a_h1'], t['a_lead'], t['cta_btn'])]
     parts += [scene_section(lang, t, i, sc[i], st[i]) for i in range(4)]
     parts += [f'<section class="section section--cream"><div class="container"><div class="section__head"><p class="eyebrow">{t["s_eyebrow"]}</p><h2>{t["s_h2"]}</h2></div>{points(t["s_pts"])}</div></section>',
               related(lang, t, t['rel_a'], t['rel_h2'], t['rel_lead']), cta(t)]

@@ -66,6 +66,8 @@
       internationalEnhance.src = `${base}js/international-enhance.js`;
       document.head.appendChild(internationalEnhance);
 
+      addJs('js/da-layout.js');
+
       const revealSafety = document.createElement('script');
       revealSafety.src = `${base}js/reveal-safety.js`;
       document.head.appendChild(revealSafety);
